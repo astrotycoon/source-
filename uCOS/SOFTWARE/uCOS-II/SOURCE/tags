@@ -1,0 +1,380 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BOOLEAN	OS_CPU.H	/^typedef unsigned char  BOOLEAN;$/;"	t
+FALSE	uCOS_II.H	29;"	d
+FP32	OS_CPU.H	/^typedef float          FP32;                     \/* Single precision floating point                    *\/$/;"	t
+FP64	OS_CPU.H	/^typedef double         FP64;                     \/* Double precision floating point                    *\/$/;"	t
+INT16S	OS_CPU.H	/^typedef signed   int   INT16S;                   \/* Signed   16 bit quantity                           *\/$/;"	t
+INT16U	OS_CPU.H	/^typedef unsigned int   INT16U;                   \/* Unsigned 16 bit quantity                           *\/$/;"	t
+INT32S	OS_CPU.H	/^typedef signed   long  INT32S;                   \/* Signed   32 bit quantity                           *\/$/;"	t
+INT32U	OS_CPU.H	/^typedef unsigned long  INT32U;                   \/* Unsigned 32 bit quantity                           *\/$/;"	t
+INT8S	OS_CPU.H	/^typedef signed   char  INT8S;                    \/* Signed    8 bit quantity                           *\/$/;"	t
+INT8U	OS_CPU.H	/^typedef unsigned char  INT8U;                    \/* Unsigned  8 bit quantity                           *\/$/;"	t
+OSAddr	uCOS_II.H	/^    void   *OSAddr;                    \/* Pointer to the beginning address of the memory partition     *\/$/;"	m	struct:__anon6
+OSBlkSize	uCOS_II.H	/^    INT32U  OSBlkSize;                 \/* Size (in bytes) of each memory block                         *\/$/;"	m	struct:__anon6
+OSCPUUsage	uCOS_II.H	/^OS_EXT  INT8S             OSCPUUsage;               \/* Percentage of CPU used                          *\/$/;"	v
+OSCnt	uCOS_II.H	/^    INT16U  OSCnt;                          \/* Semaphore count                                         *\/$/;"	m	struct:__anon9
+OSCtxSwCtr	uCOS_II.H	/^OS_EXT  INT32U            OSCtxSwCtr;               \/* Counter of number of context switches           *\/$/;"	v
+OSEventCnt	uCOS_II.H	/^    INT16U  OSEventCnt;                    \/* Semaphore Count (not used if other EVENT type)           *\/$/;"	m	struct:__anon1
+OSEventFreeList	uCOS_II.H	/^OS_EXT  OS_EVENT         *OSEventFreeList;          \/* Pointer to list of free EVENT control blocks    *\/$/;"	v
+OSEventGrp	uCOS_II.H	/^    INT8U          OSEventGrp;          \/* Group corresponding to tasks waiting for event to occur     *\/$/;"	m	struct:__anon8
+OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                     \/* Group corresponding to tasks waiting for event to occur *\/$/;"	m	struct:__anon7
+OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                     \/* Group corresponding to tasks waiting for event to occur *\/$/;"	m	struct:__anon9
+OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                    \/* Group corresponding to tasks waiting for event to occur  *\/$/;"	m	struct:__anon1
+OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                    \/* Group corresponding to tasks waiting for event to occur  *\/$/;"	m	struct:__anon4
+OSEventPtr	uCOS_II.H	/^    void   *OSEventPtr;                    \/* Pointer to message or queue structure                    *\/$/;"	m	struct:__anon1
+OSEventTbl	uCOS_II.H	/^    INT8U          OSEventTbl[OS_EVENT_TBL_SIZE];  \/* List of tasks waiting for event to occur         *\/$/;"	m	struct:__anon8
+OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE];  \/* List of tasks waiting for event to occur                *\/$/;"	m	struct:__anon7
+OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE];  \/* List of tasks waiting for event to occur                *\/$/;"	m	struct:__anon9
+OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; \/* List of tasks waiting for event to occur                 *\/$/;"	m	struct:__anon1
+OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; \/* List of tasks waiting for event to occur                 *\/$/;"	m	struct:__anon4
+OSEventTbl	uCOS_II.H	/^OS_EXT  OS_EVENT          OSEventTbl[OS_MAX_EVENTS];\/* Table of EVENT control blocks                   *\/$/;"	v
+OSEventType	uCOS_II.H	/^    INT8U   OSEventType;                   \/* Type of event control block (see OS_EVENT_TYPE_???)      *\/$/;"	m	struct:__anon1
+OSFlagAccept	OS_FLAG.C	/^OS_FLAGS  OSFlagAccept (OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U wait_type, INT8U *err)$/;"	f
+OSFlagCreate	OS_FLAG.C	/^OS_FLAG_GRP  *OSFlagCreate (OS_FLAGS flags, INT8U *err)$/;"	f
+OSFlagDel	OS_FLAG.C	/^OS_FLAG_GRP  *OSFlagDel (OS_FLAG_GRP *pgrp, INT8U opt, INT8U *err)$/;"	f
+OSFlagFlags	uCOS_II.H	/^    OS_FLAGS      OSFlagFlags;              \/* 8, 16 or 32 bit flags                                   *\/$/;"	m	struct:__anon2
+OSFlagFreeList	uCOS_II.H	/^OS_EXT  OS_FLAG_GRP      *OSFlagFreeList;           \/* Pointer to free list of event flag groups       *\/$/;"	v
+OSFlagNodeFlagGrp	uCOS_II.H	/^    void         *OSFlagNodeFlagGrp;        \/* Pointer to Event Flag Group                             *\/  $/;"	m	struct:__anon3
+OSFlagNodeFlags	uCOS_II.H	/^    OS_FLAGS      OSFlagNodeFlags;          \/* Event flag to wait on                                   *\/  $/;"	m	struct:__anon3
+OSFlagNodeNext	uCOS_II.H	/^    void         *OSFlagNodeNext;           \/* Pointer to next     NODE in wait list                   *\/$/;"	m	struct:__anon3
+OSFlagNodePrev	uCOS_II.H	/^    void         *OSFlagNodePrev;           \/* Pointer to previous NODE in wait list                   *\/$/;"	m	struct:__anon3
+OSFlagNodeTCB	uCOS_II.H	/^    void         *OSFlagNodeTCB;            \/* Pointer to TCB of waiting task                          *\/  $/;"	m	struct:__anon3
+OSFlagNodeWaitType	uCOS_II.H	/^    INT8U         OSFlagNodeWaitType;       \/* Type of wait:                                           *\/$/;"	m	struct:__anon3
+OSFlagPend	OS_FLAG.C	/^OS_FLAGS  OSFlagPend (OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U wait_type, INT16U timeout, INT8U *err)$/;"	f
+OSFlagPost	OS_FLAG.C	/^OS_FLAGS  OSFlagPost (OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U opt, INT8U *err)$/;"	f
+OSFlagQuery	OS_FLAG.C	/^OS_FLAGS  OSFlagQuery (OS_FLAG_GRP *pgrp, INT8U *err)$/;"	f
+OSFlagTbl	uCOS_II.H	/^OS_EXT  OS_FLAG_GRP       OSFlagTbl[OS_MAX_FLAGS];  \/* Table containing event flag groups              *\/$/;"	v
+OSFlagType	uCOS_II.H	/^    INT8U         OSFlagType;               \/* Should be set to OS_EVENT_TYPE_FLAG                     *\/$/;"	m	struct:__anon2
+OSFlagWaitList	uCOS_II.H	/^    void         *OSFlagWaitList;           \/* Pointer to first NODE of task waiting on event flag     *\/$/;"	m	struct:__anon2
+OSFree	uCOS_II.H	/^    INT32U  OSFree;                    \/* Number of free bytes on the stack                            *\/$/;"	m	struct:__anon10
+OSFreeList	uCOS_II.H	/^    void   *OSFreeList;                \/* Pointer to the beginning of the free list of memory blocks   *\/$/;"	m	struct:__anon6
+OSIdleCtr	uCOS_II.H	/^OS_EXT  volatile  INT32U  OSIdleCtr;                                 \/* Idle counter                   *\/$/;"	v
+OSIdleCtrMax	uCOS_II.H	/^OS_EXT  INT32U            OSIdleCtrMax;             \/* Max. value that idle ctr can take in 1 sec.     *\/$/;"	v
+OSIdleCtrRun	uCOS_II.H	/^OS_EXT  INT32U            OSIdleCtrRun;             \/* Val. reached by idle ctr at run time in 1 sec.  *\/$/;"	v
+OSInit	OS_CORE.C	/^void  OSInit (void)$/;"	f
+OSIntEnter	OS_CORE.C	/^void  OSIntEnter (void)$/;"	f
+OSIntExit	OS_CORE.C	/^void  OSIntExit (void)$/;"	f
+OSIntExitY	uCOS_II.H	/^OS_EXT  INT8U             OSIntExitY;$/;"	v
+OSIntNesting	uCOS_II.H	/^OS_EXT  INT8U             OSIntNesting;             \/* Interrupt nesting level                         *\/$/;"	v
+OSLockNesting	uCOS_II.H	/^OS_EXT  INT8U             OSLockNesting;            \/* Multitasking lock nesting level                 *\/$/;"	v
+OSMapTbl	OS_CORE.C	/^INT8U  const  OSMapTbl[]   = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};$/;"	v
+OSMboxAccept	OS_MBOX.C	/^void  *OSMboxAccept (OS_EVENT *pevent)$/;"	f
+OSMboxCreate	OS_MBOX.C	/^OS_EVENT  *OSMboxCreate (void *msg)$/;"	f
+OSMboxDel	OS_MBOX.C	/^OS_EVENT  *OSMboxDel (OS_EVENT *pevent, INT8U opt, INT8U *err)$/;"	f
+OSMboxPend	OS_MBOX.C	/^void  *OSMboxPend (OS_EVENT *pevent, INT16U timeout, INT8U *err)$/;"	f
+OSMboxPost	OS_MBOX.C	/^INT8U  OSMboxPost (OS_EVENT *pevent, void *msg)$/;"	f
+OSMboxPostOpt	OS_MBOX.C	/^INT8U  OSMboxPostOpt (OS_EVENT *pevent, void *msg, INT8U opt)$/;"	f
+OSMboxQuery	OS_MBOX.C	/^INT8U  OSMboxQuery (OS_EVENT *pevent, OS_MBOX_DATA *pdata)$/;"	f
+OSMemAddr	uCOS_II.H	/^    void   *OSMemAddr;                 \/* Pointer to beginning of memory partition                     *\/$/;"	m	struct:__anon5
+OSMemBlkSize	uCOS_II.H	/^    INT32U  OSMemBlkSize;              \/* Size (in bytes) of each block of memory                      *\/$/;"	m	struct:__anon5
+OSMemCreate	OS_MEM.C	/^OS_MEM  *OSMemCreate (void *addr, INT32U nblks, INT32U blksize, INT8U *err)$/;"	f
+OSMemFreeList	uCOS_II.H	/^    void   *OSMemFreeList;             \/* Pointer to list of free memory blocks                        *\/$/;"	m	struct:__anon5
+OSMemFreeList	uCOS_II.H	/^OS_EXT  OS_MEM           *OSMemFreeList;            \/* Pointer to free list of memory partitions       *\/$/;"	v
+OSMemGet	OS_MEM.C	/^void  *OSMemGet (OS_MEM *pmem, INT8U *err)$/;"	f
+OSMemNBlks	uCOS_II.H	/^    INT32U  OSMemNBlks;                \/* Total number of blocks in this partition                     *\/$/;"	m	struct:__anon5
+OSMemNFree	uCOS_II.H	/^    INT32U  OSMemNFree;                \/* Number of memory blocks remaining in this partition          *\/$/;"	m	struct:__anon5
+OSMemPut	OS_MEM.C	/^INT8U  OSMemPut (OS_MEM  *pmem, void *pblk)$/;"	f
+OSMemQuery	OS_MEM.C	/^INT8U  OSMemQuery (OS_MEM *pmem, OS_MEM_DATA *pdata)$/;"	f
+OSMemTbl	uCOS_II.H	/^OS_EXT  OS_MEM            OSMemTbl[OS_MAX_MEM_PART];\/* Storage for memory partition manager            *\/$/;"	v
+OSMsg	uCOS_II.H	/^    void          *OSMsg;               \/* Pointer to next message to be extracted from queue          *\/$/;"	m	struct:__anon8
+OSMsg	uCOS_II.H	/^    void   *OSMsg;                         \/* Pointer to message in mailbox                            *\/$/;"	m	struct:__anon4
+OSMutexAccept	OS_MUTEX.C	/^INT8U  OSMutexAccept (OS_EVENT *pevent, INT8U *err)$/;"	f
+OSMutexCreate	OS_MUTEX.C	/^OS_EVENT  *OSMutexCreate (INT8U prio, INT8U *err)$/;"	f
+OSMutexDel	OS_MUTEX.C	/^OS_EVENT  *OSMutexDel (OS_EVENT *pevent, INT8U opt, INT8U *err)$/;"	f
+OSMutexPIP	uCOS_II.H	/^    INT8U   OSMutexPIP;                     \/* Priority Inheritance Priority or 0xFF if no owner       *\/$/;"	m	struct:__anon7
+OSMutexPend	OS_MUTEX.C	/^void  OSMutexPend (OS_EVENT *pevent, INT16U timeout, INT8U *err)$/;"	f
+OSMutexPost	OS_MUTEX.C	/^INT8U  OSMutexPost (OS_EVENT *pevent)$/;"	f
+OSMutexQuery	OS_MUTEX.C	/^INT8U  OSMutexQuery (OS_EVENT *pevent, OS_MUTEX_DATA *pdata)$/;"	f
+OSNBlks	uCOS_II.H	/^    INT32U  OSNBlks;                   \/* Total number of blocks in the partition                      *\/$/;"	m	struct:__anon6
+OSNFree	uCOS_II.H	/^    INT32U  OSNFree;                   \/* Number of memory blocks free                                 *\/$/;"	m	struct:__anon6
+OSNMsgs	uCOS_II.H	/^    INT16U         OSNMsgs;             \/* Number of messages in message queue                         *\/$/;"	m	struct:__anon8
+OSNUsed	uCOS_II.H	/^    INT32U  OSNUsed;                   \/* Number of memory blocks used                                 *\/$/;"	m	struct:__anon6
+OSOwnerPrio	uCOS_II.H	/^    INT8U   OSOwnerPrio;                    \/* Mutex owner's task priority or 0xFF if no owner         *\/$/;"	m	struct:__anon7
+OSPrioCur	uCOS_II.H	/^OS_EXT  INT8U             OSPrioCur;                \/* Priority of current task                        *\/$/;"	v
+OSPrioHighRdy	uCOS_II.H	/^OS_EXT  INT8U             OSPrioHighRdy;            \/* Priority of highest priority task               *\/$/;"	v
+OSQAccept	OS_Q.C	/^void  *OSQAccept (OS_EVENT *pevent)$/;"	f
+OSQCreate	OS_Q.C	/^OS_EVENT  *OSQCreate (void **start, INT16U size)$/;"	f
+OSQDel	OS_Q.C	/^OS_EVENT  *OSQDel (OS_EVENT *pevent, INT8U opt, INT8U *err)$/;"	f
+OSQEnd	uCOS_II.H	/^    void         **OSQEnd;              \/* Pointer to end   of queue data                              *\/$/;"	m	struct:os_q
+OSQEntries	uCOS_II.H	/^    INT16U         OSQEntries;          \/* Current number of entries in the queue                      *\/$/;"	m	struct:os_q
+OSQFlush	OS_Q.C	/^INT8U  OSQFlush (OS_EVENT *pevent)$/;"	f
+OSQFreeList	uCOS_II.H	/^OS_EXT  OS_Q             *OSQFreeList;              \/* Pointer to list of free QUEUE control blocks    *\/$/;"	v
+OSQIn	uCOS_II.H	/^    void         **OSQIn;               \/* Pointer to where next message will be inserted  in   the Q  *\/$/;"	m	struct:os_q
+OSQOut	uCOS_II.H	/^    void         **OSQOut;              \/* Pointer to where next message will be extracted from the Q  *\/$/;"	m	struct:os_q
+OSQPend	OS_Q.C	/^void  *OSQPend (OS_EVENT *pevent, INT16U timeout, INT8U *err)$/;"	f
+OSQPost	OS_Q.C	/^INT8U  OSQPost (OS_EVENT *pevent, void *msg)$/;"	f
+OSQPostFront	OS_Q.C	/^INT8U  OSQPostFront (OS_EVENT *pevent, void *msg)$/;"	f
+OSQPostOpt	OS_Q.C	/^INT8U  OSQPostOpt (OS_EVENT *pevent, void *msg, INT8U opt)$/;"	f
+OSQPtr	uCOS_II.H	/^    struct os_q   *OSQPtr;              \/* Link to next queue control block in list of free blocks     *\/$/;"	m	struct:os_q	typeref:struct:os_q::os_q
+OSQQuery	OS_Q.C	/^INT8U  OSQQuery (OS_EVENT *pevent, OS_Q_DATA *pdata)$/;"	f
+OSQSize	uCOS_II.H	/^    INT16U         OSQSize;             \/* Size of message queue                                       *\/$/;"	m	struct:__anon8
+OSQSize	uCOS_II.H	/^    INT16U         OSQSize;             \/* Size of queue (maximum number of entries)                   *\/$/;"	m	struct:os_q
+OSQStart	uCOS_II.H	/^    void         **OSQStart;            \/* Pointer to start of queue data                              *\/$/;"	m	struct:os_q
+OSQTbl	uCOS_II.H	/^OS_EXT  OS_Q              OSQTbl[OS_MAX_QS];        \/* Table of QUEUE control blocks                   *\/$/;"	v
+OSRdyGrp	uCOS_II.H	/^OS_EXT  INT8U             OSRdyGrp;                        \/* Ready list group                         *\/$/;"	v
+OSRdyTbl	uCOS_II.H	/^OS_EXT  INT8U             OSRdyTbl[OS_RDY_TBL_SIZE];       \/* Table of tasks which are ready to run    *\/$/;"	v
+OSRunning	uCOS_II.H	/^OS_EXT  BOOLEAN           OSRunning;                       \/* Flag indicating that kernel is running   *\/$/;"	v
+OSSchedLock	OS_CORE.C	/^void  OSSchedLock (void)$/;"	f
+OSSchedUnlock	OS_CORE.C	/^void  OSSchedUnlock (void)$/;"	f
+OSSemAccept	OS_SEM.C	/^INT16U  OSSemAccept (OS_EVENT *pevent)$/;"	f
+OSSemCreate	OS_SEM.C	/^OS_EVENT  *OSSemCreate (INT16U cnt)$/;"	f
+OSSemDel	OS_SEM.C	/^OS_EVENT  *OSSemDel (OS_EVENT *pevent, INT8U opt, INT8U *err)$/;"	f
+OSSemPend	OS_SEM.C	/^void  OSSemPend (OS_EVENT *pevent, INT16U timeout, INT8U *err)$/;"	f
+OSSemPost	OS_SEM.C	/^INT8U  OSSemPost (OS_EVENT *pevent)$/;"	f
+OSSemQuery	OS_SEM.C	/^INT8U  OSSemQuery (OS_EVENT *pevent, OS_SEM_DATA *pdata)$/;"	f
+OSStart	OS_CORE.C	/^void  OSStart (void)$/;"	f
+OSStatInit	OS_CORE.C	/^void  OSStatInit (void)$/;"	f
+OSStatRdy	uCOS_II.H	/^OS_EXT  BOOLEAN           OSStatRdy;                \/* Flag indicating that the statistic task is rdy  *\/$/;"	v
+OSTCBBitX	uCOS_II.H	/^    INT8U          OSTCBBitX;          \/* Bit mask to access bit position in ready table               *\/$/;"	m	struct:os_tcb
+OSTCBBitY	uCOS_II.H	/^    INT8U          OSTCBBitY;          \/* Bit mask to access bit position in ready group               *\/$/;"	m	struct:os_tcb
+OSTCBCur	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBCur;                        \/* Pointer to currently running TCB         *\/$/;"	v
+OSTCBDelReq	uCOS_II.H	/^    BOOLEAN        OSTCBDelReq;        \/* Indicates whether a task needs to delete itself              *\/$/;"	m	struct:os_tcb
+OSTCBDly	uCOS_II.H	/^    INT16U         OSTCBDly;           \/* Nbr ticks to delay task or, timeout waiting for event        *\/$/;"	m	struct:os_tcb
+OSTCBEventPtr	uCOS_II.H	/^    OS_EVENT      *OSTCBEventPtr;      \/* Pointer to event control block                               *\/$/;"	m	struct:os_tcb
+OSTCBExtPtr	uCOS_II.H	/^    void          *OSTCBExtPtr;        \/* Pointer to user definable data for TCB extension             *\/$/;"	m	struct:os_tcb
+OSTCBFlagNode	uCOS_II.H	/^    OS_FLAG_NODE  *OSTCBFlagNode;      \/* Pointer to event flag node                                   *\/$/;"	m	struct:os_tcb
+OSTCBFlagsRdy	uCOS_II.H	/^    OS_FLAGS       OSTCBFlagsRdy;      \/* Event flags that made task ready to run                      *\/$/;"	m	struct:os_tcb
+OSTCBFreeList	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBFreeList;                   \/* Pointer to list of free TCBs             *\/$/;"	v
+OSTCBHighRdy	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBHighRdy;                    \/* Pointer to highest priority TCB R-to-R   *\/$/;"	v
+OSTCBId	uCOS_II.H	/^    INT16U         OSTCBId;            \/* Task ID (0..65535)                                           *\/$/;"	m	struct:os_tcb
+OSTCBList	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBList;                       \/* Pointer to doubly linked list of TCBs    *\/$/;"	v
+OSTCBMsg	uCOS_II.H	/^    void          *OSTCBMsg;           \/* Message received from OSMboxPost() or OSQPost()              *\/$/;"	m	struct:os_tcb
+OSTCBNext	uCOS_II.H	/^    struct os_tcb *OSTCBNext;          \/* Pointer to next     TCB in the TCB list                      *\/$/;"	m	struct:os_tcb	typeref:struct:os_tcb::os_tcb
+OSTCBOpt	uCOS_II.H	/^    INT16U         OSTCBOpt;           \/* Task options as passed by OSTaskCreateExt()                  *\/$/;"	m	struct:os_tcb
+OSTCBPrev	uCOS_II.H	/^    struct os_tcb *OSTCBPrev;          \/* Pointer to previous TCB in the TCB list                      *\/$/;"	m	struct:os_tcb	typeref:struct:os_tcb::os_tcb
+OSTCBPrio	uCOS_II.H	/^    INT8U          OSTCBPrio;          \/* Task priority (0 == highest, 63 == lowest)                   *\/$/;"	m	struct:os_tcb
+OSTCBPrioTbl	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBPrioTbl[OS_LOWEST_PRIO + 1];\/* Table of pointers to created TCBs        *\/$/;"	v
+OSTCBStat	uCOS_II.H	/^    INT8U          OSTCBStat;          \/* Task status                                                  *\/$/;"	m	struct:os_tcb
+OSTCBStkBottom	uCOS_II.H	/^    OS_STK        *OSTCBStkBottom;     \/* Pointer to bottom of stack                                   *\/$/;"	m	struct:os_tcb
+OSTCBStkPtr	uCOS_II.H	/^    OS_STK        *OSTCBStkPtr;        \/* Pointer to current top of stack                              *\/$/;"	m	struct:os_tcb
+OSTCBStkSize	uCOS_II.H	/^    INT32U         OSTCBStkSize;       \/* Size of task stack (in number of stack elements)             *\/$/;"	m	struct:os_tcb
+OSTCBTbl	uCOS_II.H	/^OS_EXT  OS_TCB            OSTCBTbl[OS_MAX_TASKS + OS_N_SYS_TASKS];   \/* Table of TCBs                  *\/$/;"	v
+OSTCBX	uCOS_II.H	/^    INT8U          OSTCBX;             \/* Bit position in group  corresponding to task priority (0..7) *\/$/;"	m	struct:os_tcb
+OSTCBY	uCOS_II.H	/^    INT8U          OSTCBY;             \/* Index into ready table corresponding to task priority        *\/$/;"	m	struct:os_tcb
+OSTaskChangePrio	OS_TASK.C	/^INT8U  OSTaskChangePrio (INT8U oldprio, INT8U newprio)$/;"	f
+OSTaskCreate	OS_TASK.C	/^INT8U  OSTaskCreate (void (*task)(void *pd), void *pdata, OS_STK *ptos, INT8U prio)$/;"	f
+OSTaskCreateExt	OS_TASK.C	/^INT8U  OSTaskCreateExt (void   (*task)(void *pd),$/;"	f
+OSTaskCtr	uCOS_II.H	/^OS_EXT  INT8U             OSTaskCtr;                       \/* Number of tasks created                  *\/$/;"	v
+OSTaskDel	OS_TASK.C	/^INT8U  OSTaskDel (INT8U prio)$/;"	f
+OSTaskDelReq	OS_TASK.C	/^INT8U  OSTaskDelReq (INT8U prio)$/;"	f
+OSTaskIdleStk	uCOS_II.H	/^OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      \/* Idle task stack                *\/$/;"	v
+OSTaskQuery	OS_TASK.C	/^INT8U  OSTaskQuery (INT8U prio, OS_TCB *pdata)$/;"	f
+OSTaskResume	OS_TASK.C	/^INT8U  OSTaskResume (INT8U prio)$/;"	f
+OSTaskStatStk	uCOS_II.H	/^OS_EXT  OS_STK            OSTaskStatStk[OS_TASK_STAT_STK_SIZE];      \/* Statistics task stack          *\/$/;"	v
+OSTaskStkChk	OS_TASK.C	/^INT8U  OSTaskStkChk (INT8U prio, OS_STK_DATA *pdata)$/;"	f
+OSTaskSuspend	OS_TASK.C	/^INT8U  OSTaskSuspend (INT8U prio)$/;"	f
+OSTickDOSCtr	OS_CPU.H	/^OS_CPU_EXT  INT8U  OSTickDOSCtr;       \/* Counter used to invoke DOS's tick handler every 'n' ticks    *\/$/;"	v
+OSTime	uCOS_II.H	/^OS_EXT  volatile  INT32U  OSTime;                   \/* Current value of system time (in ticks)         *\/$/;"	v
+OSTimeDly	OS_TIME.C	/^void  OSTimeDly (INT16U ticks)$/;"	f
+OSTimeDlyHMSM	OS_TIME.C	/^INT8U  OSTimeDlyHMSM (INT8U hours, INT8U minutes, INT8U seconds, INT16U milli)$/;"	f
+OSTimeDlyResume	OS_TIME.C	/^INT8U  OSTimeDlyResume (INT8U prio)$/;"	f
+OSTimeGet	OS_TIME.C	/^INT32U  OSTimeGet (void)$/;"	f
+OSTimeSet	OS_TIME.C	/^void  OSTimeSet (INT32U ticks)$/;"	f
+OSTimeTick	OS_CORE.C	/^void  OSTimeTick (void)$/;"	f
+OSUnMapTbl	OS_CORE.C	/^INT8U  const  OSUnMapTbl[] = {$/;"	v
+OSUsed	uCOS_II.H	/^    INT32U  OSUsed;                    \/* Number of bytes used on the stack                            *\/$/;"	m	struct:__anon10
+OSValue	uCOS_II.H	/^    INT8U   OSValue;                        \/* Mutex value (0 = used, 1 = available)                   *\/$/;"	m	struct:__anon7
+OSVersion	OS_CORE.C	/^INT16U  OSVersion (void)$/;"	f
+OS_ARG_CHK_EN	OS_CFG.H	23;"	d
+OS_CPU_EXT	OS_CPU.H	21;"	d
+OS_CPU_EXT	OS_CPU.H	23;"	d
+OS_CPU_HOOKS_EN	OS_CFG.H	25;"	d
+OS_CPU_SR	OS_CPU.H	/^typedef unsigned int   OS_CPU_SR;                \/* The CPU Status Word is 16-bit wide                 *\/$/;"	t
+OS_CRITICAL_METHOD	OS_CPU.H	65;"	d
+OS_DEL_ALWAYS	uCOS_II.H	111;"	d
+OS_DEL_NO_PEND	uCOS_II.H	110;"	d
+OS_Dummy	OS_CORE.C	/^void  OS_Dummy (void)$/;"	f
+OS_ENTER_CRITICAL	OS_CPU.H	68;"	d
+OS_ERR_CREATE_ISR	uCOS_II.H	196;"	d
+OS_ERR_DEL_ISR	uCOS_II.H	195;"	d
+OS_ERR_EVENT_TYPE	uCOS_II.H	140;"	d
+OS_ERR_INVALID_OPT	uCOS_II.H	146;"	d
+OS_ERR_NOT_MUTEX_OWNER	uCOS_II.H	191;"	d
+OS_ERR_PEND_ISR	uCOS_II.H	141;"	d
+OS_ERR_PEVENT_NULL	uCOS_II.H	143;"	d
+OS_ERR_POST_ISR	uCOS_II.H	144;"	d
+OS_ERR_POST_NULL_PTR	uCOS_II.H	142;"	d
+OS_ERR_QUERY_ISR	uCOS_II.H	145;"	d
+OS_ERR_TASK_WAITING	uCOS_II.H	147;"	d
+OS_EVENT	uCOS_II.H	/^} OS_EVENT;$/;"	t	typeref:struct:__anon1
+OS_EVENT_EN	uCOS_II.H	53;"	d
+OS_EVENT_TBL_SIZE	uCOS_II.H	47;"	d
+OS_EVENT_TYPE_FLAG	uCOS_II.H	79;"	d
+OS_EVENT_TYPE_MBOX	uCOS_II.H	75;"	d
+OS_EVENT_TYPE_MUTEX	uCOS_II.H	78;"	d
+OS_EVENT_TYPE_Q	uCOS_II.H	76;"	d
+OS_EVENT_TYPE_SEM	uCOS_II.H	77;"	d
+OS_EVENT_TYPE_UNUSED	uCOS_II.H	74;"	d
+OS_EXIT_CRITICAL	OS_CPU.H	69;"	d
+OS_EXT	uCOS_II.H	23;"	d
+OS_EXT	uCOS_II.H	25;"	d
+OS_EventTO	OS_CORE.C	/^void  OS_EventTO (OS_EVENT *pevent)$/;"	f
+OS_EventTaskRdy	OS_CORE.C	/^INT8U  OS_EventTaskRdy (OS_EVENT *pevent, void *msg, INT8U msk)$/;"	f
+OS_EventTaskWait	OS_CORE.C	/^void  OS_EventTaskWait (OS_EVENT *pevent)$/;"	f
+OS_EventWaitListInit	OS_CORE.C	/^void  OS_EventWaitListInit (OS_EVENT *pevent)$/;"	f
+OS_FLAGS	OS_CFG.H	/^typedef INT16U             OS_FLAGS;   \/* Date type for event flag bits (8, 16 or 32 bits)             *\/$/;"	t
+OS_FLAG_ACCEPT_EN	OS_CFG.H	54;"	d
+OS_FLAG_CLR	uCOS_II.H	102;"	d
+OS_FLAG_CONSUME	uCOS_II.H	99;"	d
+OS_FLAG_DEL_EN	OS_CFG.H	55;"	d
+OS_FLAG_EN	OS_CFG.H	52;"	d
+OS_FLAG_ERR_NOT_RDY	uCOS_II.H	200;"	d
+OS_FLAG_ERR_WAIT_TYPE	uCOS_II.H	199;"	d
+OS_FLAG_GRP	uCOS_II.H	/^} OS_FLAG_GRP;    $/;"	t	typeref:struct:__anon2
+OS_FLAG_GRP_DEPLETED	uCOS_II.H	202;"	d
+OS_FLAG_INVALID_OPT	uCOS_II.H	201;"	d
+OS_FLAG_INVALID_PGRP	uCOS_II.H	198;"	d
+OS_FLAG_NODE	uCOS_II.H	/^} OS_FLAG_NODE;$/;"	t	typeref:struct:__anon3
+OS_FLAG_QUERY_EN	OS_CFG.H	56;"	d
+OS_FLAG_SET	uCOS_II.H	103;"	d
+OS_FLAG_WAIT_CLR_ALL	uCOS_II.H	86;"	d
+OS_FLAG_WAIT_CLR_AND	uCOS_II.H	87;"	d
+OS_FLAG_WAIT_CLR_ANY	uCOS_II.H	89;"	d
+OS_FLAG_WAIT_CLR_EN	OS_CFG.H	53;"	d
+OS_FLAG_WAIT_CLR_OR	uCOS_II.H	90;"	d
+OS_FLAG_WAIT_SET_ALL	uCOS_II.H	92;"	d
+OS_FLAG_WAIT_SET_AND	uCOS_II.H	93;"	d
+OS_FLAG_WAIT_SET_ANY	uCOS_II.H	95;"	d
+OS_FLAG_WAIT_SET_OR	uCOS_II.H	96;"	d
+OS_FlagBlock	OS_FLAG.C	/^static  void  OS_FlagBlock (OS_FLAG_GRP *pgrp, OS_FLAG_NODE *pnode, OS_FLAGS flags, INT8U wait_type, INT16U timeout)$/;"	f	file:
+OS_FlagInit	OS_FLAG.C	/^void  OS_FlagInit (void)$/;"	f
+OS_FlagTaskRdy	OS_FLAG.C	/^static  BOOLEAN  OS_FlagTaskRdy (OS_FLAG_NODE *pnode, OS_FLAGS flags_rdy)$/;"	f	file:
+OS_FlagUnlink	OS_FLAG.C	/^void  OS_FlagUnlink (OS_FLAG_NODE *pnode)$/;"	f
+OS_GLOBALS	OS_CORE.C	16;"	d	file:
+OS_GLOBALS	uCOS_II.C	14;"	d	file:
+OS_IDLE_PRIO	uCOS_II.H	45;"	d
+OS_InitEventList	OS_CORE.C	/^static  void  OS_InitEventList (void)$/;"	f	file:
+OS_InitMisc	OS_CORE.C	/^static  void  OS_InitMisc (void)$/;"	f	file:
+OS_InitRdyList	OS_CORE.C	/^static  void  OS_InitRdyList (void)$/;"	f	file:
+OS_InitTCBList	OS_CORE.C	/^static  void  OS_InitTCBList (void)$/;"	f	file:
+OS_InitTaskIdle	OS_CORE.C	/^static  void  OS_InitTaskIdle (void)$/;"	f	file:
+OS_InitTaskStat	OS_CORE.C	/^static  void  OS_InitTaskStat (void)$/;"	f	file:
+OS_LOWEST_PRIO	OS_CFG.H	27;"	d
+OS_MASTER_FILE	uCOS_II.C	18;"	d	file:
+OS_MAX_EVENTS	OS_CFG.H	30;"	d
+OS_MAX_FLAGS	OS_CFG.H	32;"	d
+OS_MAX_MEM_PART	OS_CFG.H	34;"	d
+OS_MAX_QS	OS_CFG.H	36;"	d
+OS_MAX_TASKS	OS_CFG.H	38;"	d
+OS_MBOX_ACCEPT_EN	OS_CFG.H	61;"	d
+OS_MBOX_DATA	uCOS_II.H	/^} OS_MBOX_DATA;$/;"	t	typeref:struct:__anon4
+OS_MBOX_DEL_EN	OS_CFG.H	62;"	d
+OS_MBOX_EN	OS_CFG.H	60;"	d
+OS_MBOX_FULL	uCOS_II.H	152;"	d
+OS_MBOX_POST_EN	OS_CFG.H	63;"	d
+OS_MBOX_POST_OPT_EN	OS_CFG.H	64;"	d
+OS_MBOX_QUERY_EN	OS_CFG.H	65;"	d
+OS_MEM	uCOS_II.H	/^} OS_MEM;$/;"	t	typeref:struct:__anon5
+OS_MEM_DATA	uCOS_II.H	/^} OS_MEM_DATA;$/;"	t	typeref:struct:__anon6
+OS_MEM_EN	OS_CFG.H	69;"	d
+OS_MEM_FULL	uCOS_II.H	185;"	d
+OS_MEM_INVALID_ADDR	uCOS_II.H	189;"	d
+OS_MEM_INVALID_BLKS	uCOS_II.H	182;"	d
+OS_MEM_INVALID_PART	uCOS_II.H	181;"	d
+OS_MEM_INVALID_PBLK	uCOS_II.H	186;"	d
+OS_MEM_INVALID_PDATA	uCOS_II.H	188;"	d
+OS_MEM_INVALID_PMEM	uCOS_II.H	187;"	d
+OS_MEM_INVALID_SIZE	uCOS_II.H	183;"	d
+OS_MEM_NO_FREE_BLKS	uCOS_II.H	184;"	d
+OS_MEM_QUERY_EN	OS_CFG.H	70;"	d
+OS_MUTEX_ACCEPT_EN	OS_CFG.H	75;"	d
+OS_MUTEX_AVAILABLE	OS_MUTEX.C	28;"	d	file:
+OS_MUTEX_DATA	uCOS_II.H	/^} OS_MUTEX_DATA;$/;"	t	typeref:struct:__anon7
+OS_MUTEX_DEL_EN	OS_CFG.H	76;"	d
+OS_MUTEX_EN	OS_CFG.H	74;"	d
+OS_MUTEX_KEEP_LOWER_8	OS_MUTEX.C	25;"	d	file:
+OS_MUTEX_KEEP_UPPER_8	OS_MUTEX.C	26;"	d	file:
+OS_MUTEX_QUERY_EN	OS_CFG.H	77;"	d
+OS_MemInit	OS_MEM.C	/^void  OS_MemInit (void)$/;"	f
+OS_NO_ERR	uCOS_II.H	138;"	d
+OS_NO_MORE_TCB	uCOS_II.H	167;"	d
+OS_N_SYS_TASKS	uCOS_II.H	39;"	d
+OS_N_SYS_TASKS	uCOS_II.H	41;"	d
+OS_POST_OPT_BROADCAST	uCOS_II.H	121;"	d
+OS_POST_OPT_FRONT	uCOS_II.H	122;"	d
+OS_POST_OPT_NONE	uCOS_II.H	120;"	d
+OS_PRIO_ERR	uCOS_II.H	157;"	d
+OS_PRIO_EXIST	uCOS_II.H	156;"	d
+OS_PRIO_INVALID	uCOS_II.H	158;"	d
+OS_PRIO_SELF	uCOS_II.H	36;"	d
+OS_Q	uCOS_II.H	/^} OS_Q;$/;"	t	typeref:struct:os_q
+OS_QInit	OS_Q.C	/^void  OS_QInit (void)$/;"	f
+OS_Q_ACCEPT_EN	OS_CFG.H	82;"	d
+OS_Q_DATA	uCOS_II.H	/^} OS_Q_DATA;$/;"	t	typeref:struct:__anon8
+OS_Q_DEL_EN	OS_CFG.H	83;"	d
+OS_Q_EN	OS_CFG.H	81;"	d
+OS_Q_FLUSH_EN	OS_CFG.H	84;"	d
+OS_Q_FULL	uCOS_II.H	154;"	d
+OS_Q_POST_EN	OS_CFG.H	85;"	d
+OS_Q_POST_FRONT_EN	OS_CFG.H	86;"	d
+OS_Q_POST_OPT_EN	OS_CFG.H	87;"	d
+OS_Q_QUERY_EN	OS_CFG.H	88;"	d
+OS_RDY_TBL_SIZE	uCOS_II.H	48;"	d
+OS_SCHED_LOCK_EN	OS_CFG.H	41;"	d
+OS_SEM_ACCEPT_EN	OS_CFG.H	93;"	d
+OS_SEM_DATA	uCOS_II.H	/^} OS_SEM_DATA;$/;"	t	typeref:struct:__anon9
+OS_SEM_DEL_EN	OS_CFG.H	94;"	d
+OS_SEM_EN	OS_CFG.H	92;"	d
+OS_SEM_OVF	uCOS_II.H	160;"	d
+OS_SEM_QUERY_EN	OS_CFG.H	95;"	d
+OS_STAT_FLAG	uCOS_II.H	67;"	d
+OS_STAT_MBOX	uCOS_II.H	63;"	d
+OS_STAT_MUTEX	uCOS_II.H	66;"	d
+OS_STAT_PRIO	uCOS_II.H	44;"	d
+OS_STAT_Q	uCOS_II.H	64;"	d
+OS_STAT_RDY	uCOS_II.H	61;"	d
+OS_STAT_SEM	uCOS_II.H	62;"	d
+OS_STAT_SUSPEND	uCOS_II.H	65;"	d
+OS_STK	OS_CPU.H	/^typedef unsigned int   OS_STK;                   \/* Each stack entry is 16-bit wide                    *\/$/;"	t
+OS_STK_DATA	uCOS_II.H	/^} OS_STK_DATA;$/;"	t	typeref:struct:__anon10
+OS_STK_GROWTH	OS_CPU.H	77;"	d
+OS_Sched	OS_CORE.C	/^void  OS_Sched (void)$/;"	f
+OS_TASK_CHANGE_PRIO_EN	OS_CFG.H	99;"	d
+OS_TASK_CREATE_EN	OS_CFG.H	100;"	d
+OS_TASK_CREATE_EXT_EN	OS_CFG.H	101;"	d
+OS_TASK_DEL_EN	OS_CFG.H	102;"	d
+OS_TASK_DEL_ERR	uCOS_II.H	162;"	d
+OS_TASK_DEL_IDLE	uCOS_II.H	163;"	d
+OS_TASK_DEL_ISR	uCOS_II.H	165;"	d
+OS_TASK_DEL_REQ	uCOS_II.H	164;"	d
+OS_TASK_IDLE_ID	uCOS_II.H	50;"	d
+OS_TASK_IDLE_STK_SIZE	OS_CFG.H	43;"	d
+OS_TASK_NOT_EXIST	uCOS_II.H	150;"	d
+OS_TASK_NOT_SUSPENDED	uCOS_II.H	179;"	d
+OS_TASK_OPT_ERR	uCOS_II.H	193;"	d
+OS_TASK_OPT_SAVE_FP	uCOS_II.H	131;"	d
+OS_TASK_OPT_STK_CHK	uCOS_II.H	129;"	d
+OS_TASK_OPT_STK_CLR	uCOS_II.H	130;"	d
+OS_TASK_QUERY_EN	OS_CFG.H	104;"	d
+OS_TASK_RESUME_PRIO	uCOS_II.H	178;"	d
+OS_TASK_STAT_EN	OS_CFG.H	45;"	d
+OS_TASK_STAT_ID	uCOS_II.H	51;"	d
+OS_TASK_STAT_STK_SIZE	OS_CFG.H	46;"	d
+OS_TASK_SUSPEND_EN	OS_CFG.H	103;"	d
+OS_TASK_SUSPEND_IDLE	uCOS_II.H	176;"	d
+OS_TASK_SUSPEND_PRIO	uCOS_II.H	175;"	d
+OS_TASK_SW	OS_CPU.H	81;"	d
+OS_TCB	uCOS_II.H	/^} OS_TCB;$/;"	t	typeref:struct:os_tcb
+OS_TCBInit	OS_CORE.C	/^INT8U  OS_TCBInit (INT8U prio, OS_STK *ptos, OS_STK *pbos, INT16U id, INT32U stk_size, void *pext, INT16U opt)$/;"	f
+OS_TICKS_PER_SEC	OS_CFG.H	48;"	d
+OS_TIMEOUT	uCOS_II.H	149;"	d
+OS_TIME_DLY_HMSM_EN	OS_CFG.H	108;"	d
+OS_TIME_DLY_RESUME_EN	OS_CFG.H	109;"	d
+OS_TIME_GET_SET_EN	OS_CFG.H	110;"	d
+OS_TIME_INVALID_MILLI	uCOS_II.H	172;"	d
+OS_TIME_INVALID_MINUTES	uCOS_II.H	170;"	d
+OS_TIME_INVALID_SECONDS	uCOS_II.H	171;"	d
+OS_TIME_NOT_DLY	uCOS_II.H	169;"	d
+OS_TIME_ZERO_DLY	uCOS_II.H	173;"	d
+OS_TaskIdle	OS_CORE.C	/^void  OS_TaskIdle (void *pdata)$/;"	f
+OS_TaskStat	OS_CORE.C	/^void  OS_TaskStat (void *pdata)$/;"	f
+OS_VERSION	uCOS_II.H	20;"	d
+TRUE	uCOS_II.H	33;"	d
+os_q	uCOS_II.H	/^typedef struct os_q {                   \/* QUEUE CONTROL BLOCK                                         *\/$/;"	s
+os_tcb	uCOS_II.H	/^typedef struct os_tcb {$/;"	s
+uCOS	OS_CPU.H	79;"	d

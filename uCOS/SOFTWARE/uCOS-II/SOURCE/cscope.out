@@ -1,0 +1,16731 @@
+cscope 15 $HOME/source/uCOS/SOFTWARE/uCOS-II/SOURCE -q 0000000483 0000093709
+	@INCLUDES.H
+
+13 
+	~<°dio.h
+>
+
+14 
+	~<°rög.h
+>
+
+15 
+	~<˘y≥.h
+>
+
+16 
+	~<°dlib.h
+>
+
+17 
+	~<c⁄io.h
+>
+
+18 
+	~<dos.h
+>
+
+19 
+	~<£tjmp.h
+>
+
+21 
+	~"\so·w¨e\ucos-ii\ix86l\bc45\os_˝u.h
+"
+
+22 
+	~"os_cfg.h
+"
+
+23 
+	~"\so·w¨e\ucos-ii\sour˚\ucos_ii.h
+"
+
+24 
+	~"\so·w¨e\blocks\pc\bc45\pc.h
+"
+
+	@OS_CFG.H
+
+23 
+	#OS_ARG_CHK_EN
+ 1
+
+	)
+
+25 
+	#OS_CPU_HOOKS_EN
+ 1
+
+	)
+
+27 
+	#OS_LOWEST_PRIO
+ 63
+
+	)
+
+30 
+	#OS_MAX_EVENTS
+ 10
+
+	)
+
+32 
+	#OS_MAX_FLAGS
+ 5
+
+	)
+
+34 
+	#OS_MAX_MEM_PART
+ 10
+
+	)
+
+36 
+	#OS_MAX_QS
+ 10
+
+	)
+
+38 
+	#OS_MAX_TASKS
+ 63
+
+	)
+
+41 
+	#OS_SCHED_LOCK_EN
+ 1
+
+	)
+
+43 
+	#OS_TASK_IDLE_STK_SIZE
+ 512
+
+	)
+
+45 
+	#OS_TASK_STAT_EN
+ 1
+
+	)
+
+46 
+	#OS_TASK_STAT_STK_SIZE
+ 512
+
+	)
+
+48 
+	#OS_TICKS_PER_SEC
+ 200
+
+	)
+
+52 
+	#OS_FLAG_EN
+ 1
+
+	)
+
+53 
+	#OS_FLAG_WAIT_CLR_EN
+ 1
+
+	)
+
+54 
+	#OS_FLAG_ACCEPT_EN
+ 1
+
+	)
+
+55 
+	#OS_FLAG_DEL_EN
+ 1
+
+	)
+
+56 
+	#OS_FLAG_QUERY_EN
+ 1
+
+	)
+
+60 
+	#OS_MBOX_EN
+ 1
+
+	)
+
+61 
+	#OS_MBOX_ACCEPT_EN
+ 1
+
+	)
+
+62 
+	#OS_MBOX_DEL_EN
+ 1
+
+	)
+
+63 
+	#OS_MBOX_POST_EN
+ 1
+
+	)
+
+64 
+	#OS_MBOX_POST_OPT_EN
+ 1
+
+	)
+
+65 
+	#OS_MBOX_QUERY_EN
+ 1
+
+	)
+
+69 
+	#OS_MEM_EN
+ 1
+
+	)
+
+70 
+	#OS_MEM_QUERY_EN
+ 1
+
+	)
+
+74 
+	#OS_MUTEX_EN
+ 1
+
+	)
+
+75 
+	#OS_MUTEX_ACCEPT_EN
+ 1
+
+	)
+
+76 
+	#OS_MUTEX_DEL_EN
+ 1
+
+	)
+
+77 
+	#OS_MUTEX_QUERY_EN
+ 1
+
+	)
+
+81 
+	#OS_Q_EN
+ 1
+
+	)
+
+82 
+	#OS_Q_ACCEPT_EN
+ 1
+
+	)
+
+83 
+	#OS_Q_DEL_EN
+ 1
+
+	)
+
+84 
+	#OS_Q_FLUSH_EN
+ 1
+
+	)
+
+85 
+	#OS_Q_POST_EN
+ 1
+
+	)
+
+86 
+	#OS_Q_POST_FRONT_EN
+ 1
+
+	)
+
+87 
+	#OS_Q_POST_OPT_EN
+ 1
+
+	)
+
+88 
+	#OS_Q_QUERY_EN
+ 1
+
+	)
+
+92 
+	#OS_SEM_EN
+ 1
+
+	)
+
+93 
+	#OS_SEM_ACCEPT_EN
+ 1
+
+	)
+
+94 
+	#OS_SEM_DEL_EN
+ 1
+
+	)
+
+95 
+	#OS_SEM_QUERY_EN
+ 1
+
+	)
+
+99 
+	#OS_TASK_CHANGE_PRIO_EN
+ 1
+
+	)
+
+100 
+	#OS_TASK_CREATE_EN
+ 1
+
+	)
+
+101 
+	#OS_TASK_CREATE_EXT_EN
+ 1
+
+	)
+
+102 
+	#OS_TASK_DEL_EN
+ 1
+
+	)
+
+103 
+	#OS_TASK_SUSPEND_EN
+ 1
+
+	)
+
+104 
+	#OS_TASK_QUERY_EN
+ 1
+
+	)
+
+108 
+	#OS_TIME_DLY_HMSM_EN
+ 1
+
+	)
+
+109 
+	#OS_TIME_DLY_RESUME_EN
+ 1
+
+	)
+
+110 
+	#OS_TIME_GET_SET_EN
+ 1
+
+	)
+
+113 
+INT16U
+ 
+	tOS_FLAGS
+;
+
+	@OS_CORE.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	#OS_GLOBALS
+
+
+	)
+
+17 
+	~"ö˛udes.h
+"
+
+29 
+INT8U
+ c⁄° 
+	gOSM≠Tbl
+[] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
+
+40 
+INT8U
+ c⁄° 
+	gOSUnM≠Tbl
+[] = {
+
+64 
+OS_InôEvítLi°
+();
+
+65 
+OS_InôMisc
+();
+
+66 
+OS_InôRdyLi°
+();
+
+67 
+OS_InôTaskIdÀ
+();
+
+68 
+OS_InôTaskSèt
+();
+
+69 
+OS_InôTCBLi°
+();
+
+85 
+	$OSInô
+ ()
+
+87 #i‡
+OS_VERSION
+ >= 204
+
+88 
+	`OSInôHookBegö
+();
+
+91 
+	`OS_InôMisc
+();
+
+93 
+	`OS_InôRdyLi°
+();
+
+94 
+	`OS_InôTCBLi°
+();
+
+95 
+	`OS_InôEvítLi°
+();
+
+97 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+98 
+	`OS_FœgInô
+();
+
+101 #i‡(
+OS_MEM_EN
+ > 0Ë&& (
+OS_MAX_MEM_PART
+ > 0)
+
+102 
+	`OS_MemInô
+();
+
+105 #i‡(
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)
+
+106 
+	`OS_QInô
+();
+
+109 
+	`OS_InôTaskIdÀ
+();
+
+110 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+111 
+	`OS_InôTaskSèt
+();
+
+114 #i‡
+OS_VERSION
+ >= 204
+
+115 
+	`OSInôHookEnd
+();
+
+117 
+	}
+}
+
+144 
+	$OSI¡E¡î
+ ()
+
+146 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+147 i‡(
+OSI¡Ne°ög
+ < 255) {
+
+148 
+OSI¡Ne°ög
+++;
+
+151 
+	}
+}
+
+172 
+	$OSI¡Exô
+ ()
+
+174 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+175 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+179 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+180 
+	`OS_ENTER_CRITICAL
+();
+
+181 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+182 
+OSI¡Ne°ög
+--;
+
+184 i‡((
+OSI¡Ne°ög
+ =0Ë&& (
+OSLockNe°ög
+ == 0)) {
+
+185 
+OSI¡ExôY
+ = 
+OSUnM≠Tbl
+[
+OSRdyGΩ
+];
+
+186 
+OSPrioHighRdy
+ = (
+INT8U
+)((
+OSI¡ExôY
+ << 3Ë+ 
+OSUnM≠Tbl
+[
+OSRdyTbl
+[OSIntExitY]]);
+
+187 i‡(
+OSPrioHighRdy
+ !
+OSPrioCur
+) {
+
+188 
+OSTCBHighRdy
+ = 
+OSTCBPrioTbl
+[
+OSPrioHighRdy
+];
+
+189 
+OSCtxSwCå
+++;
+
+190 
+	`OSI¡CtxSw
+();
+
+193 
+	`OS_EXIT_CRITICAL
+();
+
+195 
+	}
+}
+
+213 #i‡
+OS_SCHED_LOCK_EN
+ > 0
+
+214 
+	$OSSchedLock
+ ()
+
+216 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+217 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+221 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+222 
+	`OS_ENTER_CRITICAL
+();
+
+223 i‡(
+OSLockNe°ög
+ < 255) {
+
+224 
+OSLockNe°ög
+++;
+
+226 
+	`OS_EXIT_CRITICAL
+();
+
+228 
+	}
+}
+
+247 #i‡
+OS_SCHED_LOCK_EN
+ > 0
+
+248 
+	$OSSchedU∆ock
+ ()
+
+250 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+251 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+255 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+256 
+	`OS_ENTER_CRITICAL
+();
+
+257 i‡(
+OSLockNe°ög
+ > 0) {
+
+258 
+OSLockNe°ög
+--;
+
+259 i‡((
+OSLockNe°ög
+ =0Ë&& (
+OSI¡Ne°ög
+ == 0)) {
+
+260 
+	`OS_EXIT_CRITICAL
+();
+
+261 
+	`OS_Sched
+();
+
+263 
+	`OS_EXIT_CRITICAL
+();
+
+266 
+	`OS_EXIT_CRITICAL
+();
+
+269 
+	}
+}
+
+293 
+	$OSSèπ
+ ()
+
+295 
+INT8U
+ 
+y
+;
+
+296 
+INT8U
+ 
+x
+;
+
+299 i‡(
+OSRu¬ög
+ =
+FALSE
+) {
+
+300 
+y
+ = 
+OSUnM≠Tbl
+[
+OSRdyGΩ
+];
+
+301 
+x
+ = 
+OSUnM≠Tbl
+[
+OSRdyTbl
+[
+y
+]];
+
+302 
+OSPrioHighRdy
+ = (
+INT8U
+)((
+y
+ << 3Ë+ 
+x
+);
+
+303 
+OSPrioCur
+ = 
+OSPrioHighRdy
+;
+
+304 
+OSTCBHighRdy
+ = 
+OSTCBPrioTbl
+[
+OSPrioHighRdy
+];
+
+305 
+OSTCBCur
+ = 
+OSTCBHighRdy
+;
+
+306 
+	`OSSèπHighRdy
+();
+
+308 
+	}
+}
+
+330 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+331 
+	$OSSètInô
+ ()
+
+333 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+334 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+338 
+	`OSTimeDly
+(2);
+
+339 
+	`OS_ENTER_CRITICAL
+();
+
+340 
+OSIdÀCå
+ = 0L;
+
+341 
+	`OS_EXIT_CRITICAL
+();
+
+342 
+	`OSTimeDly
+(
+OS_TICKS_PER_SEC
+);
+
+343 
+	`OS_ENTER_CRITICAL
+();
+
+344 
+OSIdÀCåMax
+ = 
+OSIdÀCå
+;
+
+345 
+OSSètRdy
+ = 
+TRUE
+;
+
+346 
+	`OS_EXIT_CRITICAL
+();
+
+347 
+	}
+}
+
+364 
+	$OSTimeTick
+ ()
+
+366 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+367 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+369 
+OS_TCB
+ *
+±cb
+;
+
+372 
+	`OSTimeTickHook
+();
+
+373 #i‡
+OS_TIME_GET_SET_EN
+ > 0
+
+374 
+	`OS_ENTER_CRITICAL
+();
+
+375 
+OSTime
+++;
+
+376 
+	`OS_EXIT_CRITICAL
+();
+
+378 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+379 
+±cb
+ = 
+OSTCBLi°
+;
+
+380 
+±cb
+->
+OSTCBPrio
+ !
+OS_IDLE_PRIO
+) {
+
+381 
+	`OS_ENTER_CRITICAL
+();
+
+382 i‡(
+±cb
+->
+OSTCBDly
+ != 0) {
+
+383 i‡(--
+±cb
+->
+OSTCBDly
+ == 0) {
+
+384 i‡((
+±cb
+->
+OSTCBSèt
+ & 
+OS_STAT_SUSPEND
+Ë=
+OS_STAT_RDY
+) {
+
+385 
+OSRdyGΩ
+ |
+±cb
+->
+OSTCBBôY
+;
+
+386 
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] |±cb->
+OSTCBBôX
+;
+
+388 
+±cb
+->
+OSTCBDly
+ = 1;
+
+392 
+±cb
+ =Ötcb->
+OSTCBNext
+;
+
+393 
+	`OS_EXIT_CRITICAL
+();
+
+396 
+	}
+}
+
+412 
+INT16U
+ 
+	$OSVîsi⁄
+ ()
+
+414  (
+OS_VERSION
+);
+
+415 
+	}
+}
+
+430 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+431 
+	$OS_Dummy
+ ()
+
+433 
+	}
+}
+
+458 #i‡
+OS_EVENT_EN
+ > 0
+
+459 
+INT8U
+ 
+	$OS_EvítTaskRdy
+ (
+OS_EVENT
+ *
+≥vít
+, *
+msg
+, 
+INT8U
+ 
+msk
+)
+
+461 
+OS_TCB
+ *
+±cb
+;
+
+462 
+INT8U
+ 
+x
+;
+
+463 
+INT8U
+ 
+y
+;
+
+464 
+INT8U
+ 
+bôx
+;
+
+465 
+INT8U
+ 
+bôy
+;
+
+466 
+INT8U
+ 
+¥io
+;
+
+469 
+y
+ = 
+OSUnM≠Tbl
+[
+≥vít
+->
+OSEvítGΩ
+];
+
+470 
+bôy
+ = 
+OSM≠Tbl
+[
+y
+];
+
+471 
+x
+ = 
+OSUnM≠Tbl
+[
+≥vít
+->
+OSEvítTbl
+[
+y
+]];
+
+472 
+bôx
+ = 
+OSM≠Tbl
+[
+x
+];
+
+473 
+¥io
+ = (
+INT8U
+)((
+y
+ << 3Ë+ 
+x
+);
+
+474 i‡((
+≥vít
+->
+OSEvítTbl
+[
+y
+] &~
+bôx
+) == 0x00) {
+
+475 
+≥vít
+->
+OSEvítGΩ
+ &~
+bôy
+;
+
+477 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+478 
+±cb
+->
+OSTCBDly
+ = 0;
+
+479 
+±cb
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+480 #i‡((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)Ë|| (
+OS_MBOX_EN
+ > 0)
+
+481 
+±cb
+->
+OSTCBMsg
+ = 
+msg
+;
+
+483 
+msg
+ = msg;
+
+485 
+±cb
+->
+OSTCBSèt
+ &~
+msk
+;
+
+486 i‡(
+±cb
+->
+OSTCBSèt
+ =
+OS_STAT_RDY
+) {
+
+487 
+OSRdyGΩ
+ |
+bôy
+;
+
+488 
+OSRdyTbl
+[
+y
+] |
+bôx
+;
+
+490  (
+¥io
+);
+
+491 
+	}
+}
+
+508 #i‡
+OS_EVENT_EN
+ > 0
+
+509 
+	$OS_EvítTaskWaô
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+511 
+OSTCBCur
+->
+OSTCBEvítPå
+ = 
+≥vít
+;
+
+512 i‡((
+OSRdyTbl
+[
+OSTCBCur
+->
+OSTCBY
+] &~OSTCBCur->
+OSTCBBôX
+) == 0x00) {
+
+513 
+OSRdyGΩ
+ &~
+OSTCBCur
+->
+OSTCBBôY
+;
+
+515 
+≥vít
+->
+OSEvítTbl
+[
+OSTCBCur
+->
+OSTCBY
+] |OSTCBCur->
+OSTCBBôX
+;
+
+516 
+≥vít
+->
+OSEvítGΩ
+ |
+OSTCBCur
+->
+OSTCBBôY
+;
+
+517 
+	}
+}
+
+534 #i‡
+OS_EVENT_EN
+ > 0
+
+535 
+	$OS_EvítTO
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+537 i‡((
+≥vít
+->
+OSEvítTbl
+[
+OSTCBCur
+->
+OSTCBY
+] &~OSTCBCur->
+OSTCBBôX
+) == 0x00) {
+
+538 
+≥vít
+->
+OSEvítGΩ
+ &~
+OSTCBCur
+->
+OSTCBBôY
+;
+
+540 
+OSTCBCur
+->
+OSTCBSèt
+ = 
+OS_STAT_RDY
+;
+
+541 
+OSTCBCur
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+542 
+	}
+}
+
+558 #i‡((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)Ë|| (
+OS_MBOX_EN
+ > 0Ë|| (
+OS_SEM_EN
+ > 0Ë|| (
+OS_MUTEX_EN
+ > 0)
+
+559 
+	$OS_EvítWaôLi°Inô
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+561 
+INT8U
+ *
+±bl
+;
+
+564 
+≥vít
+->
+OSEvítGΩ
+ = 0x00;
+
+565 
+±bl
+ = &
+≥vít
+->
+OSEvítTbl
+[0];
+
+567 #i‡
+OS_EVENT_TBL_SIZE
+ > 0
+
+568 *
+±bl
+++ = 0x00;
+
+571 #i‡
+OS_EVENT_TBL_SIZE
+ > 1
+
+572 *
+±bl
+++ = 0x00;
+
+575 #i‡
+OS_EVENT_TBL_SIZE
+ > 2
+
+576 *
+±bl
+++ = 0x00;
+
+579 #i‡
+OS_EVENT_TBL_SIZE
+ > 3
+
+580 *
+±bl
+++ = 0x00;
+
+583 #i‡
+OS_EVENT_TBL_SIZE
+ > 4
+
+584 *
+±bl
+++ = 0x00;
+
+587 #i‡
+OS_EVENT_TBL_SIZE
+ > 5
+
+588 *
+±bl
+++ = 0x00;
+
+591 #i‡
+OS_EVENT_TBL_SIZE
+ > 6
+
+592 *
+±bl
+++ = 0x00;
+
+595 #i‡
+OS_EVENT_TBL_SIZE
+ > 7
+
+596 *
+±bl
+ = 0x00;
+
+598 
+	}
+}
+
+614 
+	$OS_InôEvítLi°
+ ()
+
+616 #i‡(
+OS_EVENT_EN
+ > 0Ë&& (
+OS_MAX_EVENTS
+ > 0)
+
+617 #i‡(
+OS_MAX_EVENTS
+ > 1)
+
+618 
+INT16U
+ 
+i
+;
+
+619 
+OS_EVENT
+ *
+≥vít1
+;
+
+620 
+OS_EVENT
+ *
+≥vít2
+;
+
+623 
+≥vít1
+ = &
+OSEvítTbl
+[0];
+
+624 
+≥vít2
+ = &
+OSEvítTbl
+[1];
+
+625 
+i
+ = 0; i < (
+OS_MAX_EVENTS
+ - 1); i++) {
+
+626 
+≥vít1
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+627 
+≥vít1
+->
+OSEvítPå
+ = 
+≥vít2
+;
+
+628 
+≥vít1
+++;
+
+629 
+≥vít2
+++;
+
+631 
+≥vít1
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+632 
+≥vít1
+->
+OSEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+633 
+OSEvítFªeLi°
+ = &
+OSEvítTbl
+[0];
+
+635 
+OSEvítFªeLi°
+ = &
+OSEvítTbl
+[0];
+
+636 
+OSEvítFªeLi°
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+637 
+OSEvítFªeLi°
+->
+OSEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+640 
+	}
+}
+
+655 
+	$OS_InôMisc
+ ()
+
+657 #i‡
+OS_TIME_GET_SET_EN
+ > 0
+
+658 
+OSTime
+ = 0L;
+
+661 
+OSI¡Ne°ög
+ = 0;
+
+662 
+OSLockNe°ög
+ = 0;
+
+664 
+OSTaskCå
+ = 0;
+
+666 
+OSRu¬ög
+ = 
+FALSE
+;
+
+668 
+OSCtxSwCå
+ = 0;
+
+669 
+OSIdÀCå
+ = 0L;
+
+671 #i‡(
+OS_TASK_STAT_EN
+ > 0Ë&& (
+OS_TASK_CREATE_EXT_EN
+ > 0)
+
+672 
+OSIdÀCåRun
+ = 0L;
+
+673 
+OSIdÀCåMax
+ = 0L;
+
+674 
+OSSètRdy
+ = 
+FALSE
+;
+
+676 
+	}
+}
+
+691 
+	$OS_InôRdyLi°
+ ()
+
+693 
+INT16U
+ 
+i
+;
+
+694 
+INT8U
+ *
+¥dytbl
+;
+
+697 
+OSRdyGΩ
+ = 0x00;
+
+698 
+¥dytbl
+ = &
+OSRdyTbl
+[0];
+
+699 
+i
+ = 0; i < 
+OS_RDY_TBL_SIZE
+; i++) {
+
+700 *
+¥dytbl
+++ = 0x00;
+
+703 
+OSPrioCur
+ = 0;
+
+704 
+OSPrioHighRdy
+ = 0;
+
+706 
+OSTCBHighRdy
+ = (
+OS_TCB
+ *)0;
+
+707 
+OSTCBCur
+ = (
+OS_TCB
+ *)0;
+
+708 
+	}
+}
+
+724 
+	$OS_InôTaskIdÀ
+ ()
+
+726 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+727 #i‡
+OS_STK_GROWTH
+ == 1
+
+728 ()
+	`OSTaskCª©eExt
+(
+OS_TaskIdÀ
+,
+
+730 &
+OSTaskIdÀStk
+[
+OS_TASK_IDLE_STK_SIZE
+ - 1],
+
+731 
+OS_IDLE_PRIO
+,
+
+732 
+OS_TASK_IDLE_ID
+,
+
+733 &
+OSTaskIdÀStk
+[0],
+
+734 
+OS_TASK_IDLE_STK_SIZE
+,
+
+736 
+OS_TASK_OPT_STK_CHK
+ | 
+OS_TASK_OPT_STK_CLR
+);
+
+738 ()
+	`OSTaskCª©eExt
+(
+OS_TaskIdÀ
+,
+
+740 &
+OSTaskIdÀStk
+[0],
+
+741 
+OS_IDLE_PRIO
+,
+
+742 
+OS_TASK_IDLE_ID
+,
+
+743 &
+OSTaskIdÀStk
+[
+OS_TASK_IDLE_STK_SIZE
+ - 1],
+
+744 
+OS_TASK_IDLE_STK_SIZE
+,
+
+746 
+OS_TASK_OPT_STK_CHK
+ | 
+OS_TASK_OPT_STK_CLR
+);
+
+749 #i‡
+OS_STK_GROWTH
+ == 1
+
+750 ()
+	`OSTaskCª©e
+(
+OS_TaskIdÀ
+,
+
+752 &
+OSTaskIdÀStk
+[
+OS_TASK_IDLE_STK_SIZE
+ - 1],
+
+753 
+OS_IDLE_PRIO
+);
+
+755 ()
+	`OSTaskCª©e
+(
+OS_TaskIdÀ
+,
+
+757 &
+OSTaskIdÀStk
+[0],
+
+758 
+OS_IDLE_PRIO
+);
+
+761 
+	}
+}
+
+776 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+777 
+	$OS_InôTaskSèt
+ ()
+
+779 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+780 #i‡
+OS_STK_GROWTH
+ == 1
+
+781 ()
+	`OSTaskCª©eExt
+(
+OS_TaskSèt
+,
+
+783 &
+OSTaskSètStk
+[
+OS_TASK_STAT_STK_SIZE
+ - 1],
+
+784 
+OS_STAT_PRIO
+,
+
+785 
+OS_TASK_STAT_ID
+,
+
+786 &
+OSTaskSètStk
+[0],
+
+787 
+OS_TASK_STAT_STK_SIZE
+,
+
+789 
+OS_TASK_OPT_STK_CHK
+ | 
+OS_TASK_OPT_STK_CLR
+);
+
+791 ()
+	`OSTaskCª©eExt
+(
+OS_TaskSèt
+,
+
+793 &
+OSTaskSètStk
+[0],
+
+794 
+OS_STAT_PRIO
+,
+
+795 
+OS_TASK_STAT_ID
+,
+
+796 &
+OSTaskSètStk
+[
+OS_TASK_STAT_STK_SIZE
+ - 1],
+
+797 
+OS_TASK_STAT_STK_SIZE
+,
+
+799 
+OS_TASK_OPT_STK_CHK
+ | 
+OS_TASK_OPT_STK_CLR
+);
+
+802 #i‡
+OS_STK_GROWTH
+ == 1
+
+803 ()
+	`OSTaskCª©e
+(
+OS_TaskSèt
+,
+
+805 &
+OSTaskSètStk
+[
+OS_TASK_STAT_STK_SIZE
+ - 1],
+
+806 
+OS_STAT_PRIO
+);
+
+808 ()
+	`OSTaskCª©e
+(
+OS_TaskSèt
+,
+
+810 &
+OSTaskSètStk
+[0],
+
+811 
+OS_STAT_PRIO
+);
+
+814 
+	}
+}
+
+830 
+	$OS_InôTCBLi°
+ ()
+
+832 
+INT8U
+ 
+i
+;
+
+833 
+OS_TCB
+ *
+±cb1
+;
+
+834 
+OS_TCB
+ *
+±cb2
+;
+
+837 
+OSTCBLi°
+ = (
+OS_TCB
+ *)0;
+
+838 
+i
+ = 0; i < (
+OS_LOWEST_PRIO
+ + 1); i++) {
+
+839 
+OSTCBPrioTbl
+[
+i
+] = (
+OS_TCB
+ *)0;
+
+841 
+±cb1
+ = &
+OSTCBTbl
+[0];
+
+842 
+±cb2
+ = &
+OSTCBTbl
+[1];
+
+843 
+i
+ = 0; i < (
+OS_MAX_TASKS
+ + 
+OS_N_SYS_TASKS
+ - 1); i++) {
+
+844 
+±cb1
+->
+OSTCBNext
+ = 
+±cb2
+;
+
+845 
+±cb1
+++;
+
+846 
+±cb2
+++;
+
+848 
+±cb1
+->
+OSTCBNext
+ = (
+OS_TCB
+ *)0;
+
+849 
+OSTCBFªeLi°
+ = &
+OSTCBTbl
+[0];
+
+850 
+	}
+}
+
+869 
+	$OS_Sched
+ ()
+
+871 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+872 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+874 
+INT8U
+ 
+y
+;
+
+877 
+	`OS_ENTER_CRITICAL
+();
+
+878 i‡((
+OSI¡Ne°ög
+ =0Ë&& (
+OSLockNe°ög
+ == 0)) {
+
+879 
+y
+ = 
+OSUnM≠Tbl
+[
+OSRdyGΩ
+];
+
+880 
+OSPrioHighRdy
+ = (
+INT8U
+)((
+y
+ << 3Ë+ 
+OSUnM≠Tbl
+[
+OSRdyTbl
+[y]]);
+
+881 i‡(
+OSPrioHighRdy
+ !
+OSPrioCur
+) {
+
+882 
+OSTCBHighRdy
+ = 
+OSTCBPrioTbl
+[
+OSPrioHighRdy
+];
+
+883 
+OSCtxSwCå
+++;
+
+884 
+	`OS_TASK_SW
+();
+
+887 
+	`OS_EXIT_CRITICAL
+();
+
+888 
+	}
+}
+
+911 
+	$OS_TaskIdÀ
+ (*
+pd©a
+)
+
+913 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+914 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+918 
+pd©a
+ =Ödata;
+
+920 
+	`OS_ENTER_CRITICAL
+();
+
+921 
+OSIdÀCå
+++;
+
+922 
+	`OS_EXIT_CRITICAL
+();
+
+923 
+	`OSTaskIdÀHook
+();
+
+925 
+	}
+}
+
+953 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+954 
+	$OS_TaskSèt
+ (*
+pd©a
+)
+
+956 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+957 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+959 
+INT32U
+ 
+run
+;
+
+960 
+INT32U
+ 
+max
+;
+
+961 
+INT8S
+ 
+ußge
+;
+
+964 
+pd©a
+ =Ödata;
+
+965 
+OSSètRdy
+ =
+FALSE
+) {
+
+966 
+	`OSTimeDly
+(2 * 
+OS_TICKS_PER_SEC
+);
+
+968 
+max
+ = 
+OSIdÀCåMax
+ / 100L;
+
+970 
+	`OS_ENTER_CRITICAL
+();
+
+971 
+OSIdÀCåRun
+ = 
+OSIdÀCå
+;
+
+972 
+run
+ = 
+OSIdÀCå
+;
+
+973 
+OSIdÀCå
+ = 0L;
+
+974 
+	`OS_EXIT_CRITICAL
+();
+
+975 i‡(
+max
+ > 0L) {
+
+976 
+ußge
+ = (
+INT8S
+)(100L - 
+run
+ / 
+max
+);
+
+977 i‡(
+ußge
+ >= 0) {
+
+978 
+OSCPUUßge
+ = 
+ußge
+;
+
+980 
+OSCPUUßge
+ = 0;
+
+983 
+OSCPUUßge
+ = 0;
+
+984 
+max
+ = 
+OSIdÀCåMax
+ / 100L;
+
+986 
+	`OSTaskSètHook
+();
+
+987 
+	`OSTimeDly
+(
+OS_TICKS_PER_SEC
+);
+
+989 
+	}
+}
+
+1035 
+INT8U
+ 
+	$OS_TCBInô
+ (
+INT8U
+ 
+¥io
+, 
+OS_STK
+ *
+±os
+, OS_STK *
+pbos
+, 
+INT16U
+ 
+id
+, 
+INT32U
+ 
+°k_size
+, *
+≥xt
+, INT16U 
+›t
+)
+
+1037 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+1038 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+1040 
+OS_TCB
+ *
+±cb
+;
+
+1043 
+	`OS_ENTER_CRITICAL
+();
+
+1044 
+±cb
+ = 
+OSTCBFªeLi°
+;
+
+1045 i‡(
+±cb
+ !(
+OS_TCB
+ *)0) {
+
+1046 
+OSTCBFªeLi°
+ = 
+±cb
+->
+OSTCBNext
+;
+
+1047 
+	`OS_EXIT_CRITICAL
+();
+
+1048 
+±cb
+->
+OSTCBStkPå
+ = 
+±os
+;
+
+1049 
+±cb
+->
+OSTCBPrio
+ = (
+INT8U
+)
+¥io
+;
+
+1050 
+±cb
+->
+OSTCBSèt
+ = 
+OS_STAT_RDY
+;
+
+1051 
+±cb
+->
+OSTCBDly
+ = 0;
+
+1053 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+1054 
+±cb
+->
+OSTCBExtPå
+ = 
+≥xt
+;
+
+1055 
+±cb
+->
+OSTCBStkSize
+ = 
+°k_size
+;
+
+1056 
+±cb
+->
+OSTCBStkBŸtom
+ = 
+pbos
+;
+
+1057 
+±cb
+->
+OSTCBO±
+ = 
+›t
+;
+
+1058 
+±cb
+->
+OSTCBId
+ = 
+id
+;
+
+1060 
+≥xt
+ =Öext;
+
+1061 
+°k_size
+ = stk_size;
+
+1062 
+pbos
+ =Öbos;
+
+1063 
+›t
+ = opt;
+
+1064 
+id
+ = id;
+
+1067 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+1068 
+±cb
+->
+OSTCBDñReq
+ = 
+OS_NO_ERR
+;
+
+1071 
+±cb
+->
+OSTCBY
+ = 
+¥io
+ >> 3;
+
+1072 
+±cb
+->
+OSTCBBôY
+ = 
+OSM≠Tbl
+[±cb->
+OSTCBY
+];
+
+1073 
+±cb
+->
+OSTCBX
+ = 
+¥io
+ & 0x07;
+
+1074 
+±cb
+->
+OSTCBBôX
+ = 
+OSM≠Tbl
+[±cb->
+OSTCBX
+];
+
+1076 #i‡
+OS_EVENT_EN
+ > 0
+
+1077 
+±cb
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+1080 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0Ë&& (
+OS_TASK_DEL_EN
+ > 0)
+
+1081 
+±cb
+->
+OSTCBFœgNode
+ = (
+OS_FLAG_NODE
+ *)0;
+
+1084 #i‡(
+OS_MBOX_EN
+ > 0Ë|| ((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0))
+
+1085 
+±cb
+->
+OSTCBMsg
+ = (*)0;
+
+1088 #i‡
+OS_VERSION
+ >= 204
+
+1089 
+	`OSTCBInôHook
+(
+±cb
+);
+
+1092 
+	`OSTaskCª©eHook
+(
+±cb
+);
+
+1094 
+	`OS_ENTER_CRITICAL
+();
+
+1095 
+OSTCBPrioTbl
+[
+¥io
+] = 
+±cb
+;
+
+1096 
+±cb
+->
+OSTCBNext
+ = 
+OSTCBLi°
+;
+
+1097 
+±cb
+->
+OSTCBPªv
+ = (
+OS_TCB
+ *)0;
+
+1098 i‡(
+OSTCBLi°
+ !(
+OS_TCB
+ *)0) {
+
+1099 
+OSTCBLi°
+->
+OSTCBPªv
+ = 
+±cb
+;
+
+1101 
+OSTCBLi°
+ = 
+±cb
+;
+
+1102 
+OSRdyGΩ
+ |
+±cb
+->
+OSTCBBôY
+;
+
+1103 
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] |±cb->
+OSTCBBôX
+;
+
+1104 
+	`OS_EXIT_CRITICAL
+();
+
+1105  (
+OS_NO_ERR
+);
+
+1107 
+	`OS_EXIT_CRITICAL
+();
+
+1108  (
+OS_NO_MORE_TCB
+);
+
+1109 
+	}
+}
+
+	@OS_CPU.H
+
+20 #ifde‡ 
+OS_CPU_GLOBALS
+
+
+21 
+	#OS_CPU_EXT
+
+
+	)
+
+23 
+	#OS_CPU_EXT
+ 
+
+	)
+
+34 
+	tBOOLEAN
+;
+
+35 
+	tINT8U
+;
+
+36 sig√d 
+	tINT8S
+;
+
+37 
+	tINT16U
+;
+
+38 sig√d 
+	tINT16S
+;
+
+39 
+	tINT32U
+;
+
+40 sig√d 
+	tINT32S
+;
+
+41 
+	tFP32
+;
+
+42 
+	tFP64
+;
+
+44 
+	tOS_STK
+;
+
+45 
+	tOS_CPU_SR
+;
+
+65 
+	#OS_CRITICAL_METHOD
+ 2
+
+	)
+
+68 
+	#OS_ENTER_CRITICAL
+(Ë
+asm
+ {
+PUSHF
+; 
+CLI
+}
+
+	)
+
+69 
+	#OS_EXIT_CRITICAL
+(Ë
+asm
+ 
+POPF
+
+
+	)
+
+77 
+	#OS_STK_GROWTH
+ 1
+
+	)
+
+79 
+	#uCOS
+ 0x80
+
+	)
+
+81 
+	#OS_TASK_SW
+(Ë
+asm
+ 
+INT
+ 
+uCOS
+
+
+	)
+
+89 
+OS_CPU_EXT
+ 
+INT8U
+ 
+	gOSTickDOSCå
+;
+
+97 
+OSFPInô
+();
+
+98 
+OSFPRe°‹e
+(*
+pblk
+);
+
+99 
+OSFPSave
+(*
+pblk
+);
+
+	@OS_FLAG.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"INCLUDES.H
+"
+
+19 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+26 
+OS_FœgBlock
+(
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+OS_FLAG_NODE
+ *
+≤ode
+, 
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ 
+waô_ty≥
+, 
+INT16U
+ 
+timeout
+);
+
+27 
+BOOLEAN
+ 
+OS_FœgTaskRdy
+(
+OS_FLAG_NODE
+ *
+≤ode
+, 
+OS_FLAGS
+ 
+Êags_rdy
+);
+
+77 #i‡
+OS_FLAG_ACCEPT_EN
+ > 0
+
+78 
+OS_FLAGS
+ 
+	$OSFœgAc˚±
+ (
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ 
+waô_ty≥
+, INT8U *
+îr
+)
+
+80 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+81 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+83 
+OS_FLAGS
+ 
+Êags_cur
+;
+
+84 
+OS_FLAGS
+ 
+Êags_rdy
+;
+
+85 
+BOOLEAN
+ 
+c⁄sume
+;
+
+88 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+89 i‡(
+pgΩ
+ =(
+OS_FLAG_GRP
+ *)0) {
+
+90 *
+îr
+ = 
+OS_FLAG_INVALID_PGRP
+;
+
+91  ((
+OS_FLAGS
+)0);
+
+93 i‡(
+pgΩ
+->
+OSFœgTy≥
+ !
+OS_EVENT_TYPE_FLAG
+) {
+
+94 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+95  ((
+OS_FLAGS
+)0);
+
+98 i‡(
+waô_ty≥
+ & 
+OS_FLAG_CONSUME
+) {
+
+99 
+waô_ty≥
+ &~
+OS_FLAG_CONSUME
+;
+
+100 
+c⁄sume
+ = 
+TRUE
+;
+
+102 
+c⁄sume
+ = 
+FALSE
+;
+
+105 *
+îr
+ = 
+OS_NO_ERR
+;
+
+106 
+	`OS_ENTER_CRITICAL
+();
+
+107 
+waô_ty≥
+) {
+
+108 
+OS_FLAG_WAIT_SET_ALL
+:
+
+109 
+Êags_rdy
+ = 
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+110 i‡(
+Êags_rdy
+ =
+Êags
+) {
+
+111 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+112 
+pgΩ
+->
+OSFœgFœgs
+ &~
+Êags_rdy
+;
+
+115 *
+îr
+ = 
+OS_FLAG_ERR_NOT_RDY
+;
+
+117 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+118 
+	`OS_EXIT_CRITICAL
+();
+
+121 
+OS_FLAG_WAIT_SET_ANY
+:
+
+122 
+Êags_rdy
+ = 
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+123 i‡(
+Êags_rdy
+ !(
+OS_FLAGS
+)0) {
+
+124 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+125 
+pgΩ
+->
+OSFœgFœgs
+ &~
+Êags_rdy
+;
+
+128 *
+îr
+ = 
+OS_FLAG_ERR_NOT_RDY
+;
+
+130 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+131 
+	`OS_EXIT_CRITICAL
+();
+
+134 #i‡
+OS_FLAG_WAIT_CLR_EN
+ > 0
+
+135 
+OS_FLAG_WAIT_CLR_ALL
+:
+
+136 
+Êags_rdy
+ = ~
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+137 i‡(
+Êags_rdy
+ =
+Êags
+) {
+
+138 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+139 
+pgΩ
+->
+OSFœgFœgs
+ |
+Êags_rdy
+;
+
+142 *
+îr
+ = 
+OS_FLAG_ERR_NOT_RDY
+;
+
+144 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+145 
+	`OS_EXIT_CRITICAL
+();
+
+148 
+OS_FLAG_WAIT_CLR_ANY
+:
+
+149 
+Êags_rdy
+ = ~
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+150 i‡(
+Êags_rdy
+ !(
+OS_FLAGS
+)0) {
+
+151 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+152 
+pgΩ
+->
+OSFœgFœgs
+ |
+Êags_rdy
+;
+
+155 *
+îr
+ = 
+OS_FLAG_ERR_NOT_RDY
+;
+
+157 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+158 
+	`OS_EXIT_CRITICAL
+();
+
+163 
+	`OS_EXIT_CRITICAL
+();
+
+164 
+Êags_cur
+ = (
+OS_FLAGS
+)0;
+
+165 *
+îr
+ = 
+OS_FLAG_ERR_WAIT_TYPE
+;
+
+168  (
+Êags_cur
+);
+
+169 
+	}
+}
+
+193 
+OS_FLAG_GRP
+ *
+	$OSFœgCª©e
+ (
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ *
+îr
+)
+
+195 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+196 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+198 
+OS_FLAG_GRP
+ *
+pgΩ
+;
+
+201 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+202 *
+îr
+ = 
+OS_ERR_CREATE_ISR
+;
+
+203  ((
+OS_FLAG_GRP
+ *)0);
+
+205 
+	`OS_ENTER_CRITICAL
+();
+
+206 
+pgΩ
+ = 
+OSFœgFªeLi°
+;
+
+207 i‡(
+pgΩ
+ !(
+OS_FLAG_GRP
+ *)0) {
+
+209 
+OSFœgFªeLi°
+ = (
+OS_FLAG_GRP
+ *)OSFœgFªeLi°->
+OSFœgWaôLi°
+;
+
+210 
+pgΩ
+->
+OSFœgTy≥
+ = 
+OS_EVENT_TYPE_FLAG
+;
+
+211 
+pgΩ
+->
+OSFœgFœgs
+ = 
+Êags
+;
+
+212 
+pgΩ
+->
+OSFœgWaôLi°
+ = (*)0;
+
+213 
+	`OS_EXIT_CRITICAL
+();
+
+214 *
+îr
+ = 
+OS_NO_ERR
+;
+
+216 
+	`OS_EXIT_CRITICAL
+();
+
+217 *
+îr
+ = 
+OS_FLAG_GRP_DEPLETED
+;
+
+219  (
+pgΩ
+);
+
+220 
+	}
+}
+
+259 #i‡
+OS_FLAG_DEL_EN
+ > 0
+
+260 
+OS_FLAG_GRP
+ *
+	$OSFœgDñ
+ (
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+)
+
+262 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+263 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+265 
+BOOLEAN
+ 
+èsks_waôög
+;
+
+266 
+OS_FLAG_NODE
+ *
+≤ode
+;
+
+269 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+270 *
+îr
+ = 
+OS_ERR_DEL_ISR
+;
+
+271  (
+pgΩ
+);
+
+273 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+274 i‡(
+pgΩ
+ =(
+OS_FLAG_GRP
+ *)0) {
+
+275 *
+îr
+ = 
+OS_FLAG_INVALID_PGRP
+;
+
+276  (
+pgΩ
+);
+
+278 i‡(
+pgΩ
+->
+OSFœgTy≥
+ !
+OS_EVENT_TYPE_FLAG
+) {
+
+279 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+280  (
+pgΩ
+);
+
+283 
+	`OS_ENTER_CRITICAL
+();
+
+284 i‡(
+pgΩ
+->
+OSFœgWaôLi°
+ != (*)0) {
+
+285 
+èsks_waôög
+ = 
+TRUE
+;
+
+287 
+èsks_waôög
+ = 
+FALSE
+;
+
+289 
+›t
+) {
+
+290 
+OS_DEL_NO_PEND
+:
+
+291 i‡(
+èsks_waôög
+ =
+FALSE
+) {
+
+292 
+pgΩ
+->
+OSFœgTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+293 
+pgΩ
+->
+OSFœgWaôLi°
+ = (*)
+OSFœgFªeLi°
+;
+
+294 
+OSFœgFªeLi°
+ = 
+pgΩ
+;
+
+295 
+	`OS_EXIT_CRITICAL
+();
+
+296 *
+îr
+ = 
+OS_NO_ERR
+;
+
+297  ((
+OS_FLAG_GRP
+ *)0);
+
+299 
+	`OS_EXIT_CRITICAL
+();
+
+300 *
+îr
+ = 
+OS_ERR_TASK_WAITING
+;
+
+301  (
+pgΩ
+);
+
+304 
+OS_DEL_ALWAYS
+:
+
+305 
+≤ode
+ = (
+OS_FLAG_NODE
+ *)
+pgΩ
+->
+OSFœgWaôLi°
+;
+
+306 
+≤ode
+ !(
+OS_FLAG_NODE
+ *)0) {
+
+307 
+	`OS_FœgTaskRdy
+(
+≤ode
+, (
+OS_FLAGS
+)0);
+
+308 
+≤ode
+ = (
+OS_FLAG_NODE
+ *Ìnode->
+OSFœgNodeNext
+;
+
+310 
+pgΩ
+->
+OSFœgTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+311 
+pgΩ
+->
+OSFœgWaôLi°
+ = (*)
+OSFœgFªeLi°
+;
+
+312 
+OSFœgFªeLi°
+ = 
+pgΩ
+;
+
+313 
+	`OS_EXIT_CRITICAL
+();
+
+314 i‡(
+èsks_waôög
+ =
+TRUE
+) {
+
+315 
+	`OS_Sched
+();
+
+317 *
+îr
+ = 
+OS_NO_ERR
+;
+
+318  ((
+OS_FLAG_GRP
+ *)0);
+
+321 
+	`OS_EXIT_CRITICAL
+();
+
+322 *
+îr
+ = 
+OS_ERR_INVALID_OPT
+;
+
+323  (
+pgΩ
+);
+
+325 
+	}
+}
+
+377 
+OS_FLAGS
+ 
+	$OSFœgPíd
+ (
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ 
+waô_ty≥
+, 
+INT16U
+ 
+timeout
+, INT8U *
+îr
+)
+
+379 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+380 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+382 
+OS_FLAG_NODE
+ 
+node
+;
+
+383 
+OS_FLAGS
+ 
+Êags_cur
+;
+
+384 
+OS_FLAGS
+ 
+Êags_rdy
+;
+
+385 
+BOOLEAN
+ 
+c⁄sume
+;
+
+388 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+389 *
+îr
+ = 
+OS_ERR_PEND_ISR
+;
+
+390  ((
+OS_FLAGS
+)0);
+
+392 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+393 i‡(
+pgΩ
+ =(
+OS_FLAG_GRP
+ *)0) {
+
+394 *
+îr
+ = 
+OS_FLAG_INVALID_PGRP
+;
+
+395  ((
+OS_FLAGS
+)0);
+
+397 i‡(
+pgΩ
+->
+OSFœgTy≥
+ !
+OS_EVENT_TYPE_FLAG
+) {
+
+398 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+399  ((
+OS_FLAGS
+)0);
+
+402 i‡(
+waô_ty≥
+ & 
+OS_FLAG_CONSUME
+) {
+
+403 
+waô_ty≥
+ &~
+OS_FLAG_CONSUME
+;
+
+404 
+c⁄sume
+ = 
+TRUE
+;
+
+406 
+c⁄sume
+ = 
+FALSE
+;
+
+409 
+	`OS_ENTER_CRITICAL
+();
+
+410 
+waô_ty≥
+) {
+
+411 
+OS_FLAG_WAIT_SET_ALL
+:
+
+412 
+Êags_rdy
+ = 
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+413 i‡(
+Êags_rdy
+ =
+Êags
+) {
+
+414 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+415 
+pgΩ
+->
+OSFœgFœgs
+ &~
+Êags_rdy
+;
+
+417 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+418 
+	`OS_EXIT_CRITICAL
+();
+
+419 *
+îr
+ = 
+OS_NO_ERR
+;
+
+420  (
+Êags_cur
+);
+
+422 
+	`OS_FœgBlock
+(
+pgΩ
+, &
+node
+, 
+Êags
+, 
+waô_ty≥
+, 
+timeout
+);
+
+423 
+	`OS_EXIT_CRITICAL
+();
+
+427 
+OS_FLAG_WAIT_SET_ANY
+:
+
+428 
+Êags_rdy
+ = 
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+429 i‡(
+Êags_rdy
+ !(
+OS_FLAGS
+)0) {
+
+430 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+431 
+pgΩ
+->
+OSFœgFœgs
+ &~
+Êags_rdy
+;
+
+433 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+434 
+	`OS_EXIT_CRITICAL
+();
+
+435 *
+îr
+ = 
+OS_NO_ERR
+;
+
+436  (
+Êags_cur
+);
+
+438 
+	`OS_FœgBlock
+(
+pgΩ
+, &
+node
+, 
+Êags
+, 
+waô_ty≥
+, 
+timeout
+);
+
+439 
+	`OS_EXIT_CRITICAL
+();
+
+443 #i‡
+OS_FLAG_WAIT_CLR_EN
+ > 0
+
+444 
+OS_FLAG_WAIT_CLR_ALL
+:
+
+445 
+Êags_rdy
+ = ~
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+446 i‡(
+Êags_rdy
+ =
+Êags
+) {
+
+447 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+448 
+pgΩ
+->
+OSFœgFœgs
+ |
+Êags_rdy
+;
+
+450 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+451 
+	`OS_EXIT_CRITICAL
+();
+
+452 *
+îr
+ = 
+OS_NO_ERR
+;
+
+453  (
+Êags_cur
+);
+
+455 
+	`OS_FœgBlock
+(
+pgΩ
+, &
+node
+, 
+Êags
+, 
+waô_ty≥
+, 
+timeout
+);
+
+456 
+	`OS_EXIT_CRITICAL
+();
+
+460 
+OS_FLAG_WAIT_CLR_ANY
+:
+
+461 
+Êags_rdy
+ = ~
+pgΩ
+->
+OSFœgFœgs
+ & 
+Êags
+;
+
+462 i‡(
+Êags_rdy
+ !(
+OS_FLAGS
+)0) {
+
+463 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+464 
+pgΩ
+->
+OSFœgFœgs
+ |
+Êags_rdy
+;
+
+466 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+467 
+	`OS_EXIT_CRITICAL
+();
+
+468 *
+îr
+ = 
+OS_NO_ERR
+;
+
+469  (
+Êags_cur
+);
+
+471 
+	`OS_FœgBlock
+(
+pgΩ
+, &
+node
+, 
+Êags
+, 
+waô_ty≥
+, 
+timeout
+);
+
+472 
+	`OS_EXIT_CRITICAL
+();
+
+478 
+	`OS_EXIT_CRITICAL
+();
+
+479 
+Êags_cur
+ = (
+OS_FLAGS
+)0;
+
+480 *
+îr
+ = 
+OS_FLAG_ERR_WAIT_TYPE
+;
+
+481  (
+Êags_cur
+);
+
+483 
+	`OS_Sched
+();
+
+484 
+	`OS_ENTER_CRITICAL
+();
+
+485 i‡(
+OSTCBCur
+->
+OSTCBSèt
+ & 
+OS_STAT_FLAG
+) {
+
+486 
+	`OS_FœgU∆ök
+(&
+node
+);
+
+487 
+OSTCBCur
+->
+OSTCBSèt
+ = 
+OS_STAT_RDY
+;
+
+488 
+	`OS_EXIT_CRITICAL
+();
+
+489 
+Êags_cur
+ = (
+OS_FLAGS
+)0;
+
+490 *
+îr
+ = 
+OS_TIMEOUT
+;
+
+492 i‡(
+c⁄sume
+ =
+TRUE
+) {
+
+493 
+waô_ty≥
+) {
+
+494 
+OS_FLAG_WAIT_SET_ALL
+:
+
+495 
+OS_FLAG_WAIT_SET_ANY
+:
+
+496 
+pgΩ
+->
+OSFœgFœgs
+ &~
+OSTCBCur
+->
+OSTCBFœgsRdy
+;
+
+499 #i‡
+OS_FLAG_WAIT_CLR_EN
+ > 0
+
+500 
+OS_FLAG_WAIT_CLR_ALL
+:
+
+501 
+OS_FLAG_WAIT_CLR_ANY
+:
+
+502 
+pgΩ
+->
+OSFœgFœgs
+ |
+OSTCBCur
+->
+OSTCBFœgsRdy
+;
+
+507 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+508 
+	`OS_EXIT_CRITICAL
+();
+
+509 *
+îr
+ = 
+OS_NO_ERR
+;
+
+511  (
+Êags_cur
+);
+
+512 
+	}
+}
+
+555 
+OS_FLAGS
+ 
+	$OSFœgPo°
+ (
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+)
+
+557 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+558 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+560 
+OS_FLAG_NODE
+ *
+≤ode
+;
+
+561 
+BOOLEAN
+ 
+sched
+;
+
+562 
+OS_FLAGS
+ 
+Êags_cur
+;
+
+563 
+OS_FLAGS
+ 
+Êags_rdy
+;
+
+566 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+567 i‡(
+pgΩ
+ =(
+OS_FLAG_GRP
+ *)0) {
+
+568 *
+îr
+ = 
+OS_FLAG_INVALID_PGRP
+;
+
+569  ((
+OS_FLAGS
+)0);
+
+571 i‡(
+pgΩ
+->
+OSFœgTy≥
+ !
+OS_EVENT_TYPE_FLAG
+) {
+
+572 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+573  ((
+OS_FLAGS
+)0);
+
+577 
+	`OS_ENTER_CRITICAL
+();
+
+578 
+›t
+) {
+
+579 
+OS_FLAG_CLR
+:
+
+580 
+pgΩ
+->
+OSFœgFœgs
+ &~
+Êags
+;
+
+583 
+OS_FLAG_SET
+:
+
+584 
+pgΩ
+->
+OSFœgFœgs
+ |
+Êags
+;
+
+588 
+	`OS_EXIT_CRITICAL
+();
+
+589 *
+îr
+ = 
+OS_FLAG_INVALID_OPT
+;
+
+590  ((
+OS_FLAGS
+)0);
+
+592 
+sched
+ = 
+FALSE
+;
+
+593 
+≤ode
+ = (
+OS_FLAG_NODE
+ *)
+pgΩ
+->
+OSFœgWaôLi°
+;
+
+594 
+≤ode
+ !(
+OS_FLAG_NODE
+ *)0) {
+
+595 
+≤ode
+->
+OSFœgNodeWaôTy≥
+) {
+
+596 
+OS_FLAG_WAIT_SET_ALL
+:
+
+597 
+Êags_rdy
+ = 
+pgΩ
+->
+OSFœgFœgs
+ & 
+≤ode
+->
+OSFœgNodeFœgs
+;
+
+598 i‡(
+Êags_rdy
+ =
+≤ode
+->
+OSFœgNodeFœgs
+) {
+
+599 i‡(
+	`OS_FœgTaskRdy
+(
+≤ode
+, 
+Êags_rdy
+Ë=
+TRUE
+) {
+
+600 
+sched
+ = 
+TRUE
+;
+
+605 
+OS_FLAG_WAIT_SET_ANY
+:
+
+606 
+Êags_rdy
+ = 
+pgΩ
+->
+OSFœgFœgs
+ & 
+≤ode
+->
+OSFœgNodeFœgs
+;
+
+607 i‡(
+Êags_rdy
+ !(
+OS_FLAGS
+)0) {
+
+608 i‡(
+	`OS_FœgTaskRdy
+(
+≤ode
+, 
+Êags_rdy
+Ë=
+TRUE
+) {
+
+609 
+sched
+ = 
+TRUE
+;
+
+614 #i‡
+OS_FLAG_WAIT_CLR_EN
+ > 0
+
+615 
+OS_FLAG_WAIT_CLR_ALL
+:
+
+616 
+Êags_rdy
+ = ~
+pgΩ
+->
+OSFœgFœgs
+ & 
+≤ode
+->
+OSFœgNodeFœgs
+;
+
+617 i‡(
+Êags_rdy
+ =
+≤ode
+->
+OSFœgNodeFœgs
+) {
+
+618 i‡(
+	`OS_FœgTaskRdy
+(
+≤ode
+, 
+Êags_rdy
+Ë=
+TRUE
+) {
+
+619 
+sched
+ = 
+TRUE
+;
+
+624 
+OS_FLAG_WAIT_CLR_ANY
+:
+
+625 
+Êags_rdy
+ = ~
+pgΩ
+->
+OSFœgFœgs
+ & 
+≤ode
+->
+OSFœgNodeFœgs
+;
+
+626 i‡(
+Êags_rdy
+ !(
+OS_FLAGS
+)0) {
+
+627 i‡(
+	`OS_FœgTaskRdy
+(
+≤ode
+, 
+Êags_rdy
+Ë=
+TRUE
+) {
+
+628 
+sched
+ = 
+TRUE
+;
+
+634 
+≤ode
+ = (
+OS_FLAG_NODE
+ *Ìnode->
+OSFœgNodeNext
+;
+
+636 
+	`OS_EXIT_CRITICAL
+();
+
+637 i‡(
+sched
+ =
+TRUE
+) {
+
+638 
+	`OS_Sched
+();
+
+640 
+	`OS_ENTER_CRITICAL
+();
+
+641 
+Êags_cur
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+642 
+	`OS_EXIT_CRITICAL
+();
+
+643 *
+îr
+ = 
+OS_NO_ERR
+;
+
+644  (
+Êags_cur
+);
+
+645 
+	}
+}
+
+666 #i‡
+OS_FLAG_QUERY_EN
+ > 0
+
+667 
+OS_FLAGS
+ 
+	$OSFœgQuîy
+ (
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+INT8U
+ *
+îr
+)
+
+669 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+670 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+672 
+OS_FLAGS
+ 
+Êags
+;
+
+675 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+676 i‡(
+pgΩ
+ =(
+OS_FLAG_GRP
+ *)0) {
+
+677 *
+îr
+ = 
+OS_FLAG_INVALID_PGRP
+;
+
+678  ((
+OS_FLAGS
+)0);
+
+680 i‡(
+pgΩ
+->
+OSFœgTy≥
+ !
+OS_EVENT_TYPE_FLAG
+) {
+
+681 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+682  ((
+OS_FLAGS
+)0);
+
+685 
+	`OS_ENTER_CRITICAL
+();
+
+686 
+Êags
+ = 
+pgΩ
+->
+OSFœgFœgs
+;
+
+687 
+	`OS_EXIT_CRITICAL
+();
+
+688 *
+îr
+ = 
+OS_NO_ERR
+;
+
+689  (
+Êags
+);
+
+690 
+	}
+}
+
+731 
+	$OS_FœgBlock
+ (
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+OS_FLAG_NODE
+ *
+≤ode
+, 
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ 
+waô_ty≥
+, 
+INT16U
+ 
+timeout
+)
+
+733 
+OS_FLAG_NODE
+ *
+≤ode_√xt
+;
+
+736 
+OSTCBCur
+->
+OSTCBSèt
+ |
+OS_STAT_FLAG
+;
+
+737 
+OSTCBCur
+->
+OSTCBDly
+ = 
+timeout
+;
+
+738 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+739 
+OSTCBCur
+->
+OSTCBFœgNode
+ = 
+≤ode
+;
+
+741 
+≤ode
+->
+OSFœgNodeFœgs
+ = 
+Êags
+;
+
+742 
+≤ode
+->
+OSFœgNodeWaôTy≥
+ = 
+waô_ty≥
+;
+
+743 
+≤ode
+->
+OSFœgNodeTCB
+ = (*)
+OSTCBCur
+;
+
+744 
+≤ode
+->
+OSFœgNodeNext
+ = 
+pgΩ
+->
+OSFœgWaôLi°
+;
+
+745 
+≤ode
+->
+OSFœgNodePªv
+ = (*)0;
+
+746 
+≤ode
+->
+OSFœgNodeFœgGΩ
+ = (*)
+pgΩ
+;
+
+747 
+≤ode_√xt
+ = (
+OS_FLAG_NODE
+ *)
+pgΩ
+->
+OSFœgWaôLi°
+;
+
+748 i‡(
+≤ode_√xt
+ != (*)0) {
+
+749 
+≤ode_√xt
+->
+OSFœgNodePªv
+ = 
+≤ode
+;
+
+751 
+pgΩ
+->
+OSFœgWaôLi°
+ = (*)
+≤ode
+;
+
+753 i‡((
+OSRdyTbl
+[
+OSTCBCur
+->
+OSTCBY
+] &~OSTCBCur->
+OSTCBBôX
+) == 0) {
+
+754 
+OSRdyGΩ
+ &~
+OSTCBCur
+->
+OSTCBBôY
+;
+
+756 
+	}
+}
+
+774 
+	$OS_FœgInô
+ ()
+
+776 #i‡
+OS_MAX_FLAGS
+ == 1
+
+777 
+OSFœgFªeLi°
+ = (
+OS_FLAG_GRP
+ *)&
+OSFœgTbl
+[0];
+
+778 
+OSFœgFªeLi°
+->
+OSFœgTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+779 
+OSFœgFªeLi°
+->
+OSFœgWaôLi°
+ = (*)0;
+
+782 #i‡
+OS_MAX_FLAGS
+ >= 2
+
+783 
+INT8U
+ 
+i
+;
+
+784 
+OS_FLAG_GRP
+ *
+pgΩ1
+;
+
+785 
+OS_FLAG_GRP
+ *
+pgΩ2
+;
+
+788 
+pgΩ1
+ = &
+OSFœgTbl
+[0];
+
+789 
+pgΩ2
+ = &
+OSFœgTbl
+[1];
+
+790 
+i
+ = 0; i < (
+OS_MAX_FLAGS
+ - 1); i++) {
+
+791 
+pgΩ1
+->
+OSFœgTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+792 
+pgΩ1
+->
+OSFœgWaôLi°
+ = (*)
+pgΩ2
+;
+
+793 
+pgΩ1
+++;
+
+794 
+pgΩ2
+++;
+
+796 
+pgΩ1
+->
+OSFœgWaôLi°
+ = (*)0;
+
+797 
+OSFœgFªeLi°
+ = (
+OS_FLAG_GRP
+ *)&
+OSFœgTbl
+[0];
+
+799 
+	}
+}
+
+824 
+BOOLEAN
+ 
+	$OS_FœgTaskRdy
+ (
+OS_FLAG_NODE
+ *
+≤ode
+, 
+OS_FLAGS
+ 
+Êags_rdy
+)
+
+826 
+OS_TCB
+ *
+±cb
+;
+
+827 
+BOOLEAN
+ 
+sched
+;
+
+830 
+±cb
+ = (
+OS_TCB
+ *)
+≤ode
+->
+OSFœgNodeTCB
+;
+
+831 
+±cb
+->
+OSTCBDly
+ = 0;
+
+832 
+±cb
+->
+OSTCBFœgsRdy
+ = 
+Êags_rdy
+;
+
+833 
+±cb
+->
+OSTCBSèt
+ &~
+OS_STAT_FLAG
+;
+
+834 i‡(
+±cb
+->
+OSTCBSèt
+ =
+OS_STAT_RDY
+) {
+
+835 
+OSRdyGΩ
+ |
+±cb
+->
+OSTCBBôY
+;
+
+836 
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] |±cb->
+OSTCBBôX
+;
+
+837 
+sched
+ = 
+TRUE
+;
+
+839 
+sched
+ = 
+FALSE
+;
+
+841 
+	`OS_FœgU∆ök
+(
+≤ode
+);
+
+842  (
+sched
+);
+
+843 
+	}
+}
+
+867 
+	$OS_FœgU∆ök
+ (
+OS_FLAG_NODE
+ *
+≤ode
+)
+
+869 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+870 
+OS_TCB
+ *
+±cb
+;
+
+872 
+OS_FLAG_GRP
+ *
+pgΩ
+;
+
+873 
+OS_FLAG_NODE
+ *
+≤ode_¥ev
+;
+
+874 
+OS_FLAG_NODE
+ *
+≤ode_√xt
+;
+
+877 
+≤ode_¥ev
+ = (
+OS_FLAG_NODE
+ *)
+≤ode
+->
+OSFœgNodePªv
+;
+
+878 
+≤ode_√xt
+ = (
+OS_FLAG_NODE
+ *)
+≤ode
+->
+OSFœgNodeNext
+;
+
+879 i‡(
+≤ode_¥ev
+ =(
+OS_FLAG_NODE
+ *)0) {
+
+880 
+pgΩ
+ = (
+OS_FLAG_GRP
+ *)
+≤ode
+->
+OSFœgNodeFœgGΩ
+;
+
+881 
+pgΩ
+->
+OSFœgWaôLi°
+ = (*)
+≤ode_√xt
+;
+
+882 i‡(
+≤ode_√xt
+ !(
+OS_FLAG_NODE
+ *)0) {
+
+883 
+≤ode_√xt
+->
+OSFœgNodePªv
+ = (
+OS_FLAG_NODE
+ *)0;
+
+886 
+≤ode_¥ev
+->
+OSFœgNodeNext
+ = 
+≤ode_√xt
+;
+
+887 i‡(
+≤ode_√xt
+ !(
+OS_FLAG_NODE
+ *)0) {
+
+888 
+≤ode_√xt
+->
+OSFœgNodePªv
+ = 
+≤ode_¥ev
+;
+
+891 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+892 
+±cb
+ = (
+OS_TCB
+ *)
+≤ode
+->
+OSFœgNodeTCB
+;
+
+893 
+±cb
+->
+OSTCBFœgNode
+ = (
+OS_FLAG_NODE
+ *)0;
+
+895 
+	}
+}
+
+	@OS_MBOX.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+19 #i‡
+OS_MBOX_EN
+ > 0
+
+37 #i‡
+OS_MBOX_ACCEPT_EN
+ > 0
+
+38 *
+	$OSMboxAc˚±
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+40 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+41 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+43 *
+msg
+;
+
+46 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+47 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+50 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MBOX
+) {
+
+54 
+	`OS_ENTER_CRITICAL
+();
+
+55 
+msg
+ = 
+≥vít
+->
+OSEvítPå
+;
+
+56 
+≥vít
+->
+OSEvítPå
+ = (*)0;
+
+57 
+	`OS_EXIT_CRITICAL
+();
+
+58  (
+msg
+);
+
+59 
+	}
+}
+
+78 
+OS_EVENT
+ *
+	$OSMboxCª©e
+ (*
+msg
+)
+
+80 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+81 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+83 
+OS_EVENT
+ *
+≥vít
+;
+
+86 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+87  ((
+OS_EVENT
+ *)0);
+
+89 
+	`OS_ENTER_CRITICAL
+();
+
+90 
+≥vít
+ = 
+OSEvítFªeLi°
+;
+
+91 i‡(
+OSEvítFªeLi°
+ !(
+OS_EVENT
+ *)0) {
+
+92 
+OSEvítFªeLi°
+ = (
+OS_EVENT
+ *)OSEvítFªeLi°->
+OSEvítPå
+;
+
+94 
+	`OS_EXIT_CRITICAL
+();
+
+95 i‡(
+≥vít
+ !(
+OS_EVENT
+ *)0) {
+
+96 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_MBOX
+;
+
+97 
+≥vít
+->
+OSEvítC¡
+ = 0;
+
+98 
+≥vít
+->
+OSEvítPå
+ = 
+msg
+;
+
+99 
+	`OS_EvítWaôLi°Inô
+(
+≥vít
+);
+
+101  (
+≥vít
+);
+
+102 
+	}
+}
+
+140 #i‡
+OS_MBOX_DEL_EN
+ > 0
+
+141 
+OS_EVENT
+ *
+	$OSMboxDñ
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+)
+
+143 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+144 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+146 
+BOOLEAN
+ 
+èsks_waôög
+;
+
+149 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+150 *
+îr
+ = 
+OS_ERR_DEL_ISR
+;
+
+151  (
+≥vít
+);
+
+153 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+154 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+155 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+156  (
+≥vít
+);
+
+158 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MBOX
+) {
+
+159 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+160  (
+≥vít
+);
+
+163 
+	`OS_ENTER_CRITICAL
+();
+
+164 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+165 
+èsks_waôög
+ = 
+TRUE
+;
+
+167 
+èsks_waôög
+ = 
+FALSE
+;
+
+169 
+›t
+) {
+
+170 
+OS_DEL_NO_PEND
+:
+
+171 i‡(
+èsks_waôög
+ =
+FALSE
+) {
+
+172 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+173 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+174 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+175 
+	`OS_EXIT_CRITICAL
+();
+
+176 *
+îr
+ = 
+OS_NO_ERR
+;
+
+177  ((
+OS_EVENT
+ *)0);
+
+179 
+	`OS_EXIT_CRITICAL
+();
+
+180 *
+îr
+ = 
+OS_ERR_TASK_WAITING
+;
+
+181  (
+≥vít
+);
+
+184 
+OS_DEL_ALWAYS
+:
+
+185 
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+186 
+	`OS_EvítTaskRdy
+(
+≥vít
+, (*)0, 
+OS_STAT_MBOX
+);
+
+188 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+189 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+190 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+191 
+	`OS_EXIT_CRITICAL
+();
+
+192 i‡(
+èsks_waôög
+ =
+TRUE
+) {
+
+193 
+	`OS_Sched
+();
+
+195 *
+îr
+ = 
+OS_NO_ERR
+;
+
+196  ((
+OS_EVENT
+ *)0);
+
+199 
+	`OS_EXIT_CRITICAL
+();
+
+200 *
+îr
+ = 
+OS_ERR_INVALID_OPT
+;
+
+201  (
+≥vít
+);
+
+203 
+	}
+}
+
+238 *
+	$OSMboxPíd
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+)
+
+240 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+241 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+243 *
+msg
+;
+
+246 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+247 *
+îr
+ = 
+OS_ERR_PEND_ISR
+;
+
+250 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+251 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+252 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+255 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MBOX
+) {
+
+256 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+260 
+	`OS_ENTER_CRITICAL
+();
+
+261 
+msg
+ = 
+≥vít
+->
+OSEvítPå
+;
+
+262 i‡(
+msg
+ != (*)0) {
+
+263 
+≥vít
+->
+OSEvítPå
+ = (*)0;
+
+264 
+	`OS_EXIT_CRITICAL
+();
+
+265 *
+îr
+ = 
+OS_NO_ERR
+;
+
+266  (
+msg
+);
+
+268 
+OSTCBCur
+->
+OSTCBSèt
+ |
+OS_STAT_MBOX
+;
+
+269 
+OSTCBCur
+->
+OSTCBDly
+ = 
+timeout
+;
+
+270 
+	`OS_EvítTaskWaô
+(
+≥vít
+);
+
+271 
+	`OS_EXIT_CRITICAL
+();
+
+272 
+	`OS_Sched
+();
+
+273 
+	`OS_ENTER_CRITICAL
+();
+
+274 
+msg
+ = 
+OSTCBCur
+->
+OSTCBMsg
+;
+
+275 i‡(
+msg
+ != (*)0) {
+
+276 
+OSTCBCur
+->
+OSTCBMsg
+ = (*)0;
+
+277 
+OSTCBCur
+->
+OSTCBSèt
+ = 
+OS_STAT_RDY
+;
+
+278 
+OSTCBCur
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+279 
+	`OS_EXIT_CRITICAL
+();
+
+280 *
+îr
+ = 
+OS_NO_ERR
+;
+
+281  (
+msg
+);
+
+283 
+	`OS_EvítTO
+(
+≥vít
+);
+
+284 
+	`OS_EXIT_CRITICAL
+();
+
+285 *
+îr
+ = 
+OS_TIMEOUT
+;
+
+287 
+	}
+}
+
+309 #i‡
+OS_MBOX_POST_EN
+ > 0
+
+310 
+INT8U
+ 
+	$OSMboxPo°
+ (
+OS_EVENT
+ *
+≥vít
+, *
+msg
+)
+
+312 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+313 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+317 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+318 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+319  (
+OS_ERR_PEVENT_NULL
+);
+
+321 i‡(
+msg
+ == (*)0) {
+
+322  (
+OS_ERR_POST_NULL_PTR
+);
+
+324 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MBOX
+) {
+
+325  (
+OS_ERR_EVENT_TYPE
+);
+
+328 
+	`OS_ENTER_CRITICAL
+();
+
+329 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+330 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_MBOX
+);
+
+331 
+	`OS_EXIT_CRITICAL
+();
+
+332 
+	`OS_Sched
+();
+
+333  (
+OS_NO_ERR
+);
+
+335 i‡(
+≥vít
+->
+OSEvítPå
+ != (*)0) {
+
+336 
+	`OS_EXIT_CRITICAL
+();
+
+337  (
+OS_MBOX_FULL
+);
+
+339 
+≥vít
+->
+OSEvítPå
+ = 
+msg
+;
+
+340 
+	`OS_EXIT_CRITICAL
+();
+
+341  (
+OS_NO_ERR
+);
+
+342 
+	}
+}
+
+374 #i‡
+OS_MBOX_POST_OPT_EN
+ > 0
+
+375 
+INT8U
+ 
+	$OSMboxPo°O±
+ (
+OS_EVENT
+ *
+≥vít
+, *
+msg
+, 
+INT8U
+ 
+›t
+)
+
+377 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+378 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+382 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+383 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+384  (
+OS_ERR_PEVENT_NULL
+);
+
+386 i‡(
+msg
+ == (*)0) {
+
+387  (
+OS_ERR_POST_NULL_PTR
+);
+
+389 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MBOX
+) {
+
+390  (
+OS_ERR_EVENT_TYPE
+);
+
+393 
+	`OS_ENTER_CRITICAL
+();
+
+394 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+395 i‡((
+›t
+ & 
+OS_POST_OPT_BROADCAST
+) != 0x00) {
+
+396 
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+397 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_MBOX
+);
+
+400 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_MBOX
+);
+
+402 
+	`OS_EXIT_CRITICAL
+();
+
+403 
+	`OS_Sched
+();
+
+404  (
+OS_NO_ERR
+);
+
+406 i‡(
+≥vít
+->
+OSEvítPå
+ != (*)0) {
+
+407 
+	`OS_EXIT_CRITICAL
+();
+
+408  (
+OS_MBOX_FULL
+);
+
+410 
+≥vít
+->
+OSEvítPå
+ = 
+msg
+;
+
+411 
+	`OS_EXIT_CRITICAL
+();
+
+412  (
+OS_NO_ERR
+);
+
+413 
+	}
+}
+
+434 #i‡
+OS_MBOX_QUERY_EN
+ > 0
+
+435 
+INT8U
+ 
+	$OSMboxQuîy
+ (
+OS_EVENT
+ *
+≥vít
+, 
+OS_MBOX_DATA
+ *
+pd©a
+)
+
+437 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+438 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+440 
+INT8U
+ *
+p§c
+;
+
+441 
+INT8U
+ *
+pde°
+;
+
+444 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+445 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+446  (
+OS_ERR_PEVENT_NULL
+);
+
+448 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MBOX
+) {
+
+449  (
+OS_ERR_EVENT_TYPE
+);
+
+452 
+	`OS_ENTER_CRITICAL
+();
+
+453 
+pd©a
+->
+OSEvítGΩ
+ = 
+≥vít
+->OSEventGrp;
+
+454 
+p§c
+ = &
+≥vít
+->
+OSEvítTbl
+[0];
+
+455 
+pde°
+ = &
+pd©a
+->
+OSEvítTbl
+[0];
+
+457 #i‡
+OS_EVENT_TBL_SIZE
+ > 0
+
+458 *
+pde°
+++ = *
+p§c
+++;
+
+461 #i‡
+OS_EVENT_TBL_SIZE
+ > 1
+
+462 *
+pde°
+++ = *
+p§c
+++;
+
+465 #i‡
+OS_EVENT_TBL_SIZE
+ > 2
+
+466 *
+pde°
+++ = *
+p§c
+++;
+
+469 #i‡
+OS_EVENT_TBL_SIZE
+ > 3
+
+470 *
+pde°
+++ = *
+p§c
+++;
+
+473 #i‡
+OS_EVENT_TBL_SIZE
+ > 4
+
+474 *
+pde°
+++ = *
+p§c
+++;
+
+477 #i‡
+OS_EVENT_TBL_SIZE
+ > 5
+
+478 *
+pde°
+++ = *
+p§c
+++;
+
+481 #i‡
+OS_EVENT_TBL_SIZE
+ > 6
+
+482 *
+pde°
+++ = *
+p§c
+++;
+
+485 #i‡
+OS_EVENT_TBL_SIZE
+ > 7
+
+486 *
+pde°
+ = *
+p§c
+;
+
+488 
+pd©a
+->
+OSMsg
+ = 
+≥vít
+->
+OSEvítPå
+;
+
+489 
+	`OS_EXIT_CRITICAL
+();
+
+490  (
+OS_NO_ERR
+);
+
+491 
+	}
+}
+
+	@OS_MEM.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+19 #i‡(
+OS_MEM_EN
+ > 0Ë&& (
+OS_MAX_MEM_PART
+ > 0)
+
+48 
+OS_MEM
+ *
+	$OSMemCª©e
+ (*
+addr
+, 
+INT32U
+ 
+nblks
+, INT32U 
+blksize
+, 
+INT8U
+ *
+îr
+)
+
+50 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+51 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+53 
+OS_MEM
+ *
+pmem
+;
+
+54 
+INT8U
+ *
+pblk
+;
+
+55 **
+∂ök
+;
+
+56 
+INT32U
+ 
+i
+;
+
+59 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+60 i‡(
+addr
+ == (*)0) {
+
+61 *
+îr
+ = 
+OS_MEM_INVALID_ADDR
+;
+
+62  ((
+OS_MEM
+ *)0);
+
+64 i‡(
+nblks
+ < 2) {
+
+65 *
+îr
+ = 
+OS_MEM_INVALID_BLKS
+;
+
+66  ((
+OS_MEM
+ *)0);
+
+68 i‡(
+blksize
+ < (*)) {
+
+69 *
+îr
+ = 
+OS_MEM_INVALID_SIZE
+;
+
+70  ((
+OS_MEM
+ *)0);
+
+73 
+	`OS_ENTER_CRITICAL
+();
+
+74 
+pmem
+ = 
+OSMemFªeLi°
+;
+
+75 i‡(
+OSMemFªeLi°
+ !(
+OS_MEM
+ *)0) {
+
+76 
+OSMemFªeLi°
+ = (
+OS_MEM
+ *)OSMemFreeList->OSMemFreeList;
+
+78 
+	`OS_EXIT_CRITICAL
+();
+
+79 i‡(
+pmem
+ =(
+OS_MEM
+ *)0) {
+
+80 *
+îr
+ = 
+OS_MEM_INVALID_PART
+;
+
+81  ((
+OS_MEM
+ *)0);
+
+83 
+∂ök
+ = (**)
+addr
+;
+
+84 
+pblk
+ = (
+INT8U
+ *)
+addr
+ + 
+blksize
+;
+
+85 
+i
+ = 0; i < (
+nblks
+ - 1); i++) {
+
+86 *
+∂ök
+ = (*)
+pblk
+;
+
+87 
+∂ök
+ = (**)
+pblk
+;
+
+88 
+pblk
+ =Öblk + 
+blksize
+;
+
+90 *
+∂ök
+ = (*)0;
+
+91 
+pmem
+->
+OSMemAddr
+ = 
+addr
+;
+
+92 
+pmem
+->
+OSMemFªeLi°
+ = 
+addr
+;
+
+93 
+pmem
+->
+OSMemNFªe
+ = 
+nblks
+;
+
+94 
+pmem
+->
+OSMemNBlks
+ = 
+nblks
+;
+
+95 
+pmem
+->
+OSMemBlkSize
+ = 
+blksize
+;
+
+96 *
+îr
+ = 
+OS_NO_ERR
+;
+
+97  (
+pmem
+);
+
+98 
+	}
+}
+
+120 *
+	$OSMemGë
+ (
+OS_MEM
+ *
+pmem
+, 
+INT8U
+ *
+îr
+)
+
+122 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+123 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+125 *
+pblk
+;
+
+128 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+129 i‡(
+pmem
+ =(
+OS_MEM
+ *)0) {
+
+130 *
+îr
+ = 
+OS_MEM_INVALID_PMEM
+;
+
+131  ((
+OS_MEM
+ *)0);
+
+134 
+	`OS_ENTER_CRITICAL
+();
+
+135 i‡(
+pmem
+->
+OSMemNFªe
+ > 0) {
+
+136 
+pblk
+ = 
+pmem
+->
+OSMemFªeLi°
+;
+
+137 
+pmem
+->
+OSMemFªeLi°
+ = *(**)
+pblk
+;
+
+138 
+pmem
+->
+OSMemNFªe
+--;
+
+139 
+	`OS_EXIT_CRITICAL
+();
+
+140 *
+îr
+ = 
+OS_NO_ERR
+;
+
+141  (
+pblk
+);
+
+143 
+	`OS_EXIT_CRITICAL
+();
+
+144 *
+îr
+ = 
+OS_MEM_NO_FREE_BLKS
+;
+
+146 
+	}
+}
+
+166 
+INT8U
+ 
+	$OSMemPut
+ (
+OS_MEM
+ *
+pmem
+, *
+pblk
+)
+
+168 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+169 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+173 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+174 i‡(
+pmem
+ =(
+OS_MEM
+ *)0) {
+
+175  (
+OS_MEM_INVALID_PMEM
+);
+
+177 i‡(
+pblk
+ == (*)0) {
+
+178  (
+OS_MEM_INVALID_PBLK
+);
+
+181 
+	`OS_ENTER_CRITICAL
+();
+
+182 i‡(
+pmem
+->
+OSMemNFªe
+ >pmem->
+OSMemNBlks
+) {
+
+183 
+	`OS_EXIT_CRITICAL
+();
+
+184  (
+OS_MEM_FULL
+);
+
+186 *(**)
+pblk
+ = 
+pmem
+->
+OSMemFªeLi°
+;
+
+187 
+pmem
+->
+OSMemFªeLi°
+ = 
+pblk
+;
+
+188 
+pmem
+->
+OSMemNFªe
+++;
+
+189 
+	`OS_EXIT_CRITICAL
+();
+
+190  (
+OS_NO_ERR
+);
+
+191 
+	}
+}
+
+211 #i‡
+OS_MEM_QUERY_EN
+ > 0
+
+212 
+INT8U
+ 
+	$OSMemQuîy
+ (
+OS_MEM
+ *
+pmem
+, 
+OS_MEM_DATA
+ *
+pd©a
+)
+
+214 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+215 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+219 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+220 i‡(
+pmem
+ =(
+OS_MEM
+ *)0) {
+
+221  (
+OS_MEM_INVALID_PMEM
+);
+
+223 i‡(
+pd©a
+ =(
+OS_MEM_DATA
+ *)0) {
+
+224  (
+OS_MEM_INVALID_PDATA
+);
+
+227 
+	`OS_ENTER_CRITICAL
+();
+
+228 
+pd©a
+->
+OSAddr
+ = 
+pmem
+->
+OSMemAddr
+;
+
+229 
+pd©a
+->
+OSFªeLi°
+ = 
+pmem
+->
+OSMemFªeLi°
+;
+
+230 
+pd©a
+->
+OSBlkSize
+ = 
+pmem
+->
+OSMemBlkSize
+;
+
+231 
+pd©a
+->
+OSNBlks
+ = 
+pmem
+->
+OSMemNBlks
+;
+
+232 
+pd©a
+->
+OSNFªe
+ = 
+pmem
+->
+OSMemNFªe
+;
+
+233 
+	`OS_EXIT_CRITICAL
+();
+
+234 
+pd©a
+->
+OSNU£d
+ =Öd©a->
+OSNBlks
+ -Öd©a->
+OSNFªe
+;
+
+235  (
+OS_NO_ERR
+);
+
+236 
+	}
+}
+
+254 
+	$OS_MemInô
+ ()
+
+256 #i‡
+OS_MAX_MEM_PART
+ == 1
+
+257 
+OSMemFªeLi°
+ = (
+OS_MEM
+ *)&
+OSMemTbl
+[0];
+
+258 
+OSMemFªeLi°
+->OSMemFreeList = (*)0;
+
+259 
+OSMemFªeLi°
+->
+OSMemAddr
+ = (*)0;
+
+260 
+OSMemFªeLi°
+->
+OSMemNFªe
+ = 0;
+
+261 
+OSMemFªeLi°
+->
+OSMemNBlks
+ = 0;
+
+262 
+OSMemFªeLi°
+->
+OSMemBlkSize
+ = 0;
+
+265 #i‡
+OS_MAX_MEM_PART
+ >= 2
+
+266 
+OS_MEM
+ *
+pmem
+;
+
+267 
+INT16U
+ 
+i
+;
+
+270 
+pmem
+ = (
+OS_MEM
+ *)&
+OSMemTbl
+[0];
+
+271 
+i
+ = 0; i < (
+OS_MAX_MEM_PART
+ - 1); i++) {
+
+272 
+pmem
+->
+OSMemFªeLi°
+ = (*)&
+OSMemTbl
+[
+i
++1];
+
+273 
+pmem
+->
+OSMemAddr
+ = (*)0;
+
+274 
+pmem
+->
+OSMemNFªe
+ = 0;
+
+275 
+pmem
+->
+OSMemNBlks
+ = 0;
+
+276 
+pmem
+->
+OSMemBlkSize
+ = 0;
+
+277 
+pmem
+++;
+
+279 
+pmem
+->
+OSMemFªeLi°
+ = (*)0;
+
+280 
+pmem
+->
+OSMemAddr
+ = (*)0;
+
+281 
+pmem
+->
+OSMemNFªe
+ = 0;
+
+282 
+pmem
+->
+OSMemNBlks
+ = 0;
+
+283 
+pmem
+->
+OSMemBlkSize
+ = 0;
+
+285 
+OSMemFªeLi°
+ = (
+OS_MEM
+ *)&
+OSMemTbl
+[0];
+
+287 
+	}
+}
+
+	@OS_MUTEX.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+25 
+	#OS_MUTEX_KEEP_LOWER_8
+ 0x00FF
+
+	)
+
+26 
+	#OS_MUTEX_KEEP_UPPER_8
+ 0xFF00
+
+	)
+
+28 
+	#OS_MUTEX_AVAILABLE
+ 0x00FF
+
+	)
+
+31 #i‡
+OS_MUTEX_EN
+ > 0
+
+58 #i‡
+OS_MUTEX_ACCEPT_EN
+ > 0
+
+59 
+INT8U
+ 
+	$OSMuãxAc˚±
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT8U
+ *
+îr
+)
+
+61 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+62 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+66 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+67 *
+îr
+ = 
+OS_ERR_PEND_ISR
+;
+
+70 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+71 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+72 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+75 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MUTEX
+) {
+
+76 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+80 
+	`OS_ENTER_CRITICAL
+();
+
+81 i‡((
+≥vít
+->
+OSEvítC¡
+ & 
+OS_MUTEX_KEEP_LOWER_8
+Ë=
+OS_MUTEX_AVAILABLE
+) {
+
+82 
+≥vít
+->
+OSEvítC¡
+ &
+OS_MUTEX_KEEP_UPPER_8
+;
+
+83 
+≥vít
+->
+OSEvítC¡
+ |
+OSTCBCur
+->
+OSTCBPrio
+;
+
+84 
+≥vít
+->
+OSEvítPå
+ = (*)
+OSTCBCur
+;
+
+85 
+	`OS_EXIT_CRITICAL
+();
+
+86 *
+îr
+ = 
+OS_NO_ERR
+;
+
+89 
+	`OS_EXIT_CRITICAL
+();
+
+90 *
+îr
+ = 
+OS_NO_ERR
+;
+
+92 
+	}
+}
+
+129 
+OS_EVENT
+ *
+	$OSMuãxCª©e
+ (
+INT8U
+ 
+¥io
+, INT8U *
+îr
+)
+
+131 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+132 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+134 
+OS_EVENT
+ *
+≥vít
+;
+
+137 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+138 *
+îr
+ = 
+OS_ERR_CREATE_ISR
+;
+
+139  ((
+OS_EVENT
+ *)0);
+
+141 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+142 i‡(
+¥io
+ >
+OS_LOWEST_PRIO
+) {
+
+143 *
+îr
+ = 
+OS_PRIO_INVALID
+;
+
+144  ((
+OS_EVENT
+ *)0);
+
+147 
+	`OS_ENTER_CRITICAL
+();
+
+148 i‡(
+OSTCBPrioTbl
+[
+¥io
+] !(
+OS_TCB
+ *)0) {
+
+149 
+	`OS_EXIT_CRITICAL
+();
+
+150 *
+îr
+ = 
+OS_PRIO_EXIST
+;
+
+151  ((
+OS_EVENT
+ *)0);
+
+153 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)1;
+
+154 
+≥vít
+ = 
+OSEvítFªeLi°
+;
+
+155 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+156 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)0;
+
+157 
+	`OS_EXIT_CRITICAL
+();
+
+158 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+159  (
+≥vít
+);
+
+161 
+OSEvítFªeLi°
+ = (
+OS_EVENT
+ *)OSEvítFªeLi°->
+OSEvítPå
+;
+
+162 
+	`OS_EXIT_CRITICAL
+();
+
+163 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_MUTEX
+;
+
+164 
+≥vít
+->
+OSEvítC¡
+ = (
+¥io
+ << 8Ë| 
+OS_MUTEX_AVAILABLE
+;
+
+165 
+≥vít
+->
+OSEvítPå
+ = (*)0;
+
+166 
+	`OS_EvítWaôLi°Inô
+(
+≥vít
+);
+
+167 *
+îr
+ = 
+OS_NO_ERR
+;
+
+168  (
+≥vít
+);
+
+169 
+	}
+}
+
+205 #i‡
+OS_MUTEX_DEL_EN
+
+
+206 
+OS_EVENT
+ *
+	$OSMuãxDñ
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+)
+
+208 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+209 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+211 
+BOOLEAN
+ 
+èsks_waôög
+;
+
+212 
+INT8U
+ 
+pù
+;
+
+215 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+216 *
+îr
+ = 
+OS_ERR_DEL_ISR
+;
+
+217  (
+≥vít
+);
+
+219 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+220 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+221 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+222  ((
+OS_EVENT
+ *)0);
+
+224 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MUTEX
+) {
+
+225 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+226  (
+≥vít
+);
+
+229 
+	`OS_ENTER_CRITICAL
+();
+
+230 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+231 
+èsks_waôög
+ = 
+TRUE
+;
+
+233 
+èsks_waôög
+ = 
+FALSE
+;
+
+235 
+›t
+) {
+
+236 
+OS_DEL_NO_PEND
+:
+
+237 i‡(
+èsks_waôög
+ =
+FALSE
+) {
+
+238 
+pù
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ >> 8);
+
+239 
+OSTCBPrioTbl
+[
+pù
+] = (
+OS_TCB
+ *)0;
+
+240 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+241 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+242 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+243 
+	`OS_EXIT_CRITICAL
+();
+
+244 *
+îr
+ = 
+OS_NO_ERR
+;
+
+245  ((
+OS_EVENT
+ *)0);
+
+247 
+	`OS_EXIT_CRITICAL
+();
+
+248 *
+îr
+ = 
+OS_ERR_TASK_WAITING
+;
+
+249  (
+≥vít
+);
+
+252 
+OS_DEL_ALWAYS
+:
+
+253 
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+254 
+	`OS_EvítTaskRdy
+(
+≥vít
+, (*)0, 
+OS_STAT_MUTEX
+);
+
+256 
+pù
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ >> 8);
+
+257 
+OSTCBPrioTbl
+[
+pù
+] = (
+OS_TCB
+ *)0;
+
+258 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+259 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+260 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+261 
+	`OS_EXIT_CRITICAL
+();
+
+262 i‡(
+èsks_waôög
+ =
+TRUE
+) {
+
+263 
+	`OS_Sched
+();
+
+265 *
+îr
+ = 
+OS_NO_ERR
+;
+
+266  ((
+OS_EVENT
+ *)0);
+
+269 
+	`OS_EXIT_CRITICAL
+();
+
+270 *
+îr
+ = 
+OS_ERR_INVALID_OPT
+;
+
+271  (
+≥vít
+);
+
+273 
+	}
+}
+
+306 
+	$OSMuãxPíd
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+)
+
+308 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+309 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+311 
+INT8U
+ 
+pù
+;
+
+312 
+INT8U
+ 
+m¥io
+;
+
+313 
+BOOLEAN
+ 
+rdy
+;
+
+314 
+OS_TCB
+ *
+±cb
+;
+
+317 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+318 *
+îr
+ = 
+OS_ERR_PEND_ISR
+;
+
+321 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+322 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+323 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+326 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MUTEX
+) {
+
+327 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+331 
+	`OS_ENTER_CRITICAL
+();
+
+332 i‡((
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ & 
+OS_MUTEX_KEEP_LOWER_8
+Ë=
+OS_MUTEX_AVAILABLE
+) {
+
+333 
+≥vít
+->
+OSEvítC¡
+ &
+OS_MUTEX_KEEP_UPPER_8
+;
+
+334 
+≥vít
+->
+OSEvítC¡
+ |
+OSTCBCur
+->
+OSTCBPrio
+;
+
+335 
+≥vít
+->
+OSEvítPå
+ = (*)
+OSTCBCur
+;
+
+336 
+	`OS_EXIT_CRITICAL
+();
+
+337 *
+îr
+ = 
+OS_NO_ERR
+;
+
+340 
+pù
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ >> 8);
+
+341 
+m¥io
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ & 
+OS_MUTEX_KEEP_LOWER_8
+);
+
+342 
+±cb
+ = (
+OS_TCB
+ *)(
+≥vít
+->
+OSEvítPå
+);
+
+343 i‡(
+±cb
+->
+OSTCBPrio
+ !
+pù
+ && 
+m¥io
+ > 
+OSTCBCur
+->OSTCBPrio) {
+
+344 i‡((
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] &Ötcb->
+OSTCBBôX
+) != 0x00) {
+
+347 i‡((
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] &~±cb->
+OSTCBBôX
+) == 0x00) {
+
+348 
+OSRdyGΩ
+ &~
+±cb
+->
+OSTCBBôY
+;
+
+350 
+rdy
+ = 
+TRUE
+;
+
+352 
+rdy
+ = 
+FALSE
+;
+
+354 
+±cb
+->
+OSTCBPrio
+ = 
+pù
+;
+
+355 
+±cb
+->
+OSTCBY
+ =Ötcb->
+OSTCBPrio
+ >> 3;
+
+356 
+±cb
+->
+OSTCBBôY
+ = 
+OSM≠Tbl
+[±cb->
+OSTCBY
+];
+
+357 
+±cb
+->
+OSTCBX
+ =Ötcb->
+OSTCBPrio
+ & 0x07;
+
+358 
+±cb
+->
+OSTCBBôX
+ = 
+OSM≠Tbl
+[±cb->
+OSTCBX
+];
+
+359 i‡(
+rdy
+ =
+TRUE
+) {
+
+360 
+OSRdyGΩ
+ |
+±cb
+->
+OSTCBBôY
+;
+
+361 
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] |±cb->
+OSTCBBôX
+;
+
+363 
+OSTCBPrioTbl
+[
+pù
+] = (
+OS_TCB
+ *)
+±cb
+;
+
+365 
+OSTCBCur
+->
+OSTCBSèt
+ |
+OS_STAT_MUTEX
+;
+
+366 
+OSTCBCur
+->
+OSTCBDly
+ = 
+timeout
+;
+
+367 
+	`OS_EvítTaskWaô
+(
+≥vít
+);
+
+368 
+	`OS_EXIT_CRITICAL
+();
+
+369 
+	`OS_Sched
+();
+
+370 
+	`OS_ENTER_CRITICAL
+();
+
+371 i‡(
+OSTCBCur
+->
+OSTCBSèt
+ & 
+OS_STAT_MUTEX
+) {
+
+372 
+	`OS_EvítTO
+(
+≥vít
+);
+
+373 
+	`OS_EXIT_CRITICAL
+();
+
+374 *
+îr
+ = 
+OS_TIMEOUT
+;
+
+377 
+OSTCBCur
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+378 
+	`OS_EXIT_CRITICAL
+();
+
+379 *
+îr
+ = 
+OS_NO_ERR
+;
+
+380 
+	}
+}
+
+399 
+INT8U
+ 
+	$OSMuãxPo°
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+401 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+402 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+404 
+INT8U
+ 
+pù
+;
+
+405 
+INT8U
+ 
+¥io
+;
+
+408 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+409  (
+OS_ERR_POST_ISR
+);
+
+411 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+412 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+413  (
+OS_ERR_PEVENT_NULL
+);
+
+415 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MUTEX
+) {
+
+416  (
+OS_ERR_EVENT_TYPE
+);
+
+419 
+	`OS_ENTER_CRITICAL
+();
+
+420 
+pù
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ >> 8);
+
+421 
+¥io
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ & 
+OS_MUTEX_KEEP_LOWER_8
+);
+
+422 i‡(
+OSTCBCur
+->
+OSTCBPrio
+ !
+pù
+ &&
+
+423 
+OSTCBCur
+->
+OSTCBPrio
+ !
+¥io
+) {
+
+424 
+	`OS_EXIT_CRITICAL
+();
+
+425  (
+OS_ERR_NOT_MUTEX_OWNER
+);
+
+427 i‡(
+OSTCBCur
+->
+OSTCBPrio
+ =
+pù
+) {
+
+430 i‡((
+OSRdyTbl
+[
+OSTCBCur
+->
+OSTCBY
+] &~OSTCBCur->
+OSTCBBôX
+) == 0) {
+
+431 
+OSRdyGΩ
+ &~
+OSTCBCur
+->
+OSTCBBôY
+;
+
+433 
+OSTCBCur
+->
+OSTCBPrio
+ = 
+¥io
+;
+
+434 
+OSTCBCur
+->
+OSTCBY
+ = 
+¥io
+ >> 3;
+
+435 
+OSTCBCur
+->
+OSTCBBôY
+ = 
+OSM≠Tbl
+[OSTCBCur->
+OSTCBY
+];
+
+436 
+OSTCBCur
+->
+OSTCBX
+ = 
+¥io
+ & 0x07;
+
+437 
+OSTCBCur
+->
+OSTCBBôX
+ = 
+OSM≠Tbl
+[OSTCBCur->
+OSTCBX
+];
+
+438 
+OSRdyGΩ
+ |
+OSTCBCur
+->
+OSTCBBôY
+;
+
+439 
+OSRdyTbl
+[
+OSTCBCur
+->
+OSTCBY
+] |OSTCBCur->
+OSTCBBôX
+;
+
+440 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)
+OSTCBCur
+;
+
+442 
+OSTCBPrioTbl
+[
+pù
+] = (
+OS_TCB
+ *)1;
+
+443 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+445 
+¥io
+ = 
+	`OS_EvítTaskRdy
+(
+≥vít
+, (*)0, 
+OS_STAT_MUTEX
+);
+
+446 
+≥vít
+->
+OSEvítC¡
+ &
+OS_MUTEX_KEEP_UPPER_8
+;
+
+447 
+≥vít
+->
+OSEvítC¡
+ |
+¥io
+;
+
+448 
+≥vít
+->
+OSEvítPå
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+449 
+	`OS_EXIT_CRITICAL
+();
+
+450 
+	`OS_Sched
+();
+
+451  (
+OS_NO_ERR
+);
+
+453 
+≥vít
+->
+OSEvítC¡
+ |
+OS_MUTEX_AVAILABLE
+;
+
+454 
+≥vít
+->
+OSEvítPå
+ = (*)0;
+
+455 
+	`OS_EXIT_CRITICAL
+();
+
+456  (
+OS_NO_ERR
+);
+
+457 
+	}
+}
+
+476 #i‡
+OS_MUTEX_QUERY_EN
+ > 0
+
+477 
+INT8U
+ 
+	$OSMuãxQuîy
+ (
+OS_EVENT
+ *
+≥vít
+, 
+OS_MUTEX_DATA
+ *
+pd©a
+)
+
+479 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+480 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+482 
+INT8U
+ *
+p§c
+;
+
+483 
+INT8U
+ *
+pde°
+;
+
+486 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+487  (
+OS_ERR_QUERY_ISR
+);
+
+489 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+490 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+491  (
+OS_ERR_PEVENT_NULL
+);
+
+493 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_MUTEX
+) {
+
+494  (
+OS_ERR_EVENT_TYPE
+);
+
+497 
+	`OS_ENTER_CRITICAL
+();
+
+498 
+pd©a
+->
+OSMuãxPIP
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ >> 8);
+
+499 
+pd©a
+->
+OSOw√rPrio
+ = (
+INT8U
+)(
+≥vít
+->
+OSEvítC¡
+ & 
+OS_MUTEX_KEEP_LOWER_8
+);
+
+500 i‡(
+pd©a
+->
+OSOw√rPrio
+ == 0xFF) {
+
+501 
+pd©a
+->
+OSVÆue
+ = 1;
+
+503 
+pd©a
+->
+OSVÆue
+ = 0;
+
+505 
+pd©a
+->
+OSEvítGΩ
+ = 
+≥vít
+->OSEventGrp;
+
+506 
+p§c
+ = &
+≥vít
+->
+OSEvítTbl
+[0];
+
+507 
+pde°
+ = &
+pd©a
+->
+OSEvítTbl
+[0];
+
+508 #i‡
+OS_EVENT_TBL_SIZE
+ > 0
+
+509 *
+pde°
+++ = *
+p§c
+++;
+
+512 #i‡
+OS_EVENT_TBL_SIZE
+ > 1
+
+513 *
+pde°
+++ = *
+p§c
+++;
+
+516 #i‡
+OS_EVENT_TBL_SIZE
+ > 2
+
+517 *
+pde°
+++ = *
+p§c
+++;
+
+520 #i‡
+OS_EVENT_TBL_SIZE
+ > 3
+
+521 *
+pde°
+++ = *
+p§c
+++;
+
+524 #i‡
+OS_EVENT_TBL_SIZE
+ > 4
+
+525 *
+pde°
+++ = *
+p§c
+++;
+
+528 #i‡
+OS_EVENT_TBL_SIZE
+ > 5
+
+529 *
+pde°
+++ = *
+p§c
+++;
+
+532 #i‡
+OS_EVENT_TBL_SIZE
+ > 6
+
+533 *
+pde°
+++ = *
+p§c
+++;
+
+536 #i‡
+OS_EVENT_TBL_SIZE
+ > 7
+
+537 *
+pde°
+ = *
+p§c
+;
+
+539 
+	`OS_EXIT_CRITICAL
+();
+
+540  (
+OS_NO_ERR
+);
+
+541 
+	}
+}
+
+	@OS_Q.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+19 #i‡(
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)
+
+38 #i‡
+OS_Q_ACCEPT_EN
+ > 0
+
+39 *
+	$OSQAc˚±
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+41 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+42 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+44 *
+msg
+;
+
+45 
+OS_Q
+ *
+pq
+;
+
+48 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+49 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+52 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+56 
+	`OS_ENTER_CRITICAL
+();
+
+57 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+58 i‡(
+pq
+->
+OSQE¡rõs
+ > 0) {
+
+59 
+msg
+ = *
+pq
+->
+OSQOut
+++;
+
+60 
+pq
+->
+OSQE¡rõs
+--;
+
+61 i‡(
+pq
+->
+OSQOut
+ =pq->
+OSQEnd
+) {
+
+62 
+pq
+->
+OSQOut
+ =Öq->
+OSQSèπ
+;
+
+65 
+msg
+ = (*)0;
+
+67 
+	`OS_EXIT_CRITICAL
+();
+
+68  (
+msg
+);
+
+69 
+	}
+}
+
+91 
+OS_EVENT
+ *
+	$OSQCª©e
+ (**
+°¨t
+, 
+INT16U
+ 
+size
+)
+
+93 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+94 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+96 
+OS_EVENT
+ *
+≥vít
+;
+
+97 
+OS_Q
+ *
+pq
+;
+
+100 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+101  ((
+OS_EVENT
+ *)0);
+
+103 
+	`OS_ENTER_CRITICAL
+();
+
+104 
+≥vít
+ = 
+OSEvítFªeLi°
+;
+
+105 i‡(
+OSEvítFªeLi°
+ !(
+OS_EVENT
+ *)0) {
+
+106 
+OSEvítFªeLi°
+ = (
+OS_EVENT
+ *)OSEvítFªeLi°->
+OSEvítPå
+;
+
+108 
+	`OS_EXIT_CRITICAL
+();
+
+109 i‡(
+≥vít
+ !(
+OS_EVENT
+ *)0) {
+
+110 
+	`OS_ENTER_CRITICAL
+();
+
+111 
+pq
+ = 
+OSQFªeLi°
+;
+
+112 i‡(
+pq
+ !(
+OS_Q
+ *)0) {
+
+113 
+OSQFªeLi°
+ = OSQFªeLi°->
+OSQPå
+;
+
+114 
+	`OS_EXIT_CRITICAL
+();
+
+115 
+pq
+->
+OSQSèπ
+ = 
+°¨t
+;
+
+116 
+pq
+->
+OSQEnd
+ = &
+°¨t
+[
+size
+];
+
+117 
+pq
+->
+OSQIn
+ = 
+°¨t
+;
+
+118 
+pq
+->
+OSQOut
+ = 
+°¨t
+;
+
+119 
+pq
+->
+OSQSize
+ = 
+size
+;
+
+120 
+pq
+->
+OSQE¡rõs
+ = 0;
+
+121 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_Q
+;
+
+122 
+≥vít
+->
+OSEvítC¡
+ = 0;
+
+123 
+≥vít
+->
+OSEvítPå
+ = 
+pq
+;
+
+124 
+	`OS_EvítWaôLi°Inô
+(
+≥vít
+);
+
+126 
+≥vít
+->
+OSEvítPå
+ = (*)
+OSEvítFªeLi°
+;
+
+127 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+128 
+	`OS_EXIT_CRITICAL
+();
+
+129 
+≥vít
+ = (
+OS_EVENT
+ *)0;
+
+132  (
+≥vít
+);
+
+133 
+	}
+}
+
+176 #i‡
+OS_Q_DEL_EN
+ > 0
+
+177 
+OS_EVENT
+ *
+	$OSQDñ
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+)
+
+179 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+180 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+182 
+BOOLEAN
+ 
+èsks_waôög
+;
+
+183 
+OS_Q
+ *
+pq
+;
+
+186 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+187 *
+îr
+ = 
+OS_ERR_DEL_ISR
+;
+
+188  ((
+OS_EVENT
+ *)0);
+
+190 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+191 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+192 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+193  (
+≥vít
+);
+
+195 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+196 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+197  (
+≥vít
+);
+
+200 
+	`OS_ENTER_CRITICAL
+();
+
+201 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+202 
+èsks_waôög
+ = 
+TRUE
+;
+
+204 
+èsks_waôög
+ = 
+FALSE
+;
+
+206 
+›t
+) {
+
+207 
+OS_DEL_NO_PEND
+:
+
+208 i‡(
+èsks_waôög
+ =
+FALSE
+) {
+
+209 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+210 
+pq
+->
+OSQPå
+ = 
+OSQFªeLi°
+;
+
+211 
+OSQFªeLi°
+ = 
+pq
+;
+
+212 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+213 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+214 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+215 
+	`OS_EXIT_CRITICAL
+();
+
+216 *
+îr
+ = 
+OS_NO_ERR
+;
+
+217  ((
+OS_EVENT
+ *)0);
+
+219 
+	`OS_EXIT_CRITICAL
+();
+
+220 *
+îr
+ = 
+OS_ERR_TASK_WAITING
+;
+
+221  (
+≥vít
+);
+
+224 
+OS_DEL_ALWAYS
+:
+
+225 
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+226 
+	`OS_EvítTaskRdy
+(
+≥vít
+, (*)0, 
+OS_STAT_Q
+);
+
+228 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+229 
+pq
+->
+OSQPå
+ = 
+OSQFªeLi°
+;
+
+230 
+OSQFªeLi°
+ = 
+pq
+;
+
+231 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+232 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+233 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+234 
+	`OS_EXIT_CRITICAL
+();
+
+235 i‡(
+èsks_waôög
+ =
+TRUE
+) {
+
+236 
+	`OS_Sched
+();
+
+238 *
+îr
+ = 
+OS_NO_ERR
+;
+
+239  ((
+OS_EVENT
+ *)0);
+
+242 
+	`OS_EXIT_CRITICAL
+();
+
+243 *
+îr
+ = 
+OS_ERR_INVALID_OPT
+;
+
+244  (
+≥vít
+);
+
+246 
+	}
+}
+
+264 #i‡
+OS_Q_FLUSH_EN
+ > 0
+
+265 
+INT8U
+ 
+	$OSQFlush
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+267 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+268 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+270 
+OS_Q
+ *
+pq
+;
+
+273 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+274 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+275  (
+OS_ERR_PEVENT_NULL
+);
+
+277 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+278  (
+OS_ERR_EVENT_TYPE
+);
+
+281 
+	`OS_ENTER_CRITICAL
+();
+
+282 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+283 
+pq
+->
+OSQIn
+ =Öq->
+OSQSèπ
+;
+
+284 
+pq
+->
+OSQOut
+ =Öq->
+OSQSèπ
+;
+
+285 
+pq
+->
+OSQE¡rõs
+ = 0;
+
+286 
+	`OS_EXIT_CRITICAL
+();
+
+287  (
+OS_NO_ERR
+);
+
+288 
+	}
+}
+
+323 *
+	$OSQPíd
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+)
+
+325 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+326 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+328 *
+msg
+;
+
+329 
+OS_Q
+ *
+pq
+;
+
+332 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+333 *
+îr
+ = 
+OS_ERR_PEND_ISR
+;
+
+336 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+337 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+338 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+341 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+342 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+346 
+	`OS_ENTER_CRITICAL
+();
+
+347 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+348 i‡(
+pq
+->
+OSQE¡rõs
+ > 0) {
+
+349 
+msg
+ = *
+pq
+->
+OSQOut
+++;
+
+350 
+pq
+->
+OSQE¡rõs
+--;
+
+351 i‡(
+pq
+->
+OSQOut
+ =pq->
+OSQEnd
+) {
+
+352 
+pq
+->
+OSQOut
+ =Öq->
+OSQSèπ
+;
+
+354 
+	`OS_EXIT_CRITICAL
+();
+
+355 *
+îr
+ = 
+OS_NO_ERR
+;
+
+356  (
+msg
+);
+
+358 
+OSTCBCur
+->
+OSTCBSèt
+ |
+OS_STAT_Q
+;
+
+359 
+OSTCBCur
+->
+OSTCBDly
+ = 
+timeout
+;
+
+360 
+	`OS_EvítTaskWaô
+(
+≥vít
+);
+
+361 
+	`OS_EXIT_CRITICAL
+();
+
+362 
+	`OS_Sched
+();
+
+363 
+	`OS_ENTER_CRITICAL
+();
+
+364 
+msg
+ = 
+OSTCBCur
+->
+OSTCBMsg
+;
+
+365 i‡(
+msg
+ != (*)0) {
+
+366 
+OSTCBCur
+->
+OSTCBMsg
+ = (*)0;
+
+367 
+OSTCBCur
+->
+OSTCBSèt
+ = 
+OS_STAT_RDY
+;
+
+368 
+OSTCBCur
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+369 
+	`OS_EXIT_CRITICAL
+();
+
+370 *
+îr
+ = 
+OS_NO_ERR
+;
+
+371  (
+msg
+);
+
+373 
+	`OS_EvítTO
+(
+≥vít
+);
+
+374 
+	`OS_EXIT_CRITICAL
+();
+
+375 *
+îr
+ = 
+OS_TIMEOUT
+;
+
+377 
+	}
+}
+
+397 #i‡
+OS_Q_POST_EN
+ > 0
+
+398 
+INT8U
+ 
+	$OSQPo°
+ (
+OS_EVENT
+ *
+≥vít
+, *
+msg
+)
+
+400 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+401 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+403 
+OS_Q
+ *
+pq
+;
+
+406 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+407 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+408  (
+OS_ERR_PEVENT_NULL
+);
+
+410 i‡(
+msg
+ == (*)0) {
+
+411  (
+OS_ERR_POST_NULL_PTR
+);
+
+413 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+414  (
+OS_ERR_EVENT_TYPE
+);
+
+417 
+	`OS_ENTER_CRITICAL
+();
+
+418 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+419 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_Q
+);
+
+420 
+	`OS_EXIT_CRITICAL
+();
+
+421 
+	`OS_Sched
+();
+
+422  (
+OS_NO_ERR
+);
+
+424 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+425 i‡(
+pq
+->
+OSQE¡rõs
+ >pq->
+OSQSize
+) {
+
+426 
+	`OS_EXIT_CRITICAL
+();
+
+427  (
+OS_Q_FULL
+);
+
+429 *
+pq
+->
+OSQIn
+++ = 
+msg
+;
+
+430 
+pq
+->
+OSQE¡rõs
+++;
+
+431 i‡(
+pq
+->
+OSQIn
+ =pq->
+OSQEnd
+) {
+
+432 
+pq
+->
+OSQIn
+ =Öq->
+OSQSèπ
+;
+
+434 
+	`OS_EXIT_CRITICAL
+();
+
+435  (
+OS_NO_ERR
+);
+
+436 
+	}
+}
+
+459 #i‡
+OS_Q_POST_FRONT_EN
+ > 0
+
+460 
+INT8U
+ 
+	$OSQPo°Fr⁄t
+ (
+OS_EVENT
+ *
+≥vít
+, *
+msg
+)
+
+462 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+463 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+465 
+OS_Q
+ *
+pq
+;
+
+468 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+469 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+470  (
+OS_ERR_PEVENT_NULL
+);
+
+472 i‡(
+msg
+ == (*)0) {
+
+473  (
+OS_ERR_POST_NULL_PTR
+);
+
+475 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+476  (
+OS_ERR_EVENT_TYPE
+);
+
+479 
+	`OS_ENTER_CRITICAL
+();
+
+480 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+481 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_Q
+);
+
+482 
+	`OS_EXIT_CRITICAL
+();
+
+483 
+	`OS_Sched
+();
+
+484  (
+OS_NO_ERR
+);
+
+486 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+487 i‡(
+pq
+->
+OSQE¡rõs
+ >pq->
+OSQSize
+) {
+
+488 
+	`OS_EXIT_CRITICAL
+();
+
+489  (
+OS_Q_FULL
+);
+
+491 i‡(
+pq
+->
+OSQOut
+ =pq->
+OSQSèπ
+) {
+
+492 
+pq
+->
+OSQOut
+ =Öq->
+OSQEnd
+;
+
+494 
+pq
+->
+OSQOut
+--;
+
+495 *
+pq
+->
+OSQOut
+ = 
+msg
+;
+
+496 
+pq
+->
+OSQE¡rõs
+++;
+
+497 
+	`OS_EXIT_CRITICAL
+();
+
+498  (
+OS_NO_ERR
+);
+
+499 
+	}
+}
+
+545 #i‡
+OS_Q_POST_OPT_EN
+ > 0
+
+546 
+INT8U
+ 
+	$OSQPo°O±
+ (
+OS_EVENT
+ *
+≥vít
+, *
+msg
+, 
+INT8U
+ 
+›t
+)
+
+548 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+549 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+551 
+OS_Q
+ *
+pq
+;
+
+554 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+555 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+556  (
+OS_ERR_PEVENT_NULL
+);
+
+558 i‡(
+msg
+ == (*)0) {
+
+559  (
+OS_ERR_POST_NULL_PTR
+);
+
+561 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+562  (
+OS_ERR_EVENT_TYPE
+);
+
+565 
+	`OS_ENTER_CRITICAL
+();
+
+566 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+567 i‡((
+›t
+ & 
+OS_POST_OPT_BROADCAST
+) != 0x00) {
+
+568 
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+569 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_Q
+);
+
+572 
+	`OS_EvítTaskRdy
+(
+≥vít
+, 
+msg
+, 
+OS_STAT_Q
+);
+
+574 
+	`OS_EXIT_CRITICAL
+();
+
+575 
+	`OS_Sched
+();
+
+576  (
+OS_NO_ERR
+);
+
+578 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+579 i‡(
+pq
+->
+OSQE¡rõs
+ >pq->
+OSQSize
+) {
+
+580 
+	`OS_EXIT_CRITICAL
+();
+
+581  (
+OS_Q_FULL
+);
+
+583 i‡((
+›t
+ & 
+OS_POST_OPT_FRONT
+) != 0x00) {
+
+584 i‡(
+pq
+->
+OSQOut
+ =pq->
+OSQSèπ
+) {
+
+585 
+pq
+->
+OSQOut
+ =Öq->
+OSQEnd
+;
+
+587 
+pq
+->
+OSQOut
+--;
+
+588 *
+pq
+->
+OSQOut
+ = 
+msg
+;
+
+590 *
+pq
+->
+OSQIn
+++ = 
+msg
+;
+
+591 i‡(
+pq
+->
+OSQIn
+ =pq->
+OSQEnd
+) {
+
+592 
+pq
+->
+OSQIn
+ =Öq->
+OSQSèπ
+;
+
+595 
+pq
+->
+OSQE¡rõs
+++;
+
+596 
+	`OS_EXIT_CRITICAL
+();
+
+597  (
+OS_NO_ERR
+);
+
+598 
+	}
+}
+
+618 #i‡
+OS_Q_QUERY_EN
+ > 0
+
+619 
+INT8U
+ 
+	$OSQQuîy
+ (
+OS_EVENT
+ *
+≥vít
+, 
+OS_Q_DATA
+ *
+pd©a
+)
+
+621 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+622 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+624 
+OS_Q
+ *
+pq
+;
+
+625 
+INT8U
+ *
+p§c
+;
+
+626 
+INT8U
+ *
+pde°
+;
+
+629 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+630 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+631  (
+OS_ERR_PEVENT_NULL
+);
+
+633 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_Q
+) {
+
+634  (
+OS_ERR_EVENT_TYPE
+);
+
+637 
+	`OS_ENTER_CRITICAL
+();
+
+638 
+pd©a
+->
+OSEvítGΩ
+ = 
+≥vít
+->OSEventGrp;
+
+639 
+p§c
+ = &
+≥vít
+->
+OSEvítTbl
+[0];
+
+640 
+pde°
+ = &
+pd©a
+->
+OSEvítTbl
+[0];
+
+641 #i‡
+OS_EVENT_TBL_SIZE
+ > 0
+
+642 *
+pde°
+++ = *
+p§c
+++;
+
+645 #i‡
+OS_EVENT_TBL_SIZE
+ > 1
+
+646 *
+pde°
+++ = *
+p§c
+++;
+
+649 #i‡
+OS_EVENT_TBL_SIZE
+ > 2
+
+650 *
+pde°
+++ = *
+p§c
+++;
+
+653 #i‡
+OS_EVENT_TBL_SIZE
+ > 3
+
+654 *
+pde°
+++ = *
+p§c
+++;
+
+657 #i‡
+OS_EVENT_TBL_SIZE
+ > 4
+
+658 *
+pde°
+++ = *
+p§c
+++;
+
+661 #i‡
+OS_EVENT_TBL_SIZE
+ > 5
+
+662 *
+pde°
+++ = *
+p§c
+++;
+
+665 #i‡
+OS_EVENT_TBL_SIZE
+ > 6
+
+666 *
+pde°
+++ = *
+p§c
+++;
+
+669 #i‡
+OS_EVENT_TBL_SIZE
+ > 7
+
+670 *
+pde°
+ = *
+p§c
+;
+
+672 
+pq
+ = (
+OS_Q
+ *)
+≥vít
+->
+OSEvítPå
+;
+
+673 i‡(
+pq
+->
+OSQE¡rõs
+ > 0) {
+
+674 
+pd©a
+->
+OSMsg
+ = *
+pq
+->
+OSQOut
+;
+
+676 
+pd©a
+->
+OSMsg
+ = (*)0;
+
+678 
+pd©a
+->
+OSNMsgs
+ = 
+pq
+->
+OSQE¡rõs
+;
+
+679 
+pd©a
+->
+OSQSize
+ = 
+pq
+->OSQSize;
+
+680 
+	`OS_EXIT_CRITICAL
+();
+
+681  (
+OS_NO_ERR
+);
+
+682 
+	}
+}
+
+701 
+	$OS_QInô
+ ()
+
+703 #i‡
+OS_MAX_QS
+ == 1
+
+704 
+OSQFªeLi°
+ = &
+OSQTbl
+[0];
+
+705 
+OSQFªeLi°
+->
+OSQPå
+ = (
+OS_Q
+ *)0;
+
+708 #i‡
+OS_MAX_QS
+ >= 2
+
+709 
+INT16U
+ 
+i
+;
+
+710 
+OS_Q
+ *
+pq1
+;
+
+711 
+OS_Q
+ *
+pq2
+;
+
+714 
+pq1
+ = &
+OSQTbl
+[0];
+
+715 
+pq2
+ = &
+OSQTbl
+[1];
+
+716 
+i
+ = 0; i < (
+OS_MAX_QS
+ - 1); i++) {
+
+717 
+pq1
+->
+OSQPå
+ = 
+pq2
+;
+
+718 
+pq1
+++;
+
+719 
+pq2
+++;
+
+721 
+pq1
+->
+OSQPå
+ = (
+OS_Q
+ *)0;
+
+722 
+OSQFªeLi°
+ = &
+OSQTbl
+[0];
+
+724 
+	}
+}
+
+	@OS_SEM.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+19 #i‡
+OS_SEM_EN
+ > 0
+
+38 #i‡
+OS_SEM_ACCEPT_EN
+ > 0
+
+39 
+INT16U
+ 
+	$OSSemAc˚±
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+41 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+42 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+44 
+INT16U
+ 
+˙t
+;
+
+47 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+48 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+51 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_SEM
+) {
+
+55 
+	`OS_ENTER_CRITICAL
+();
+
+56 
+˙t
+ = 
+≥vít
+->
+OSEvítC¡
+;
+
+57 i‡(
+˙t
+ > 0) {
+
+58 
+≥vít
+->
+OSEvítC¡
+--;
+
+60 
+	`OS_EXIT_CRITICAL
+();
+
+61  (
+˙t
+);
+
+62 
+	}
+}
+
+83 
+OS_EVENT
+ *
+	$OSSemCª©e
+ (
+INT16U
+ 
+˙t
+)
+
+85 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+86 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+88 
+OS_EVENT
+ *
+≥vít
+;
+
+91 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+92  ((
+OS_EVENT
+ *)0);
+
+94 
+	`OS_ENTER_CRITICAL
+();
+
+95 
+≥vít
+ = 
+OSEvítFªeLi°
+;
+
+96 i‡(
+OSEvítFªeLi°
+ !(
+OS_EVENT
+ *)0) {
+
+97 
+OSEvítFªeLi°
+ = (
+OS_EVENT
+ *)OSEvítFªeLi°->
+OSEvítPå
+;
+
+99 
+	`OS_EXIT_CRITICAL
+();
+
+100 i‡(
+≥vít
+ !(
+OS_EVENT
+ *)0) {
+
+101 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_SEM
+;
+
+102 
+≥vít
+->
+OSEvítC¡
+ = 
+˙t
+;
+
+103 
+≥vít
+->
+OSEvítPå
+ = (*)0;
+
+104 
+	`OS_EvítWaôLi°Inô
+(
+≥vít
+);
+
+106  (
+≥vít
+);
+
+107 
+	}
+}
+
+147 #i‡
+OS_SEM_DEL_EN
+ > 0
+
+148 
+OS_EVENT
+ *
+	$OSSemDñ
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+)
+
+150 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+151 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+153 
+BOOLEAN
+ 
+èsks_waôög
+;
+
+156 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+157 *
+îr
+ = 
+OS_ERR_DEL_ISR
+;
+
+158  (
+≥vít
+);
+
+160 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+161 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+162 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+163  (
+≥vít
+);
+
+165 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_SEM
+) {
+
+166 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+167  (
+≥vít
+);
+
+170 
+	`OS_ENTER_CRITICAL
+();
+
+171 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+172 
+èsks_waôög
+ = 
+TRUE
+;
+
+174 
+èsks_waôög
+ = 
+FALSE
+;
+
+176 
+›t
+) {
+
+177 
+OS_DEL_NO_PEND
+:
+
+178 i‡(
+èsks_waôög
+ =
+FALSE
+) {
+
+179 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+180 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+181 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+182 
+	`OS_EXIT_CRITICAL
+();
+
+183 *
+îr
+ = 
+OS_NO_ERR
+;
+
+184  ((
+OS_EVENT
+ *)0);
+
+186 
+	`OS_EXIT_CRITICAL
+();
+
+187 *
+îr
+ = 
+OS_ERR_TASK_WAITING
+;
+
+188  (
+≥vít
+);
+
+191 
+OS_DEL_ALWAYS
+:
+
+192 
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+193 
+	`OS_EvítTaskRdy
+(
+≥vít
+, (*)0, 
+OS_STAT_SEM
+);
+
+195 
+≥vít
+->
+OSEvítTy≥
+ = 
+OS_EVENT_TYPE_UNUSED
+;
+
+196 
+≥vít
+->
+OSEvítPå
+ = 
+OSEvítFªeLi°
+;
+
+197 
+OSEvítFªeLi°
+ = 
+≥vít
+;
+
+198 
+	`OS_EXIT_CRITICAL
+();
+
+199 i‡(
+èsks_waôög
+ =
+TRUE
+) {
+
+200 
+	`OS_Sched
+();
+
+202 *
+îr
+ = 
+OS_NO_ERR
+;
+
+203  ((
+OS_EVENT
+ *)0);
+
+206 
+	`OS_EXIT_CRITICAL
+();
+
+207 *
+îr
+ = 
+OS_ERR_INVALID_OPT
+;
+
+208  (
+≥vít
+);
+
+210 
+	}
+}
+
+244 
+	$OSSemPíd
+ (
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+)
+
+246 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+247 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+251 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+252 *
+îr
+ = 
+OS_ERR_PEND_ISR
+;
+
+255 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+256 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+257 *
+îr
+ = 
+OS_ERR_PEVENT_NULL
+;
+
+260 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_SEM
+) {
+
+261 *
+îr
+ = 
+OS_ERR_EVENT_TYPE
+;
+
+265 
+	`OS_ENTER_CRITICAL
+();
+
+266 i‡(
+≥vít
+->
+OSEvítC¡
+ > 0) {
+
+267 
+≥vít
+->
+OSEvítC¡
+--;
+
+268 
+	`OS_EXIT_CRITICAL
+();
+
+269 *
+îr
+ = 
+OS_NO_ERR
+;
+
+273 
+OSTCBCur
+->
+OSTCBSèt
+ |
+OS_STAT_SEM
+;
+
+274 
+OSTCBCur
+->
+OSTCBDly
+ = 
+timeout
+;
+
+275 
+	`OS_EvítTaskWaô
+(
+≥vít
+);
+
+276 
+	`OS_EXIT_CRITICAL
+();
+
+277 
+	`OS_Sched
+();
+
+278 
+	`OS_ENTER_CRITICAL
+();
+
+279 i‡(
+OSTCBCur
+->
+OSTCBSèt
+ & 
+OS_STAT_SEM
+) {
+
+280 
+	`OS_EvítTO
+(
+≥vít
+);
+
+281 
+	`OS_EXIT_CRITICAL
+();
+
+282 *
+îr
+ = 
+OS_TIMEOUT
+;
+
+285 
+OSTCBCur
+->
+OSTCBEvítPå
+ = (
+OS_EVENT
+ *)0;
+
+286 
+	`OS_EXIT_CRITICAL
+();
+
+287 *
+îr
+ = 
+OS_NO_ERR
+;
+
+288 
+	}
+}
+
+308 
+INT8U
+ 
+	$OSSemPo°
+ (
+OS_EVENT
+ *
+≥vít
+)
+
+310 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+311 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+315 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+316 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+317  (
+OS_ERR_PEVENT_NULL
+);
+
+319 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_SEM
+) {
+
+320  (
+OS_ERR_EVENT_TYPE
+);
+
+323 
+	`OS_ENTER_CRITICAL
+();
+
+324 i‡(
+≥vít
+->
+OSEvítGΩ
+ != 0x00) {
+
+325 
+	`OS_EvítTaskRdy
+(
+≥vít
+, (*)0, 
+OS_STAT_SEM
+);
+
+326 
+	`OS_EXIT_CRITICAL
+();
+
+327 
+	`OS_Sched
+();
+
+328  (
+OS_NO_ERR
+);
+
+330 i‡(
+≥vít
+->
+OSEvítC¡
+ < 65535) {
+
+331 
+≥vít
+->
+OSEvítC¡
+++;
+
+332 
+	`OS_EXIT_CRITICAL
+();
+
+333  (
+OS_NO_ERR
+);
+
+335 
+	`OS_EXIT_CRITICAL
+();
+
+336  (
+OS_SEM_OVF
+);
+
+337 
+	}
+}
+
+357 #i‡
+OS_SEM_QUERY_EN
+ > 0
+
+358 
+INT8U
+ 
+	$OSSemQuîy
+ (
+OS_EVENT
+ *
+≥vít
+, 
+OS_SEM_DATA
+ *
+pd©a
+)
+
+360 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+361 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+363 
+INT8U
+ *
+p§c
+;
+
+364 
+INT8U
+ *
+pde°
+;
+
+367 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+368 i‡(
+≥vít
+ =(
+OS_EVENT
+ *)0) {
+
+369  (
+OS_ERR_PEVENT_NULL
+);
+
+371 i‡(
+≥vít
+->
+OSEvítTy≥
+ !
+OS_EVENT_TYPE_SEM
+) {
+
+372  (
+OS_ERR_EVENT_TYPE
+);
+
+375 
+	`OS_ENTER_CRITICAL
+();
+
+376 
+pd©a
+->
+OSEvítGΩ
+ = 
+≥vít
+->OSEventGrp;
+
+377 
+p§c
+ = &
+≥vít
+->
+OSEvítTbl
+[0];
+
+378 
+pde°
+ = &
+pd©a
+->
+OSEvítTbl
+[0];
+
+379 #i‡
+OS_EVENT_TBL_SIZE
+ > 0
+
+380 *
+pde°
+++ = *
+p§c
+++;
+
+383 #i‡
+OS_EVENT_TBL_SIZE
+ > 1
+
+384 *
+pde°
+++ = *
+p§c
+++;
+
+387 #i‡
+OS_EVENT_TBL_SIZE
+ > 2
+
+388 *
+pde°
+++ = *
+p§c
+++;
+
+391 #i‡
+OS_EVENT_TBL_SIZE
+ > 3
+
+392 *
+pde°
+++ = *
+p§c
+++;
+
+395 #i‡
+OS_EVENT_TBL_SIZE
+ > 4
+
+396 *
+pde°
+++ = *
+p§c
+++;
+
+399 #i‡
+OS_EVENT_TBL_SIZE
+ > 5
+
+400 *
+pde°
+++ = *
+p§c
+++;
+
+403 #i‡
+OS_EVENT_TBL_SIZE
+ > 6
+
+404 *
+pde°
+++ = *
+p§c
+++;
+
+407 #i‡
+OS_EVENT_TBL_SIZE
+ > 7
+
+408 *
+pde°
+ = *
+p§c
+;
+
+410 
+pd©a
+->
+OSC¡
+ = 
+≥vít
+->
+OSEvítC¡
+;
+
+411 
+	`OS_EXIT_CRITICAL
+();
+
+412  (
+OS_NO_ERR
+);
+
+413 
+	}
+}
+
+	@OS_TASK.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+39 #i‡
+OS_TASK_CHANGE_PRIO_EN
+ > 0
+
+40 
+INT8U
+ 
+	$OSTaskCh™gePrio
+ (
+INT8U
+ 
+ﬁd¥io
+, INT8U 
+√w¥io
+)
+
+42 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+43 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+46 #i‡
+OS_EVENT_EN
+ > 0
+
+47 
+OS_EVENT
+ *
+≥vít
+;
+
+50 
+OS_TCB
+ *
+±cb
+;
+
+51 
+INT8U
+ 
+x
+;
+
+52 
+INT8U
+ 
+y
+;
+
+53 
+INT8U
+ 
+bôx
+;
+
+54 
+INT8U
+ 
+bôy
+;
+
+58 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+59 i‡((
+ﬁd¥io
+ >
+OS_LOWEST_PRIO
+ && old¥iÿ!
+OS_PRIO_SELF
+) ||
+
+60 
+√w¥io
+ >
+OS_LOWEST_PRIO
+) {
+
+61  (
+OS_PRIO_INVALID
+);
+
+64 
+	`OS_ENTER_CRITICAL
+();
+
+65 i‡(
+OSTCBPrioTbl
+[
+√w¥io
+] !(
+OS_TCB
+ *)0) {
+
+66 
+	`OS_EXIT_CRITICAL
+();
+
+67  (
+OS_PRIO_EXIST
+);
+
+69 
+OSTCBPrioTbl
+[
+√w¥io
+] = (
+OS_TCB
+ *)1;
+
+70 
+	`OS_EXIT_CRITICAL
+();
+
+71 
+y
+ = 
+√w¥io
+ >> 3;
+
+72 
+bôy
+ = 
+OSM≠Tbl
+[
+y
+];
+
+73 
+x
+ = 
+√w¥io
+ & 0x07;
+
+74 
+bôx
+ = 
+OSM≠Tbl
+[
+x
+];
+
+75 
+	`OS_ENTER_CRITICAL
+();
+
+76 i‡(
+ﬁd¥io
+ =
+OS_PRIO_SELF
+) {
+
+77 
+ﬁd¥io
+ = 
+OSTCBCur
+->
+OSTCBPrio
+;
+
+79 
+±cb
+ = 
+OSTCBPrioTbl
+[
+ﬁd¥io
+];
+
+80 i‡(
+±cb
+ !(
+OS_TCB
+ *)0) {
+
+81 
+OSTCBPrioTbl
+[
+ﬁd¥io
+] = (
+OS_TCB
+ *)0;
+
+82 i‡((
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] &Ötcb->
+OSTCBBôX
+) != 0x00) {
+
+83 i‡((
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] &~±cb->
+OSTCBBôX
+) == 0x00) {
+
+84 
+OSRdyGΩ
+ &~
+±cb
+->
+OSTCBBôY
+;
+
+86 
+OSRdyGΩ
+ |
+bôy
+;
+
+87 
+OSRdyTbl
+[
+y
+] |
+bôx
+;
+
+88 #i‡
+OS_EVENT_EN
+ > 0
+
+90 
+≥vít
+ = 
+±cb
+->
+OSTCBEvítPå
+;
+
+91 i‡(
+≥vít
+ !(
+OS_EVENT
+ *)0) {
+
+92 i‡((
+≥vít
+->
+OSEvítTbl
+[
+±cb
+->
+OSTCBY
+] &~±cb->
+OSTCBBôX
+) == 0) {
+
+93 
+≥vít
+->
+OSEvítGΩ
+ &~
+±cb
+->
+OSTCBBôY
+;
+
+95 
+≥vít
+->
+OSEvítGΩ
+ |
+bôy
+;
+
+96 
+≥vít
+->
+OSEvítTbl
+[
+y
+] |
+bôx
+;
+
+100 
+OSTCBPrioTbl
+[
+√w¥io
+] = 
+±cb
+;
+
+101 
+±cb
+->
+OSTCBPrio
+ = 
+√w¥io
+;
+
+102 
+±cb
+->
+OSTCBY
+ = 
+y
+;
+
+103 
+±cb
+->
+OSTCBX
+ = 
+x
+;
+
+104 
+±cb
+->
+OSTCBBôY
+ = 
+bôy
+;
+
+105 
+±cb
+->
+OSTCBBôX
+ = 
+bôx
+;
+
+106 
+	`OS_EXIT_CRITICAL
+();
+
+107 
+	`OS_Sched
+();
+
+108  (
+OS_NO_ERR
+);
+
+110 
+OSTCBPrioTbl
+[
+√w¥io
+] = (
+OS_TCB
+ *)0;
+
+111 
+	`OS_EXIT_CRITICAL
+();
+
+112  (
+OS_PRIO_ERR
+);
+
+115 
+	}
+}
+
+157 #i‡
+OS_TASK_CREATE_EN
+ > 0
+
+158 
+INT8U
+ 
+OSTaskCª©e
+ ((*
+èsk
+)(*
+pd
+), *
+pd©a
+, 
+OS_STK
+ *
+±os
+, INT8U 
+¥io
+)
+
+160 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+161 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+163 
+OS_STK
+ *
+p•
+;
+
+164 
+INT8U
+ 
+îr
+;
+
+167 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+168 i‡(
+¥io
+ > 
+OS_LOWEST_PRIO
+) {
+
+169  (
+OS_PRIO_INVALID
+);
+
+172 
+	`OS_ENTER_CRITICAL
+();
+
+173 i‡(
+OSTCBPrioTbl
+[
+¥io
+] =(
+OS_TCB
+ *)0) {
+
+174 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)1;
+
+176 
+	`OS_EXIT_CRITICAL
+();
+
+177 
+p•
+ = (
+OS_STK
+ *)
+	`OSTaskStkInô
+(
+èsk
+, 
+pd©a
+, 
+±os
+, 0);
+
+178 
+îr
+ = 
+	`OS_TCBInô
+(
+¥io
+, 
+p•
+, (
+OS_STK
+ *)0, 0, 0, (*)0, 0);
+
+179 i‡(
+îr
+ =
+OS_NO_ERR
+) {
+
+180 
+	`OS_ENTER_CRITICAL
+();
+
+181 
+OSTaskCå
+++;
+
+182 
+	`OS_EXIT_CRITICAL
+();
+
+183 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+184 
+	`OS_Sched
+();
+
+187 
+	`OS_ENTER_CRITICAL
+();
+
+188 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)0;
+
+189 
+	`OS_EXIT_CRITICAL
+();
+
+191  (
+îr
+);
+
+193 
+	`OS_EXIT_CRITICAL
+();
+
+194  (
+OS_PRIO_EXIST
+);
+
+195 
+	}
+}
+
+262 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+263 
+INT8U
+ 
+OSTaskCª©eExt
+ ((*
+èsk
+)(*
+pd
+),
+
+264 *
+pd©a
+,
+
+265 
+OS_STK
+ *
+±os
+,
+
+266 
+INT8U
+ 
+¥io
+,
+
+267 
+INT16U
+ 
+id
+,
+
+268 
+OS_STK
+ *
+pbos
+,
+
+269 
+INT32U
+ 
+°k_size
+,
+
+270 *
+≥xt
+,
+
+271 
+INT16U
+ 
+›t
+)
+
+273 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+274 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+276 
+OS_STK
+ *
+p•
+;
+
+277 
+INT8U
+ 
+îr
+;
+
+280 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+281 i‡(
+¥io
+ > 
+OS_LOWEST_PRIO
+) {
+
+282  (
+OS_PRIO_INVALID
+);
+
+285 
+	`OS_ENTER_CRITICAL
+();
+
+286 i‡(
+OSTCBPrioTbl
+[
+¥io
+] =(
+OS_TCB
+ *)0) {
+
+287 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)1;
+
+289 
+	`OS_EXIT_CRITICAL
+();
+
+291 i‡(((
+›t
+ & 
+OS_TASK_OPT_STK_CHK
+) != 0x0000) ||
+
+292 ((
+›t
+ & 
+OS_TASK_OPT_STK_CLR
+) != 0x0000)) {
+
+293 #i‡
+OS_STK_GROWTH
+ == 1
+
+294 ()
+	`mem£t
+(
+pbos
+, 0, 
+°k_size
+ * (
+OS_STK
+));
+
+296 ()
+	`mem£t
+(
+±os
+, 0, 
+°k_size
+ * (
+OS_STK
+));
+
+300 
+p•
+ = (
+OS_STK
+ *)
+	`OSTaskStkInô
+(
+èsk
+, 
+pd©a
+, 
+±os
+, 
+›t
+);
+
+301 
+îr
+ = 
+	`OS_TCBInô
+(
+¥io
+, 
+p•
+, 
+pbos
+, 
+id
+, 
+°k_size
+, 
+≥xt
+, 
+›t
+);
+
+302 i‡(
+îr
+ =
+OS_NO_ERR
+) {
+
+303 
+	`OS_ENTER_CRITICAL
+();
+
+304 
+OSTaskCå
+++;
+
+305 
+	`OS_EXIT_CRITICAL
+();
+
+306 i‡(
+OSRu¬ög
+ =
+TRUE
+) {
+
+307 
+	`OS_Sched
+();
+
+310 
+	`OS_ENTER_CRITICAL
+();
+
+311 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)0;
+
+312 
+	`OS_EXIT_CRITICAL
+();
+
+314  (
+îr
+);
+
+316 
+	`OS_EXIT_CRITICAL
+();
+
+317  (
+OS_PRIO_EXIST
+);
+
+318 
+	}
+}
+
+356 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+357 
+INT8U
+ 
+	$OSTaskDñ
+ (
+INT8U
+ 
+¥io
+)
+
+359 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+360 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+363 #i‡
+OS_EVENT_EN
+ > 0
+
+364 
+OS_EVENT
+ *
+≥vít
+;
+
+366 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+367 
+OS_FLAG_NODE
+ *
+≤ode
+;
+
+369 
+OS_TCB
+ *
+±cb
+;
+
+370 
+BOOLEAN
+ 
+£lf
+;
+
+374 i‡(
+OSI¡Ne°ög
+ > 0) {
+
+375  (
+OS_TASK_DEL_ISR
+);
+
+377 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+378 i‡(
+¥io
+ =
+OS_IDLE_PRIO
+) {
+
+379  (
+OS_TASK_DEL_IDLE
+);
+
+381 i‡(
+¥io
+ >
+OS_LOWEST_PRIO
+ &&Öriÿ!
+OS_PRIO_SELF
+) {
+
+382  (
+OS_PRIO_INVALID
+);
+
+385 
+	`OS_ENTER_CRITICAL
+();
+
+386 i‡(
+¥io
+ =
+OS_PRIO_SELF
+) {
+
+387 
+¥io
+ = 
+OSTCBCur
+->
+OSTCBPrio
+;
+
+389 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+390 i‡(
+±cb
+ !(
+OS_TCB
+ *)0) {
+
+391 i‡((
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] &~±cb->
+OSTCBBôX
+) == 0x00) {
+
+392 
+OSRdyGΩ
+ &~
+±cb
+->
+OSTCBBôY
+;
+
+394 #i‡
+OS_EVENT_EN
+ > 0
+
+395 
+≥vít
+ = 
+±cb
+->
+OSTCBEvítPå
+;
+
+396 i‡(
+≥vít
+ !(
+OS_EVENT
+ *)0) {
+
+397 i‡((
+≥vít
+->
+OSEvítTbl
+[
+±cb
+->
+OSTCBY
+] &~±cb->
+OSTCBBôX
+) == 0) {
+
+398 
+≥vít
+->
+OSEvítGΩ
+ &~
+±cb
+->
+OSTCBBôY
+;
+
+402 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+403 
+≤ode
+ = 
+±cb
+->
+OSTCBFœgNode
+;
+
+404 i‡(
+≤ode
+ !(
+OS_FLAG_NODE
+ *)0) {
+
+405 
+	`OS_FœgU∆ök
+(
+≤ode
+);
+
+408 
+±cb
+->
+OSTCBDly
+ = 0;
+
+409 
+±cb
+->
+OSTCBSèt
+ = 
+OS_STAT_RDY
+;
+
+410 i‡(
+OSLockNe°ög
+ < 255) {
+
+411 
+OSLockNe°ög
+++;
+
+413 
+	`OS_EXIT_CRITICAL
+();
+
+414 
+	`OS_Dummy
+();
+
+415 
+	`OS_ENTER_CRITICAL
+();
+
+416 i‡(
+OSLockNe°ög
+ > 0) {
+
+417 
+OSLockNe°ög
+--;
+
+419 
+	`OSTaskDñHook
+(
+±cb
+);
+
+420 
+OSTaskCå
+--;
+
+421 
+OSTCBPrioTbl
+[
+¥io
+] = (
+OS_TCB
+ *)0;
+
+422 i‡(
+±cb
+->
+OSTCBPªv
+ =(
+OS_TCB
+ *)0) {
+
+423 
+±cb
+->
+OSTCBNext
+->
+OSTCBPªv
+ = (
+OS_TCB
+ *)0;
+
+424 
+OSTCBLi°
+ = 
+±cb
+->
+OSTCBNext
+;
+
+426 
+±cb
+->
+OSTCBPªv
+->
+OSTCBNext
+ =Ötcb->OSTCBNext;
+
+427 
+±cb
+->
+OSTCBNext
+->
+OSTCBPªv
+ =Ötcb->OSTCBPrev;
+
+429 
+±cb
+->
+OSTCBNext
+ = 
+OSTCBFªeLi°
+;
+
+430 
+OSTCBFªeLi°
+ = 
+±cb
+;
+
+431 
+	`OS_EXIT_CRITICAL
+();
+
+432 
+	`OS_Sched
+();
+
+433  (
+OS_NO_ERR
+);
+
+435 
+	`OS_EXIT_CRITICAL
+();
+
+436  (
+OS_TASK_DEL_ERR
+);
+
+437 
+	}
+}
+
+485 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+486 
+INT8U
+ 
+	$OSTaskDñReq
+ (
+INT8U
+ 
+¥io
+)
+
+488 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+489 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+491 
+BOOLEAN
+ 
+°©
+;
+
+492 
+INT8U
+ 
+îr
+;
+
+493 
+OS_TCB
+ *
+±cb
+;
+
+496 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+497 i‡(
+¥io
+ =
+OS_IDLE_PRIO
+) {
+
+498  (
+OS_TASK_DEL_IDLE
+);
+
+500 i‡(
+¥io
+ >
+OS_LOWEST_PRIO
+ &&Öriÿ!
+OS_PRIO_SELF
+) {
+
+501  (
+OS_PRIO_INVALID
+);
+
+504 i‡(
+¥io
+ =
+OS_PRIO_SELF
+) {
+
+505 
+	`OS_ENTER_CRITICAL
+();
+
+506 
+°©
+ = 
+OSTCBCur
+->
+OSTCBDñReq
+;
+
+507 
+	`OS_EXIT_CRITICAL
+();
+
+508  (
+°©
+);
+
+510 
+	`OS_ENTER_CRITICAL
+();
+
+511 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+512 i‡(
+±cb
+ !(
+OS_TCB
+ *)0) {
+
+513 
+±cb
+->
+OSTCBDñReq
+ = 
+OS_TASK_DEL_REQ
+;
+
+514 
+îr
+ = 
+OS_NO_ERR
+;
+
+516 
+îr
+ = 
+OS_TASK_NOT_EXIST
+;
+
+518 
+	`OS_EXIT_CRITICAL
+();
+
+519  (
+îr
+);
+
+520 
+	}
+}
+
+540 #i‡
+OS_TASK_SUSPEND_EN
+ > 0
+
+541 
+INT8U
+ 
+	$OSTaskResume
+ (
+INT8U
+ 
+¥io
+)
+
+543 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+544 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+546 
+OS_TCB
+ *
+±cb
+;
+
+549 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+550 i‡(
+¥io
+ >
+OS_LOWEST_PRIO
+) {
+
+551  (
+OS_PRIO_INVALID
+);
+
+554 
+	`OS_ENTER_CRITICAL
+();
+
+555 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+556 i‡(
+±cb
+ =(
+OS_TCB
+ *)0) {
+
+557 
+	`OS_EXIT_CRITICAL
+();
+
+558  (
+OS_TASK_RESUME_PRIO
+);
+
+560 i‡((
+±cb
+->
+OSTCBSèt
+ & 
+OS_STAT_SUSPEND
+Ë!
+OS_STAT_RDY
+) {
+
+561 i‡(((
+±cb
+->
+OSTCBSèt
+ &~
+OS_STAT_SUSPEND
+Ë=
+OS_STAT_RDY
+) &&
+
+562 (
+±cb
+->
+OSTCBDly
+ == 0)) {
+
+563 
+OSRdyGΩ
+ |
+±cb
+->
+OSTCBBôY
+;
+
+564 
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] |±cb->
+OSTCBBôX
+;
+
+565 
+	`OS_EXIT_CRITICAL
+();
+
+566 
+	`OS_Sched
+();
+
+568 
+	`OS_EXIT_CRITICAL
+();
+
+570  (
+OS_NO_ERR
+);
+
+572 
+	`OS_EXIT_CRITICAL
+();
+
+573  (
+OS_TASK_NOT_SUSPENDED
+);
+
+574 
+	}
+}
+
+595 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+596 
+INT8U
+ 
+	$OSTaskStkChk
+ (
+INT8U
+ 
+¥io
+, 
+OS_STK_DATA
+ *
+pd©a
+)
+
+598 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+599 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+601 
+OS_TCB
+ *
+±cb
+;
+
+602 
+OS_STK
+ *
+pchk
+;
+
+603 
+INT32U
+ 
+‰ì
+;
+
+604 
+INT32U
+ 
+size
+;
+
+607 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+608 i‡(
+¥io
+ > 
+OS_LOWEST_PRIO
+ &&Öriÿ!
+OS_PRIO_SELF
+) {
+
+609  (
+OS_PRIO_INVALID
+);
+
+612 
+pd©a
+->
+OSFªe
+ = 0;
+
+613 
+pd©a
+->
+OSU£d
+ = 0;
+
+614 
+	`OS_ENTER_CRITICAL
+();
+
+615 i‡(
+¥io
+ =
+OS_PRIO_SELF
+) {
+
+616 
+¥io
+ = 
+OSTCBCur
+->
+OSTCBPrio
+;
+
+618 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+619 i‡(
+±cb
+ =(
+OS_TCB
+ *)0) {
+
+620 
+	`OS_EXIT_CRITICAL
+();
+
+621  (
+OS_TASK_NOT_EXIST
+);
+
+623 i‡((
+±cb
+->
+OSTCBO±
+ & 
+OS_TASK_OPT_STK_CHK
+) == 0) {
+
+624 
+	`OS_EXIT_CRITICAL
+();
+
+625  (
+OS_TASK_OPT_ERR
+);
+
+627 
+‰ì
+ = 0;
+
+628 
+size
+ = 
+±cb
+->
+OSTCBStkSize
+;
+
+629 
+pchk
+ = 
+±cb
+->
+OSTCBStkBŸtom
+;
+
+630 
+	`OS_EXIT_CRITICAL
+();
+
+631 #i‡
+OS_STK_GROWTH
+ == 1
+
+632 *
+pchk
+++ =(
+OS_STK
+)0) {
+
+633 
+‰ì
+++;
+
+636 *
+pchk
+-- =(
+OS_STK
+)0) {
+
+637 
+‰ì
+++;
+
+640 
+pd©a
+->
+OSFªe
+ = 
+‰ì
+ * (
+OS_STK
+);
+
+641 
+pd©a
+->
+OSU£d
+ = (
+size
+ - 
+‰ì
+Ë* (
+OS_STK
+);
+
+642  (
+OS_NO_ERR
+);
+
+643 
+	}
+}
+
+668 #i‡
+OS_TASK_SUSPEND_EN
+ > 0
+
+669 
+INT8U
+ 
+	$OSTaskSu•íd
+ (
+INT8U
+ 
+¥io
+)
+
+671 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+672 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+674 
+BOOLEAN
+ 
+£lf
+;
+
+675 
+OS_TCB
+ *
+±cb
+;
+
+678 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+679 i‡(
+¥io
+ =
+OS_IDLE_PRIO
+) {
+
+680  (
+OS_TASK_SUSPEND_IDLE
+);
+
+682 i‡(
+¥io
+ >
+OS_LOWEST_PRIO
+ &&Öriÿ!
+OS_PRIO_SELF
+) {
+
+683  (
+OS_PRIO_INVALID
+);
+
+686 
+	`OS_ENTER_CRITICAL
+();
+
+687 i‡(
+¥io
+ =
+OS_PRIO_SELF
+) {
+
+688 
+¥io
+ = 
+OSTCBCur
+->
+OSTCBPrio
+;
+
+689 
+£lf
+ = 
+TRUE
+;
+
+690 } i‡(
+¥io
+ =
+OSTCBCur
+->
+OSTCBPrio
+) {
+
+691 
+£lf
+ = 
+TRUE
+;
+
+693 
+£lf
+ = 
+FALSE
+;
+
+695 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+696 i‡(
+±cb
+ =(
+OS_TCB
+ *)0) {
+
+697 
+	`OS_EXIT_CRITICAL
+();
+
+698  (
+OS_TASK_SUSPEND_PRIO
+);
+
+700 i‡((
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] &~±cb->
+OSTCBBôX
+) == 0x00) {
+
+701 
+OSRdyGΩ
+ &~
+±cb
+->
+OSTCBBôY
+;
+
+703 
+±cb
+->
+OSTCBSèt
+ |
+OS_STAT_SUSPEND
+;
+
+704 
+	`OS_EXIT_CRITICAL
+();
+
+705 i‡(
+£lf
+ =
+TRUE
+) {
+
+706 
+	`OS_Sched
+();
+
+708  (
+OS_NO_ERR
+);
+
+709 
+	}
+}
+
+727 #i‡
+OS_TASK_QUERY_EN
+ > 0
+
+728 
+INT8U
+ 
+	$OSTaskQuîy
+ (
+INT8U
+ 
+¥io
+, 
+OS_TCB
+ *
+pd©a
+)
+
+730 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+731 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+733 
+OS_TCB
+ *
+±cb
+;
+
+736 #i‡
+OS_ARG_CHK_EN
+ > 0
+
+737 i‡(
+¥io
+ > 
+OS_LOWEST_PRIO
+ &&Öriÿ!
+OS_PRIO_SELF
+) {
+
+738  (
+OS_PRIO_INVALID
+);
+
+741 
+	`OS_ENTER_CRITICAL
+();
+
+742 i‡(
+¥io
+ =
+OS_PRIO_SELF
+) {
+
+743 
+¥io
+ = 
+OSTCBCur
+->
+OSTCBPrio
+;
+
+745 
+±cb
+ = 
+OSTCBPrioTbl
+[
+¥io
+];
+
+746 i‡(
+±cb
+ =(
+OS_TCB
+ *)0) {
+
+747 
+	`OS_EXIT_CRITICAL
+();
+
+748  (
+OS_PRIO_ERR
+);
+
+750 
+	`mem˝y
+(
+pd©a
+, 
+±cb
+, (
+OS_TCB
+));
+
+751 
+	`OS_EXIT_CRITICAL
+();
+
+752  (
+OS_NO_ERR
+);
+
+753 
+	}
+}
+
+	@OS_TIME.C
+
+15 #i‚de‡ 
+OS_MASTER_FILE
+
+
+16 
+	~"ö˛udes.h
+"
+
+35 
+	$OSTimeDly
+ (
+INT16U
+ 
+ticks
+)
+
+37 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+38 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+42 i‡(
+ticks
+ > 0) {
+
+43 
+	`OS_ENTER_CRITICAL
+();
+
+44 i‡((
+OSRdyTbl
+[
+OSTCBCur
+->
+OSTCBY
+] &~OSTCBCur->
+OSTCBBôX
+) == 0) {
+
+45 
+OSRdyGΩ
+ &~
+OSTCBCur
+->
+OSTCBBôY
+;
+
+47 
+OSTCBCur
+->
+OSTCBDly
+ = 
+ticks
+;
+
+48 
+	`OS_EXIT_CRITICAL
+();
+
+49 
+	`OS_Sched
+();
+
+51 
+	}
+}
+
+78 #i‡
+OS_TIME_DLY_HMSM_EN
+ > 0
+
+79 
+INT8U
+ 
+	$OSTimeDlyHMSM
+ (
+INT8U
+ 
+hours
+, INT8U 
+möuãs
+, INT8U 
+£c⁄ds
+, 
+INT16U
+ 
+mûli
+)
+
+81 
+INT32U
+ 
+ticks
+;
+
+82 
+INT16U
+ 
+lo›s
+;
+
+85 i‡(
+hours
+ > 0 || 
+möuãs
+ > 0 || 
+£c⁄ds
+ > 0 || 
+mûli
+ > 0) {
+
+86 i‡(
+möuãs
+ > 59) {
+
+87  (
+OS_TIME_INVALID_MINUTES
+);
+
+89 i‡(
+£c⁄ds
+ > 59) {
+
+90  (
+OS_TIME_INVALID_SECONDS
+);
+
+92 i‡(
+mûli
+ > 999) {
+
+93  (
+OS_TIME_INVALID_MILLI
+);
+
+97 
+ticks
+ = ((
+INT32U
+)
+hours
+ * 3600L + (INT32U)
+möuãs
+ * 60L + (INT32U)
+£c⁄ds
+Ë* 
+OS_TICKS_PER_SEC
+
+
+98 + 
+OS_TICKS_PER_SEC
+ * ((
+INT32U
+)
+mûli
+ + 500L / OS_TICKS_PER_SEC) / 1000L;
+
+99 
+lo›s
+ = (
+INT16U
+)(
+ticks
+ / 65536L);
+
+100 
+ticks
+ =Åicks % 65536L;
+
+101 
+	`OSTimeDly
+((
+INT16U
+)
+ticks
+);
+
+102 
+lo›s
+ > 0) {
+
+103 
+	`OSTimeDly
+(32768);
+
+104 
+	`OSTimeDly
+(32768);
+
+105 
+lo›s
+--;
+
+107  (
+OS_NO_ERR
+);
+
+109  (
+OS_TIME_ZERO_DLY
+);
+
+110 
+	}
+}
+
+137 #i‡
+OS_TIME_DLY_RESUME_EN
+ > 0
+
+138 
+INT8U
+ 
+	$OSTimeDlyResume
+ (
+INT8U
+ 
+¥io
+)
+
+140 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+141 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+143 
+OS_TCB
+ *
+±cb
+;
+
+146 i‡(
+¥io
+ >
+OS_LOWEST_PRIO
+) {
+
+147  (
+OS_PRIO_INVALID
+);
+
+149 
+	`OS_ENTER_CRITICAL
+();
+
+150 
+±cb
+ = (
+OS_TCB
+ *)
+OSTCBPrioTbl
+[
+¥io
+];
+
+151 i‡(
+±cb
+ !(
+OS_TCB
+ *)0) {
+
+152 i‡(
+±cb
+->
+OSTCBDly
+ != 0) {
+
+153 
+±cb
+->
+OSTCBDly
+ = 0;
+
+154 i‡((
+±cb
+->
+OSTCBSèt
+ & 
+OS_STAT_SUSPEND
+Ë=
+OS_STAT_RDY
+) {
+
+155 
+OSRdyGΩ
+ |
+±cb
+->
+OSTCBBôY
+;
+
+156 
+OSRdyTbl
+[
+±cb
+->
+OSTCBY
+] |±cb->
+OSTCBBôX
+;
+
+157 
+	`OS_EXIT_CRITICAL
+();
+
+158 
+	`OS_Sched
+();
+
+160 
+	`OS_EXIT_CRITICAL
+();
+
+162  (
+OS_NO_ERR
+);
+
+164 
+	`OS_EXIT_CRITICAL
+();
+
+165  (
+OS_TIME_NOT_DLY
+);
+
+168 
+	`OS_EXIT_CRITICAL
+();
+
+169  (
+OS_TASK_NOT_EXIST
+);
+
+170 
+	}
+}
+
+186 #i‡
+OS_TIME_GET_SET_EN
+ > 0
+
+187 
+INT32U
+ 
+	$OSTimeGë
+ ()
+
+189 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+190 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+192 
+INT32U
+ 
+ticks
+;
+
+195 
+	`OS_ENTER_CRITICAL
+();
+
+196 
+ticks
+ = 
+OSTime
+;
+
+197 
+	`OS_EXIT_CRITICAL
+();
+
+198  (
+ticks
+);
+
+199 
+	}
+}
+
+214 #i‡
+OS_TIME_GET_SET_EN
+ > 0
+
+215 
+	$OSTimeSë
+ (
+INT32U
+ 
+ticks
+)
+
+217 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+218 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+222 
+	`OS_ENTER_CRITICAL
+();
+
+223 
+OSTime
+ = 
+ticks
+;
+
+224 
+	`OS_EXIT_CRITICAL
+();
+
+225 
+	}
+}
+
+	@uCOS_II.C
+
+14 
+	#OS_GLOBALS
+
+
+	)
+
+15 
+	~"ö˛udes.h
+"
+
+18 
+	#OS_MASTER_FILE
+
+
+	)
+
+19 
+	~"\so·w¨e\ucos-ii\sour˚\os_c‹e.c
+"
+
+20 
+	~"\so·w¨e\ucos-ii\sour˚\os_Êag.c
+"
+
+21 
+	~"\so·w¨e\ucos-ii\sour˚\os_mbox.c
+"
+
+22 
+	~"\so·w¨e\ucos-ii\sour˚\os_mem.c
+"
+
+23 
+	~"\so·w¨e\ucos-ii\sour˚\os_muãx.c
+"
+
+24 
+	~"\so·w¨e\ucos-ii\sour˚\os_q.c
+"
+
+25 
+	~"\so·w¨e\ucos-ii\sour˚\os_£m.c
+"
+
+26 
+	~"\so·w¨e\ucos-ii\sour˚\os_èsk.c
+"
+
+27 
+	~"\so·w¨e\ucos-ii\sour˚\os_time.c
+"
+
+	@uCOS_II.H
+
+20 
+	#OS_VERSION
+ 252
+
+	)
+
+22 #ifde‡ 
+OS_GLOBALS
+
+
+23 
+	#OS_EXT
+
+
+	)
+
+25 
+	#OS_EXT
+ 
+
+	)
+
+28 #i‚de‡ 
+FALSE
+
+
+29 
+	#FALSE
+ 0
+
+	)
+
+32 #i‚de‡ 
+TRUE
+
+
+33 
+	#TRUE
+ 1
+
+	)
+
+36 
+	#OS_PRIO_SELF
+ 0xFF
+
+	)
+
+38 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+39 
+	#OS_N_SYS_TASKS
+ 2
+
+	)
+
+41 
+	#OS_N_SYS_TASKS
+ 1
+
+	)
+
+44 
+	#OS_STAT_PRIO
+ (
+OS_LOWEST_PRIO
+ - 1Ë
+
+	)
+
+45 
+	#OS_IDLE_PRIO
+ (
+OS_LOWEST_PRIO
+Ë
+
+	)
+
+47 
+	#OS_EVENT_TBL_SIZE
+ ((
+OS_LOWEST_PRIO
+Ë/ 8 + 1Ë
+
+	)
+
+48 
+	#OS_RDY_TBL_SIZE
+ ((
+OS_LOWEST_PRIO
+Ë/ 8 + 1Ë
+
+	)
+
+50 
+	#OS_TASK_IDLE_ID
+ 65535
+
+	)
+
+51 
+	#OS_TASK_STAT_ID
+ 65534
+
+	)
+
+53 
+	#OS_EVENT_EN
+ (((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)Ë|| (
+OS_MBOX_EN
+ > 0Ë|| (
+OS_SEM_EN
+ > 0Ë|| (
+OS_MUTEX_EN
+ > 0))
+
+	)
+
+61 
+	#OS_STAT_RDY
+ 0x00
+
+	)
+
+62 
+	#OS_STAT_SEM
+ 0x01
+
+	)
+
+63 
+	#OS_STAT_MBOX
+ 0x02
+
+	)
+
+64 
+	#OS_STAT_Q
+ 0x04
+
+	)
+
+65 
+	#OS_STAT_SUSPEND
+ 0x08
+
+	)
+
+66 
+	#OS_STAT_MUTEX
+ 0x10
+
+	)
+
+67 
+	#OS_STAT_FLAG
+ 0x20
+
+	)
+
+74 
+	#OS_EVENT_TYPE_UNUSED
+ 0
+
+	)
+
+75 
+	#OS_EVENT_TYPE_MBOX
+ 1
+
+	)
+
+76 
+	#OS_EVENT_TYPE_Q
+ 2
+
+	)
+
+77 
+	#OS_EVENT_TYPE_SEM
+ 3
+
+	)
+
+78 
+	#OS_EVENT_TYPE_MUTEX
+ 4
+
+	)
+
+79 
+	#OS_EVENT_TYPE_FLAG
+ 5
+
+	)
+
+86 
+	#OS_FLAG_WAIT_CLR_ALL
+ 0
+
+	)
+
+87 
+	#OS_FLAG_WAIT_CLR_AND
+ 0
+
+	)
+
+89 
+	#OS_FLAG_WAIT_CLR_ANY
+ 1
+
+	)
+
+90 
+	#OS_FLAG_WAIT_CLR_OR
+ 1
+
+	)
+
+92 
+	#OS_FLAG_WAIT_SET_ALL
+ 2
+
+	)
+
+93 
+	#OS_FLAG_WAIT_SET_AND
+ 2
+
+	)
+
+95 
+	#OS_FLAG_WAIT_SET_ANY
+ 3
+
+	)
+
+96 
+	#OS_FLAG_WAIT_SET_OR
+ 3
+
+	)
+
+99 
+	#OS_FLAG_CONSUME
+ 0x80
+
+	)
+
+102 
+	#OS_FLAG_CLR
+ 0
+
+	)
+
+103 
+	#OS_FLAG_SET
+ 1
+
+	)
+
+110 
+	#OS_DEL_NO_PEND
+ 0
+
+	)
+
+111 
+	#OS_DEL_ALWAYS
+ 1
+
+	)
+
+120 
+	#OS_POST_OPT_NONE
+ 0x00
+
+	)
+
+121 
+	#OS_POST_OPT_BROADCAST
+ 0x01
+
+	)
+
+122 
+	#OS_POST_OPT_FRONT
+ 0x02
+
+	)
+
+129 
+	#OS_TASK_OPT_STK_CHK
+ 0x0001
+
+	)
+
+130 
+	#OS_TASK_OPT_STK_CLR
+ 0x0002
+
+	)
+
+131 
+	#OS_TASK_OPT_SAVE_FP
+ 0x0004
+
+	)
+
+138 
+	#OS_NO_ERR
+ 0
+
+	)
+
+140 
+	#OS_ERR_EVENT_TYPE
+ 1
+
+	)
+
+141 
+	#OS_ERR_PEND_ISR
+ 2
+
+	)
+
+142 
+	#OS_ERR_POST_NULL_PTR
+ 3
+
+	)
+
+143 
+	#OS_ERR_PEVENT_NULL
+ 4
+
+	)
+
+144 
+	#OS_ERR_POST_ISR
+ 5
+
+	)
+
+145 
+	#OS_ERR_QUERY_ISR
+ 6
+
+	)
+
+146 
+	#OS_ERR_INVALID_OPT
+ 7
+
+	)
+
+147 
+	#OS_ERR_TASK_WAITING
+ 8
+
+	)
+
+149 
+	#OS_TIMEOUT
+ 10
+
+	)
+
+150 
+	#OS_TASK_NOT_EXIST
+ 11
+
+	)
+
+152 
+	#OS_MBOX_FULL
+ 20
+
+	)
+
+154 
+	#OS_Q_FULL
+ 30
+
+	)
+
+156 
+	#OS_PRIO_EXIST
+ 40
+
+	)
+
+157 
+	#OS_PRIO_ERR
+ 41
+
+	)
+
+158 
+	#OS_PRIO_INVALID
+ 42
+
+	)
+
+160 
+	#OS_SEM_OVF
+ 50
+
+	)
+
+162 
+	#OS_TASK_DEL_ERR
+ 60
+
+	)
+
+163 
+	#OS_TASK_DEL_IDLE
+ 61
+
+	)
+
+164 
+	#OS_TASK_DEL_REQ
+ 62
+
+	)
+
+165 
+	#OS_TASK_DEL_ISR
+ 63
+
+	)
+
+167 
+	#OS_NO_MORE_TCB
+ 70
+
+	)
+
+169 
+	#OS_TIME_NOT_DLY
+ 80
+
+	)
+
+170 
+	#OS_TIME_INVALID_MINUTES
+ 81
+
+	)
+
+171 
+	#OS_TIME_INVALID_SECONDS
+ 82
+
+	)
+
+172 
+	#OS_TIME_INVALID_MILLI
+ 83
+
+	)
+
+173 
+	#OS_TIME_ZERO_DLY
+ 84
+
+	)
+
+175 
+	#OS_TASK_SUSPEND_PRIO
+ 90
+
+	)
+
+176 
+	#OS_TASK_SUSPEND_IDLE
+ 91
+
+	)
+
+178 
+	#OS_TASK_RESUME_PRIO
+ 100
+
+	)
+
+179 
+	#OS_TASK_NOT_SUSPENDED
+ 101
+
+	)
+
+181 
+	#OS_MEM_INVALID_PART
+ 110
+
+	)
+
+182 
+	#OS_MEM_INVALID_BLKS
+ 111
+
+	)
+
+183 
+	#OS_MEM_INVALID_SIZE
+ 112
+
+	)
+
+184 
+	#OS_MEM_NO_FREE_BLKS
+ 113
+
+	)
+
+185 
+	#OS_MEM_FULL
+ 114
+
+	)
+
+186 
+	#OS_MEM_INVALID_PBLK
+ 115
+
+	)
+
+187 
+	#OS_MEM_INVALID_PMEM
+ 116
+
+	)
+
+188 
+	#OS_MEM_INVALID_PDATA
+ 117
+
+	)
+
+189 
+	#OS_MEM_INVALID_ADDR
+ 118
+
+	)
+
+191 
+	#OS_ERR_NOT_MUTEX_OWNER
+ 120
+
+	)
+
+193 
+	#OS_TASK_OPT_ERR
+ 130
+
+	)
+
+195 
+	#OS_ERR_DEL_ISR
+ 140
+
+	)
+
+196 
+	#OS_ERR_CREATE_ISR
+ 141
+
+	)
+
+198 
+	#OS_FLAG_INVALID_PGRP
+ 150
+
+	)
+
+199 
+	#OS_FLAG_ERR_WAIT_TYPE
+ 151
+
+	)
+
+200 
+	#OS_FLAG_ERR_NOT_RDY
+ 152
+
+	)
+
+201 
+	#OS_FLAG_INVALID_OPT
+ 153
+
+	)
+
+202 
+	#OS_FLAG_GRP_DEPLETED
+ 154
+
+	)
+
+211 #i‡(
+OS_EVENT_EN
+ > 0Ë&& (
+OS_MAX_EVENTS
+ > 0)
+
+213 
+INT8U
+ 
+OSEvítTy≥
+;
+
+214 
+INT8U
+ 
+OSEvítGΩ
+;
+
+215 
+INT16U
+ 
+OSEvítC¡
+;
+
+216 *
+OSEvítPå
+;
+
+217 
+INT8U
+ 
+OSEvítTbl
+[
+OS_EVENT_TBL_SIZE
+];
+
+218 } 
+	tOS_EVENT
+;
+
+228 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+230 
+INT8U
+ 
+	mOSFœgTy≥
+;
+
+231 *
+	mOSFœgWaôLi°
+;
+
+232 
+OS_FLAGS
+ 
+	mOSFœgFœgs
+;
+
+233 } 
+	tOS_FLAG_GRP
+;
+
+238 *
+	mOSFœgNodeNext
+;
+
+239 *
+	mOSFœgNodePªv
+;
+
+240 *
+	mOSFœgNodeTCB
+;
+
+241 *
+	mOSFœgNodeFœgGΩ
+;
+
+242 
+OS_FLAGS
+ 
+	mOSFœgNodeFœgs
+;
+
+243 
+INT8U
+ 
+	mOSFœgNodeWaôTy≥
+;
+
+248 } 
+	tOS_FLAG_NODE
+;
+
+258 #i‡
+OS_MBOX_EN
+ > 0
+
+260 *
+	mOSMsg
+;
+
+261 
+INT8U
+ 
+	mOSEvítTbl
+[
+OS_EVENT_TBL_SIZE
+];
+
+262 
+INT8U
+ 
+	mOSEvítGΩ
+;
+
+263 } 
+	tOS_MBOX_DATA
+;
+
+272 #i‡(
+OS_MEM_EN
+ > 0Ë&& (
+OS_MAX_MEM_PART
+ > 0)
+
+274 *
+	mOSMemAddr
+;
+
+275 *
+	mOSMemFªeLi°
+;
+
+276 
+INT32U
+ 
+	mOSMemBlkSize
+;
+
+277 
+INT32U
+ 
+	mOSMemNBlks
+;
+
+278 
+INT32U
+ 
+	mOSMemNFªe
+;
+
+279 } 
+	tOS_MEM
+;
+
+283 *
+	mOSAddr
+;
+
+284 *
+	mOSFªeLi°
+;
+
+285 
+INT32U
+ 
+	mOSBlkSize
+;
+
+286 
+INT32U
+ 
+	mOSNBlks
+;
+
+287 
+INT32U
+ 
+	mOSNFªe
+;
+
+288 
+INT32U
+ 
+	mOSNU£d
+;
+
+289 } 
+	tOS_MEM_DATA
+;
+
+299 #i‡
+OS_MUTEX_EN
+ > 0
+
+301 
+INT8U
+ 
+	mOSEvítTbl
+[
+OS_EVENT_TBL_SIZE
+];
+
+302 
+INT8U
+ 
+	mOSEvítGΩ
+;
+
+303 
+INT8U
+ 
+	mOSVÆue
+;
+
+304 
+INT8U
+ 
+	mOSOw√rPrio
+;
+
+305 
+INT8U
+ 
+	mOSMuãxPIP
+;
+
+306 } 
+	tOS_MUTEX_DATA
+;
+
+315 #i‡
+OS_Q_EN
+ > 0
+
+316 
+	sos_q
+ {
+
+317 
+os_q
+ *
+	mOSQPå
+;
+
+318 **
+	mOSQSèπ
+;
+
+319 **
+	mOSQEnd
+;
+
+320 **
+	mOSQIn
+;
+
+321 **
+	mOSQOut
+;
+
+322 
+INT16U
+ 
+	mOSQSize
+;
+
+323 
+INT16U
+ 
+	mOSQE¡rõs
+;
+
+324 } 
+	tOS_Q
+;
+
+328 *
+	mOSMsg
+;
+
+329 
+INT16U
+ 
+	mOSNMsgs
+;
+
+330 
+INT16U
+ 
+	mOSQSize
+;
+
+331 
+INT8U
+ 
+	mOSEvítTbl
+[
+OS_EVENT_TBL_SIZE
+];
+
+332 
+INT8U
+ 
+	mOSEvítGΩ
+;
+
+333 } 
+	tOS_Q_DATA
+;
+
+342 #i‡
+OS_SEM_EN
+ > 0
+
+344 
+INT16U
+ 
+	mOSC¡
+;
+
+345 
+INT8U
+ 
+	mOSEvítTbl
+[
+OS_EVENT_TBL_SIZE
+];
+
+346 
+INT8U
+ 
+	mOSEvítGΩ
+;
+
+347 } 
+	tOS_SEM_DATA
+;
+
+356 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+358 
+INT32U
+ 
+	mOSFªe
+;
+
+359 
+INT32U
+ 
+	mOSU£d
+;
+
+360 } 
+	tOS_STK_DATA
+;
+
+370 
+	sos_tcb
+ {
+
+371 
+OS_STK
+ *
+	mOSTCBStkPå
+;
+
+373 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+374 *
+	mOSTCBExtPå
+;
+
+375 
+OS_STK
+ *
+	mOSTCBStkBŸtom
+;
+
+376 
+INT32U
+ 
+	mOSTCBStkSize
+;
+
+377 
+INT16U
+ 
+	mOSTCBO±
+;
+
+378 
+INT16U
+ 
+	mOSTCBId
+;
+
+381 
+os_tcb
+ *
+	mOSTCBNext
+;
+
+382 
+os_tcb
+ *
+	mOSTCBPªv
+;
+
+384 #i‡((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)Ë|| (
+OS_MBOX_EN
+ > 0Ë|| (
+OS_SEM_EN
+ > 0Ë|| (
+OS_MUTEX_EN
+ > 0)
+
+385 
+OS_EVENT
+ *
+	mOSTCBEvítPå
+;
+
+388 #i‡((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)Ë|| (
+OS_MBOX_EN
+ > 0)
+
+389 *
+	mOSTCBMsg
+;
+
+392 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+393 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+394 
+OS_FLAG_NODE
+ *
+	mOSTCBFœgNode
+;
+
+396 
+OS_FLAGS
+ 
+	mOSTCBFœgsRdy
+;
+
+399 
+INT16U
+ 
+	mOSTCBDly
+;
+
+400 
+INT8U
+ 
+	mOSTCBSèt
+;
+
+401 
+INT8U
+ 
+	mOSTCBPrio
+;
+
+403 
+INT8U
+ 
+	mOSTCBX
+;
+
+404 
+INT8U
+ 
+	mOSTCBY
+;
+
+405 
+INT8U
+ 
+	mOSTCBBôX
+;
+
+406 
+INT8U
+ 
+	mOSTCBBôY
+;
+
+408 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+409 
+BOOLEAN
+ 
+	mOSTCBDñReq
+;
+
+411 } 
+	tOS_TCB
+;
+
+420 
+OS_EXT
+ 
+INT32U
+ 
+	gOSCtxSwCå
+;
+
+422 #i‡(
+OS_EVENT_EN
+ > 0Ë&& (
+OS_MAX_EVENTS
+ > 0)
+
+423 
+OS_EXT
+ 
+OS_EVENT
+ *
+	gOSEvítFªeLi°
+;
+
+424 
+OS_EXT
+ 
+OS_EVENT
+ 
+	gOSEvítTbl
+[
+OS_MAX_EVENTS
+];
+
+427 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+428 
+OS_EXT
+ 
+OS_FLAG_GRP
+ 
+	gOSFœgTbl
+[
+OS_MAX_FLAGS
+];
+
+429 
+OS_EXT
+ 
+OS_FLAG_GRP
+ *
+	gOSFœgFªeLi°
+;
+
+432 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+433 
+OS_EXT
+ 
+INT8S
+ 
+	gOSCPUUßge
+;
+
+434 
+OS_EXT
+ 
+INT32U
+ 
+	gOSIdÀCåMax
+;
+
+435 
+OS_EXT
+ 
+INT32U
+ 
+	gOSIdÀCåRun
+;
+
+436 
+OS_EXT
+ 
+BOOLEAN
+ 
+	gOSSètRdy
+;
+
+437 
+OS_EXT
+ 
+OS_STK
+ 
+	gOSTaskSètStk
+[
+OS_TASK_STAT_STK_SIZE
+];
+
+440 
+OS_EXT
+ 
+INT8U
+ 
+	gOSI¡Ne°ög
+;
+
+441 
+OS_EXT
+ 
+INT8U
+ 
+	gOSI¡ExôY
+;
+
+443 
+OS_EXT
+ 
+INT8U
+ 
+	gOSLockNe°ög
+;
+
+445 
+OS_EXT
+ 
+INT8U
+ 
+	gOSPrioCur
+;
+
+446 
+OS_EXT
+ 
+INT8U
+ 
+	gOSPrioHighRdy
+;
+
+448 
+OS_EXT
+ 
+INT8U
+ 
+	gOSRdyGΩ
+;
+
+449 
+OS_EXT
+ 
+INT8U
+ 
+	gOSRdyTbl
+[
+OS_RDY_TBL_SIZE
+];
+
+451 
+OS_EXT
+ 
+BOOLEAN
+ 
+	gOSRu¬ög
+;
+
+453 
+OS_EXT
+ 
+INT8U
+ 
+	gOSTaskCå
+;
+
+455 
+OS_EXT
+ vﬁ©ûê
+INT32U
+ 
+	gOSIdÀCå
+;
+
+457 
+OS_EXT
+ 
+OS_STK
+ 
+	gOSTaskIdÀStk
+[
+OS_TASK_IDLE_STK_SIZE
+];
+
+460 
+OS_EXT
+ 
+OS_TCB
+ *
+	gOSTCBCur
+;
+
+461 
+OS_EXT
+ 
+OS_TCB
+ *
+	gOSTCBFªeLi°
+;
+
+462 
+OS_EXT
+ 
+OS_TCB
+ *
+	gOSTCBHighRdy
+;
+
+463 
+OS_EXT
+ 
+OS_TCB
+ *
+	gOSTCBLi°
+;
+
+464 
+OS_EXT
+ 
+OS_TCB
+ *
+	gOSTCBPrioTbl
+[
+OS_LOWEST_PRIO
+ + 1];
+
+465 
+OS_EXT
+ 
+OS_TCB
+ 
+	gOSTCBTbl
+[
+OS_MAX_TASKS
+ + 
+OS_N_SYS_TASKS
+];
+
+467 #i‡(
+OS_MEM_EN
+ > 0Ë&& (
+OS_MAX_MEM_PART
+ > 0)
+
+468 
+OS_EXT
+ 
+OS_MEM
+ *
+	gOSMemFªeLi°
+;
+
+469 
+OS_EXT
+ 
+OS_MEM
+ 
+	gOSMemTbl
+[
+OS_MAX_MEM_PART
+];
+
+472 #i‡(
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)
+
+473 
+OS_EXT
+ 
+OS_Q
+ *
+	gOSQFªeLi°
+;
+
+474 
+OS_EXT
+ 
+OS_Q
+ 
+	gOSQTbl
+[
+OS_MAX_QS
+];
+
+477 #i‡
+OS_TIME_GET_SET_EN
+ > 0
+
+478 
+OS_EXT
+ vﬁ©ûê
+INT32U
+ 
+	gOSTime
+;
+
+481 
+INT8U
+ c⁄° 
+OSM≠Tbl
+[];
+
+482 
+INT8U
+ c⁄° 
+OSUnM≠Tbl
+[];
+
+498 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+500 #i‡
+OS_FLAG_ACCEPT_EN
+ > 0
+
+501 
+OS_FLAGS
+ 
+OSFœgAc˚±
+(
+OS_FLAG_GRP
+ *
+pgΩ
+, OS_FLAGS 
+Êags
+, 
+INT8U
+ 
+waô_ty≥
+, INT8U *
+îr
+);
+
+504 
+OS_FLAG_GRP
+ *
+OSFœgCª©e
+(
+OS_FLAGS
+ 
+Êags
+, 
+INT8U
+ *
+îr
+);
+
+506 #i‡
+OS_FLAG_DEL_EN
+ > 0
+
+507 
+OS_FLAG_GRP
+ *
+OSFœgDñ
+(OS_FLAG_GRP *
+pgΩ
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+);
+
+510 
+OS_FLAGS
+ 
+OSFœgPíd
+(
+OS_FLAG_GRP
+ *
+pgΩ
+, OS_FLAGS 
+Êags
+, 
+INT8U
+ 
+waô_ty≥
+, 
+INT16U
+ 
+timeout
+, INT8U *
+îr
+);
+
+511 
+OS_FLAGS
+ 
+OSFœgPo°
+(
+OS_FLAG_GRP
+ *
+pgΩ
+, OS_FLAGS 
+Êags
+, 
+INT8U
+ 
+›î©i⁄
+, INT8U *
+îr
+);
+
+513 #i‡
+OS_FLAG_QUERY_EN
+ > 0
+
+514 
+OS_FLAGS
+ 
+OSFœgQuîy
+(
+OS_FLAG_GRP
+ *
+pgΩ
+, 
+INT8U
+ *
+îr
+);
+
+524 #i‡
+OS_MBOX_EN
+ > 0
+
+526 #i‡
+OS_MBOX_ACCEPT_EN
+ > 0
+
+527 *
+OSMboxAc˚±
+(
+OS_EVENT
+ *
+≥vít
+);
+
+530 
+OS_EVENT
+ *
+OSMboxCª©e
+(*
+msg
+);
+
+532 #i‡
+OS_MBOX_DEL_EN
+ > 0
+
+533 
+OS_EVENT
+ *
+OSMboxDñ
+(OS_EVENT *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+);
+
+536 *
+OSMboxPíd
+(
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+);
+
+538 #i‡
+OS_MBOX_POST_EN
+ > 0
+
+539 
+INT8U
+ 
+OSMboxPo°
+(
+OS_EVENT
+ *
+≥vít
+, *
+msg
+);
+
+542 #i‡
+OS_MBOX_POST_OPT_EN
+ > 0
+
+543 
+INT8U
+ 
+OSMboxPo°O±
+(
+OS_EVENT
+ *
+≥vít
+, *
+msg
+, INT8U 
+›t
+);
+
+546 #i‡
+OS_MBOX_QUERY_EN
+ > 0
+
+547 
+INT8U
+ 
+OSMboxQuîy
+(
+OS_EVENT
+ *
+≥vít
+, 
+OS_MBOX_DATA
+ *
+pd©a
+);
+
+557 #i‡(
+OS_MEM_EN
+ > 0Ë&& (
+OS_MAX_MEM_PART
+ > 0)
+
+559 
+OS_MEM
+ *
+OSMemCª©e
+(*
+addr
+, 
+INT32U
+ 
+nblks
+, INT32U 
+blksize
+, 
+INT8U
+ *
+îr
+);
+
+560 *
+OSMemGë
+(
+OS_MEM
+ *
+pmem
+, 
+INT8U
+ *
+îr
+);
+
+561 
+INT8U
+ 
+OSMemPut
+(
+OS_MEM
+ *
+pmem
+, *
+pblk
+);
+
+563 #i‡
+OS_MEM_QUERY_EN
+ > 0
+
+564 
+INT8U
+ 
+OSMemQuîy
+(
+OS_MEM
+ *
+pmem
+, 
+OS_MEM_DATA
+ *
+pd©a
+);
+
+575 #i‡
+OS_MUTEX_EN
+ > 0
+
+577 #i‡
+OS_MUTEX_ACCEPT_EN
+ > 0
+
+578 
+INT8U
+ 
+OSMuãxAc˚±
+(
+OS_EVENT
+ *
+≥vít
+, INT8U *
+îr
+);
+
+581 
+OS_EVENT
+ *
+OSMuãxCª©e
+(
+INT8U
+ 
+¥io
+, INT8U *
+îr
+);
+
+583 #i‡
+OS_MUTEX_DEL_EN
+ > 0
+
+584 
+OS_EVENT
+ *
+OSMuãxDñ
+(OS_EVENT *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+);
+
+587 
+OSMuãxPíd
+(
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+);
+
+588 
+INT8U
+ 
+OSMuãxPo°
+(
+OS_EVENT
+ *
+≥vít
+);
+
+590 #i‡
+OS_MUTEX_QUERY_EN
+ > 0
+
+591 
+INT8U
+ 
+OSMuãxQuîy
+(
+OS_EVENT
+ *
+≥vít
+, 
+OS_MUTEX_DATA
+ *
+pd©a
+);
+
+603 #i‡(
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)
+
+605 #i‡
+OS_Q_ACCEPT_EN
+ > 0
+
+606 *
+OSQAc˚±
+(
+OS_EVENT
+ *
+≥vít
+);
+
+609 
+OS_EVENT
+ *
+OSQCª©e
+(**
+°¨t
+, 
+INT16U
+ 
+size
+);
+
+611 #i‡
+OS_Q_DEL_EN
+ > 0
+
+612 
+OS_EVENT
+ *
+OSQDñ
+(OS_EVENT *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+);
+
+615 #i‡
+OS_Q_FLUSH_EN
+ > 0
+
+616 
+INT8U
+ 
+OSQFlush
+(
+OS_EVENT
+ *
+≥vít
+);
+
+619 *
+OSQPíd
+(
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+);
+
+621 #i‡
+OS_Q_POST_EN
+ > 0
+
+622 
+INT8U
+ 
+OSQPo°
+(
+OS_EVENT
+ *
+≥vít
+, *
+msg
+);
+
+625 #i‡
+OS_Q_POST_FRONT_EN
+ > 0
+
+626 
+INT8U
+ 
+OSQPo°Fr⁄t
+(
+OS_EVENT
+ *
+≥vít
+, *
+msg
+);
+
+629 #i‡
+OS_Q_POST_OPT_EN
+ > 0
+
+630 
+INT8U
+ 
+OSQPo°O±
+(
+OS_EVENT
+ *
+≥vít
+, *
+msg
+, INT8U 
+›t
+);
+
+633 #i‡
+OS_Q_QUERY_EN
+ > 0
+
+634 
+INT8U
+ 
+OSQQuîy
+(
+OS_EVENT
+ *
+≥vít
+, 
+OS_Q_DATA
+ *
+pd©a
+);
+
+645 #i‡
+OS_SEM_EN
+ > 0
+
+647 #i‡
+OS_SEM_ACCEPT_EN
+ > 0
+
+648 
+INT16U
+ 
+OSSemAc˚±
+(
+OS_EVENT
+ *
+≥vít
+);
+
+651 
+OS_EVENT
+ *
+OSSemCª©e
+(
+INT16U
+ 
+˙t
+);
+
+653 #i‡
+OS_SEM_DEL_EN
+ > 0
+
+654 
+OS_EVENT
+ *
+OSSemDñ
+(OS_EVENT *
+≥vít
+, 
+INT8U
+ 
+›t
+, INT8U *
+îr
+);
+
+657 
+OSSemPíd
+(
+OS_EVENT
+ *
+≥vít
+, 
+INT16U
+ 
+timeout
+, 
+INT8U
+ *
+îr
+);
+
+658 
+INT8U
+ 
+OSSemPo°
+(
+OS_EVENT
+ *
+≥vít
+);
+
+660 #i‡
+OS_SEM_QUERY_EN
+ > 0
+
+661 
+INT8U
+ 
+OSSemQuîy
+(
+OS_EVENT
+ *
+≥vít
+, 
+OS_SEM_DATA
+ *
+pd©a
+);
+
+672 #i‡
+OS_TASK_CHANGE_PRIO_EN
+ > 0
+
+673 
+INT8U
+ 
+OSTaskCh™gePrio
+(INT8U 
+ﬁd¥io
+, INT8U 
+√w¥io
+);
+
+676 #i‡
+OS_TASK_CREATE_EN
+ > 0
+
+677 
+INT8U
+ 
+OSTaskCª©e
+((*
+èsk
+)(*
+pd
+), *
+pd©a
+, 
+OS_STK
+ *
+±os
+, INT8U 
+¥io
+);
+
+680 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+681 
+INT8U
+ 
+	`OSTaskCª©eExt
+((*
+èsk
+)(*
+pd
+),
+
+682 *
+pd©a
+,
+
+683 
+OS_STK
+ *
+±os
+,
+
+684 
+INT8U
+ 
+¥io
+,
+
+685 
+INT16U
+ 
+id
+,
+
+686 
+OS_STK
+ *
+pbos
+,
+
+687 
+INT32U
+ 
+°k_size
+,
+
+688 *
+≥xt
+,
+
+689 
+INT16U
+ 
+›t
+);
+
+692 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+693 
+INT8U
+ 
+	`OSTaskDñ
+(INT8U 
+¥io
+);
+
+694 
+INT8U
+ 
+	`OSTaskDñReq
+(INT8U 
+¥io
+);
+
+697 #i‡
+OS_TASK_SUSPEND_EN
+ > 0
+
+698 
+INT8U
+ 
+	`OSTaskResume
+(INT8U 
+¥io
+);
+
+699 
+INT8U
+ 
+	`OSTaskSu•íd
+(INT8U 
+¥io
+);
+
+702 #i‡
+OS_TASK_CREATE_EXT_EN
+ > 0
+
+703 
+INT8U
+ 
+	`OSTaskStkChk
+(INT8U 
+¥io
+, 
+OS_STK_DATA
+ *
+pd©a
+);
+
+706 #i‡
+OS_TASK_QUERY_EN
+ > 0
+
+707 
+INT8U
+ 
+	`OSTaskQuîy
+(INT8U 
+¥io
+, 
+OS_TCB
+ *
+pd©a
+);
+
+717 
+	`OSTimeDly
+(
+INT16U
+ 
+ticks
+);
+
+719 #i‡
+OS_TIME_DLY_HMSM_EN
+ > 0
+
+720 
+INT8U
+ 
+	`OSTimeDlyHMSM
+(INT8U 
+hours
+, INT8U 
+möuãs
+, INT8U 
+£c⁄ds
+, 
+INT16U
+ 
+mûli
+);
+
+723 #i‡
+OS_TIME_DLY_RESUME_EN
+ > 0
+
+724 
+INT8U
+ 
+	`OSTimeDlyResume
+(INT8U 
+¥io
+);
+
+727 #i‡
+OS_TIME_GET_SET_EN
+ > 0
+
+728 
+INT32U
+ 
+	`OSTimeGë
+();
+
+729 
+	`OSTimeSë
+(
+INT32U
+ 
+ticks
+);
+
+732 
+	`OSTimeTick
+();
+
+740 
+	`OSInô
+();
+
+742 
+	`OSI¡E¡î
+();
+
+743 
+	`OSI¡Exô
+();
+
+745 #i‡
+OS_SCHED_LOCK_EN
+ > 0
+
+746 
+	`OSSchedLock
+();
+
+747 
+	`OSSchedU∆ock
+();
+
+750 
+	`OSSèπ
+();
+
+752 
+	`OSSètInô
+();
+
+754 
+INT16U
+ 
+	`OSVîsi⁄
+();
+
+764 #i‡
+OS_TASK_DEL_EN
+ > 0
+
+765 
+	`OS_Dummy
+();
+
+768 #i‡((
+OS_Q_EN
+ > 0Ë&& (
+OS_MAX_QS
+ > 0)Ë|| (
+OS_MBOX_EN
+ > 0Ë|| (
+OS_SEM_EN
+ > 0Ë|| (
+OS_MUTEX_EN
+ > 0)
+
+769 
+INT8U
+ 
+	`OS_EvítTaskRdy
+(
+OS_EVENT
+ *
+≥vít
+, *
+msg
+, INT8U 
+msk
+);
+
+770 
+	`OS_EvítTaskWaô
+(
+OS_EVENT
+ *
+≥vít
+);
+
+771 
+	`OS_EvítTO
+(
+OS_EVENT
+ *
+≥vít
+);
+
+772 
+	`OS_EvítWaôLi°Inô
+(
+OS_EVENT
+ *
+≥vít
+);
+
+775 #i‡(
+OS_VERSION
+ >251Ë&& (
+OS_FLAG_EN
+ > 0Ë&& (
+OS_MAX_FLAGS
+ > 0)
+
+776 
+	`OS_FœgInô
+();
+
+777 
+	`OS_FœgU∆ök
+(
+OS_FLAG_NODE
+ *
+≤ode
+);
+
+780 #i‡(
+OS_MEM_EN
+ > 0Ë&& (
+OS_MAX_MEM_PART
+ > 0)
+
+781 
+	`OS_MemInô
+();
+
+784 #i‡
+OS_Q_EN
+ > 0
+
+785 
+	`OS_QInô
+();
+
+788 
+	`OS_Sched
+();
+
+790 
+	`OS_TaskIdÀ
+(*
+d©a
+);
+
+792 #i‡
+OS_TASK_STAT_EN
+ > 0
+
+793 
+	`OS_TaskSèt
+(*
+d©a
+);
+
+796 
+INT8U
+ 
+	`OS_TCBInô
+(INT8U 
+¥io
+, 
+OS_STK
+ *
+±os
+, OS_STK *
+pbos
+, 
+INT16U
+ 
+id
+, 
+INT32U
+ 
+°k_size
+, *
+≥xt
+, INT16U 
+›t
+);
+
+806 #i‡
+OS_VERSION
+ >= 204
+
+807 
+	`OSInôHookBegö
+();
+
+808 
+	`OSInôHookEnd
+();
+
+811 
+	`OSI¡CtxSw
+();
+
+813 
+	`OSSèπHighRdy
+();
+
+815 
+	`OSTaskCª©eHook
+(
+OS_TCB
+ *
+±cb
+);
+
+816 
+	`OSTaskDñHook
+(
+OS_TCB
+ *
+±cb
+);
+
+818 #i‡
+OS_VERSION
+ >= 251
+
+819 
+	`OSTaskIdÀHook
+();
+
+822 
+	`OSTaskSètHook
+();
+
+823 
+OS_STK
+ *
+	`OSTaskStkInô
+((*
+èsk
+)(*
+pd
+), *
+pd©a
+, OS_STK *
+±os
+, 
+INT16U
+ 
+›t
+);
+
+824 
+	`OSTaskSwHook
+();
+
+826 #i‡
+OS_VERSION
+ >= 204
+
+827 
+	`OSTCBInôHook
+(
+OS_TCB
+ *
+±cb
+);
+
+830 
+	`OSTimeTickHook
+();
+
+839 #i‚de‡
+OS_ISR_PROTO_EXT
+
+
+840 
+	`OSCtxSw
+();
+
+841 
+	`OSTickISR
+();
+
+863 #i‚de‡
+OS_FLAG_EN
+
+
+866 #i‚de‡
+OS_MAX_FLAGS
+
+
+869 #i‡ 
+OS_MAX_FLAGS
+ == 0
+
+872 #i‡ 
+OS_MAX_FLAGS
+ > 255
+
+877 #i‚de‡
+OS_FLAG_WAIT_CLR_EN
+
+
+881 #i‚de‡
+OS_FLAG_ACCEPT_EN
+
+
+885 #i‚de‡
+OS_FLAG_DEL_EN
+
+
+889 #i‚de‡
+OS_FLAG_QUERY_EN
+
+
+900 #i‚de‡
+OS_MBOX_EN
+
+
+903 #i‚de‡
+OS_MBOX_ACCEPT_EN
+
+
+907 #i‚de‡
+OS_MBOX_DEL_EN
+
+
+911 #i‚de‡
+OS_MBOX_POST_EN
+
+
+915 #i‚de‡
+OS_MBOX_POST_OPT_EN
+
+
+919 #i‚de‡
+OS_MBOX_QUERY_EN
+
+
+930 #i‚de‡
+OS_MEM_EN
+
+
+933 #i‚de‡
+OS_MAX_MEM_PART
+
+
+936 #i‡ 
+OS_MAX_MEM_PART
+ == 0
+
+939 #i‡ 
+OS_MAX_MEM_PART
+ > 255
+
+944 #i‚de‡
+OS_MEM_QUERY_EN
+
+
+955 #i‚de‡
+OS_MUTEX_EN
+
+
+958 #i‚de‡
+OS_MUTEX_ACCEPT_EN
+
+
+962 #i‚de‡
+OS_MUTEX_DEL_EN
+
+
+966 #i‚de‡
+OS_MUTEX_QUERY_EN
+
+
+977 #i‚de‡
+OS_Q_EN
+
+
+980 #i‚de‡
+OS_MAX_QS
+
+
+983 #i‡ 
+OS_MAX_QS
+ == 0
+
+986 #i‡ 
+OS_MAX_QS
+ > 255
+
+991 #i‚de‡
+OS_Q_ACCEPT_EN
+
+
+995 #i‚de‡
+OS_Q_DEL_EN
+
+
+999 #i‚de‡
+OS_Q_FLUSH_EN
+
+
+1003 #i‚de‡
+OS_Q_POST_EN
+
+
+1007 #i‚de‡
+OS_Q_POST_FRONT_EN
+
+
+1011 #i‚de‡
+OS_Q_POST_OPT_EN
+
+
+1015 #i‚de‡
+OS_Q_QUERY_EN
+
+
+1026 #i‚de‡
+OS_SEM_EN
+
+
+1029 #i‚de‡
+OS_SEM_ACCEPT_EN
+
+
+1033 #i‚de‡
+OS_SEM_DEL_EN
+
+
+1037 #i‚de‡
+OS_SEM_QUERY_EN
+
+
+1048 #i‚de‡
+OS_MAX_TASKS
+
+
+1051 #i‡ 
+OS_MAX_TASKS
+ == 0
+
+1054 #i‡ 
+OS_MAX_TASKS
+ > 63
+
+1059 #i‚de‡
+OS_TASK_IDLE_STK_SIZE
+
+
+1063 #i‚de‡
+OS_TASK_STAT_EN
+
+
+1067 #i‚de‡
+OS_TASK_STAT_STK_SIZE
+
+
+1071 #i‚de‡
+OS_TASK_CHANGE_PRIO_EN
+
+
+1075 #i‚de‡
+OS_TASK_CREATE_EN
+
+
+1079 #i‚de‡
+OS_TASK_CREATE_EXT_EN
+
+
+1083 #i‚de‡
+OS_TASK_DEL_EN
+
+
+1087 #i‚de‡
+OS_TASK_SUSPEND_EN
+
+
+1091 #i‚de‡
+OS_TASK_QUERY_EN
+
+
+1101 #i‚de‡
+OS_TICKS_PER_SEC
+
+
+1105 #i‚de‡
+OS_TIME_DLY_HMSM_EN
+
+
+1109 #i‚de‡
+OS_TIME_DLY_RESUME_EN
+
+
+1113 #i‚de‡
+OS_TIME_GET_SET_EN
+
+
+1123 #i‚de‡
+OS_MAX_EVENTS
+
+
+1126 #i‡ 
+OS_MAX_EVENTS
+ == 0
+
+1129 #i‡ 
+OS_MAX_EVENTS
+ > 255
+
+1134 #i‚de‡
+OS_LOWEST_PRIO
+
+
+1138 #i‚de‡
+OS_ARG_CHK_EN
+
+
+1142 #i‚de‡
+OS_CPU_HOOKS_EN
+
+
+1146 #i‚de‡
+OS_SCHED_LOCK_EN
+
+
+	@
+1
+.
+0
+14
+135
+INCLUDES.H
+OS_CFG.H
+OS_CORE.C
+OS_CPU.H
+OS_FLAG.C
+OS_MBOX.C
+OS_MEM.C
+OS_MUTEX.C
+OS_Q.C
+OS_SEM.C
+OS_TASK.C
+OS_TIME.C
+uCOS_II.C
+uCOS_II.H
