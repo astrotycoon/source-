@@ -260,15 +260,15 @@ INT8U  OSTaskCreate (void (*task)(void *pd), void *pdata, OS_STK *ptos, INT8U pr
 */
 /*$PAGE*/
 #if OS_TASK_CREATE_EXT_EN > 0
-INT8U  OSTaskCreateExt (void   (*task)(void *pd),
-                        void    *pdata,
-                        OS_STK  *ptos,
-                        INT8U    prio,
-                        INT16U   id,
-                        OS_STK  *pbos,
-                        INT32U   stk_size,
-                        void    *pext,
-                        INT16U   opt)
+INT8U  OSTaskCreateExt (void   (*task)(void *pd),	/* 指向任务的指针 		*/
+                        void    *pdata,			/* 传递给任务的参数 		*/
+                        OS_STK  *ptos,			/* 指向任务堆栈栈顶的指针 	*/
+                        INT8U    prio,			/* 任务的优先级 		*/
+                        INT16U   id,			/* 任务的标识 			*/
+                        OS_STK  *pbos,			/* 任务堆栈栈底的指针 		*/
+                        INT32U   stk_size,		/* 任务堆栈的容量 		*/
+                        void    *pext,			/* 指向附加数据域的指针 	*/
+                        INT16U   opt)			/* 用于设定操作选项		*/
 {
 #if OS_CRITICAL_METHOD == 3                  /* Allocate storage for CPU status register               */
     OS_CPU_SR  cpu_sr;
