@@ -88,18 +88,18 @@ void  OSInit (void)
     OSInitHookBegin();                                           /* Call port specific initialization code   */
 #endif
 
-    OS_InitMisc();                                               /* Initialize miscellaneous variables       */
+    OS_InitMisc();                                               /* Initialize miscellaneous variables       *//* 初始化OSIntNesting等全局变量 	*/
 
-    OS_InitRdyList();                                            /* Initialize the Ready List                */
-    OS_InitTCBList();                                            /* Initialize the free list of OS_TCBs      */
-    OS_InitEventList();                                          /* Initialize the free list of OS_EVENTs    */
+    OS_InitRdyList();                                            /* Initialize the Ready List                *//* 初始化就绪任务表及其相关变量 	*/
+    OS_InitTCBList();                                            /* Initialize the free list of OS_TCBs      *//* 初始化空任务控制块链表 	*/
+    OS_InitEventList();                                          /* Initialize the free list of OS_EVENTs    *//* 初始化事件控制块链表 		*/
 
 #if (OS_VERSION >= 251) && (OS_FLAG_EN > 0) && (OS_MAX_FLAGS > 0)
-    OS_FlagInit();                                               /* Initialize the event flag structures     */
+    OS_FlagInit();                                               /* Initialize the event flag structures     *//* 初始化信号量集 		*/
 #endif
 
 #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
-    OS_MemInit();                                                /* Initialize the memory manager            */
+    OS_MemInit();                                                /* Initialize the memory manager            *//* 存储管理初始化 		*/
 #endif
 
 #if (OS_Q_EN > 0) && (OS_MAX_QS > 0)
@@ -108,7 +108,7 @@ void  OSInit (void)
 
     OS_InitTaskIdle();                                           /* Create the Idle Task                     */
 #if OS_TASK_STAT_EN > 0
-    OS_InitTaskStat();                                           /* Create the Statistic Task                */
+    OS_InitTaskStat();                                           /* Create the Statistic Task                *//* 统计任务 */
 #endif
 
 #if OS_VERSION >= 204
