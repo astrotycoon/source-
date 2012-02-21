@@ -883,7 +883,7 @@ void  OS_Sched (void)
  */
 
     OS_ENTER_CRITICAL();
-    if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Sched. only if all ISRs done & not locked    */
+    if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Sched. only if all ISRs done & not locked    *//* 未处在中段服务程序中或调度器未被上锁 */
         y             = OSUnMapTbl[OSRdyGrp];          /* Get pointer to HPT ready to run              */
         OSPrioHighRdy = (INT8U)((y << 3) + OSUnMapTbl[OSRdyTbl[y]]);          /*    得到最高优先任务   */
         if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy     */
