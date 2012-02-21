@@ -1,0 +1,237 @@
+# depslib dependency file v1.0
+1300801891 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/aatree.c
+	"aatree.h"
+	<stdlib.h>
+	"fatal.h"
+
+1300800973 /home/nan/chen-work/c-data-structures-analysis/ds-lib/aatree.h
+	<stdlib.h>
+	"fatal.h"
+
+1300801891 /home/nan/chen-work/c-data-structures-analysis/ds-lib/fatal.h
+	<stdio.h>
+	<stdlib.h>
+
+1301950281 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/list.c
+	"list.h"
+	<stdlib.h>
+	"fatal.h"
+	"resourcetrack.h"
+
+1301690031 /home/nan/chen-work/c-data-structures-analysis/ds-lib/list.h
+
+1300801892 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/queue.c
+	"queue.h"
+	"fatal.h"
+	<stdlib.h>
+
+1300801270 /home/nan/chen-work/c-data-structures-analysis/ds-lib/queue.h
+
+1300801595 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testaa.c
+	"aatree.h"
+	<stdio.h>
+
+1302217702 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testlist.c
+	<stdio.h>
+	"list.h"
+	"resourcetrack.h"
+
+1300801570 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testque.c
+	<stdio.h>
+	"queue.h"
+
+1299696535 source:/home/nan/chen-work/c-data-structures-analysis/main.c
+
+1302304343 source:/home/nan/chen-work/c-data-structures-analysis/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	<sys/times.h>
+	"../ds-lib/testlist.h"
+	"../ds-lib/testque.h"
+	"../ds-lib/testtree.h"
+	"../ds-lib/sort.h"
+	"../ds-lib/testavl.h"
+
+1300801628 /home/nan/chen-work/c-data-structures-analysis/ds-lib/testlist.h
+
+1300801570 /home/nan/chen-work/c-data-structures-analysis/ds-lib/testque.h
+
+1302034381 /home/nan/chen-work/c-data-structures-analysis/ds-lib/sort.h
+
+1302303640 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/sort.c
+	<stdlib.h>
+	<math.h>
+	"fatal.h"
+	"sort.h"
+	"resourcetrack.h"
+
+1300818212 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/tree.c
+	<stdlib.h>
+	"resourcetrack.h"
+	"tree.h"
+	"fatal.h"
+
+1300023487 /home/nan/chen-work/c-data-structures-analysis/ds-lib/tree.h
+
+1301357609 /home/nan/chen-work/c-data-structures-analysis/ds-lib/testtree.h
+
+1300795613 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/resource-track.c
+	<stdio.h>
+	"resource-track.h"
+
+1300795912 /home/nan/chen-work/c-data-structures-analysis/ds-lib/resource-track.h
+
+1302034488 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/avltree.c
+	"avltree.h"
+	"fatal.h"
+	"resourcetrack.h"
+	<stdlib.h>
+
+1302034488 /home/nan/chen-work/c-data-structures-analysis/ds-lib/avltree.h
+
+1302213747 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/binheap.c
+	"binheap.h"
+	"fatal.h"
+	<stdlib.h>
+
+1300799704 /home/nan/chen-work/c-data-structures-analysis/ds-lib/binheap.h
+
+1302219930 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testavl.c
+	"avltree.h"
+	"testavl.h"
+	"resourcetrack.h"
+	"sort.h"
+	<stdio.h>
+
+1300821306 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testtree.c
+	<stdio.h>
+	"tree.h"
+	"resourcetrack.h"
+
+1300801484 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testheap.c
+	"binheap.h"
+	<stdio.h>
+
+1302304476 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/resourcetrack.c
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<sys/types.h>
+	<sys/stat.h>
+	"resourcetrack.h"
+
+1302040883 /home/nan/chen-work/c-data-structures-analysis/ds-lib/resourcetrack.h
+	<time.h>
+	<stdbool.h>
+	"list.h"
+
+1302210502 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/hashsep.c
+	"fatal.h"
+	"hashsep.h"
+	<stdlib.h>
+
+1302183130 /home/nan/chen-work/c-data-structures-analysis/ds-lib/hashsep.h
+
+1302209975 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testhash.c
+	"hashsep.h"
+	"hashquad.h"
+	<stdio.h>
+
+1302028788 /home/nan/chen-work/c-data-structures-analysis/ds-lib/testavl.h
+
+1302033851 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testutil.c
+	"testutil.h"
+
+1302033844 /home/nan/chen-work/c-data-structures-analysis/ds-lib/testutil.h
+
+1302209996 /home/nan/chen-work/c-data-structures-analysis/ds-lib/hashquad.h
+
+1302211042 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/binomial.c
+	"binomial.h"
+	"fatal.h"
+
+1302183926 /home/nan/chen-work/c-data-structures-analysis/ds-lib/binomial.h
+
+1302210609 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/disjsets.c
+
+1302210521 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/dsl.c
+	"dsl.h"
+	<stdlib.h>
+	"fatal.h"
+
+1302184378 /home/nan/chen-work/c-data-structures-analysis/ds-lib/dsl.h
+	<stdlib.h>
+	"fatal.h"
+
+839878061 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/hashquad.c
+	"fatal.h"
+	"hashquad.h"
+	<stdlib.h>
+
+1302182938 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/listcursor.c
+	"listcursor.h"
+	<stdlib.h>
+	"fatal.h"
+
+1302182938 /home/nan/chen-work/c-data-structures-analysis/ds-lib/listcursor.h
+
+1302210542 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/redblack.c
+	"redblack.h"
+	<stdlib.h>
+	"fatal.h"
+
+1302183211 /home/nan/chen-work/c-data-structures-analysis/ds-lib/redblack.h
+	<stdlib.h>
+	"fatal.h"
+
+1302211040 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/stackar.c
+	"stackar.h"
+	"fatal.h"
+	<stdlib.h>
+
+1302183497 /home/nan/chen-work/c-data-structures-analysis/ds-lib/stackar.h
+
+1302183650 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/stackli.c
+	"stackli.h"
+	"fatal.h"
+	<stdlib.h>
+
+1302183650 /home/nan/chen-work/c-data-structures-analysis/ds-lib/stackli.h
+
+1300799787 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testbin.c
+	"binomial.h"
+	<stdio.h>
+
+1302210241 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testdsl.c
+	"dsl.h"
+	<stdio.h>
+
+1302210270 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testrb.c
+	"redblack.h"
+	<stdio.h>
+
+1302183651 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/teststkl.c
+	<stdio.h>
+	"stackli.h"
+
+1302184254 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testtrp.c
+	"treap.h"
+	<stdio.h>
+
+1302184255 /home/nan/chen-work/c-data-structures-analysis/ds-lib/treap.h
+	<stdlib.h>
+	"fatal.h"
+
+1302184255 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/treap.c
+	"treap.h"
+	<stdlib.h>
+	"fatal.h"
+
+1302209433 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/testlistcurs.c
+	<stdio.h>
+	"listcursor.h"
+
+1302209411 source:/home/nan/chen-work/c-data-structures-analysis/ds-lib/teststka.c
+	<stdio.h>
+	"stackar.h"
+

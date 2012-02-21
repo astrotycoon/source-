@@ -1,0 +1,46 @@
+Are your hands dirty? :)
+Enjoy a cup of coffee and music now, Let's go further. are you ready?
+*****************************************
+首先开发一些基本的工具，然后在此基础上，
+开发一些实际的应用程序。
+*****************************************
+主要参与人员
+	1)赵岩老师  无学号
+	2)王明忠 1103710402
+	3)xujingshan  1103710113
+	4)钱冰忆 1103710408
+	5)徐博强 1103710108
+	6)王意林 1103710215
+	7)刘平 1103710409
+	8)chenkaibin  1103710116
+	9)lisongze 1103710618
+	10)林巍伟 1103710615
+	11)牛国成 1103710104
+	12)王正 1103710604
+	13)任震宇 1103710305
+	14)RanYu 1103710616 
+***********************************************
+2010年10月18日
+	王意林 完成了FileNamtTools.c三个函数
+	任震宇 给所有的语句加上了注释
+	
+2010/11/1
+Now, we have finished studying the basic git, and used git in two c files, TxtTools.c and FileNameTools.c. 
+
+Next, we will do a practical task. I push a txt file "射雕英雄传"。 When you read it on you mobile phone, it's too big to load it into your cell phone memeory. 
+you need to write a programe to split the txt file into some small txt files according to its content. 第一回风雪惊变 。。。 第二回江南七怪。。。。。The file name is section1.txt, section2.txt, section3.txt.......
+
+Use the functions in the TxtTools.c and FileNameTools.c if it is possible. 
+
+After finish this task, we will try more mobile phone programming. Hope you enjoy it. 
+
+2010/11/30
+1)finished two functions: InsertTagToFile and SplitFile. Students should take a deep look at these two functions and remember some useful code snippet.
+2) A new task, implement Trim function. 
+
+
+
+
+
+
+

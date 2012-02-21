@@ -1,0 +1,19 @@
+dsLib
+-----
+Copyright (c) 2010 - 2011, Gaurav Mathur <narainmg@gmail.com> 
+All Rights Reserved.
+
+dsLib is a library of the commonly used data structure and
+algorithm. The idea is to provide rich set of APIs to these data
+structures which could be used by applications by linking to this
+library. It's designed with space and time performace complexity in
+mind to be as efficient as possible. It will not solve all data
+structure design and performance needs all of the time but some needs
+some of the time. There are a rich set of test cases included that
+illustrate how the data structure APIs can be used.
+
+This work is still under active development so the paragraph above
+should read more like a mission statement for the time being.
+
+--
+Last updated: 29th Sep 2011

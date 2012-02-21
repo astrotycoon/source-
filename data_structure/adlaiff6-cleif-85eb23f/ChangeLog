@@ -1,0 +1,29 @@
+2009-07-01  Leif Walsh  <leif.walsh@gmail.com>
+
+	* withstmt.h (with): Added the "with" macro for using locks in a
+	more python/probably-lisp/whatever-else syntactic manner.
+
+2009-05-02  Leif Walsh  <leif.walsh@gmail.com>
+
+	* klist.h: Moved to klist to allow for a non-kernel-style list
+	eventually.
+
+	* test/klist_test.c: Moved to klist to allow for a
+	non-kernel-style list eventually.
+
+	* test/Makefile: Created Makefile for tests.
+
+	* Makefile: Created Makefile.
+
+	* README: Wrote a snarky README.
+
+	* TODO: Added some todo items.
+
+	* tree.h (struct tree): Created a tree data structure.  No
+	balancing yet.
+
+2009-03-18  Leif Walsh  <leif.walsh@gmail.com>
+
+	* util.h (container_of): Stole container_of from linux kernel.
+
+	* list.h: Created simple linked list.

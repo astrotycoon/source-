@@ -1,0 +1,164 @@
+LIBHX_1.10.0 {
+global:
+	HX_basename;
+	HX_chomp;
+	HX_copy_dir;
+	HX_copy_file;
+	HX_dirname;
+	HX_dlclose;
+	HX_dlerror;
+	HX_dlopen;
+	HX_dlsym;
+	HX_ffs;
+	HX_getopt;
+	HX_getopt_help;
+	HX_getopt_help_cb;
+	HX_getopt_usage;
+	HX_getopt_usage_cb;
+	HX_irand;
+	HX_mkdir;
+	HX_rand;
+	HX_rrmdir;
+	HX_shconfig;
+	HX_shconfig_free;
+	HX_shconfig_pv;
+	HX_split5;
+	HX_split;
+	HX_strbchr;
+	HX_strclone;
+	HX_strlower;
+	HX_strltrim;
+	HX_strmid;
+	HX_strrcspn;
+	HX_strrev;
+	HX_strrtrim;
+	HX_strsep2;
+	HX_strsep;
+	HX_strupper;
+	HX_zvecfree;
+	HX_zveclen;
+	HXdeque_del;
+	HXdeque_find;
+	HXdeque_free;
+	HXdeque_get;
+	HXdeque_init;
+	HXdeque_move;
+	HXdeque_pop;
+	HXdeque_push;
+	HXdeque_shift;
+	HXdeque_to_vec;
+	HXdeque_unshift;
+	HXdir_close;
+	HXdir_open;
+	HXdir_read;
+local:
+	*;
+};
+
+LIBHX_1.25 {
+global:
+	HX_getl;
+	HXmc_free;
+	HXmc_length;
+	HXmc_memcat;
+	HXmc_memcpy;
+	HXmc_memdel;
+	HXmc_meminit;
+	HXmc_memins;
+	HXmc_mempcat;
+	HXmc_strcat;
+	HXmc_strcpy;
+	HXmc_strinit;
+	HXmc_strins;
+	HXmc_strpcat;
+	HXmc_trunc;
+} LIBHX_1.10.0;
+
+LIBHX_1.26 {
+global:
+	HX_hexdump;
+	HX_time_compare;
+} LIBHX_1.25;
+
+LIBHX_2.0 {
+global:
+	HXmc_setlen;
+} LIBHX_1.26;
+
+LIBHX_2.2 {
+global:
+	HX_split4;
+	HXproc_run_async;
+	HXproc_run_sync;
+	HXproc_wait;
+} LIBHX_2.0;
+
+LIBHX_2.6 {
+global:
+	HX_fls;
+} LIBHX_2.2;
+
+LIBHX_2.9 {
+global:
+	HX_basename_exact;
+} LIBHX_2.6;
+
+LIBHX_3.0 {
+global:
+	HX_diff_timespec;
+	HX_diff_timeval;
+	HXformat_add;
+	HXformat_free;
+	HXformat_init;
+	HXhash_djb2;
+	HXhash_jlookup3;
+	HXhash_jlookup3s;
+	HXhash_primes;
+	HXmap_add;
+	HXmap_del;
+	HXmap_find;
+	HXmap_free;
+	HXmap_get;
+	HXmap_init5;
+	HXmap_init;
+	HXmap_keysvalues;
+	HXmap_qfe;
+	HXmap_traverse;
+	HXmap_travfree;
+	HXmap_travinit;
+} LIBHX_2.9;
+
+LIBHX_3.2 {
+global:
+	HX_strquote;
+} LIBHX_3.0;
+
+LIBHX_3.3 {
+global:
+	HX_drand;
+	HX_shconfig_map;
+	HXdeque_genocide2;
+	HXformat2_aprintf;
+	HXformat2_fprintf;
+	HXformat2_sprintf;
+	HXmc_zvecfree;
+} LIBHX_3.2;
+
+LIBHX_3.4 {
+global:
+	HX_exit;
+	HX_init;
+	HX_memmem;
+} LIBHX_3.3;
+
+LIBHX_3.9 {
+global:
+	HXio_fullread;
+	HXio_fullwrite;
+} LIBHX_3.4;
+
+LIBHX_3.10 {
+global:
+	HX_readlink;
+	HX_realpath;
+} LIBHX_3.9;

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Test" />
+	<File name="ds-lib/aatree.c" open="0" top="0" tabpos="0">
+		<Cursor position="3785" topLine="130" />
+	</File>
+	<File name="ds-lib/avltree.c" open="0" top="0" tabpos="2">
+		<Cursor position="4453" topLine="192" />
+	</File>
+	<File name="ds-lib/avltree.h" open="0" top="0" tabpos="0">
+		<Cursor position="224" topLine="0" />
+	</File>
+	<File name="ds-lib/binheap.c" open="0" top="0" tabpos="0">
+		<Cursor position="2905" topLine="86" />
+	</File>
+	<File name="ds-lib/binomial.c" open="0" top="0" tabpos="0">
+		<Cursor position="613" topLine="18" />
+	</File>
+	<File name="ds-lib/disjsets.c" open="0" top="0" tabpos="0">
+		<Cursor position="2231" topLine="78" />
+	</File>
+	<File name="ds-lib/dsl.c" open="0" top="0" tabpos="0">
+		<Cursor position="4241" topLine="129" />
+	</File>
+	<File name="ds-lib/fatal.h" open="0" top="0" tabpos="0">
+		<Cursor position="79" topLine="0" />
+	</File>
+	<File name="ds-lib/hashsep.c" open="0" top="0" tabpos="0">
+		<Cursor position="3042" topLine="95" />
+	</File>
+	<File name="ds-lib/hashsep.h" open="0" top="0" tabpos="0">
+		<Cursor position="250" topLine="0" />
+	</File>
+	<File name="ds-lib/list.c" open="0" top="0" tabpos="2">
+		<Cursor position="7198" topLine="228" />
+	</File>
+	<File name="ds-lib/list.h" open="0" top="0" tabpos="4">
+		<Cursor position="496" topLine="0" />
+	</File>
+	<File name="ds-lib/queue.c" open="0" top="0" tabpos="0">
+		<Cursor position="779" topLine="23" />
+	</File>
+	<File name="ds-lib/queue.h" open="0" top="0" tabpos="0">
+		<Cursor position="13" topLine="0" />
+	</File>
+	<File name="ds-lib/redblack.c" open="0" top="0" tabpos="0">
+		<Cursor position="5648" topLine="200" />
+	</File>
+	<File name="ds-lib/resourcetrack.c" open="0" top="0" tabpos="2">
+		<Cursor position="3270" topLine="262" />
+	</File>
+	<File name="ds-lib/resourcetrack.h" open="0" top="0" tabpos="4">
+		<Cursor position="1109" topLine="29" />
+	</File>
+	<File name="ds-lib/sort.c" open="0" top="0" tabpos="1">
+		<Cursor position="1632" topLine="60" />
+	</File>
+	<File name="ds-lib/sort.h" open="0" top="0" tabpos="2">
+		<Cursor position="100" topLine="0" />
+	</File>
+	<File name="ds-lib/stackar.c" open="0" top="0" tabpos="0">
+		<Cursor position="2356" topLine="95" />
+	</File>
+	<File name="ds-lib/testavl.c" open="0" top="0" tabpos="2">
+		<Cursor position="306" topLine="98" />
+	</File>
+	<File name="ds-lib/testavl.h" open="0" top="0" tabpos="0">
+		<Cursor position="32" topLine="0" />
+	</File>
+	<File name="ds-lib/testdsl.c" open="0" top="0" tabpos="0">
+		<Cursor position="134" topLine="0" />
+	</File>
+	<File name="ds-lib/testhash.c" open="0" top="0" tabpos="0">
+		<Cursor position="491" topLine="23" />
+	</File>
+	<File name="ds-lib/testheap.c" open="0" top="0" tabpos="0">
+		<Cursor position="83" topLine="0" />
+	</File>
+	<File name="ds-lib/testlist.c" open="0" top="0" tabpos="2">
+		<Cursor position="519" topLine="186" />
+	</File>
+	<File name="ds-lib/testque.c" open="0" top="0" tabpos="0">
+		<Cursor position="401" topLine="2" />
+	</File>
+	<File name="ds-lib/testrb.c" open="0" top="0" tabpos="0">
+		<Cursor position="78" topLine="0" />
+	</File>
+	<File name="ds-lib/teststka.c" open="0" top="0" tabpos="0">
+		<Cursor position="51" topLine="0" />
+	</File>
+	<File name="ds-lib/testtree.c" open="0" top="0" tabpos="6">
+		<Cursor position="79" topLine="0" />
+	</File>
+	<File name="ds-lib/testtree.h" open="0" top="0" tabpos="0">
+		<Cursor position="157" topLine="0" />
+	</File>
+	<File name="ds-lib/testutil.c" open="0" top="0" tabpos="0">
+		<Cursor position="222" topLine="0" />
+	</File>
+	<File name="ds-lib/testutil.h" open="0" top="0" tabpos="0">
+		<Cursor position="130" topLine="0" />
+	</File>
+	<File name="ds-lib/tree.c" open="0" top="0" tabpos="0">
+		<Cursor position="55" topLine="51" />
+	</File>
+	<File name="ds-lib/tree.h" open="0" top="0" tabpos="0">
+		<Cursor position="101" topLine="0" />
+	</File>
+	<File name="src/main.c" open="0" top="0" tabpos="1">
+		<Cursor position="557" topLine="21" />
+	</File>
+</CodeBlocks_layout_file>

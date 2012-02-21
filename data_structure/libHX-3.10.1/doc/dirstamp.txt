@@ -1,0 +1,4 @@
+Improved dirstamp:
+
+dirstamp.lst:
+	[ ! -e $@ -o -n "$(find dir/ -newer $@ -print -quit)" ] && touch $@ || :;

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+topdir="${0%/*}";
+abstopdir=$(readlink -f "$topdir");
+if [ ! -e "${topdir}/configure" ]; then
+	pushd "$topdir";
+	./autogen.sh;
+	popd;
+fi;
+exec "$topdir/configure" CFLAGS="-O0 -ggdb3" CXXFLAGS="-O0 -ggdb3" \
+	--sysconfdir="$abstopdir/src" "$@";

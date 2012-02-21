@@ -1,0 +1,6 @@
+#!/bin/sh -ex
+
+if [ -z "$srcdir" ]; then
+	srcdir=".";
+fi;
+exec lyx -e pdf2 "$srcdir/libHX_Documentation.lyx";

@@ -1,0 +1,56 @@
+Here's some instructions (interwoven with notes to myself) on how to build and
+install libdll.
+
+1. Create Makefiles
+
+    Install cmake (http://www.cmake.org/) if you haven't got it already.
+    
+    If you want to install into a non-standard location you can modify the
+    CMAKE_INSTALL_PREFIX cmake cache entry to change the destination using the
+    following cmake parameter:
+
+        -DCMAKE_INSTALL_PREFIX:PATH=/opt/libdll
+
+    If you want a Debug build of libdll you can specify 
+
+        -DCMAKE_BUILD_TYPE:STRING=Debug
+
+    on cmake's commandline. Make sure you have cunit
+    (http://cunit.sourceforge.net/) installed though, as an additional unit test
+    binary will be created as well.
+
+    I tend to use clang (http://clang.llvm.org) quite often lately, this is how
+    I tell cmake which C-compiler to use (entirely optional if you don't care):
+
+        -DCMAKE_C_COMPILER:STRING=clang
+
+    I would suggest building out of tree, so make yourself a build directory
+    somewhere:
+
+        mkdir build
+        cd build
+
+    Finally run cmake with any of the above options an the path to libdll's
+    source directory:
+
+        cmake [OPTS] /path/to/libdll/src/
+
+2. Build
+    
+        make
+
+    Running make in your build directory will build the shared libdll library
+    and optionally (in a Debug build) a 'dlltest' binary which runs some unit
+    tests against the library.
+
+3. Install
+
+        make install
+
+    There is no need to install if for instance you just want to run dlltest.
+    cmake will set everything up accordingly. Just go ahead and run test/dlltest
+    from the build direcotry. I would suggest to do so before installing anyway. 
+
+4. Update you dynamic linker's runtime bindings so it can find libdll (see e.g.
+   man ldconfig on Linux).
+

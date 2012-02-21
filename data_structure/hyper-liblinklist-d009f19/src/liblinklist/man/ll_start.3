@@ -1,0 +1,74 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_start 3 "15 July 2009" "0.70" "Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_start \- Initialise an iteration loop through the nodes in the list.
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B void ll_start(linklist_t *list);
+.br
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t *list;
+.br
+	void *data;
+.sp
+	list = (list_t *) malloc(sizeof(list_t));
+.br
+	ll_init(list);
+.sp
+	/* populate the list with nodes. */
+.sp
+	ll_start(list);
+.br
+	while ((data = ll_next(list))) {
+.br
+		/* do stuff with 'data' */
+.br
+	}
+.br
+	ll_finish(list);
+.sp
+	ll_free(list);
+.br
+	free(list);
+.br
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B ll_start()
+is used to initialise an iteration loop.  You cannot have a loop within a loop on the same list.  When finished with the loop, you must close off the iteration with 
+.B ll_finish().
+.sp
+
+.SH SEE ALSO
+.BR liblinklist (3),
+.BR ll_start (3),
+.BR ll_next (3),
+.BR ll_finish (3)
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Apr 05, 2009 \- v0.1 - Pre-release.
+.br
+Apr 06, 2009 \- v0.2 - Minor tweaks and documentations.
+.br
+Apr 07, 2009 \- v0.3 - Added ll_start and ll_next for list iteration, and ll_remove for deleting entries that are somewhere in the list.
+.br
+Apr 08, 2009 \- v0.3.1 - Fixed layout of man/liblinklist
+.br
+Apr 08, 2009 \- v0.3.2 - Fixed more manpage layouts.
+.br
+Jul 15, 2009 \- v0.70 - Removed the 'next' parameters, and use it internal to the structure instead.

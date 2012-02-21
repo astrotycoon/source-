@@ -1,0 +1,65 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_finish 3 "15 July 2009" "0.70" "Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_finish \- Close off the iteration loop through the nodes in the list.
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B void ll_finish(linklist_t *list);
+.br
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t *list;
+.br
+	void *data;
+.sp
+	list = (list_t *) malloc(sizeof(list_t));
+.br
+	ll_init(list);
+.sp
+	/* populate the list with nodes. */
+.sp
+	ll_start(list);
+.br
+	while ((data = ll_next(list))) {
+.br
+		/* do stuff with 'data' */
+.br
+	}
+.br
+	ll_finish(list);
+.sp
+	ll_free(list);
+.br
+	free(list);
+.br
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B ll_finish()
+is used to clear out the internal pointers used to iterate through the loop.  You cannot have a loop within a loop on the same list.  When finished with the loop, you must close off the iteration with
+.B ll_finish().
+.sp
+Although technically we can do without having an ll_finish function, it is beneficial to help detect when a developer is using the lists in unsafe ways, such as looping inside a loop.
+.SH SEE ALSO
+.BR liblinklist (3),
+.BR ll_start (3),
+.BR ll_next (3),
+.BR ll_finish (3)
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Jul 15, 2009 \- v0.70 - Introduced function with changes to others to remove the 'next' pointer.
+.br

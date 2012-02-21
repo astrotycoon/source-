@@ -1,0 +1,69 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_free 3 "7 April 2008" "0.3" "Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_free \- Free the resources created to manage the list.
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B list_t * ll_free(linklist_t *list);
+.br
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t *list;
+.sp
+	list = ll_init(NULL);
+.br
+	/* do something with the list. */
+.br
+	list = ll_free(list);
+.br
+	assert(list == NULL);
+.sp
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B ll_free()
+is used when the list is no longer needed (and presumably empty), it's internal 
+allocations need to be freed, so ll_free() should be called, before freeing the 
+memory created for the list_t structure.
+.sp
+If the list was was created internally, then this function will return a 
+NULL.  If the list was created externally, and passed in as a parameter to 
+ll_init() then it will return the pointer.  THis is useful for making sure 
+that things are free'd the same way they are created.  
+.sp
+	somelist = ll_init(NULL);
+	...
+	somelist = ll_free(somelist);
+	assert(somelist == NULL);
+.sp
+.SH SEE ALSO
+.BR liblinklist (3),
+.BR ll_init (3),
+.BR ll_free (3),
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Apr 05, 2009 \- v0.1 - Pre-release.
+.br
+Apr 06, 2009 \- v0.2 - Minor tweaks and documentations.
+.br
+Apr 07, 2009 \- v0.3 - Added ll_start and ll_next for list iteration, and ll_remove for deleting entries that are somewhere in the list.
+.br
+Apr 08, 2009 \- v0.3.1 - Fixed layout of man/liblinklist
+.br
+Apr 08, 2009 \- v0.3.2 - Fixed more manpage layouts.
+.br
+Feb 3, 2009 \- v0.9.10 - Modified ll_free so that it returns the list pointer if it is still valid.

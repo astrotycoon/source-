@@ -1,0 +1,50 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_count 3 "7 April 2008" "0.4" "Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_count \- Return the number of items in the list..
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B int ll_count(linklist_t *list);
+.br
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t *list;
+.sp
+	list = (list_t *) malloc(sizeof(list_t));
+.br
+	ll_init(list);
+.br
+	/* do something with the list. */
+.br
+	printf("items: %d\n", ll_count(list));
+.br
+	ll_free(list);
+.br
+	free(list);
+.br
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B ll_init()
+is used to initialise a linklist structure.  The pointer that is provided can be an auto variable that remains in scope, or a pointer to memory that has been obtained from the heap (malloc).
+.sp
+When the list is no longer needed (and presumably empty), it's internal allocations need to be freed, so ll_free() should be called, before freeing the memory created for the list_t structure.
+.SH SEE ALSO
+.BR liblinklist (3),
+.BR ll_init (3),
+.BR ll_free (3),
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi

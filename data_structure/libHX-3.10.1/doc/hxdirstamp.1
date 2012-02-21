@@ -1,0 +1,19 @@
+.TH hxdirstamp 1 "2010-12-09" "libHX" "libHX"
+.SS Name
+.PP
+hxdirstamp \(em produce directory timestamps
+.SH Syntax
+.PP
+\fBhxdirstamp\fP \fIpath\fP...
+.SH Description
+.PP
+hxdirstamp can be used to make a so-called "stamp" file of a directory's
+content and/or single files. It is used in conjunction with Makefile rules to
+check especially to rebuild a target when a source file has been deleted.
+.SH Example
+.nf
+icons.lst: .FORCE
+	${AM_V_GEN}hxdirstamp ${srcdir}/icons/ >$@.tmp; \\
+	cmp -s $@ $@.tmp || mv $@.tmp $@; \\
+	rm -f $@.tmp;
+.fi

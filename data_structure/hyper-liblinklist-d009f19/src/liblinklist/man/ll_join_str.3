@@ -1,0 +1,40 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_join_str 3 "23 June 2009" "0.6" "liblinklist - Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_join_str \- Return a string with all the list entries joined together (with seperator)
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B char * ll_join_str(linklist_t *list, const char *sep);
+.br
+.SH EXAMPLES
+	list_t *list;
+.br
+	char *str;
+.br
+	/* assuming there are a number of strings added to the list. */
+.br
+	str = ll_join_str(list, ", ");
+.br
+	printf("Joined string: %s\n", str);
+.sp
+	/* Do not free the string.  If you want to keep the string, strdup() it. */
+.SH DESCRIPTION
+.B ll_join_str()
+is used to create a string which has all the entries in the list joined together with the seperator between each entry.  The returned string remains under the control of the list, so you do not need to free it.  Other calls to ll_join_str() will re-use that chunk of memory, and may even move it making the previous pointer invalid.  If you wish to keep the string or manipulate it, you should make a copy of it.
+.sp
+.SH SEE ALSO
+.BR liblinklist (3),
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Jun 23, 2009 \- v0.6 - ll_join_str introduced.
+.br

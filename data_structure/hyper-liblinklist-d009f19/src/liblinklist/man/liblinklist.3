@@ -1,0 +1,144 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH liblinklist 3 "22 July 2009" "0.75" "Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+liblinklist \- Simple library to manage a free-standing linked list of generic objects.
+.SH SYNOPSIS
+.\" Syntax goes here. 
+.B #include <linklist.h>
+.sp
+.B list_t * ll_init(list_t *list);
+.br
+.B list_t * ll_free(list_t *list);
+.sp
+.B void ll_push_head(list_t *list, void *data);
+.br
+.B void ll_push_tail(list_t *list, void *data);
+.sp
+.B void * ll_get_head(list_t *list);
+.br
+.B void * ll_get_tail(list_t *list);
+.sp
+.B void * ll_pop_head(list_t *list);
+.br
+.B void * ll_pop_tail(list_t *list);
+.sp
+.B void ll_start(list_t *list);
+.br
+.B void * ll_next(list_t *list);
+.br
+.B void ll_finish(list_t *list);
+.br
+.B void ll_remove(list_t *list, void *ptr, void *next);
+.br
+.B int ll_count(list_t *list);
+.br
+.B char * ll_join_str(list_t *list, const char *sep);
+.sp
+.B void ll_move_head(list_t *list, void *ptr);
+.br
+.B void ll_move_tail(list_t *list, void *ptr);
+.sp
+compile with the 
+.B -llinklist
+option
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t list;
+.br
+	somestruct_t *object;
+.sp
+	ll_init(&list);
+.sp
+	// Get an object (pointer) from somewhere else (simplified for example)
+.br
+	// and push it to the top of the list.
+.br
+	object = get_some_object();
+.br
+	while (object) {
+.br
+		ll_push_head(&list, object);
+.br
+		object = get_some_object();
+.br
+	}
+.sp
+	// Get all the objects from the list and do something with it.
+.br
+	// by pushing to the head and popping from the head, we are using the list like a stack.
+.br
+	// if we push to head, and pop from tail, then it becomes a fifo list.
+.br
+	object = ll_pop_head(&list);
+.br
+	while (object) {
+.br
+		do_something_with_object(object);
+.br
+		object = ll_pop_head(&list);
+.br
+	}
+.sp
+	ll_free(&list);
+.br
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B liblinklist
+is a simple library for handling a linked list of objects.  The objects themselves do not need to have anything in them to assist with the linked list.  Therefore, it is easy to assign an object in multiple linked lists, assuming that you keep it somewhat in sync so that you dont free (de-allocate) the object before it has been removed from all the lists.
+.br
+
+.SH FILES
+.P 
+.I /usr/lib/liblinklist.so
+.br
+.I /usr/include/linklist.h
+.SH SEE ALSO
+.BR ll_init (3),
+.BR ll_free (3),
+.BR ll_push_head (3),
+.BR ll_push_tail (3),
+.BR ll_pop_head (3),
+.BR ll_pop_tail (3),
+.BR ll_get_head (3),
+.BR ll_get_tail (3),
+.BR ll_start (3),
+.BR ll_next (3),
+.BR ll_finish (3),
+.BR ll_remove (3),
+.BR ll_count (3),
+.BR ll_join_str (3),
+.BR ll_move_head (3),
+.BR ll_move_tail (3)
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Apr 05, 2009 \- v0.1 - Pre-release.
+.br
+Apr 06, 2009 \- v0.2 - Minor tweaks and documentations.
+.br
+Apr 07, 2009 \- v0.3 - Added ll_start and ll_next for list iteration, and ll_remove for deleting entries that are somewhere in the list.
+.br
+Apr 08, 2009 \- v0.3.1 - Fixed layout of man/liblinklist
+.br
+Apr 08, 2009 \- v0.3.2 - Fixed more manpage layouts.
+.br
+Apr 08, 2009 \- v0.4 - added ll_count() to return the number of items in the list.
+.br
+Jun 23, 2009 \- v0.6 - added ll_join_str() function.
+.br
+Jul 16, 2009 \- v0.7 - Reworked the iteration functions (ll_start, ll_next and ll_finish) to use an internal 'next' hint.
+.br
+Jul 22, 2009 \- v0.75 - Added ll_move_head and ll_move_tail so that we can move a node entry without having to remove it from the list and then add it again.

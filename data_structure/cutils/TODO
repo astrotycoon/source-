@@ -1,0 +1,25 @@
+Here is the list of things that needs to be done:
+
+Data structures
+---------------
+- heap
+- priority queue
+- B-tree (working on it)
+- AVL tree
+- various graph interpretations
+
+
+Algorithms
+----------
+(graph)
+- Dijsktra's algorithm
+- Floyd–Warshall algorithm
+
+Others
+------
+- reference counting (a'la kref in Linux kernel)
+
+Permutations
+------------
+- next permutation
+- permutation to index and vice versa

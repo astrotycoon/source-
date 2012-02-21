@@ -1,0 +1,22 @@
+# Lines starting with '#' are considered comments.
+Makefile
+Makefile.in
+configure
+libtool
+config.*
+config
+stamp-h1
+ckit.pc
+*.cache
+*.m4
+*.swp
+*~
+*.gcno
+*.gcda
+*.gcov
+.deps
+.libs
+*.o
+*.a
+*.lo
+*.la

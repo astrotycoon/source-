@@ -1,0 +1,83 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_push_tail 3 "7 April 2008" "0.3" "liblinklist - Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_push_tail \- add an object to the tail of the linked list.
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B void ll_push_tail(linklist_t *list, void *ptr);
+.br
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t *list;
+.br
+	some_object_t *data;
+.sp
+	list = (list_t *) malloc(sizeof(list_t));
+.br
+	ll_init(list);
+.br
+	/* get object from somewhere. */
+.br
+	data = get_some_data();
+.br
+	ll_push_tail(list, data);
+.sp
+	/* before the list can be free'd, all objects must be removed from it. */
+.br
+	while (data = ll_pop_head(list)) {
+.br
+		free(data);	/* and whatever else should be done to it. */
+.br
+	}
+.br
+	ll_free(list);
+.br
+	free(list);
+.sp
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B ll_push_tail()
+is used to add objects to the tail of the list.  NULL object cannot be added to the list, and the list does not know what kind of object it is, or how big it is.  Internally the list will manage the links for each node by wrapping the pointer in a control structure.
+.sp
+.B ll_push_head()
+and
+.B ll_push_tail()
+work almost identically except that objects are added at the head, or tail of the list.  If all objects are pushed to the head, and popped from the head, then the list behaves like a stack (last one in, first one out).  But if all objects are added to the head, and popped from the tail, then it behaves like a queue (first one in, first one out).
+.sp
+.B NOTE:
+Before the resources in the list can be de-allocated, the list needs to be empty.  So all objects added to the list will need to be removed.
+.SH SEE ALSO
+.BR liblinklist (3),
+.BR ll_push_head (3),
+.BR ll_push_tail (3),
+.BR ll_pop_head (3),
+.BR ll_pop_tail (3),
+.BR ll_get_head (3),
+.BR ll_get_tail (3)
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Apr 05, 2009 \- v0.1 - Pre-release.
+.br
+Apr 06, 2009 \- v0.2 - Minor tweaks and documentations.
+.br
+Apr 07, 2009 \- v0.3 - Added ll_start and ll_next for list iteration, and ll_remove for deleting entries that are somewhere in the list.
+.br
+Apr 08, 2009 \- v0.3.1 - Fixed layout of man/liblinklist
+.br
+Apr 08, 2009 \- v0.3.2 - Fixed more manpage layouts.
+.br

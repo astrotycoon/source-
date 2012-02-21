@@ -1,0 +1,18 @@
+headers
+=======
+
+DON'T includes so many headers into every source file.
+
+CKit configure script generate ckit-config.h file, which already
+includes `standard' headers. include this file rather than system
+headers is strong recommendatory. but before include this file,
+you should check whether your source's header include it already.
+
+is it so complex?
+maybe! in a word, you should keep included headers as few as possible.
+
+CKit has below rules:
+ckit-type.h includes ckit-config.h and ckit-macro.h
+
+so only include ckit-type.h into your source's header is right
+at most case.

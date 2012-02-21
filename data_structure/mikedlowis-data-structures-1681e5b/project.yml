@@ -1,0 +1,38 @@
+---
+
+:project:
+  :use_exceptions: FALSE
+  :use_test_preprocessor: TRUE
+  :use_auxiliary_dependencies: TRUE
+  :build_root: build
+  :test_file_prefix: test_
+
+:paths:
+  :test:
+    - tests/**
+  :source:
+    - src/**
+
+:defines:
+  :commmon: &common_defines
+  :test:
+    - *common_defines
+    - TEST
+  :test_preprocess:
+    - *common_defines
+    - TEST
+
+:cmock:
+  :mock_prefix: mock_
+  :when_no_prototypes: :warn
+  :enforce_strict_ordering: TRUE
+  :plugins:
+    - :ignore
+
+:plugins:
+  :load_paths:
+    - tools/ceedling/plugins
+  :enabled:
+    - stdout_pretty_tests_report
+
+...

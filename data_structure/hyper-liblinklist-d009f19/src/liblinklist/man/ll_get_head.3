@@ -1,0 +1,91 @@
+.\" man page for liblinklist
+.\" Contact dev@hyper-active.com.au to correct errors or omissions. 
+.TH ll_get_head 3 "7 April 2008" "0.3" "liblinklist - Simple library to manage a free-standing linked list of generic objects."
+.SH NAME
+ll_get_head \- get the object from the head of the list, without removing it.
+.SH SYNOPSIS
+.B #include <linklist.h>
+.sp
+.B void * ll_get_head(linklist_t *list);
+.br
+.SH EXAMPLES
+#include <linklist.h>
+.sp
+int main(void) {
+.br
+	list_t *list;
+.br
+	some_object_t *data, *next;
+.sp
+	list = (list_t *) malloc(sizeof(list_t));
+.br
+	ll_init(list);
+.br
+	/* get object from somewhere. */
+.br
+	data = get_some_data();
+.br
+	ll_push_head(list, data);
+.sp
+	/* Process all the entries in the list (like a stack). */
+.br
+	while (data = ll_pop_head(list)) {
+.br
+		next = ll_get_head(list);		/* get the next entry in the list, to see if we need to compare the two */
+.br
+		if (some_compare(data, next))
+.br
+			ll_push_tail(list, data);	/* after comparing against the next one in the list, we will put it back in the tail. */
+.br
+		else
+.br
+			free(data);	/* and whatever else should be done to it. */
+.br
+	}
+.br
+	ll_free(list);
+.br
+	free(list);
+.sp
+	return(0);
+.br
+}
+.SH DESCRIPTION
+.B ll_get_head()
+is used to ued to retrieve the object from the top of the list, without removing it from the list.  If there is no more objects in the list, then it will return NULL.
+.sp
+ll_pop_head() can be used to get the object in the top of the list and removing it.
+.sp
+.B ll_pop_head()
+and
+.B ll_pop_tail()
+work almost identically except that objects are popped from the head, or tail of the list.  If all objects are pushed to the head, and popped from the head, then the list behaves like a stack (last one in, first one out).  But if all objects are added to the head, and popped from the tail, then it behaves like a queue (first one in, first one out).
+.sp
+.SH SEE ALSO
+.BR liblinklist (3),
+.BR ll_push_head (3),
+.BR ll_push_tail (3),
+.BR ll_pop_head (3),
+.BR ll_pop_tail (3),
+.BR ll_get_head (3),
+.BR ll_get_tail (3),
+.SH BUGS
+No known bugs at this time. 
+.SH AUTHOR
+.nf
+Clint Webb (webb.clint@gmail.com)
+on behalf of Hyper-Active Systems, Australia.
+.br
+http://www.hyper-active.com.au/liblinklist/
+.fi
+.SH HISTORY
+Apr 05, 2009 \- v0.1 - Pre-release.
+.br
+Apr 06, 2009 \- v0.2 - Minor tweaks and documentations.
+.br
+Apr 07, 2009 \- v0.3 - Added ll_start and ll_next for list iteration, and ll_remove for deleting entries that are somewhere in the list.
+.br
+Apr 08, 2009 \- v0.3.1 - Fixed layout of man/liblinklist
+.br
+Apr 08, 2009 \- v0.3.2 - Fixed more manpage layouts.
+.br

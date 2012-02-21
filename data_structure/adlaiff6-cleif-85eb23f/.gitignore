@@ -1,0 +1,12 @@
+.objs/*
+.deps/*
+tags
+TAGS
+cscope.out
+
+klist_test
+skiplist_test
+tree_test
+withstmt_test
+
+skiplist_perf

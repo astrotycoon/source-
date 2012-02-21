@@ -1,0 +1,41 @@
+CKit: Data structure and arithmetic implement in C
+
+COMPILE
+~~~~~~~
+To compile CKit, you need install check(1) test framework and
+pkg-config(2) tool (note also set PKG_CONFIG_PATH env).
+
+(1) http://check.sourceforge.net
+(2) http://www.freedesktop.org/wiki/Software/pkg-config
+
+Compile from git:
+ $ git clone git://github.com/xiaohu/ckit.git
+ $ mkdir m4 config
+ $ autoreconf -i
+ $ ./configure
+ $ make
+
+Compile from ckit-x.x.x.tar.gz:
+ $ tar zxf ckit-x.x.x.tar.gz
+ $ cd ckit-x.x.x
+ $ ./configure
+ $ make
+
+
+RESOURCES
+~~~~~~~~~
+https://github.com/xiaohu/ckit - Project Home
+https://github.com/xiaohu/ckit/wiki - Project Wiki
+
+The `docs' subdirectory has some documents for developer.
+
+
+LICENSE
+~~~~~~~
+CKit is free software, released under The MIT License, see COPYING.
+
+
+BUGS
+~~~~
+Bug reports should be send to https://github.com/xiaohu/ckit/issues,
+or email to maintainer<xiaohu417@gmail.com>.

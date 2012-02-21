@@ -1,0 +1,12 @@
+CKit and thread
+===============
+
+CKit internal uses `pthread' to protected shared data structure to
+prevent multi-thread broke.
+
+If CKit cannot found pthread on your system, it will continue work,
+but is not MF safe, that is, you should not adopt it in a multi-pthread
+application.
+
+Only pthread is support now(maybe future), beacuse it is POSIX standard
+and broad adopt in industry. there also has a pthread for win32 too.

@@ -1,0 +1,46 @@
+Test Code Coverage with gcov
+============================
+
+We are uses gcov alone with gcc to testing code coverage. For other
+compiler please see its manual.
+
+0. INSTALL
+~~~~~~~~~~
+Ensure gcov has install, if not, install it.
+
+1. CONFIGURE
+~~~~~~~~~~~~
+./configure --with-maintainer-mode --config-cache --with-dmalloc \
+ CFLAGS="-DDEBUG -g -Wall -fprofile-arcs -ftest-coverage"
+
+Note don't add optimization options beacuse optimization may not give
+you as much information as you need to look for.
+
+2. RECOMPILE
+~~~~~~~~~~~~
+Recompile all sources, this will generate a .gcno file for each .c file.
+The generated .gcno file place into same with where .o file place.
+
+3. TEST
+~~~~~~~
+Type `make check', this will compile and run tests/ckit-test program,
+and for each .gcno file will generate a .gcda file, it contains the
+coverage data in raw format.
+
+4. GCOV
+~~~~~~~
+To combine raw coverage information and source file into a more readable
+format, run `gcov' utility:
+
+  $ gcov ckit-foo.c
+
+This will produce the file `ckit-foo.c.gcov', with below format:
+
+  _usage_   _lineno_    _code_
+
+_usage_ maybe `-', means this line does not contain executed code,
+or `#####', which means this line contain code but never executed--these
+are the lines that are probably most interesting for you, or a number, 
+which means how often that line was executed.
+
+_lineno_ is source line, and _code_ is source code.
