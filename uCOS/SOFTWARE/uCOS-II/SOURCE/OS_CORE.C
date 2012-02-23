@@ -179,7 +179,7 @@ void  OSIntExit (void)
     if (OSRunning == TRUE) {
         OS_ENTER_CRITICAL();
         if (OSIntNesting > 0) {                            /* Prevent OSIntNesting from wrapping       */
-            OSIntNesting--;
+            OSIntNesting--;				   /* 	      中段嵌套层计数器减1	       */
         }
         if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Reschedule only if all ISRs complete ... */
             OSIntExitY    = OSUnMapTbl[OSRdyGrp];          /* ... and not locked.                      */
@@ -303,7 +303,7 @@ void  OSStart (void)
         OSPrioCur     = OSPrioHighRdy;
         OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy]; /* Point to highest priority task ready to run    */
         OSTCBCur      = OSTCBHighRdy;
-        OSStartHighRdy();                            /* Execute target specific code to start task     */
+        OSStartHighRdy();                            /* Execute target specific code to start task     *//* 运行最高优先级别的就绪任务 */
     }
 }
 /*$PAGE*/
