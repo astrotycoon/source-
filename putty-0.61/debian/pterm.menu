@@ -1,0 +1,4 @@
+?package(pterm):needs="X11" section="Applications/Terminal Emulators"\
+ longtitle="pterm: PuTTY terminal emulator" title="pterm"\
+ icon="/usr/share/pixmaps/pterm.xpm"\
+ command="/usr/bin/pterm"

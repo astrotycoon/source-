@@ -1,0 +1,2 @@
+unix/putty usr/bin
+debian/putty.desktop usr/share/applications

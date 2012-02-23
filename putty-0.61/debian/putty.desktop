@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=PuTTY SSH Client
+GenericName=PuTTY
+Comment=Connect to an SSH server with PuTTY
+Type=Application
+Exec=putty
+Icon=putty
+Categories=GTK;Network;

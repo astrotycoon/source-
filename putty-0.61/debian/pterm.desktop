@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=PuTTY Terminal Emulator
+GenericName=Pterm
+Comment=Start a PuTTY terminal session
+Type=Application
+Exec=pterm
+Icon=pterm
+Categories=GTK;Utility;TerminalEmulator;

@@ -1,0 +1,1 @@
+pterm: setgid-binary usr/bin/pterm 2755 root/utmp

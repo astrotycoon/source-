@@ -71,12 +71,12 @@
 *                                        OS_EVENT types
 *********************************************************************************************************
 */
-#define  OS_EVENT_TYPE_UNUSED      0
-#define  OS_EVENT_TYPE_MBOX        1
-#define  OS_EVENT_TYPE_Q           2
-#define  OS_EVENT_TYPE_SEM         3
-#define  OS_EVENT_TYPE_MUTEX       4
-#define  OS_EVENT_TYPE_FLAG        5
+#define  OS_EVENT_TYPE_UNUSED      0	/* 空事件控制块 （未被使用的事件控制块）	*/
+#define  OS_EVENT_TYPE_MBOX        1	/* 表明事件是 消息邮箱 				*/
+#define  OS_EVENT_TYPE_Q           2	/* 表明事件是 消息队列 				*/
+#define  OS_EVENT_TYPE_SEM         3	/* 表明事件是 信号量 				*/
+#define  OS_EVENT_TYPE_MUTEX       4	/* 表明事件是 互斥型信号量			*/
+#define  OS_EVENT_TYPE_FLAG        5	/* 						*/
 
 /*
 *********************************************************************************************************
@@ -210,11 +210,11 @@
 
 #if (OS_EVENT_EN > 0) && (OS_MAX_EVENTS > 0)
 typedef struct {
-    INT8U   OSEventType;                   /* Type of event control block (see OS_EVENT_TYPE_???)      */
-    INT8U   OSEventGrp;                    /* Group corresponding to tasks waiting for event to occur  */
-    INT16U  OSEventCnt;                    /* Semaphore Count (not used if other EVENT type)           */
-    void   *OSEventPtr;                    /* Pointer to message or queue structure                    */
-    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; /* List of tasks waiting for event to occur                 */
+    INT8U   OSEventType;                   /* Type of event control block (see OS_EVENT_TYPE_???)      *//* 事件的类型 			*/
+    INT8U   OSEventGrp;                    /* Group corresponding to tasks waiting for event to occur  *//* 等待事件的任务组 		*/
+    INT16U  OSEventCnt;                    /* Semaphore Count (not used if other EVENT type)           *//* 信号量计数器	 	*/
+    void   *OSEventPtr;                    /* Pointer to message or queue structure                    *//* 消息或消息队列的指针 	*/
+    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; /* List of tasks waiting for event to occur                 *//* 任务等待表			*/
 } OS_EVENT;
 #endif
 

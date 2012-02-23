@@ -1,0 +1,41 @@
+#! /usr/bin/make -f
+%:
+	dh $@
+
+ptermtmp = debian/pterm
+puttytmp = debian/putty
+
+version := $(shell dpkg-parsechangelog | grep '^Version:' | \
+		   sed -e 's/.*\([0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]\).*/\1/')
+
+# If a snapshot, supply an explicit version. Release tarballs work it out
+# for themselves.
+ifeq (,$(findstring Version,$(version)))
+verdef := VER=-DSNAPSHOT="$(version)"
+endif
+
+override_dh_auto_build:
+	cd unix && $(MAKE) -f Makefile.gtk $(verdef) \
+		plink pscp psftp pterm putty puttygen
+	$(MAKE) -C icons cicons pngs
+
+override_dh_auto_clean:
+	cd unix && $(MAKE) -f Makefile.gtk clean
+	$(MAKE) -C icons clean
+
+override_dh_install:
+	dh_install
+	install -m644 icons/xpmpterm.c $(ptermtmp)/usr/share/pixmaps/pterm.xpm
+	install -m644 icons/xpmputty.c $(puttytmp)/usr/share/pixmaps/putty.xpm
+	install -m644 icons/pterm-32.png \
+		      $(ptermtmp)/usr/share/pixmaps/pterm.png
+	install -m644 icons/putty-32.png \
+		      $(puttytmp)/usr/share/pixmaps/putty.png
+
+override_dh_compress:
+	dh_compress -X.py
+
+override_dh_fixperms:
+	dh_fixperms
+	chgrp utmp $(ptermtmp)/usr/bin/pterm
+	chmod g+s $(ptermtmp)/usr/bin/pterm

@@ -1,0 +1,67 @@
+Source: putty
+Section: net
+Priority: optional
+Maintainer: Colin Watson <cjwatson@debian.org>
+Standards-Version: 3.5.9
+Build-Depends: debhelper (>= 7.0.50), pkg-config, libgtk2.0-dev, x11proto-core-dev, libx11-dev, imagemagick, python
+Vcs-Bzr: http://anonscm.debian.org/bzr/pkg-ssh/putty/trunk
+Vcs-Browser: http://anonscm.debian.org/loggerhead/pkg-ssh/putty/trunk
+
+Package: pterm
+Section: x11
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: putty-doc
+Provides: x-terminal-emulator
+Description: PuTTY terminal emulator
+ This is an X terminal emulator based on the popular Windows SSH client,
+ PuTTY. It supports xterm escape sequences, plus some Linux console
+ sequences for colour palette configuration and some DECterm sequences for
+ title bar control, and with an appropriate font it supports the UTF-8
+ encoding of Unicode. It also has some nifty features like rectangular
+ selection and NetHack keypad mode.
+
+Package: putty
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, putty-tools
+Suggests: putty-doc
+Description: Telnet/SSH client for X
+ This is the Unix port of the popular Windows SSH client, PuTTY. It supports
+ flexible terminal setup, mid-session reconfiguration using Ctrl-rightclick,
+ multiple X11 authentication protocols, and various other interesting things
+ not provided by ssh in an xterm.
+
+Package: putty-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: putty-doc
+Description: command-line tools for SSH, SCP, and SFTP
+ This package provides four command-line tools from the PuTTY suite that
+ allow various kinds of secure interaction with remote systems.
+ .
+ Plink (PuTTY Link) connects to a remote system via SSH, Telnet, or rlogin,
+ and either starts an interactive session or runs a batch process. It
+ supports the usual SSH features like port forwarding, X11 forwarding,
+ SOCKS, and compression.
+ .
+ PSCP (PuTTY Secure Copy) transfers files securely between systems using an
+ SSH connection. It works with both SSH protocol 1 and protocol 2.
+ .
+ PSFTP (PuTTY SFTP client) transfers files securely between systems using
+ the SSH file transfer protocol, which is specific to SSH protocol 2. In
+ interactive mode its interface is much like the traditional Unix FTP
+ client, although it can also operate in batch mode.
+ .
+ PuTTYgen generates SSH public and private key pairs in any of a number of
+ formats, including those usable by PuTTY, OpenSSH, and ssh.com.
+ .
+ All these utilities can make use of PuTTY's saved sessions where
+ appropriate.
+
+Package: putty-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: PuTTY HTML documentation
+ Full HTML documentation for the PuTTY suite of programs (PuTTY, pterm,
+ Plink, PSCP, PSFTP, and PuTTYgen).

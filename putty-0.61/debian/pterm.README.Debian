@@ -1,0 +1,11 @@
+pterm uses two processes rather than one. What's going on?
+----------------------------------------------------------
+
+Like other terminal emulators, pterm is setgid utmp, so that it can record
+your login in the utmp, wtmp, and lastlog files. Rather than holding this
+extra privilege while it runs so that it can record you logging out as well,
+it forks a helper process to handle this task and then drops privileges.
+Although this is different from other terminal emulators, the extra process
+is there by design, not a bug.
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 08 Nov 2002 19:27:27 +0000

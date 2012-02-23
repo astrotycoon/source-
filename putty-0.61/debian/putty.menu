@@ -1,0 +1,4 @@
+?package(putty):needs="X11" section="Applications/Network/Communication"\
+ longtitle="PuTTY SSH client" title="PuTTY"\
+ icon="/usr/share/pixmaps/putty.xpm"\
+ command="/usr/bin/putty"
