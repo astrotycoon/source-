@@ -1,0 +1,17 @@
+# Compilation
+
+## SCons
+
+    make
+
+## CMake
+
+    cd build
+    cmake ..
+    make
+
+# Documentation
+
+    make doc
+
+[Doxygen](html/index.html)
