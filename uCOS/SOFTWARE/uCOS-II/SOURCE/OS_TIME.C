@@ -42,11 +42,11 @@ void  OSTimeDly (INT16U ticks)
     if (ticks > 0) {                                                      /* 0 means no delay!         */
         OS_ENTER_CRITICAL();
         if ((OSRdyTbl[OSTCBCur->OSTCBY] &= ~OSTCBCur->OSTCBBitX) == 0) {  /* Delay current task        */
-            OSRdyGrp &= ~OSTCBCur->OSTCBBitY;
+            OSRdyGrp &= ~OSTCBCur->OSTCBBitY;			          /* 取消当前任务的就绪状态    */
         }
-        OSTCBCur->OSTCBDly = ticks;                                       /* Load ticks in TCB         */
+        OSTCBCur->OSTCBDly = ticks;                                       /* Load ticks in TCB         *//* 延时节拍数存入任务控制块 */
         OS_EXIT_CRITICAL();
-        OS_Sched();                                                       /* Find next task to run!    */
+        OS_Sched();                                                       /* Find next task to run!    *//* 调用调度函数 */
     }
 }
 /*$PAGE*/

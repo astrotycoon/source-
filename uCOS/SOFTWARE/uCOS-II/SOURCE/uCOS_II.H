@@ -438,7 +438,7 @@ OS_EXT  OS_STK            OSTaskStatStk[OS_TASK_STAT_STK_SIZE];      /* Statisti
 #endif
 
 OS_EXT  INT8U             OSIntNesting;             /* Interrupt nesting level                         *//* 存放中段嵌套的层数 */
-OS_EXT  INT8U             OSIntExitY;	            /* 用于函数OSInitExt() */
+OS_EXT  INT8U             OSIntExitY;	            /* 用于函数OSIntExt() */
 
 OS_EXT  INT8U             OSLockNesting;            /* Multitasking lock nesting level                 *//* 调用OSSchedLock()的嵌套层数 */
 

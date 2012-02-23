@@ -145,7 +145,7 @@ void  OSIntEnter (void)
 {
     if (OSRunning == TRUE) {
         if (OSIntNesting < 255) {
-            OSIntNesting++;                      /* Increment ISR nesting level                        */
+            OSIntNesting++;                      /* Increment ISR nesting level                        *//* 中段嵌套层数计数器加1 */
         }
     }
 }
@@ -179,7 +179,7 @@ void  OSIntExit (void)
     if (OSRunning == TRUE) {
         OS_ENTER_CRITICAL();
         if (OSIntNesting > 0) {                            /* Prevent OSIntNesting from wrapping       */
-            OSIntNesting--;				   /* 	      中段嵌套层计数器减1	       */
+            OSIntNesting--;				   /* 	      中段嵌套层数计数器减1	       */
         }
         if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Reschedule only if all ISRs complete ... */
             OSIntExitY    = OSUnMapTbl[OSRdyGrp];          /* ... and not locked.                      */
@@ -372,7 +372,7 @@ void  OSTimeTick (void)
     OSTimeTickHook();                                      /* Call user definable hook                 */
 #if OS_TIME_GET_SET_EN > 0   
     OS_ENTER_CRITICAL();                                   /* Update the 32-bit tick counter           */
-    OSTime++;
+    OSTime++;						   /*  记录节拍数                              */
     OS_EXIT_CRITICAL();
 #endif
     if (OSRunning == TRUE) {    
@@ -380,7 +380,7 @@ void  OSTimeTick (void)
         while (ptcb->OSTCBPrio != OS_IDLE_PRIO) {          /* Go through all TCBs in TCB list          */
             OS_ENTER_CRITICAL();
             if (ptcb->OSTCBDly != 0) {                     /* Delayed or waiting for event with TO     */
-                if (--ptcb->OSTCBDly == 0) {               /* Decrement nbr of ticks to end of delay   */
+                if (--ptcb->OSTCBDly == 0) {               /* Decrement nbr of ticks to end of delay   *//* 任务的延时时间减1 */
                     if ((ptcb->OSTCBStat & OS_STAT_SUSPEND) == OS_STAT_RDY) { /* Is task suspended?    */
                         OSRdyGrp               |= ptcb->OSTCBBitY; /* No,  Make task R-to-R (timed out)*/
                         OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
