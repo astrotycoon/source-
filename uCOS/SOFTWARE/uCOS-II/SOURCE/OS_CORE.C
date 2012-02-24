@@ -562,7 +562,7 @@ void  OS_EventWaitListInit (OS_EVENT *pevent)
 
 
     pevent->OSEventGrp = 0x00;                   /* No task waiting on event                           */
-    ptbl               = &pevent->OSEventTbl[0];
+    ptbl               = &pevent->OSEventTbl[0]; /* ptbl 	= pevent->OSEventTbl 		       */
 
 #if OS_EVENT_TBL_SIZE > 0
     *ptbl++            = 0x00;

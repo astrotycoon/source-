@@ -98,10 +98,10 @@ OS_EVENT  *OSSemCreate (INT16U cnt)
     }
     OS_EXIT_CRITICAL();
     if (pevent != (OS_EVENT *)0) {                         /* Get an event control block               */
-        pevent->OSEventType = OS_EVENT_TYPE_SEM;
-        pevent->OSEventCnt  = cnt;                         /* Set semaphore value                      */
-        pevent->OSEventPtr  = (void *)0;                   /* Unlink from ECB free list                */
-        OS_EventWaitListInit(pevent);                      /* Initialize to 'nobody waiting' on sem.   */
+        pevent->OSEventType = OS_EVENT_TYPE_SEM;								/* 设置为信号量 	*/
+        pevent->OSEventCnt  = cnt;                         /* Set semaphore value                      */	/* 设置计数器初值	*/
+        pevent->OSEventPtr  = (void *)0;                   /* Unlink from ECB free list                */	/* 置空指针		*/
+        OS_EventWaitListInit(pevent);                      /* Initialize to 'nobody waiting' on sem.   */	/* 初始化控制块		*/
     }
     return (pevent);
 }

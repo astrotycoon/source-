@@ -396,7 +396,7 @@ typedef struct os_tcb {
     OS_FLAGS       OSTCBFlagsRdy;      /* Event flags that made task ready to run                      */
 #endif
 
-    INT16U         OSTCBDly;           /* Nbr ticks to delay task or, timeout waiting for event        */
+    INT16U         OSTCBDly;           /* Nbr ticks to delay task or, timeout waiting for event        *//* 等待任务的等待期限 */
     INT8U          OSTCBStat;          /* Task status                                                  */
     INT8U          OSTCBPrio;          /* Task priority (0 == highest, 63 == lowest)                   */
 
@@ -527,7 +527,7 @@ OS_FLAGS      OSFlagQuery(OS_FLAG_GRP *pgrp, INT8U *err);
 void         *OSMboxAccept(OS_EVENT *pevent);
 #endif
 
-OS_EVENT     *OSMboxCreate(void *msg);
+OS_EVENT     *OSMboxCreate(void *msg);	/* 对消息队列进行操作的函数 */
 
 #if OS_MBOX_DEL_EN > 0
 OS_EVENT     *OSMboxDel(OS_EVENT *pevent, INT8U opt, INT8U *err);
@@ -556,7 +556,7 @@ INT8U         OSMboxQuery(OS_EVENT *pevent, OS_MBOX_DATA *pdata);
 
 #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
 
-OS_MEM       *OSMemCreate(void *addr, INT32U nblks, INT32U blksize, INT8U *err);
+OS_MEM       *OSMemCreate(void *addr, INT32U nblks, INT32U blksize, INT8U *err);	/* */
 void         *OSMemGet(OS_MEM *pmem, INT8U *err);
 INT8U         OSMemPut(OS_MEM *pmem, void *pblk);
 
@@ -578,7 +578,7 @@ INT8U         OSMemQuery(OS_MEM *pmem, OS_MEM_DATA *pdata);
 INT8U         OSMutexAccept(OS_EVENT *pevent, INT8U *err);
 #endif
 
-OS_EVENT     *OSMutexCreate(INT8U prio, INT8U *err);
+OS_EVENT     *OSMutexCreate(INT8U prio, INT8U *err);	/* 对互斥型信号量进行操作的函数 */
 
 #if OS_MUTEX_DEL_EN > 0
 OS_EVENT     *OSMutexDel(OS_EVENT *pevent, INT8U opt, INT8U *err);
@@ -606,7 +606,7 @@ INT8U         OSMutexQuery(OS_EVENT *pevent, OS_MUTEX_DATA *pdata);
 void         *OSQAccept(OS_EVENT *pevent);
 #endif
 
-OS_EVENT     *OSQCreate(void **start, INT16U size);
+OS_EVENT     *OSQCreate(void **start, INT16U size);	/* 对消息队列进行操作的函数 */
 
 #if OS_Q_DEL_EN > 0
 OS_EVENT     *OSQDel(OS_EVENT *pevent, INT8U opt, INT8U *err);
@@ -645,21 +645,42 @@ INT8U         OSQQuery(OS_EVENT *pevent, OS_Q_DATA *pdata);
 #if OS_SEM_EN > 0
 
 #if OS_SEM_ACCEPT_EN > 0
-INT16U        OSSemAccept(OS_EVENT *pevent);
+INT16U        OSSemAccept(OS_EVENT *pevent);	/* 当一个任务请求信号量时，如果希望在信号量无效时准许任务不进入等待状态而继续运行。则不调用OSSemPend()
+						函数，而是调用函数OSSemAccept()来请求信号量*/
 #endif
 
-OS_EVENT     *OSSemCreate(INT16U cnt);
+OS_EVENT     *OSSemCreate(INT16U cnt);	/* 对信号量进行操作的函数 */
+/*
+	创建信号量
+	OS_EVENT	*OSSemCreate(
+					INT16U cnt	//信号量计数器初值
+				    )
+*/
 
+/* opt --> 删除条件选项 1、opt --> OS_DEL_NO_PEND则当等待任务表中已没有等待任务时才删除信号量
+			2、opt --> OS_DEL_ALLWAYS则表明在等待任务表中无论是否有等待任务都立即删除信号量 */
 #if OS_SEM_DEL_EN > 0
 OS_EVENT     *OSSemDel(OS_EVENT *pevent, INT8U opt, INT8U *err);
 #endif
-
+/*	请求信号量
+void 	      OSSemPend(
+				OS_EVENT	*pevent,	-->被请求信号量的指针
+				INT16U		timeout,	-->等待时限（timeout设置为0，则表明任务的等待时间为无限长）
+				INT8U		*err		-->错误消息
+		       )
+*/
 void          OSSemPend(OS_EVENT *pevent, INT16U timeout, INT8U *err);
-INT8U         OSSemPost(OS_EVENT *pevent);
+INT8U         OSSemPost(OS_EVENT *pevent);	/* 发送信号量 */
 
 #if OS_SEM_QUERY_EN > 0
-INT8U         OSSemQuery(OS_EVENT *pevent, OS_SEM_DATA *pdata);
+INT8U         OSSemQuery(OS_EVENT *pevent, OS_SEM_DATA *pdata);	/* 查询信号量的状态 */
 #endif
+/*
+INT8U	      OSSemQuery(
+				OS_EVENT *pevnet,	--> 信号量指针
+				OS_SEM_DATA *pdata	--> 存储信号量状态的结构 
+		        )
+*/
 
 #endif
 
@@ -773,11 +794,16 @@ void          OS_Dummy(void);
 #endif
 
 #if ((OS_Q_EN > 0) && (OS_MAX_QS > 0)) || (OS_MBOX_EN > 0) || (OS_SEM_EN > 0) || (OS_MUTEX_EN > 0)
-INT8U         OS_EventTaskRdy(OS_EVENT *pevent, void *msg, INT8U msk);
-void          OS_EventTaskWait(OS_EVENT *pevent);
-void          OS_EventTO(OS_EVENT *pevent);
-void          OS_EventWaitListInit(OS_EVENT *pevent);
+INT8U         OS_EventTaskRdy(OS_EVENT *pevent, void *msg, INT8U msk);	/* 使一个正在等待任务进入就绪状态的函数 	*/
+void          OS_EventTaskWait(OS_EVENT *pevent);			/* 使一个任务进入等待状态的函数			*/
+void          OS_EventTO(OS_EVENT *pevent);				/* 使一个等待超时的任务进入就绪状态的函数	*/
+void          OS_EventWaitListInit(OS_EVENT *pevent);			/* 事件控制块的初始化函数			*/
 #endif
+/*
+	void OS_EventWaitListInit(
+					OS_EVENT *pevent;	//事件控制块的指针
+				 )
+*/
 
 #if (OS_VERSION >= 251) && (OS_FLAG_EN > 0) && (OS_MAX_FLAGS > 0)
 void          OS_FlagInit(void);
