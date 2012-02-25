@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "upgrade" ] && dpkg --compare-versions "$2" lt-nl 2.30.0-0ubuntu3; then
+    # ensure that /usr/share/doc/libglib2.0-data is not a leftover symlink,
+    # this happend for some upgrades (LP: #854622)
+    if [ -L /usr/share/doc/libglib2.0-data ]; then
+        rm -f /usr/share/doc/libglib2.0-data
+    fi
+fi
+
+#DEBHELPER#

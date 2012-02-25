@@ -1,0 +1,26 @@
+debian/install/deb/usr/include/* usr/include
+debian/install/deb/usr/lib/${DEB_HOST_MULTIARCH}/lib*.{la,a} usr/lib/${DEB_HOST_MULTIARCH}
+debian/install/deb/usr/lib/${DEB_HOST_MULTIARCH}/libg{object,module,thread,io}*.so usr/lib/${DEB_HOST_MULTIARCH}
+debian/install/deb/usr/lib/${DEB_HOST_MULTIARCH}/glib-2.0 usr/lib/${DEB_HOST_MULTIARCH}
+debian/install/deb/usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig usr/lib/${DEB_HOST_MULTIARCH}
+debian/install/deb/usr/lib/${DEB_HOST_MULTIARCH}/gdbus-2.0/codegen/*.py usr/lib/${DEB_HOST_MULTIARCH}/gdbus-2.0/codegen
+debian/install/deb/usr/share/aclocal usr/share
+debian/install/deb/usr/share/gdb usr/share/gdb
+debian/install/deb/usr/share/glib-2.0/gdb usr/share/glib-2.0
+debian/install/deb/usr/share/glib-2.0/gettext usr/share/glib-2.0
+debian/install/deb/usr/share/glib-2.0/schemas usr/share/glib-2.0
+debian/install/deb/usr/share/man/man1/glib-genmarshal.1* usr/share/man/man1
+debian/install/deb/usr/share/man/man1/glib-mkenums.1* usr/share/man/man1
+debian/install/deb/usr/share/man/man1/gobject-query.1* usr/share/man/man1
+debian/install/deb/usr/share/man/man1/glib-gettextize.1* usr/share/man/man1
+debian/install/deb/usr/share/man/man1/gtester.1* usr/share/man/man1
+debian/install/deb/usr/share/man/man1/gtester-report.1* usr/share/man/man1
+debian/install/deb/usr/share/man/man1/gdbus-codegen.1* usr/share/man/man1
+debian/install/deb/usr/bin/glib-genmarshal usr/bin
+debian/install/deb/usr/bin/gobject-query usr/bin
+debian/install/deb/usr/bin/glib-mkenums usr/bin
+debian/install/deb/usr/bin/gtester-report usr/bin
+debian/install/deb/usr/bin/glib-gettextize usr/bin
+debian/install/deb/usr/bin/gtester usr/bin
+debian/install/deb/usr/bin/gdbus-codegen usr/bin
+

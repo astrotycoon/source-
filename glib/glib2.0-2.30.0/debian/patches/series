@@ -1,0 +1,6 @@
+01_gettext-desktopfiles.patch
+02_gettext-desktopfiles-ubuntu.patch
+04_homedir_env.patch
+gio-modules-multiarch-compat.patch
+10_gvariant_check_null.patch
+

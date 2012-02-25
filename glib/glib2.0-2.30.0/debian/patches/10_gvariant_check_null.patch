@@ -1,0 +1,13 @@
+=== modified file 'glib/gvariant-core.c'
+--- old/glib/gvariant-core.c	2011-08-16 15:42:41 +0000
++++ new/glib/gvariant-core.c	2011-10-03 14:58:16 +0000
+@@ -614,6 +614,8 @@ g_variant_is_trusted (GVariant *value)
+ void
+ g_variant_unref (GVariant *value)
+ {
++  g_return_if_fail (value != NULL);
++
+   if (g_atomic_int_dec_and_test (&value->ref_count))
+     {
+       if G_UNLIKELY (value->state & STATE_LOCKED)
+

@@ -1,0 +1,2 @@
+debian/install/udeb/usr/lib/${DEB_HOST_MULTIARCH}/lib*.so.* usr/lib
+debian/install/udeb/usr/share/locale usr/share

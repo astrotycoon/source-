@@ -1,0 +1,1 @@
+debian/install/refdbg/usr/lib/${DEB_HOST_MULTIARCH}/libgobject*.so* usr/lib/${DEB_HOST_MULTIARCH}/refdbg

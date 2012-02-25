@@ -155,7 +155,7 @@
 
 #define OS_PRIO_EXIST            40
 #define OS_PRIO_ERR              41
-#define OS_PRIO_INVALID          42
+#define OS_PRIO_INVALID          42	/* */
 
 #define OS_SEM_OVF               50
 
@@ -578,7 +578,7 @@ INT8U         OSMemQuery(OS_MEM *pmem, OS_MEM_DATA *pdata);
 INT8U         OSMutexAccept(OS_EVENT *pevent, INT8U *err);
 #endif
 
-OS_EVENT     *OSMutexCreate(INT8U prio, INT8U *err);	/* 对互斥型信号量进行操作的函数 */
+OS_EVENT     *OSMutexCreate(INT8U prio, INT8U *err);	/* 对互斥型信号量进行操作的函数 （创建互斥型信号量） */
 
 #if OS_MUTEX_DEL_EN > 0
 OS_EVENT     *OSMutexDel(OS_EVENT *pevent, INT8U opt, INT8U *err);

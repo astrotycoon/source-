@@ -1,0 +1,4 @@
+version=2
+http://download.gnome.org/sources/glib/([\d\.]+)/ \
+	glib-(.*)\.tar\.bz2 \
+	debian uupdate

@@ -1,0 +1,4 @@
+usr/share/doc/libgtk2.0-doc/gtk usr/share/doc/libglib2.0-doc/gtk
+usr/share/doc/libglib2.0-doc/gio usr/share/gtk-doc/html/gio
+usr/share/doc/libglib2.0-doc/glib usr/share/gtk-doc/html/glib
+usr/share/doc/libglib2.0-doc/gobject usr/share/gtk-doc/html/gobject
