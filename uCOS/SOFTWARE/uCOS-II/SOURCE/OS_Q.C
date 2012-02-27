@@ -113,7 +113,7 @@ OS_EVENT  *OSQCreate (void **start, INT16U size)
             OSQFreeList         = OSQFreeList->OSQPtr;    /* Yes, Adjust free list pointer to next free*/
             OS_EXIT_CRITICAL();
             pq->OSQStart        = start;                  /*      Initialize the queue                 */
-            pq->OSQEnd          = &start[size];
+            pq->OSQEnd          = &start[size];		  /* pq->OSQEnd = start + size;		       */
             pq->OSQIn           = start;
             pq->OSQOut          = start;
             pq->OSQSize         = size;

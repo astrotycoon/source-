@@ -22,7 +22,15 @@
 *                                            LOCAL PROTOTYPES
 *********************************************************************************************************
 */
-
+/*
+static void      OS_FlagBlock(
+				OS_FLAG_GRP *pgrp,	-->信号量集指针
+				OS_FLAG_NODE *pnode,	-->待添加的等待任务节点指针
+				OS_FLAGS flags,		-->指定等待信号的数据
+				INT8U wait_type,	-->信号与等待任务之间的逻辑
+				INT16U timeout		-->等待时限
+			     )
+*/
 static  void     OS_FlagBlock(OS_FLAG_GRP *pgrp, OS_FLAG_NODE *pnode, OS_FLAGS flags, INT8U wait_type, INT16U timeout);
 static  BOOLEAN  OS_FlagTaskRdy(OS_FLAG_NODE *pnode, OS_FLAGS flags_rdy);
 

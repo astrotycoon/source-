@@ -110,4 +110,4 @@
 #define OS_TIME_GET_SET_EN        1    /*     Include code for OSTimeGet() and OSTimeSet()             */
 
 
-typedef INT16U             OS_FLAGS;   /* Date type for event flag bits (8, 16 or 32 bits)             */
+typedef INT16U             OS_FLAGS;   /* Date type for event flag bits (8, 16 or 32 bits)             *//* 用来存放信号量集所有信号的状态，每一个信号占据一个二进制位 */

@@ -227,25 +227,25 @@ typedef struct {
 
 #if (OS_VERSION >= 251) && (OS_FLAG_EN > 0) && (OS_MAX_FLAGS > 0)
 typedef struct {                            /* Event Flag Group                                        */
-    INT8U         OSFlagType;               /* Should be set to OS_EVENT_TYPE_FLAG                     */
-    void         *OSFlagWaitList;           /* Pointer to first NODE of task waiting on event flag     */
-    OS_FLAGS      OSFlagFlags;              /* 8, 16 or 32 bit flags                                   */
-} OS_FLAG_GRP;    
+    INT8U         OSFlagType;               /* Should be set to OS_EVENT_TYPE_FLAG                     *//* 识别是否为信号量集的标志 */
+    void         *OSFlagWaitList;           /* Pointer to first NODE of task waiting on event flag     *//* 指向等待任务链表的指针   */
+    OS_FLAGS      OSFlagFlags;              /* 8, 16 or 32 bit flags                                   *//* 所有信号列表             */
+} OS_FLAG_GRP;	/* 标志组 --描述信号量集 */
 
     
     
 typedef struct {                            /* Event Flag Wait List Node                               */
-    void         *OSFlagNodeNext;           /* Pointer to next     NODE in wait list                   */
-    void         *OSFlagNodePrev;           /* Pointer to previous NODE in wait list                   */
-    void         *OSFlagNodeTCB;            /* Pointer to TCB of waiting task                          */  
-    void         *OSFlagNodeFlagGrp;        /* Pointer to Event Flag Group                             */  
-    OS_FLAGS      OSFlagNodeFlags;          /* Event flag to wait on                                   */  
-    INT8U         OSFlagNodeWaitType;       /* Type of wait:                                           */
+    void         *OSFlagNodeNext;           /* Pointer to next     NODE in wait list                   *//* 指向下一个节点的指针 		*/
+    void         *OSFlagNodePrev;           /* Pointer to previous NODE in wait list                   *//* 指向前一个节点的指针 		*/
+    void         *OSFlagNodeTCB;            /* Pointer to TCB of waiting task                          *//* 指向对应任务的任务控制块的指针 	*/  
+    void         *OSFlagNodeFlagGrp;        /* Pointer to Event Flag Group                             *//* 反向指向信号量集标志组的指针	*/  
+    OS_FLAGS      OSFlagNodeFlags;          /* Event flag to wait on                                   *//* 信号过滤器 				*/  
+    INT8U         OSFlagNodeWaitType;       /* Type of wait:                                           *//* 定义逻辑运算关系的数据		*/
                                             /*      OS_FLAG_WAIT_AND                                   */
                                             /*      OS_FLAG_WAIT_ALL                                   */
                                             /*      OS_FLAG_WAIT_OR                                    */
                                             /*      OS_FLAG_WAIT_ANY                                   */
-} OS_FLAG_NODE;
+} OS_FLAG_NODE;	/* 等待任务链表节点 */
 #endif
 
 
@@ -312,6 +312,15 @@ typedef struct {
 *********************************************************************************************************
 */
 
+/*
+	OSQPtr		指向下一个队列控制块
+	OSQStart	指针，指向消息指针数组的起始地址
+	OSQEnd		指针，指向了消息指针数组结束单元的下一个单元。它使得数组构成了一个循环的缓冲区
+	OSQIn		指针，指向了插入一条消息的位置。当它移动到与OSQEnd相等时，被调整到指向数组的起始单元
+	OSQOut		指针，指向了被取出消息的位置。当它移动到与OSQEnd相等时，被调整到指向数组的起始单元
+	OSQSize		数组的长度
+	OSQEntries	已存放消息指针的元素数目
+*/
 #if OS_Q_EN > 0
 typedef struct os_q {                   /* QUEUE CONTROL BLOCK                                         */
     struct os_q   *OSQPtr;              /* Link to next queue control block in list of free blocks     */
@@ -321,7 +330,7 @@ typedef struct os_q {                   /* QUEUE CONTROL BLOCK                  
     void         **OSQOut;              /* Pointer to where next message will be extracted from the Q  */
     INT16U         OSQSize;             /* Size of queue (maximum number of entries)                   */
     INT16U         OSQEntries;          /* Current number of entries in the queue                      */
-} OS_Q;
+} OS_Q;	/* 队列控制块 */
 
 
 typedef struct {
@@ -499,17 +508,45 @@ extern  INT8U  const      OSUnMapTbl[];             /* Priority->Index    lookup
 
 #if OS_FLAG_ACCEPT_EN > 0
 OS_FLAGS      OSFlagAccept(OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U wait_type, INT8U *err);
-#endif
+#endif/*
+OS_FLAGS      OSFlagAccept(
+				OS_FLAG_GRP *pgrp,	-->所请求的信号量集指针
+				OS_FLAGS flags,		-->请求的信号
+				INT8U wait_type,	-->任务就绪与信号之间的逻辑关系
+				INT8U *err		-->错误信息
+			  );
+      */	
 
 OS_FLAG_GRP  *OSFlagCreate(OS_FLAGS flags, INT8U *err);
+/*
+OS_FLAG_GRP  *OSFlagCreate(
+				OS_FLAGS flags,	-->信号的初始值
+				INT8U *err	-->错误信息
+			  );
+*/
 
 #if OS_FLAG_DEL_EN > 0
 OS_FLAG_GRP  *OSFlagDel(OS_FLAG_GRP *pgrp, INT8U opt, INT8U *err);
 #endif
-
+/*
+OS_FLAGS      OSFlagPend(
+				OS_FLAG_GRP *pgrp,	-->所请求的信号量集指针
+				OS_FLAGS flags,		-->滤波器
+				INT8U wait_type,	-->逻辑运算类型
+				INT16U timeout,		-->等待时限
+				INT8U *err		-->错误信息
+			)
+*/
 OS_FLAGS      OSFlagPend(OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U wait_type, INT16U timeout, INT8U *err);
 OS_FLAGS      OSFlagPost(OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U operation, INT8U *err);
-
+/*
+OS_FLAGS      OSFlagPost(
+				OS_FLAG_GRP *pgrp,	-->信号量集指针
+				OS_FLAGS flags,		-->选择所要发送的信号
+				INT8U operation,	-->信号有效的选项
+				INT8U *err		-->错误信息
+			)
+*/
 #if OS_FLAG_QUERY_EN > 0
 OS_FLAGS      OSFlagQuery(OS_FLAG_GRP *pgrp, INT8U *err);
 #endif
@@ -528,17 +565,38 @@ void         *OSMboxAccept(OS_EVENT *pevent);
 #endif
 
 OS_EVENT     *OSMboxCreate(void *msg);	/* 对消息队列进行操作的函数 */
+/*
+创建邮箱的操作
+OS_EVNET     *OSMboxCreate(
+				void *msg	-->消息指针
+			  )
+*/
 
 #if OS_MBOX_DEL_EN > 0
 OS_EVENT     *OSMboxDel(OS_EVENT *pevent, INT8U opt, INT8U *err);
 #endif
 
 void         *OSMboxPend(OS_EVENT *pevent, INT16U timeout, INT8U *err);
+/*
+void         *OSMboxPend(
+				OS_EVENT *pevent,	-->请求消息邮箱指针
+				INT16U timeout,		-->等待时限
+				INT8U *err		-->错误消息
+			)
+*/
 
 #if OS_MBOX_POST_EN > 0
 INT8U         OSMboxPost(OS_EVENT *pevent, void *msg);
 #endif
-
+/*
+INT8U         OSMboxPostOpt(
+				OS_EVENT *pevent,	-->消息邮箱指针
+				void *msg,		-->消息指针
+				INT8U opt		-->广播选项（用来说明是否把消息向所有等待任务广播）
+						opt == OS_POST_OPT_BROADCAST	把消息向所有等待任务广播
+						opt == OS_POST_OPT_NONE		把消息只向优先级别最高的等待任务发送
+			   )
+*/
 #if OS_MBOX_POST_OPT_EN > 0
 INT8U         OSMboxPostOpt(OS_EVENT *pevent, void *msg, INT8U opt);
 #endif
@@ -607,6 +665,12 @@ void         *OSQAccept(OS_EVENT *pevent);
 #endif
 
 OS_EVENT     *OSQCreate(void **start, INT16U size);	/* 对消息队列进行操作的函数 */
+/*
+OS_EVENT     *OSQCreate(
+				void **start,	-->指针数组的地址
+				INT16U size	-->数组长度
+		       )
+*/
 
 #if OS_Q_DEL_EN > 0
 OS_EVENT     *OSQDel(OS_EVENT *pevent, INT8U opt, INT8U *err);
@@ -617,13 +681,20 @@ INT8U         OSQFlush(OS_EVENT *pevent);
 #endif
 
 void         *OSQPend(OS_EVENT *pevent, INT16U timeout, INT8U *err);
+/*
+void         *OSQPend(
+			OS_EVENT *pevent,	-->所请求的消息队列的指针
+			INT16U timeout,		-->等待时限
+			INT8U *err		-->错误消息
+		     )
+*/
 
 #if OS_Q_POST_EN > 0
-INT8U         OSQPost(OS_EVENT *pevent, void *msg);
+INT8U         OSQPost(OS_EVENT *pevent, void *msg);		/* 以FIFO（先进先出）的方式组织消息队列 */
 #endif
 
 #if OS_Q_POST_FRONT_EN > 0
-INT8U         OSQPostFront(OS_EVENT *pevent, void *msg);
+INT8U         OSQPostFront(OS_EVENT *pevent, void *msg);	/* 以LIFO（后进先出）的方式组织消息队列 */
 #endif
 
 #if OS_Q_POST_OPT_EN > 0
