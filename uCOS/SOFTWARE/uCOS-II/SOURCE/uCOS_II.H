@@ -271,12 +271,12 @@ typedef struct {
 
 #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
 typedef struct {                       /* MEMORY CONTROL BLOCK                                         */
-    void   *OSMemAddr;                 /* Pointer to beginning of memory partition                     */
-    void   *OSMemFreeList;             /* Pointer to list of free memory blocks                        */
-    INT32U  OSMemBlkSize;              /* Size (in bytes) of each block of memory                      */
-    INT32U  OSMemNBlks;                /* Total number of blocks in this partition                     */
-    INT32U  OSMemNFree;                /* Number of memory blocks remaining in this partition          */
-} OS_MEM;
+    void   *OSMemAddr;                 /* Pointer to beginning of memory partition                     *//* 内存分区的指针 		  */
+    void   *OSMemFreeList;             /* Pointer to list of free memory blocks                        *//* 指向内存块链表的指针	  */
+    INT32U  OSMemBlkSize;              /* Size (in bytes) of each block of memory                      *//* 内存块的长度		  */
+    INT32U  OSMemNBlks;                /* Total number of blocks in this partition                     *//* 分区内分区块的数目 		  */
+    INT32U  OSMemNFree;                /* Number of memory blocks remaining in this partition          *//* 分区内当前可分配的内存块的数目*/
+} OS_MEM;	/* 内存控制块 */
 
 
 typedef struct {
@@ -613,8 +613,16 @@ INT8U         OSMboxQuery(OS_EVENT *pevent, OS_MBOX_DATA *pdata);
 */
 
 #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
-
-OS_MEM       *OSMemCreate(void *addr, INT32U nblks, INT32U blksize, INT8U *err);	/* */
+/*
+	创建内存分区
+OS_MEM	     *OSMemCreate(
+				void *addr,		-->内存分区的起始地址
+				INT32U nblks,		-->分区中内存块的数目
+				INT32U blksize,		-->每个内存块的字节数
+				INT8U *err		-->错误信息
+			 )	
+*/
+OS_MEM       *OSMemCreate(void *addr, INT32U nblks, INT32U blksize, INT8U *err);
 void         *OSMemGet(OS_MEM *pmem, INT8U *err);
 INT8U         OSMemPut(OS_MEM *pmem, void *pblk);
 

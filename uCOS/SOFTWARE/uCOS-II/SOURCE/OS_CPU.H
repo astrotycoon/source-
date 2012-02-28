@@ -76,9 +76,9 @@ typedef unsigned int   OS_CPU_SR;                /* The CPU Status Word is 16-bi
 
 #define  OS_STK_GROWTH        1                       /* Stack grows from HIGH to LOW memory on 80x86  */
 
-#define  uCOS                 0x80                    /* Interrupt vector # used for context switch    */
+#define  uCOS                 0x80                    /* Interrupt vector # used for context switch    *//* 定义常量uCOS并且值为0x80 */
 
-#define  OS_TASK_SW()         asm  INT   uCOS
+#define  OS_TASK_SW()         asm  INT   uCOS	      /* 引发INT 0x80内部中段			       */
 
 /*
 *********************************************************************************************************

@@ -127,19 +127,19 @@ _OSStartHighRdy  ENDP
 
 _OSCtxSw    PROC   FAR
 ;
-            PUSHA                                  ; Save current task's context
-            PUSH   ES                              ;
+            PUSHA                                  ; Save current task's context （把被中止运行任务的在CPU其他寄存器中的断点数据保存到当前任务堆栈中）
+            PUSH   ES                              ;					PUSHA  -->所有寄存器进栈
             PUSH   DS                              ;
 ;
             MOV    AX, SEG _OSTCBCur               ; Reload DS in case it was altered
             MOV    DS, AX                          ;
 ;
-            LES    BX, DWORD PTR DS:_OSTCBCur      ; OSTCBCur->OSTCBStkPtr = SS:SP
+            LES    BX, DWORD PTR DS:_OSTCBCur      ; OSTCBCur->OSTCBStkPtr = SS:SP （把指向新的堆栈结构的指针保存到当前任务控制块TCB中）
             MOV    ES:[BX+2], SS                   ;
             MOV    ES:[BX+0], SP                   ;
 ;
-            CALL   FAR PTR _OSTaskSwHook           ; Call user defined task switch hook
-;
+            CALL   FAR PTR _OSTaskSwHook           ; Call user defined task switch hook（调用钩子函数OSTaskSwHook()。应用程序设计人员可在其中编
+；																写一些自己的代码）
             MOV    AX, WORD PTR DS:_OSTCBHighRdy+2 ; OSTCBCur = OSTCBHighRdy
             MOV    DX, WORD PTR DS:_OSTCBHighRdy   ;
             MOV    WORD PTR DS:_OSTCBCur+2, AX     ;
