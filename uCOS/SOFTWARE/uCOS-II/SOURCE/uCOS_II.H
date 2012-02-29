@@ -58,13 +58,13 @@
 *                              TASK STATUS (Bit definition for OSTCBStat)
 *********************************************************************************************************
 */
-#define  OS_STAT_RDY            0x00        /* Ready to run                                            */
-#define  OS_STAT_SEM            0x01        /* Pending on semaphore                                    */
-#define  OS_STAT_MBOX           0x02        /* Pending on mailbox                                      */
-#define  OS_STAT_Q              0x04        /* Pending on queue                                        */
-#define  OS_STAT_SUSPEND        0x08        /* Task is suspended                                       */
-#define  OS_STAT_MUTEX          0x10        /* Pending on mutual exclusion semaphore                   */
-#define  OS_STAT_FLAG           0x20        /* Pending on event flag group                             */
+#define  OS_STAT_RDY            0x00        /* Ready to run                                            *//* 就绪态		*/
+#define  OS_STAT_SEM            0x01        /* Pending on semaphore                                    *//* 等待信号量状态	*/
+#define  OS_STAT_MBOX           0x02        /* Pending on mailbox                                      *//* 等待消息邮箱状态	*/
+#define  OS_STAT_Q              0x04        /* Pending on queue                                        *//* 等待消息队列状态	*/
+#define  OS_STAT_SUSPEND        0x08        /* Task is suspended                                       *//* 挂起状态		*/
+#define  OS_STAT_MUTEX          0x10        /* Pending on mutual exclusion semaphore                   *//* 等待互斥型信号量状态*/
+#define  OS_STAT_FLAG           0x20        /* Pending on event flag group                             *//* */
 
 /*
 *********************************************************************************************************
@@ -126,9 +126,9 @@
 *                                 TASK OPTIONS (see OSTaskCreateExt()) 
 *********************************************************************************************************
 */
-#define  OS_TASK_OPT_STK_CHK  0x0001        /* Enable stack checking for the task                      */
-#define  OS_TASK_OPT_STK_CLR  0x0002        /* Clear the stack when the task is create                 */
-#define  OS_TASK_OPT_SAVE_FP  0x0004        /* Save the contents of any floating-point registers       */
+#define  OS_TASK_OPT_STK_CHK  0x0001        /* Enable stack checking for the task                      *//* 告知OSTaskCreateExt()任务栈检验功能得到了许	*/
+#define  OS_TASK_OPT_STK_CLR  0x0002        /* Clear the stack when the task is create                 *//* 表示任务建立时，任务栈要清0			*/
+#define  OS_TASK_OPT_SAVE_FP  0x0004        /* Save the contents of any floating-point registers       *//* 告知OSTaskCreateExt()任务要做浮点数运算	*/
 
 /*
 *********************************************************************************************************
@@ -377,37 +377,37 @@ typedef struct {
 */
 
 typedef struct os_tcb {
-    OS_STK        *OSTCBStkPtr;        /* Pointer to current top of stack                              */
+    OS_STK        *OSTCBStkPtr;        /* Pointer to current top of stack                              *//* 指向任务堆栈栈顶的指针	*/
 
 #if OS_TASK_CREATE_EXT_EN > 0
-    void          *OSTCBExtPtr;        /* Pointer to user definable data for TCB extension             */
-    OS_STK        *OSTCBStkBottom;     /* Pointer to bottom of stack                                   */
-    INT32U         OSTCBStkSize;       /* Size of task stack (in number of stack elements)             */
-    INT16U         OSTCBOpt;           /* Task options as passed by OSTaskCreateExt()                  */
-    INT16U         OSTCBId;            /* Task ID (0..65535)                                           */
+    void          *OSTCBExtPtr;        /* Pointer to user definable data for TCB extension             *//* 指向用户的任务控制块的指针 	*/
+    OS_STK        *OSTCBStkBottom;     /* Pointer to bottom of stack                                   *//* 指向任务堆栈栈底的指针	*/
+    INT32U         OSTCBStkSize;       /* Size of task stack (in number of stack elements)             *//* 任务堆栈大小		*/
+    INT16U         OSTCBOpt;           /* Task options as passed by OSTaskCreateExt()                  *//* 创建任务时的选择项		*/
+    INT16U         OSTCBId;            /* Task ID (0..65535)                                           *//* 目前该域未被使用		*/
 #endif
 
-    struct os_tcb *OSTCBNext;          /* Pointer to next     TCB in the TCB list                      */
-    struct os_tcb *OSTCBPrev;          /* Pointer to previous TCB in the TCB list                      */
+    struct os_tcb *OSTCBNext;          /* Pointer to next     TCB in the TCB list                      *//* 指向后一个任务控制块的指针	*/
+    struct os_tcb *OSTCBPrev;          /* Pointer to previous TCB in the TCB list                      *//* 指向前一个任务控制块的指针	*/
 
 #if ((OS_Q_EN > 0) && (OS_MAX_QS > 0)) || (OS_MBOX_EN > 0) || (OS_SEM_EN > 0) || (OS_MUTEX_EN > 0)
-    OS_EVENT      *OSTCBEventPtr;      /* Pointer to event control block                               */
+    OS_EVENT      *OSTCBEventPtr;      /* Pointer to event control block                               *//* 指向事件控制块的指针	*/
 #endif
 
 #if ((OS_Q_EN > 0) && (OS_MAX_QS > 0)) || (OS_MBOX_EN > 0)
-    void          *OSTCBMsg;           /* Message received from OSMboxPost() or OSQPost()              */
+    void          *OSTCBMsg;           /* Message received from OSMboxPost() or OSQPost()              *//* 指向传递给任务消息的指针	*/
 #endif
 
 #if (OS_VERSION >= 251) && (OS_FLAG_EN > 0) && (OS_MAX_FLAGS > 0)
 #if OS_TASK_DEL_EN > 0
-    OS_FLAG_NODE  *OSTCBFlagNode;      /* Pointer to event flag node                                   */
+    OS_FLAG_NODE  *OSTCBFlagNode;      /* Pointer to event flag node                                   *//* 指向事件标志节点的指针 	*/
 #endif    
-    OS_FLAGS       OSTCBFlagsRdy;      /* Event flags that made task ready to run                      */
+    OS_FLAGS       OSTCBFlagsRdy;      /* Event flags that made task ready to run                      *//* 使任务进入就绪态的事件标志	*/
 #endif
 
-    INT16U         OSTCBDly;           /* Nbr ticks to delay task or, timeout waiting for event        *//* 等待任务的等待期限 */
-    INT8U          OSTCBStat;          /* Task status                                                  */
-    INT8U          OSTCBPrio;          /* Task priority (0 == highest, 63 == lowest)                   */
+    INT16U         OSTCBDly;           /* Nbr ticks to delay task or, timeout waiting for event        *//* 把任务延时或挂起一段时间	*/
+    INT8U          OSTCBStat;          /* Task status                                                  *//* 任务的当前状态		*/
+    INT8U          OSTCBPrio;          /* Task priority (0 == highest, 63 == lowest)                   *//* 任务的优先级		*/
 
     INT8U          OSTCBX;             /* Bit position in group  corresponding to task priority (0..7) */
     INT8U          OSTCBY;             /* Index into ready table corresponding to task priority        */
