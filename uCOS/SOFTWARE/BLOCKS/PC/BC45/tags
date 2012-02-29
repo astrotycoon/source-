@@ -1,0 +1,62 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DISP_BASE	PC.C	20;"	d	file:
+DISP_BGND_BLACK	PC.H	52;"	d
+DISP_BGND_BLUE	PC.H	53;"	d
+DISP_BGND_BROWN	PC.H	58;"	d
+DISP_BGND_CYAN	PC.H	55;"	d
+DISP_BGND_GREEN	PC.H	54;"	d
+DISP_BGND_LIGHT_GRAY	PC.H	59;"	d
+DISP_BGND_PURPLE	PC.H	57;"	d
+DISP_BGND_RED	PC.H	56;"	d
+DISP_BLINK	PC.H	61;"	d
+DISP_FGND_BLACK	PC.H	35;"	d
+DISP_FGND_BLUE	PC.H	36;"	d
+DISP_FGND_BROWN	PC.H	41;"	d
+DISP_FGND_CYAN	PC.H	38;"	d
+DISP_FGND_DARK_GRAY	PC.H	43;"	d
+DISP_FGND_GREEN	PC.H	37;"	d
+DISP_FGND_LIGHT_BLUE	PC.H	44;"	d
+DISP_FGND_LIGHT_CYAN	PC.H	46;"	d
+DISP_FGND_LIGHT_GRAY	PC.H	42;"	d
+DISP_FGND_LIGHT_GREEN	PC.H	45;"	d
+DISP_FGND_LIGHT_PURPLE	PC.H	48;"	d
+DISP_FGND_LIGHT_RED	PC.H	47;"	d
+DISP_FGND_PURPLE	PC.H	40;"	d
+DISP_FGND_RED	PC.H	39;"	d
+DISP_FGND_WHITE	PC.H	50;"	d
+DISP_FGND_YELLOW	PC.H	49;"	d
+DISP_MAX_X	PC.C	21;"	d	file:
+DISP_MAX_Y	PC.C	22;"	d	file:
+PC_DOSReturn	PC.C	/^void PC_DOSReturn (void)$/;"	f
+PC_DOSSaveReturn	PC.C	/^void PC_DOSSaveReturn (void)$/;"	f
+PC_DispChar	PC.C	/^void PC_DispChar (INT8U x, INT8U y, INT8U c, INT8U color)$/;"	f
+PC_DispClrCol	PC.C	/^void PC_DispClrCol (INT8U x, INT8U color)$/;"	f
+PC_DispClrRow	PC.C	/^void PC_DispClrRow (INT8U y, INT8U color)$/;"	f
+PC_DispClrScr	PC.C	/^void PC_DispClrScr (INT8U color)$/;"	f
+PC_DispStr	PC.C	/^void PC_DispStr (INT8U x, INT8U y, INT8U *s, INT8U color)$/;"	f
+PC_ElapsedInit	PC.C	/^void PC_ElapsedInit(void)$/;"	f
+PC_ElapsedOverhead	PC.C	/^static INT16U    PC_ElapsedOverhead;$/;"	v	file:
+PC_ElapsedStart	PC.C	/^void PC_ElapsedStart(void)$/;"	f
+PC_ElapsedStop	PC.C	/^INT16U PC_ElapsedStop(void)$/;"	f
+PC_ExitFlag	PC.C	/^static BOOLEAN   PC_ExitFlag;$/;"	v	file:
+PC_GetDateTime	PC.C	/^void PC_GetDateTime (char *s)$/;"	f
+PC_GetKey	PC.C	/^BOOLEAN PC_GetKey (INT16S *c)$/;"	f
+PC_JumpBuf	PC.C	/^static jmp_buf   PC_JumpBuf;$/;"	v	file:
+PC_SetTickRate	PC.C	/^void PC_SetTickRate (INT16U freq)$/;"	f
+PC_TickISR	PC.C	/^void           (*PC_TickISR)(void);$/;"	v
+PC_VectGet	PC.C	/^void *PC_VectGet (INT8U vect)$/;"	f
+PC_VectSet	PC.C	/^void PC_VectSet (INT8U vect, void (*isr)(void))$/;"	f
+TICK_T0_8254_CTR0	PC.C	25;"	d	file:
+TICK_T0_8254_CTR0_MODE3	PC.C	29;"	d	file:
+TICK_T0_8254_CTR1	PC.C	26;"	d	file:
+TICK_T0_8254_CTR2	PC.C	27;"	d	file:
+TICK_T0_8254_CTR2_LATCH	PC.C	31;"	d	file:
+TICK_T0_8254_CTR2_MODE0	PC.C	30;"	d	file:
+TICK_T0_8254_CWR	PC.C	24;"	d	file:
+VECT_DOS_CHAIN	PC.C	34;"	d	file:
+VECT_TICK	PC.C	33;"	d	file:

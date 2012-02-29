@@ -459,9 +459,9 @@ OS_EXT  INT8U             OSRdyTbl[OS_RDY_TBL_SIZE];       /* Table of tasks whi
 
 OS_EXT  BOOLEAN           OSRunning;                       /* Flag indicating that kernel is running   *//* uCOS核是否在运行的标志 */
 
-OS_EXT  INT8U             OSTaskCtr;                       /* Number of tasks created                  *//* 已经建立了的任务数 */
+OS_EXT  INT8U             OSTaskCtr;                       /* Number of tasks created                  *//* 定义任务计数器 */
 
-OS_EXT  volatile  INT32U  OSIdleCtr;                                 /* Idle counter                   *//* 空闲任务的计数器 */
+OS_EXT  volatile  INT32U  OSIdleCtr;                       /* Idle counter                   	       *//* 定义32位空闲任务计数器 */
 
 OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      /* Idle task stack                */
 

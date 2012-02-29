@@ -31,18 +31,18 @@
                                        /* ... MUST be > 0                                              */
 #define OS_MAX_FLAGS              5    /* Max. number of Event Flag Groups    in your application ...  *//* 事件标志的最大数目 				*/
                                        /* ... MUST be > 0                                              */
-#define OS_MAX_MEM_PART          10    /* Max. number of memory partitions ...                         *//* 最多内存分区数目				*/
+#define OS_MAX_MEM_PART          10    /* Max. number of memory partitions ...                         *//* 最多内存块数目				*/
                                        /* ... MUST be > 0                                              */
 #define OS_MAX_QS                10    /* Max. number of queue control blocks in your application ...  *//* 消息队列的最大数目				*/
                                        /* ... MUST be > 0                                              */
-#define OS_MAX_TASKS             63    /* Max. number of tasks in your application ...                 *//* 最多任务数					*/
+#define OS_MAX_TASKS             63    /* Max. number of tasks in your application ...                 *//* 用户程序中最多任务数（不能大于62）		*/
                                        /* ... MUST be >= 2                                             */
 
 #define OS_SCHED_LOCK_EN          1    /*     Include code for OSSchedLock() and OSSchedUnlock()       *//* 用于设定是否使用左边两个函数		*/
 
 #define OS_TASK_IDLE_STK_SIZE   512    /* Idle task stack size (# of OS_STK wide entries)              *//* 设定空闲任务的堆栈容量 			*/
 
-#define OS_TASK_STAT_EN           1    /* Enable (1) or Disable(0) the statistics task                 *//* 设定是否使用统计任务			*/
+#define OS_TASK_STAT_EN           1    /* Enable (1) or Disable(0) the statistics task                 *//* 设定是否使用统计任务及其初始化函数		*/
 #define OS_TASK_STAT_STK_SIZE   512    /* Statistics task stack size (# of OS_STK wide entries)        *//* 设定统计任务的堆栈容量			*/
 
 #define OS_TICKS_PER_SEC        200    /* Set the number of ticks in one second                        *//* 设定调用OSTimeTick()函数的频率		*/
@@ -103,7 +103,7 @@
 #define OS_TASK_SUSPEND_EN        1    /*     Include code for OSTaskSuspend() and OSTaskResume()      *//* 是否使用OSTaskSuspend()和OSTaskResume()函数	*/
 #define OS_TASK_QUERY_EN          1    /*     Include code for OSTaskQuery()                           *//* 是否使用OSTaskQuery()函数			*/
 
-				       /*                         时间管理			       */
+				       /*                        时钟管理			       */
                                        /* --------------------- TIME MANAGEMENT ---------------------- */
 #define OS_TIME_DLY_HMSM_EN       1    /*     Include code for OSTimeDlyHMSM()                         *//* 是否使用OSTimeDlyHMSM()函数			*/
 #define OS_TIME_DLY_RESUME_EN     1    /*     Include code for OSTimeDlyResume()                       *//* 是否使用OSTimeDlyResume()函数		*/

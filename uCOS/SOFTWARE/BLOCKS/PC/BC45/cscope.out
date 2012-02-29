@@ -1,0 +1,1379 @@
+cscope 15 $HOME/source/uCOS/SOFTWARE/BLOCKS/PC/BC45 -q 0000000115 0000007050
+	@PC.C
+
+13 
+	~"ö˛udes.h
+"
+
+20 
+	#DISP_BASE
+ 0xB800
+
+	)
+
+21 
+	#DISP_MAX_X
+ 80
+
+	)
+
+22 
+	#DISP_MAX_Y
+ 25
+
+	)
+
+24 
+	#TICK_T0_8254_CWR
+ 0x43
+
+	)
+
+25 
+	#TICK_T0_8254_CTR0
+ 0x40
+
+	)
+
+26 
+	#TICK_T0_8254_CTR1
+ 0x41
+
+	)
+
+27 
+	#TICK_T0_8254_CTR2
+ 0x42
+
+	)
+
+29 
+	#TICK_T0_8254_CTR0_MODE3
+ 0x36
+
+	)
+
+30 
+	#TICK_T0_8254_CTR2_MODE0
+ 0xB0
+
+	)
+
+31 
+	#TICK_T0_8254_CTR2_LATCH
+ 0x80
+
+	)
+
+33 
+	#VECT_TICK
+ 0x08
+
+	)
+
+34 
+	#VECT_DOS_CHAIN
+ 0x81
+
+	)
+
+42 
+INT16U
+ 
+	gPC_Eœp£dOvîhód
+;
+
+43 
+jmp_buf
+ 
+	gPC_JumpBuf
+;
+
+44 
+BOOLEAN
+ 
+	gPC_ExôFœg
+;
+
+45 (*
+PC_TickISR
+)();
+
+72 
+	$PC_Di•Ch¨
+ (
+INT8U
+ 
+x
+, INT8U 
+y
+, INT8U 
+c
+, INT8U 
+cﬁ‹
+)
+
+74 
+INT8U
+ 
+Ár
+ *
+ps¸
+;
+
+75 
+INT16U
+ 
+off£t
+;
+
+78 
+off£t
+ = (
+INT16U
+)
+y
+ * 
+DISP_MAX_X
+ * 2 + (INT16U)
+x
+ * 2;
+
+79 
+ps¸
+ = (
+INT8U
+ 
+Ár
+ *)
+	`MK_FP
+(
+DISP_BASE
+, 
+off£t
+);
+
+80 *
+ps¸
+++ = 
+c
+;
+
+81 *
+ps¸
+ = 
+cﬁ‹
+;
+
+82 
+	}
+}
+
+103 
+	$PC_Di•CÃCﬁ
+ (
+INT8U
+ 
+x
+, INT8U 
+cﬁ‹
+)
+
+105 
+INT8U
+ 
+Ár
+ *
+ps¸
+;
+
+106 
+INT8U
+ 
+i
+;
+
+109 
+ps¸
+ = (
+INT8U
+ 
+Ár
+ *)
+	`MK_FP
+(
+DISP_BASE
+, (
+INT16U
+)
+x
+ * 2);
+
+110 
+i
+ = 0; i < 
+DISP_MAX_Y
+; i++) {
+
+111 *
+ps¸
+++ = ' ';
+
+112 *
+ps¸
+-- = 
+cﬁ‹
+;
+
+113 
+ps¸
+ =Ös¸ + 
+DISP_MAX_X
+ * 2;
+
+115 
+	}
+}
+
+136 
+	$PC_Di•CÃRow
+ (
+INT8U
+ 
+y
+, INT8U 
+cﬁ‹
+)
+
+138 
+INT8U
+ 
+Ár
+ *
+ps¸
+;
+
+139 
+INT8U
+ 
+i
+;
+
+142 
+ps¸
+ = (
+INT8U
+ 
+Ár
+ *)
+	`MK_FP
+(
+DISP_BASE
+, (
+INT16U
+)
+y
+ * 
+DISP_MAX_X
+ * 2);
+
+143 
+i
+ = 0; i < 
+DISP_MAX_X
+; i++) {
+
+144 *
+ps¸
+++ = ' ';
+
+145 *
+ps¸
+++ = 
+cﬁ‹
+;
+
+147 
+	}
+}
+
+165 
+	$PC_Di•CÃS¸
+ (
+INT8U
+ 
+cﬁ‹
+)
+
+167 
+INT8U
+ 
+Ár
+ *
+ps¸
+;
+
+168 
+INT16U
+ 
+i
+;
+
+171 
+ps¸
+ = (
+INT8U
+ 
+Ár
+ *)
+	`MK_FP
+(
+DISP_BASE
+, 0x0000);
+
+172 
+i
+ = 0; i < (
+DISP_MAX_X
+ * 
+DISP_MAX_Y
+); i++) {
+
+173 *
+ps¸
+++ = ' ';
+
+174 *
+ps¸
+++ = 
+cﬁ‹
+;
+
+176 
+	}
+}
+
+202 
+	$PC_Di•Så
+ (
+INT8U
+ 
+x
+, INT8U 
+y
+, INT8U *
+s
+, INT8U 
+cﬁ‹
+)
+
+204 
+INT8U
+ 
+Ár
+ *
+ps¸
+;
+
+205 
+INT16U
+ 
+off£t
+;
+
+208 
+off£t
+ = (
+INT16U
+)
+y
+ * 
+DISP_MAX_X
+ * 2 + (INT16U)
+x
+ * 2;
+
+209 
+ps¸
+ = (
+INT8U
+ 
+Ár
+ *)
+	`MK_FP
+(
+DISP_BASE
+, 
+off£t
+);
+
+210 *
+s
+) {
+
+211 *
+ps¸
+++ = *
+s
+++;
+
+212 *
+ps¸
+++ = 
+cﬁ‹
+;
+
+214 
+	}
+}
+
+231 
+	$PC_DOSRëu∫
+ ()
+
+233 
+PC_ExôFœg
+ = 
+TRUE
+;
+
+234 
+	`l⁄gjmp
+(
+PC_JumpBuf
+, 1);
+
+235 
+	}
+}
+
+255 
+	$PC_DOSSaveRëu∫
+ ()
+
+257 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+258 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+262 
+PC_ExôFœg
+ = 
+FALSE
+;
+
+263 
+OSTickDOSCå
+ = 1;
+
+264 
+PC_TickISR
+ = 
+	`PC_Ve˘Gë
+(
+VECT_TICK
+);
+
+266 
+	`PC_Ve˘Së
+(
+VECT_DOS_CHAIN
+, 
+PC_TickISR
+);
+
+268 
+	`£tjmp
+(
+PC_JumpBuf
+);
+
+269 i‡(
+PC_ExôFœg
+ =
+TRUE
+) {
+
+270 
+	`OS_ENTER_CRITICAL
+();
+
+271 
+	`PC_SëTickR©e
+(18);
+
+272 
+	`OS_EXIT_CRITICAL
+();
+
+273 
+	`PC_Ve˘Së
+(
+VECT_TICK
+, 
+PC_TickISR
+);
+
+274 
+	`PC_Di•CÃS¸
+(
+DISP_FGND_WHITE
+ + 
+DISP_BGND_BLACK
+);
+
+275 
+	`exô
+(0);
+
+277 
+	}
+}
+
+292 
+	$PC_Eœp£dInô
+()
+
+294 
+PC_Eœp£dOvîhód
+ = 0;
+
+295 
+	`PC_Eœp£dSèπ
+();
+
+296 
+PC_Eœp£dOvîhód
+ = 
+	`PC_Eœp£dSt›
+();
+
+297 
+	}
+}
+
+311 
+	$PC_Eœp£dSèπ
+()
+
+313 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+314 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+316 
+INT8U
+ 
+d©a
+;
+
+319 
+	`OS_ENTER_CRITICAL
+();
+
+320 
+d©a
+ = (
+INT8U
+)
+	`öp
+(0x61);
+
+321 
+d©a
+ &= 0xFE;
+
+322 
+	`ouç
+(0x61, 
+d©a
+);
+
+323 
+	`ouç
+(
+TICK_T0_8254_CWR
+, 
+TICK_T0_8254_CTR2_MODE0
+);
+
+324 
+	`ouç
+(
+TICK_T0_8254_CTR2
+, 0xFF);
+
+325 
+	`ouç
+(
+TICK_T0_8254_CTR2
+, 0xFF);
+
+326 
+d©a
+ |= 0x01;
+
+327 
+	`ouç
+(0x61, 
+d©a
+);
+
+328 
+	`OS_EXIT_CRITICAL
+();
+
+329 
+	}
+}
+
+347 
+INT16U
+ 
+	$PC_Eœp£dSt›
+()
+
+349 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+350 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+352 
+INT8U
+ 
+d©a
+;
+
+353 
+INT8U
+ 
+low
+;
+
+354 
+INT8U
+ 
+high
+;
+
+355 
+INT16U
+ 
+˙ts
+;
+
+358 
+	`OS_ENTER_CRITICAL
+();
+
+359 
+d©a
+ = (
+INT8U
+)
+	`öp
+(0x61);
+
+360 
+d©a
+ &= 0xFE;
+
+361 
+	`ouç
+(0x61, 
+d©a
+);
+
+362 
+	`ouç
+(
+TICK_T0_8254_CWR
+, 
+TICK_T0_8254_CTR2_LATCH
+);
+
+363 
+low
+ = 
+	`öp
+(
+TICK_T0_8254_CTR2
+);
+
+364 
+high
+ = 
+	`öp
+(
+TICK_T0_8254_CTR2
+);
+
+365 
+˙ts
+ = (
+INT16U
+)0xFFFF - (((INT16U)
+high
+ << 8Ë+ (INT16U)
+low
+);
+
+366 
+	`OS_EXIT_CRITICAL
+();
+
+367  ((
+INT16U
+)((
+INT32U
+)
+˙ts
+ * 54926L >> 16Ë- 
+PC_Eœp£dOvîhód
+);
+
+368 
+	}
+}
+
+385 
+	$PC_GëD©eTime
+ (*
+s
+)
+
+387 
+time
+ 
+now
+;
+
+388 
+d©e
+ 
+today
+;
+
+391 
+	`gëtime
+(&
+now
+);
+
+392 
+	`gëd©e
+(&
+today
+);
+
+393 
+	`•rötf
+(
+s
+, "%04d-%02d-%02d %02d:%02d:%02d",
+
+394 
+today
+.
+da_yór
+,
+
+395 
+today
+.
+da_m⁄
+,
+
+396 
+today
+.
+da_day
+,
+
+397 
+now
+.
+ti_hour
+,
+
+398 
+now
+.
+ti_mö
+,
+
+399 
+now
+.
+ti_£c
+);
+
+400 
+	}
+}
+
+416 
+BOOLEAN
+ 
+	$PC_GëKey
+ (
+INT16S
+ *
+c
+)
+
+418 i‡(
+	`kbhô
+()) {
+
+419 *
+c
+ = (
+INT16S
+)
+	`gëch
+();
+
+420  (
+TRUE
+);
+
+422 *
+c
+ = 0x00;
+
+423  (
+FALSE
+);
+
+425 
+	}
+}
+
+448 
+	$PC_SëTickR©e
+ (
+INT16U
+ 
+‰eq
+)
+
+450 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+451 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+453 
+INT16U
+ 
+cou¡
+;
+
+456 i‡(
+‰eq
+ == 18) {
+
+457 
+cou¡
+ = 0;
+
+458 } i‡(
+‰eq
+ > 0) {
+
+461 
+cou¡
+ = (
+INT16U
+)(((
+INT32U
+)2386360L / 
+‰eq
+ + 1) >> 1);
+
+463 
+cou¡
+ = 0;
+
+465 
+	`OS_ENTER_CRITICAL
+();
+
+466 
+	`ouç
+(
+TICK_T0_8254_CWR
+, 
+TICK_T0_8254_CTR0_MODE3
+);
+
+467 
+	`ouç
+(
+TICK_T0_8254_CTR0
+, 
+cou¡
+ & 0xFF);
+
+468 
+	`ouç
+(
+TICK_T0_8254_CTR0
+, (
+cou¡
+ >> 8) & 0xFF);
+
+469 
+	`OS_EXIT_CRITICAL
+();
+
+470 
+	}
+}
+
+483 *
+	$PC_Ve˘Gë
+ (
+INT8U
+ 
+ve˘
+)
+
+485 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+486 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+488 
+INT16U
+ *
+pve˘
+;
+
+489 
+INT16U
+ 
+off
+;
+
+490 
+INT16U
+ 
+£g
+;
+
+493 
+pve˘
+ = (
+INT16U
+ *)
+	`MK_FP
+(0x0000, 
+ve˘
+ * 4);
+
+494 
+	`OS_ENTER_CRITICAL
+();
+
+495 
+off
+ = *
+pve˘
+++;
+
+496 
+£g
+ = *
+pve˘
+;
+
+497 
+	`OS_EXIT_CRITICAL
+();
+
+498  (
+	`MK_FP
+(
+£g
+, 
+off
+));
+
+499 
+	}
+}
+
+513 
+PC_Ve˘Së
+ (
+INT8U
+ 
+ve˘
+, (*
+i§
+)())
+
+515 #i‡
+OS_CRITICAL_METHOD
+ == 3
+
+516 
+OS_CPU_SR
+ 
+˝u_§
+;
+
+518 
+INT16U
+ *
+pve˘
+;
+
+521 
+pve˘
+ = (
+INT16U
+ *)
+	`MK_FP
+(0x0000, 
+ve˘
+ * 4);
+
+522 
+	`OS_ENTER_CRITICAL
+();
+
+523 *
+pve˘
+++ = (
+INT16U
+)
+	`FP_OFF
+(
+i§
+);
+
+524 *
+pve˘
+ = (
+INT16U
+)
+	`FP_SEG
+(
+i§
+);
+
+525 
+	`OS_EXIT_CRITICAL
+();
+
+526 
+	}
+}
+
+	@PC.H
+
+35 
+	#DISP_FGND_BLACK
+ 0x00
+
+	)
+
+36 
+	#DISP_FGND_BLUE
+ 0x01
+
+	)
+
+37 
+	#DISP_FGND_GREEN
+ 0x02
+
+	)
+
+38 
+	#DISP_FGND_CYAN
+ 0x03
+
+	)
+
+39 
+	#DISP_FGND_RED
+ 0x04
+
+	)
+
+40 
+	#DISP_FGND_PURPLE
+ 0x05
+
+	)
+
+41 
+	#DISP_FGND_BROWN
+ 0x06
+
+	)
+
+42 
+	#DISP_FGND_LIGHT_GRAY
+ 0x07
+
+	)
+
+43 
+	#DISP_FGND_DARK_GRAY
+ 0x08
+
+	)
+
+44 
+	#DISP_FGND_LIGHT_BLUE
+ 0x09
+
+	)
+
+45 
+	#DISP_FGND_LIGHT_GREEN
+ 0x0A
+
+	)
+
+46 
+	#DISP_FGND_LIGHT_CYAN
+ 0x0B
+
+	)
+
+47 
+	#DISP_FGND_LIGHT_RED
+ 0x0C
+
+	)
+
+48 
+	#DISP_FGND_LIGHT_PURPLE
+ 0x0D
+
+	)
+
+49 
+	#DISP_FGND_YELLOW
+ 0x0E
+
+	)
+
+50 
+	#DISP_FGND_WHITE
+ 0x0F
+
+	)
+
+52 
+	#DISP_BGND_BLACK
+ 0x00
+
+	)
+
+53 
+	#DISP_BGND_BLUE
+ 0x10
+
+	)
+
+54 
+	#DISP_BGND_GREEN
+ 0x20
+
+	)
+
+55 
+	#DISP_BGND_CYAN
+ 0x30
+
+	)
+
+56 
+	#DISP_BGND_RED
+ 0x40
+
+	)
+
+57 
+	#DISP_BGND_PURPLE
+ 0x50
+
+	)
+
+58 
+	#DISP_BGND_BROWN
+ 0x60
+
+	)
+
+59 
+	#DISP_BGND_LIGHT_GRAY
+ 0x70
+
+	)
+
+61 
+	#DISP_BLINK
+ 0x80
+
+	)
+
+71 
+PC_Di•Ch¨
+(
+INT8U
+ 
+x
+, INT8U 
+y
+, INT8U 
+c
+, INT8U 
+cﬁ‹
+);
+
+72 
+PC_Di•CÃCﬁ
+(
+INT8U
+ 
+x
+, INT8U 
+bgnd_cﬁ‹
+);
+
+73 
+PC_Di•CÃRow
+(
+INT8U
+ 
+y
+, INT8U 
+bgnd_cﬁ‹
+);
+
+74 
+PC_Di•CÃS¸
+(
+INT8U
+ 
+bgnd_cﬁ‹
+);
+
+75 
+PC_Di•Så
+(
+INT8U
+ 
+x
+, INT8U 
+y
+, INT8U *
+s
+, INT8U 
+cﬁ‹
+);
+
+77 
+PC_DOSRëu∫
+();
+
+78 
+PC_DOSSaveRëu∫
+();
+
+80 
+PC_Eœp£dInô
+();
+
+81 
+PC_Eœp£dSèπ
+();
+
+82 
+INT16U
+ 
+PC_Eœp£dSt›
+();
+
+84 
+PC_GëD©eTime
+(*
+s
+);
+
+85 
+BOOLEAN
+ 
+PC_GëKey
+(
+INT16S
+ *
+c
+);
+
+87 
+PC_SëTickR©e
+(
+INT16U
+ 
+‰eq
+);
+
+89 *
+PC_Ve˘Gë
+(
+INT8U
+ 
+ve˘
+);
+
+90 
+PC_Ve˘Së
+(
+INT8U
+ 
+ve˘
+, (*
+i§
+)());
+
+	@
+1
+.
+0
+2
+10
+PC.C
+PC.H
