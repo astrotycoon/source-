@@ -25,6 +25,13 @@
 *              To have the ASCII character 'A' blink with a white letter on a blue background.
 *********************************************************************************************************
 */
+/*              需显示的字符		       	  背景色	前景色
+	/—————————————^————————————————\    闪烁/—————————\/——————^———————\ 
+ 	——— ——— ——— ——— ——— ——— ——— ———    ——— ——— ——— ——— ——— ——— ——— ———
+       |   |   |   |   |   |   |   |   |  |   |   |   |   |   |   |   |   |
+	——— ——— ——— ——— ——— ——— ——— ———    ——— ——— ——— ——— ——— ——— ——— ——— 
+	底-------------------------------------------------------------->高		*/
+/* 前景色 */	
 #define DISP_FGND_BLACK           0x00
 #define DISP_FGND_BLUE            0x01
 #define DISP_FGND_GREEN           0x02
@@ -41,7 +48,7 @@
 #define DISP_FGND_LIGHT_PURPLE    0x0D
 #define DISP_FGND_YELLOW          0x0E
 #define DISP_FGND_WHITE           0x0F
-
+/* 背景色 */
 #define DISP_BGND_BLACK           0x00
 #define DISP_BGND_BLUE            0x10
 #define DISP_BGND_GREEN           0x20
@@ -51,7 +58,8 @@
 #define DISP_BGND_BROWN           0x60
 #define DISP_BGND_LIGHT_GRAY      0x70
 
-#define DISP_BLINK                0x80
+#define DISP_BLINK                0x80 /* 闪烁 	*/
+/*                                0x00  不闪烁	*/
 
 /*$PAGE*/
 /*
@@ -59,16 +67,16 @@
 *                                           FUNCTION PROTOTYPES
 *********************************************************************************************************
 */
-
+/* 显示函数 */
 void    PC_DispChar(INT8U x, INT8U y, INT8U c, INT8U color);
 void    PC_DispClrCol(INT8U x, INT8U bgnd_color);
 void    PC_DispClrRow(INT8U y, INT8U bgnd_color);
 void    PC_DispClrScr(INT8U bgnd_color);
 void    PC_DispStr(INT8U x, INT8U y, INT8U *s, INT8U color);
-
-void    PC_DOSReturn(void);
-void    PC_DOSSaveReturn(void);
-
+/* 保存和恢复DOS的环境设置 */
+void    PC_DOSReturn(void);	/* 返回DOS		*/
+void    PC_DOSSaveReturn(void);	/* 保存当前DOS环境 	*/
+/* 程序运行时间的测量 */
 void    PC_ElapsedInit(void);
 void    PC_ElapsedStart(void);
 INT16U  PC_ElapsedStop(void);
