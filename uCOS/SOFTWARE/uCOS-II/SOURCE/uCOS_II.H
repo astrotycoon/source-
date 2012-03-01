@@ -466,12 +466,12 @@ OS_EXT  volatile  INT32U  OSIdleCtr;                       /* Idle counter      
 OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      /* Idle task stack                */
 
 
-OS_EXT  OS_TCB           *OSTCBCur;                        /* Pointer to currently running TCB         *//* 指向正在运行任务控制块的指针 */
-OS_EXT  OS_TCB           *OSTCBFreeList;                   /* Pointer to list of free TCBs             */
-OS_EXT  OS_TCB           *OSTCBHighRdy;                    /* Pointer to highest priority TCB R-to-R   *//* 指向最高优先级别就绪任务控制块的指针 */
+OS_EXT  OS_TCB           *OSTCBCur;                        /* Pointer to currently running TCB         *//* 指向正在运行任务控制块的指针 	*/
+OS_EXT  OS_TCB           *OSTCBFreeList;                   /* Pointer to list of free TCBs             *//* 指向空闲任务块链表的指针		*/
+OS_EXT  OS_TCB           *OSTCBHighRdy;                    /* Pointer to highest priority TCB R-to-R   *//* 指向最高优先级别就绪任务控制块的指针*/
 OS_EXT  OS_TCB           *OSTCBList;                       /* Pointer to doubly linked list of TCBs    */
-OS_EXT  OS_TCB           *OSTCBPrioTbl[OS_LOWEST_PRIO + 1];/* Table of pointers to created TCBs        */
-OS_EXT  OS_TCB            OSTCBTbl[OS_MAX_TASKS + OS_N_SYS_TASKS];   /* Table of TCBs                  */
+OS_EXT  OS_TCB           *OSTCBPrioTbl[OS_LOWEST_PRIO + 1];/* Table of pointers to created TCBs        *//* 保存控制块指针的数组		*/
+OS_EXT  OS_TCB            OSTCBTbl[OS_MAX_TASKS + OS_N_SYS_TASKS];   /* Table of TCBs                  *//* 空任务控制块链表			*/
 
 #if (OS_MEM_EN > 0) && (OS_MAX_MEM_PART > 0)
 OS_EXT  OS_MEM           *OSMemFreeList;            /* Pointer to free list of memory partitions       */
