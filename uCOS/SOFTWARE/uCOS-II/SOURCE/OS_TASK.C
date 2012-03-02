@@ -56,7 +56,7 @@ INT8U  OSTaskChangePrio (INT8U oldprio, INT8U newprio)
 
 
 #if OS_ARG_CHK_EN > 0
-    if ((oldprio >= OS_LOWEST_PRIO && oldprio != OS_PRIO_SELF)  ||
+    if ((oldprio >= OS_LOWEST_PRIO && oldprio != OS_PRIO_SELF)  ||	/* 因为OS_PRIO_SELF == 0xFF > OS_LOWEST_PRIO，所以必须判断 */
          newprio >= OS_LOWEST_PRIO) {
         return (OS_PRIO_INVALID);
     }
@@ -564,7 +564,7 @@ INT8U  OSTaskResume (INT8U prio)
     }
     if ((ptcb->OSTCBStat & OS_STAT_SUSPEND) != OS_STAT_RDY) {              /* Task must be suspended   */
         if (((ptcb->OSTCBStat &= ~OS_STAT_SUSPEND) == OS_STAT_RDY) &&      /* Remove suspension        */
-             (ptcb->OSTCBDly  == 0)) {                                     /* Must not be delayed      */
+             (ptcb->OSTCBDly  == 0)) {                                     /* Must not be delayed      *//* 该任务不是等待任务	*/
             OSRdyGrp               |= ptcb->OSTCBBitY;                     /* Make task ready to run   */
             OSRdyTbl[ptcb->OSTCBY] |= ptcb->OSTCBBitX;
             OS_EXIT_CRITICAL();

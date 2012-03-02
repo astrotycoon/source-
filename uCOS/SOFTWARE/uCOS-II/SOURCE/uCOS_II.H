@@ -154,7 +154,7 @@
 #define OS_Q_FULL                30
 
 #define OS_PRIO_EXIST            40	/* 优先级已经存在 			*/
-#define OS_PRIO_ERR              41
+#define OS_PRIO_ERR              41	/* 参数中的任务优先级不存在		*/
 #define OS_PRIO_INVALID          42	/* 参数指定的优先级大于OS_LOWEST_PRIO 	*/
 
 #define OS_SEM_OVF               50
