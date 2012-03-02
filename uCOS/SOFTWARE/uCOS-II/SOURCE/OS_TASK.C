@@ -684,7 +684,7 @@ INT8U  OSTaskSuspend (INT8U prio)
     if (prio == OS_IDLE_PRIO) {                                 /* Not allowed to suspend idle task    */
         return (OS_TASK_SUSPEND_IDLE);
     }
-    if (prio >= OS_LOWEST_PRIO && prio != OS_PRIO_SELF) {       /* Task priority valid ?               */
+    if (prio >= OS_LOWEST_PRIO && prio != OS_PRIO_SELF) {       /* Task priority valid ?   *//* 因为OS_PRIO_SELF的值是0xFF，也大于OS_LOWEST_PRIO */
         return (OS_PRIO_INVALID);
     }
 #endif
@@ -700,7 +700,7 @@ INT8U  OSTaskSuspend (INT8U prio)
     ptcb = OSTCBPrioTbl[prio];
     if (ptcb == (OS_TCB *)0) {                                  /* Task to suspend must exist          */
         OS_EXIT_CRITICAL();
-        return (OS_TASK_SUSPEND_PRIO);
+        return (OS_TASK_SUSPEND_PRIO);				/* 要挂起的任务不存在		       */
     }
     if ((OSRdyTbl[ptcb->OSTCBY] &= ~ptcb->OSTCBBitX) == 0x00) { /* Make task not ready                 */
         OSRdyGrp &= ~ptcb->OSTCBBitY;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.c" open="1" top="1" tabpos="3">
+		<Cursor position="5541" topLine="162" />
+	</File>
+	<File name="..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\system_stm32f10x.h" open="1" top="0" tabpos="2">
+		<Cursor position="1801" topLine="68" />
+	</File>
+	<File name="led.c" open="0" top="0" tabpos="0">
+		<Cursor position="797" topLine="18" />
+	</File>
+	<File name="startup.c" open="1" top="0" tabpos="1">
+		<Cursor position="2598" topLine="109" />
+	</File>
+</CodeBlocks_layout_file>

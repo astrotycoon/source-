@@ -33,7 +33,7 @@
 #define  TRUE                      1
 #endif
 
-#define  OS_PRIO_SELF           0xFF                    /* Indicate SELF priority                      */
+#define  OS_PRIO_SELF           0xFF                    /* Indicate SELF priority                      *//* 在OSTaskSuspend()中调用挂起自身 	*/
 
 #if OS_TASK_STAT_EN > 0
 #define  OS_N_SYS_TASKS            2                    /* Number of system tasks                      */
@@ -42,7 +42,7 @@
 #endif
 
 #define  OS_STAT_PRIO       (OS_LOWEST_PRIO - 1)        /* Statistic task priority                     */
-#define  OS_IDLE_PRIO       (OS_LOWEST_PRIO)            /* IDLE      task priority                     */
+#define  OS_IDLE_PRIO       (OS_LOWEST_PRIO)            /* IDLE      task priority                     *//* 空闲任务 				*/
 
 #define  OS_EVENT_TBL_SIZE ((OS_LOWEST_PRIO) / 8 + 1)   /* Size of event table                         */
 #define  OS_RDY_TBL_SIZE   ((OS_LOWEST_PRIO) / 8 + 1)   /* Size of ready table                         */
@@ -172,11 +172,11 @@
 #define OS_TIME_INVALID_MILLI    83
 #define OS_TIME_ZERO_DLY         84
 
-#define OS_TASK_SUSPEND_PRIO     90
-#define OS_TASK_SUSPEND_IDLE     91
+#define OS_TASK_SUSPEND_PRIO     90	/* 要挂起的任务不存在			*/
+#define OS_TASK_SUSPEND_IDLE     91	/* 试图挂起空闲任务（不允许）		*/
 
-#define OS_TASK_RESUME_PRIO     100
-#define OS_TASK_NOT_SUSPENDED   101
+#define OS_TASK_RESUME_PRIO     100	/* 要唤醒的任务不存在			*/
+#define OS_TASK_NOT_SUSPENDED   101	/* 要唤醒的任务状态不是挂起状态		*/
 
 #define OS_MEM_INVALID_PART     110
 #define OS_MEM_INVALID_BLKS     111
@@ -802,8 +802,8 @@ INT8U         OSTaskDelReq(INT8U prio);
 #endif
 
 #if OS_TASK_SUSPEND_EN > 0
-INT8U         OSTaskResume(INT8U prio);
-INT8U         OSTaskSuspend(INT8U prio);
+INT8U         OSTaskResume(INT8U prio);			/* 恢复任务 			*/
+INT8U         OSTaskSuspend(INT8U prio);		/* 挂起任务			*/	
 #endif
 
 #if OS_TASK_CREATE_EXT_EN > 0
