@@ -153,14 +153,19 @@ INT8U  OSTaskChangePrio (INT8U oldprio, INT8U newprio)
 *                               (i.e. >= OS_LOWEST_PRIO)
 *********************************************************************************************************
 */
-
+/*
+	函数完成三项工作:
+	@1:	任务堆栈的初始化
+	@2:	任务控制块的初始化
+	@3:	任务调度
+*/
 #if OS_TASK_CREATE_EN > 0
 INT8U  OSTaskCreate (void (*task)(void *pd), void *pdata, OS_STK *ptos, INT8U prio)
 {
 #if OS_CRITICAL_METHOD == 3                  /* Allocate storage for CPU status register               */
     OS_CPU_SR  cpu_sr;
 #endif
-    OS_STK    *psp;
+    OS_STK    *psp;	/* 新的栈顶指针 */
     INT8U      err;
 
 
@@ -175,17 +180,17 @@ INT8U  OSTaskCreate (void (*task)(void *pd), void *pdata, OS_STK *ptos, INT8U pr
                                              /* ... the same thing until task is created.              */
         OS_EXIT_CRITICAL();
         psp = (OS_STK *)OSTaskStkInit(task, pdata, ptos, 0);    /* Initialize the task's stack         */
-        err = OS_TCBInit(prio, psp, (OS_STK *)0, 0, 0, (void *)0, 0);
+        err = OS_TCBInit(prio, psp, (OS_STK *)0, 0, 0, (void *)0, 0);/* 获得并初始化任务控制块	       */
         if (err == OS_NO_ERR) {
             OS_ENTER_CRITICAL();
-            OSTaskCtr++;                                        /* Increment the #tasks counter        */
+            OSTaskCtr++;                     /* 任务计数器加1 */ /* Increment the #tasks counter       */
             OS_EXIT_CRITICAL();
             if (OSRunning == TRUE) {         /* Find highest priority task if multitasking has started */
                 OS_Sched();
             }
         } else {
             OS_ENTER_CRITICAL();
-            OSTCBPrioTbl[prio] = (OS_TCB *)0;/* Make this priority available to others                 */
+            OSTCBPrioTbl[prio] = (OS_TCB *)0;/* Make this priority available to others（放弃任务）     */
             OS_EXIT_CRITICAL();
         }
         return (err);

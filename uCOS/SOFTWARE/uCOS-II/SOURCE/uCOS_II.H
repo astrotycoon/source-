@@ -153,9 +153,9 @@
 
 #define OS_Q_FULL                30
 
-#define OS_PRIO_EXIST            40
+#define OS_PRIO_EXIST            40	/* 优先级已经存在 			*/
 #define OS_PRIO_ERR              41
-#define OS_PRIO_INVALID          42	/* */
+#define OS_PRIO_INVALID          42	/* 参数指定的优先级大于OS_LOWEST_PRIO 	*/
 
 #define OS_SEM_OVF               50
 
@@ -164,7 +164,7 @@
 #define OS_TASK_DEL_REQ          62
 #define OS_TASK_DEL_ISR          63
 
-#define OS_NO_MORE_TCB           70
+#define OS_NO_MORE_TCB           70	/* 系统中没有OS_TCB分配给任务了		*/
 
 #define OS_TIME_NOT_DLY          80
 #define OS_TIME_INVALID_MINUTES  81
@@ -906,6 +906,18 @@ void          OS_TaskStat(void *data);
 #endif
 
 INT8U         OS_TCBInit(INT8U prio, OS_STK *ptos, OS_STK *pbos, INT16U id, INT32U stk_size, void *pext, INT16U opt);
+/*
+	任务控制块初始化函数
+INT8U         OS_TCBInit(
+				INT8U prio,		-->任务优先级
+				OS_STK *ptos,		-->指向任务堆栈栈顶的指针
+				OS_STK *pbos,		-->指向任务堆栈栈底的指针
+				INT16U id,		-->任务的ID（0 ～～～65535）
+				INT32U stk_size,	-->任务堆栈的大小
+				void *pnext,		-->指向任务扩张的指针
+				INT16U opt		-->创建任务时的选择项
+			)
+*/
 
 /*$PAGE*/
 /*
