@@ -1,0 +1,63 @@
+import rtconfig
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+src = Split("""
+CMSIS/CM3/CoreSupport/core_cm3.c
+CMSIS/CM3/DeviceSupport/EnergyMicro/EFM32/system_efm32.c
+efm32lib/src/efm32_acmp.c
+efm32lib/src/efm32_adc.c
+efm32lib/src/efm32_aes.c
+efm32lib/src/efm32_assert.c
+efm32lib/src/efm32_cmu.c
+efm32lib/src/efm32_dac.c
+efm32lib/src/efm32_dbg.c
+efm32lib/src/efm32_dma.c
+efm32lib/src/efm32_ebi.c
+efm32lib/src/efm32_emu.c
+efm32lib/src/efm32_gpio.c
+efm32lib/src/efm32_i2c.c
+efm32lib/src/efm32_lcd.c
+efm32lib/src/efm32_letimer.c
+efm32lib/src/efm32_leuart.c
+efm32lib/src/efm32_mpu.c
+efm32lib/src/efm32_msc.c
+efm32lib/src/efm32_pcnt.c
+efm32lib/src/efm32_prs.c
+efm32lib/src/efm32_rmu.c
+efm32lib/src/efm32_rtc.c
+efm32lib/src/efm32_system.c
+efm32lib/src/efm32_timer.c
+efm32lib/src/efm32_usart.c
+efm32lib/src/efm32_vcmp.c
+efm32lib/src/efm32_wdog.c
+""")
+
+# starupt scripts for each EFM32 family
+startup_scripts = {}
+startup_scripts['TinyGecko'] = 'startup_efm32tg.s'
+startup_scripts['Gecko'] = 'startup_efm32.s'
+startup_scripts['Giant Gecko'] = 'startup_efm32gg.s'
+
+# linker scripts for each EFM32 family
+linker_scripts = {}
+linker_scripts['TinyGecko'] = 'efm32tg.ld'
+linker_scripts['Gecko'] = 'efm32g.ld'
+linker_scripts['Giant Gecko'] = 'efm32gg.ld'
+
+startup_scripts[rtconfig.EFM32_FAMILY] = 'CMSIS/CM3/DeviceSupport/EnergyMicro/EFM32/startup/cs3/' + startup_scripts[rtconfig.EFM32_FAMILY]
+linker_scripts[rtconfig.EFM32_FAMILY] = cwd + '/CMSIS/CM3/DeviceSupport/EnergyMicro/EFM32/startup/cs3/' + linker_scripts[rtconfig.EFM32_FAMILY]
+src = src + [startup_scripts[rtconfig.EFM32_FAMILY]]
+
+path = [cwd + '/efm32lib/inc',
+    cwd + '/CMSIS/CM3/CoreSupport',
+    cwd + '/CMSIS/CM3/DeviceSupport/EnergyMicro/EFM32']
+
+CPPDEFINES = [rtconfig.EFM32_TYPE]
+#group = DefineGroup('EFM32_StdPeriph', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES, LINKFLAGS = linker_scripts[rtconfig.EFM32_FAMILY])
+group = DefineGroup('EFM32_StdPeriph', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')
