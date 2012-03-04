@@ -1,0 +1,35 @@
+
+
+【AudioExtract项目介绍】
+
+AudioExtract项目是麦宝开源项目中的一个子项目。它的目的是产生一个可执行文件ae.exe。用户可以用这个软件提取播布客教学视频中的声音，导出到一个mp3格式的音频文件，方便用户在上班坐车途中听课学习。
+
+使用方法：
+1. 下载播布客的示例视频：
+   http://www.boobooke.com/v/bbk5277.zip
+   http://www.boobooke.com/v/bbk5278.zip
+   把以上视频用WinRAR软件解压缩到一个目录，里面会有一个video.swf，这个就是视频文件。
+
+2. 使用ae.exe:
+   ae.exe  video.swf  xiaobu.mp3
+   以上命令读取video.swf中的mp3音频数据，保存成一个xiaobu.mp3音频文件。你可以用任何mp3播放器播放这个音频。很多智能手机里面都有mp3播放器，方便网友坐车的时候收听学习。
+
+这个项目是一个练手项目，具有一定的实用性，同时加入这个项目的难度不高：
+1. 这是一个命令行模式的程序，不需要操心图形用户界面的问题。大大简化的进入门槛
+2. 这个程序有对应的C源码可以参考。 大家可以去http://www.swftools.org/ 下载最新的软件和源码，里面的swfextract就是这个项目的源码。我们的工作是把C的源码翻译成汇编代码。
+
+下载地址：http://www.swftools.org/swftools-2011-10-10-1647.exe
+源码下载地址： http://www.swftools.org/swftools-2011-10-10-1647.tar.gz
+
+如果在国内访问不到的网友，可以到播布客服务器上下载：
+下载地址：http://www.boobooke.com/download/software/swftools-2011-10-10-1647.exe
+源码下载地址： http://www.boobooke.com/download/software/swftools-2011-10-10-1647.tar.gz
+
+【AudioExtract编程指南】
+1. 首先你要下载MASM32(http://www.masm32.com/)， 这是我们的主要开发环境。如果你访问不了，请到播布客服务器上下载：
+   http://www.boobooke.com/download/software/m32v10r.zip
+
+2. 其次你要安装Visual C++ 2008|2010 Express版本。
+
+3. 开始编程
+

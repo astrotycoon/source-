@@ -1,0 +1,2 @@
+ml /c /Zd /coff main.asm
+link /subsystem:console main.obj
