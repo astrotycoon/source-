@@ -3,7 +3,7 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_VERSION	5.8	//
 BOOLEAN	OS_CPU.H	/^typedef unsigned char  BOOLEAN;$/;"	t
 FALSE	uCOS_II.H	29;"	d
 FP32	OS_CPU.H	/^typedef float          FP32;                     \/* Single precision floating point                    *\/$/;"	t
@@ -16,52 +16,52 @@ INT8S	OS_CPU.H	/^typedef signed   char  INT8S;                    \/* Signed    
 INT8U	OS_CPU.H	/^typedef unsigned char  INT8U;                    \/* Unsigned  8 bit quantity                           *\/$/;"	t
 OSAddr	uCOS_II.H	/^    void   *OSAddr;                    \/* Pointer to the beginning address of the memory partition     *\/$/;"	m	struct:__anon6
 OSBlkSize	uCOS_II.H	/^    INT32U  OSBlkSize;                 \/* Size (in bytes) of each memory block                         *\/$/;"	m	struct:__anon6
-OSCPUUsage	uCOS_II.H	/^OS_EXT  INT8S             OSCPUUsage;               \/* Percentage of CPU used                          *\/$/;"	v
+OSCPUUsage	uCOS_II.H	/^OS_EXT  INT8S             OSCPUUsage;               \/* Percentage of CPU used                          *\/\/* CPU的利用率（%）*\/$/;"	v
 OSCnt	uCOS_II.H	/^    INT16U  OSCnt;                          \/* Semaphore count                                         *\/$/;"	m	struct:__anon9
-OSCtxSwCtr	uCOS_II.H	/^OS_EXT  INT32U            OSCtxSwCtr;               \/* Counter of number of context switches           *\/$/;"	v
-OSEventCnt	uCOS_II.H	/^    INT16U  OSEventCnt;                    \/* Semaphore Count (not used if other EVENT type)           *\/$/;"	m	struct:__anon1
+OSCtxSwCtr	uCOS_II.H	/^OS_EXT  INT32U            OSCtxSwCtr;               \/* Counter of number of context switches           *\/\/* 上下文切换的次数 *\/$/;"	v
+OSEventCnt	uCOS_II.H	/^    INT16U  OSEventCnt;                    \/* Semaphore Count (not used if other EVENT type)           *\/\/* 信号量计数器	 	*\/$/;"	m	struct:__anon1
 OSEventFreeList	uCOS_II.H	/^OS_EXT  OS_EVENT         *OSEventFreeList;          \/* Pointer to list of free EVENT control blocks    *\/$/;"	v
 OSEventGrp	uCOS_II.H	/^    INT8U          OSEventGrp;          \/* Group corresponding to tasks waiting for event to occur     *\/$/;"	m	struct:__anon8
 OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                     \/* Group corresponding to tasks waiting for event to occur *\/$/;"	m	struct:__anon7
 OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                     \/* Group corresponding to tasks waiting for event to occur *\/$/;"	m	struct:__anon9
-OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                    \/* Group corresponding to tasks waiting for event to occur  *\/$/;"	m	struct:__anon1
 OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                    \/* Group corresponding to tasks waiting for event to occur  *\/$/;"	m	struct:__anon4
-OSEventPtr	uCOS_II.H	/^    void   *OSEventPtr;                    \/* Pointer to message or queue structure                    *\/$/;"	m	struct:__anon1
+OSEventGrp	uCOS_II.H	/^    INT8U   OSEventGrp;                    \/* Group corresponding to tasks waiting for event to occur  *\/\/* 等待事件的任务组 		*\/$/;"	m	struct:__anon1
+OSEventPtr	uCOS_II.H	/^    void   *OSEventPtr;                    \/* Pointer to message or queue structure                    *\/\/* 消息或消息队列的指针 	*\/$/;"	m	struct:__anon1
 OSEventTbl	uCOS_II.H	/^    INT8U          OSEventTbl[OS_EVENT_TBL_SIZE];  \/* List of tasks waiting for event to occur         *\/$/;"	m	struct:__anon8
 OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE];  \/* List of tasks waiting for event to occur                *\/$/;"	m	struct:__anon7
 OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE];  \/* List of tasks waiting for event to occur                *\/$/;"	m	struct:__anon9
-OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; \/* List of tasks waiting for event to occur                 *\/$/;"	m	struct:__anon1
 OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; \/* List of tasks waiting for event to occur                 *\/$/;"	m	struct:__anon4
+OSEventTbl	uCOS_II.H	/^    INT8U   OSEventTbl[OS_EVENT_TBL_SIZE]; \/* List of tasks waiting for event to occur                 *\/\/* 任务等待表			*\/$/;"	m	struct:__anon1
 OSEventTbl	uCOS_II.H	/^OS_EXT  OS_EVENT          OSEventTbl[OS_MAX_EVENTS];\/* Table of EVENT control blocks                   *\/$/;"	v
-OSEventType	uCOS_II.H	/^    INT8U   OSEventType;                   \/* Type of event control block (see OS_EVENT_TYPE_???)      *\/$/;"	m	struct:__anon1
+OSEventType	uCOS_II.H	/^    INT8U   OSEventType;                   \/* Type of event control block (see OS_EVENT_TYPE_???)      *\/\/* 事件的类型 			*\/$/;"	m	struct:__anon1
 OSFlagAccept	OS_FLAG.C	/^OS_FLAGS  OSFlagAccept (OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U wait_type, INT8U *err)$/;"	f
 OSFlagCreate	OS_FLAG.C	/^OS_FLAG_GRP  *OSFlagCreate (OS_FLAGS flags, INT8U *err)$/;"	f
 OSFlagDel	OS_FLAG.C	/^OS_FLAG_GRP  *OSFlagDel (OS_FLAG_GRP *pgrp, INT8U opt, INT8U *err)$/;"	f
-OSFlagFlags	uCOS_II.H	/^    OS_FLAGS      OSFlagFlags;              \/* 8, 16 or 32 bit flags                                   *\/$/;"	m	struct:__anon2
+OSFlagFlags	uCOS_II.H	/^    OS_FLAGS      OSFlagFlags;              \/* 8, 16 or 32 bit flags                                   *\/\/* 所有信号列表             *\/$/;"	m	struct:__anon2
 OSFlagFreeList	uCOS_II.H	/^OS_EXT  OS_FLAG_GRP      *OSFlagFreeList;           \/* Pointer to free list of event flag groups       *\/$/;"	v
-OSFlagNodeFlagGrp	uCOS_II.H	/^    void         *OSFlagNodeFlagGrp;        \/* Pointer to Event Flag Group                             *\/  $/;"	m	struct:__anon3
-OSFlagNodeFlags	uCOS_II.H	/^    OS_FLAGS      OSFlagNodeFlags;          \/* Event flag to wait on                                   *\/  $/;"	m	struct:__anon3
-OSFlagNodeNext	uCOS_II.H	/^    void         *OSFlagNodeNext;           \/* Pointer to next     NODE in wait list                   *\/$/;"	m	struct:__anon3
-OSFlagNodePrev	uCOS_II.H	/^    void         *OSFlagNodePrev;           \/* Pointer to previous NODE in wait list                   *\/$/;"	m	struct:__anon3
-OSFlagNodeTCB	uCOS_II.H	/^    void         *OSFlagNodeTCB;            \/* Pointer to TCB of waiting task                          *\/  $/;"	m	struct:__anon3
-OSFlagNodeWaitType	uCOS_II.H	/^    INT8U         OSFlagNodeWaitType;       \/* Type of wait:                                           *\/$/;"	m	struct:__anon3
+OSFlagNodeFlagGrp	uCOS_II.H	/^    void         *OSFlagNodeFlagGrp;        \/* Pointer to Event Flag Group                             *\/\/* 反向指向信号量集标志组的指针	*\/  $/;"	m	struct:__anon3
+OSFlagNodeFlags	uCOS_II.H	/^    OS_FLAGS      OSFlagNodeFlags;          \/* Event flag to wait on                                   *\/\/* 信号过滤器 				*\/  $/;"	m	struct:__anon3
+OSFlagNodeNext	uCOS_II.H	/^    void         *OSFlagNodeNext;           \/* Pointer to next     NODE in wait list                   *\/\/* 指向下一个节点的指针 		*\/$/;"	m	struct:__anon3
+OSFlagNodePrev	uCOS_II.H	/^    void         *OSFlagNodePrev;           \/* Pointer to previous NODE in wait list                   *\/\/* 指向前一个节点的指针 		*\/$/;"	m	struct:__anon3
+OSFlagNodeTCB	uCOS_II.H	/^    void         *OSFlagNodeTCB;            \/* Pointer to TCB of waiting task                          *\/\/* 指向对应任务的任务控制块的指针 	*\/  $/;"	m	struct:__anon3
+OSFlagNodeWaitType	uCOS_II.H	/^    INT8U         OSFlagNodeWaitType;       \/* Type of wait:                                           *\/\/* 定义逻辑运算关系的数据		*\/$/;"	m	struct:__anon3
 OSFlagPend	OS_FLAG.C	/^OS_FLAGS  OSFlagPend (OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U wait_type, INT16U timeout, INT8U *err)$/;"	f
 OSFlagPost	OS_FLAG.C	/^OS_FLAGS  OSFlagPost (OS_FLAG_GRP *pgrp, OS_FLAGS flags, INT8U opt, INT8U *err)$/;"	f
 OSFlagQuery	OS_FLAG.C	/^OS_FLAGS  OSFlagQuery (OS_FLAG_GRP *pgrp, INT8U *err)$/;"	f
 OSFlagTbl	uCOS_II.H	/^OS_EXT  OS_FLAG_GRP       OSFlagTbl[OS_MAX_FLAGS];  \/* Table containing event flag groups              *\/$/;"	v
-OSFlagType	uCOS_II.H	/^    INT8U         OSFlagType;               \/* Should be set to OS_EVENT_TYPE_FLAG                     *\/$/;"	m	struct:__anon2
-OSFlagWaitList	uCOS_II.H	/^    void         *OSFlagWaitList;           \/* Pointer to first NODE of task waiting on event flag     *\/$/;"	m	struct:__anon2
+OSFlagType	uCOS_II.H	/^    INT8U         OSFlagType;               \/* Should be set to OS_EVENT_TYPE_FLAG                     *\/\/* 识别是否为信号量集的标志 *\/$/;"	m	struct:__anon2
+OSFlagWaitList	uCOS_II.H	/^    void         *OSFlagWaitList;           \/* Pointer to first NODE of task waiting on event flag     *\/\/* 指向等待任务链表的指针   *\/$/;"	m	struct:__anon2
 OSFree	uCOS_II.H	/^    INT32U  OSFree;                    \/* Number of free bytes on the stack                            *\/$/;"	m	struct:__anon10
 OSFreeList	uCOS_II.H	/^    void   *OSFreeList;                \/* Pointer to the beginning of the free list of memory blocks   *\/$/;"	m	struct:__anon6
-OSIdleCtr	uCOS_II.H	/^OS_EXT  volatile  INT32U  OSIdleCtr;                                 \/* Idle counter                   *\/$/;"	v
-OSIdleCtrMax	uCOS_II.H	/^OS_EXT  INT32U            OSIdleCtrMax;             \/* Max. value that idle ctr can take in 1 sec.     *\/$/;"	v
+OSIdleCtr	uCOS_II.H	/^OS_EXT  volatile  INT32U  OSIdleCtr;                       \/* Idle counter                   	       *\/\/* 定义32位空闲任务计数器 *\/$/;"	v
+OSIdleCtrMax	uCOS_II.H	/^OS_EXT  INT32U            OSIdleCtrMax;             \/* Max. value that idle ctr can take in 1 sec.     *\/\/* 表示每秒空闲任务计数的最大值 *\/$/;"	v
 OSIdleCtrRun	uCOS_II.H	/^OS_EXT  INT32U            OSIdleCtrRun;             \/* Val. reached by idle ctr at run time in 1 sec.  *\/$/;"	v
 OSInit	OS_CORE.C	/^void  OSInit (void)$/;"	f
 OSIntEnter	OS_CORE.C	/^void  OSIntEnter (void)$/;"	f
 OSIntExit	OS_CORE.C	/^void  OSIntExit (void)$/;"	f
-OSIntExitY	uCOS_II.H	/^OS_EXT  INT8U             OSIntExitY;$/;"	v
-OSIntNesting	uCOS_II.H	/^OS_EXT  INT8U             OSIntNesting;             \/* Interrupt nesting level                         *\/$/;"	v
-OSLockNesting	uCOS_II.H	/^OS_EXT  INT8U             OSLockNesting;            \/* Multitasking lock nesting level                 *\/$/;"	v
+OSIntExitY	uCOS_II.H	/^OS_EXT  INT8U             OSIntExitY;	            \/* 用于函数OSIntExt() *\/$/;"	v
+OSIntNesting	uCOS_II.H	/^OS_EXT  INT8U             OSIntNesting;             \/* Interrupt nesting level                         *\/\/* 存放中段嵌套的层数 *\/$/;"	v
+OSLockNesting	uCOS_II.H	/^OS_EXT  INT8U             OSLockNesting;            \/* Multitasking lock nesting level                 *\/\/* 调用OSSchedLock()的嵌套层数 *\/$/;"	v
 OSMapTbl	OS_CORE.C	/^INT8U  const  OSMapTbl[]   = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};$/;"	v
 OSMboxAccept	OS_MBOX.C	/^void  *OSMboxAccept (OS_EVENT *pevent)$/;"	f
 OSMboxCreate	OS_MBOX.C	/^OS_EVENT  *OSMboxCreate (void *msg)$/;"	f
@@ -70,14 +70,14 @@ OSMboxPend	OS_MBOX.C	/^void  *OSMboxPend (OS_EVENT *pevent, INT16U timeout, INT8
 OSMboxPost	OS_MBOX.C	/^INT8U  OSMboxPost (OS_EVENT *pevent, void *msg)$/;"	f
 OSMboxPostOpt	OS_MBOX.C	/^INT8U  OSMboxPostOpt (OS_EVENT *pevent, void *msg, INT8U opt)$/;"	f
 OSMboxQuery	OS_MBOX.C	/^INT8U  OSMboxQuery (OS_EVENT *pevent, OS_MBOX_DATA *pdata)$/;"	f
-OSMemAddr	uCOS_II.H	/^    void   *OSMemAddr;                 \/* Pointer to beginning of memory partition                     *\/$/;"	m	struct:__anon5
-OSMemBlkSize	uCOS_II.H	/^    INT32U  OSMemBlkSize;              \/* Size (in bytes) of each block of memory                      *\/$/;"	m	struct:__anon5
+OSMemAddr	uCOS_II.H	/^    void   *OSMemAddr;                 \/* Pointer to beginning of memory partition                     *\/\/* 内存分区的指针 		  *\/$/;"	m	struct:__anon5
+OSMemBlkSize	uCOS_II.H	/^    INT32U  OSMemBlkSize;              \/* Size (in bytes) of each block of memory                      *\/\/* 内存块的长度		  *\/$/;"	m	struct:__anon5
 OSMemCreate	OS_MEM.C	/^OS_MEM  *OSMemCreate (void *addr, INT32U nblks, INT32U blksize, INT8U *err)$/;"	f
-OSMemFreeList	uCOS_II.H	/^    void   *OSMemFreeList;             \/* Pointer to list of free memory blocks                        *\/$/;"	m	struct:__anon5
+OSMemFreeList	uCOS_II.H	/^    void   *OSMemFreeList;             \/* Pointer to list of free memory blocks                        *\/\/* 指向内存块链表的指针	  *\/$/;"	m	struct:__anon5
 OSMemFreeList	uCOS_II.H	/^OS_EXT  OS_MEM           *OSMemFreeList;            \/* Pointer to free list of memory partitions       *\/$/;"	v
 OSMemGet	OS_MEM.C	/^void  *OSMemGet (OS_MEM *pmem, INT8U *err)$/;"	f
-OSMemNBlks	uCOS_II.H	/^    INT32U  OSMemNBlks;                \/* Total number of blocks in this partition                     *\/$/;"	m	struct:__anon5
-OSMemNFree	uCOS_II.H	/^    INT32U  OSMemNFree;                \/* Number of memory blocks remaining in this partition          *\/$/;"	m	struct:__anon5
+OSMemNBlks	uCOS_II.H	/^    INT32U  OSMemNBlks;                \/* Total number of blocks in this partition                     *\/\/* 分区内分区块的数目 		  *\/$/;"	m	struct:__anon5
+OSMemNFree	uCOS_II.H	/^    INT32U  OSMemNFree;                \/* Number of memory blocks remaining in this partition          *\/\/* 分区内当前可分配的内存块的数目*\/$/;"	m	struct:__anon5
 OSMemPut	OS_MEM.C	/^INT8U  OSMemPut (OS_MEM  *pmem, void *pblk)$/;"	f
 OSMemQuery	OS_MEM.C	/^INT8U  OSMemQuery (OS_MEM *pmem, OS_MEM_DATA *pdata)$/;"	f
 OSMemTbl	uCOS_II.H	/^OS_EXT  OS_MEM            OSMemTbl[OS_MAX_MEM_PART];\/* Storage for memory partition manager            *\/$/;"	v
@@ -95,8 +95,8 @@ OSNFree	uCOS_II.H	/^    INT32U  OSNFree;                   \/* Number of memory 
 OSNMsgs	uCOS_II.H	/^    INT16U         OSNMsgs;             \/* Number of messages in message queue                         *\/$/;"	m	struct:__anon8
 OSNUsed	uCOS_II.H	/^    INT32U  OSNUsed;                   \/* Number of memory blocks used                                 *\/$/;"	m	struct:__anon6
 OSOwnerPrio	uCOS_II.H	/^    INT8U   OSOwnerPrio;                    \/* Mutex owner's task priority or 0xFF if no owner         *\/$/;"	m	struct:__anon7
-OSPrioCur	uCOS_II.H	/^OS_EXT  INT8U             OSPrioCur;                \/* Priority of current task                        *\/$/;"	v
-OSPrioHighRdy	uCOS_II.H	/^OS_EXT  INT8U             OSPrioHighRdy;            \/* Priority of highest priority task               *\/$/;"	v
+OSPrioCur	uCOS_II.H	/^OS_EXT  INT8U             OSPrioCur;                \/* Priority of current task                        *\/\/* 正在运行任务的优先级 *\/$/;"	v
+OSPrioHighRdy	uCOS_II.H	/^OS_EXT  INT8U             OSPrioHighRdy;            \/* Priority of highest priority task               *\/\/* 具有最高优先级的就绪任务的优先级 *\/$/;"	v
 OSQAccept	OS_Q.C	/^void  *OSQAccept (OS_EVENT *pevent)$/;"	f
 OSQCreate	OS_Q.C	/^OS_EVENT  *OSQCreate (void **start, INT16U size)$/;"	f
 OSQDel	OS_Q.C	/^OS_EVENT  *OSQDel (OS_EVENT *pevent, INT8U opt, INT8U *err)$/;"	f
@@ -118,7 +118,7 @@ OSQStart	uCOS_II.H	/^    void         **OSQStart;            \/* Pointer to star
 OSQTbl	uCOS_II.H	/^OS_EXT  OS_Q              OSQTbl[OS_MAX_QS];        \/* Table of QUEUE control blocks                   *\/$/;"	v
 OSRdyGrp	uCOS_II.H	/^OS_EXT  INT8U             OSRdyGrp;                        \/* Ready list group                         *\/$/;"	v
 OSRdyTbl	uCOS_II.H	/^OS_EXT  INT8U             OSRdyTbl[OS_RDY_TBL_SIZE];       \/* Table of tasks which are ready to run    *\/$/;"	v
-OSRunning	uCOS_II.H	/^OS_EXT  BOOLEAN           OSRunning;                       \/* Flag indicating that kernel is running   *\/$/;"	v
+OSRunning	uCOS_II.H	/^OS_EXT  BOOLEAN           OSRunning;                       \/* Flag indicating that kernel is running   *\/\/* uCOS核是否在运行的标志 *\/$/;"	v
 OSSchedLock	OS_CORE.C	/^void  OSSchedLock (void)$/;"	f
 OSSchedUnlock	OS_CORE.C	/^void  OSSchedUnlock (void)$/;"	f
 OSSemAccept	OS_SEM.C	/^INT16U  OSSemAccept (OS_EVENT *pevent)$/;"	f
@@ -129,37 +129,37 @@ OSSemPost	OS_SEM.C	/^INT8U  OSSemPost (OS_EVENT *pevent)$/;"	f
 OSSemQuery	OS_SEM.C	/^INT8U  OSSemQuery (OS_EVENT *pevent, OS_SEM_DATA *pdata)$/;"	f
 OSStart	OS_CORE.C	/^void  OSStart (void)$/;"	f
 OSStatInit	OS_CORE.C	/^void  OSStatInit (void)$/;"	f
-OSStatRdy	uCOS_II.H	/^OS_EXT  BOOLEAN           OSStatRdy;                \/* Flag indicating that the statistic task is rdy  *\/$/;"	v
+OSStatRdy	uCOS_II.H	/^OS_EXT  BOOLEAN           OSStatRdy;                \/* Flag indicating that the statistic task is rdy  *\/\/* 统计任务是否就绪的标志 *\/$/;"	v
 OSTCBBitX	uCOS_II.H	/^    INT8U          OSTCBBitX;          \/* Bit mask to access bit position in ready table               *\/$/;"	m	struct:os_tcb
 OSTCBBitY	uCOS_II.H	/^    INT8U          OSTCBBitY;          \/* Bit mask to access bit position in ready group               *\/$/;"	m	struct:os_tcb
-OSTCBCur	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBCur;                        \/* Pointer to currently running TCB         *\/$/;"	v
+OSTCBCur	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBCur;                        \/* Pointer to currently running TCB         *\/\/* 指向正在运行任务控制块的指针 	*\/$/;"	v
 OSTCBDelReq	uCOS_II.H	/^    BOOLEAN        OSTCBDelReq;        \/* Indicates whether a task needs to delete itself              *\/$/;"	m	struct:os_tcb
-OSTCBDly	uCOS_II.H	/^    INT16U         OSTCBDly;           \/* Nbr ticks to delay task or, timeout waiting for event        *\/$/;"	m	struct:os_tcb
-OSTCBEventPtr	uCOS_II.H	/^    OS_EVENT      *OSTCBEventPtr;      \/* Pointer to event control block                               *\/$/;"	m	struct:os_tcb
-OSTCBExtPtr	uCOS_II.H	/^    void          *OSTCBExtPtr;        \/* Pointer to user definable data for TCB extension             *\/$/;"	m	struct:os_tcb
-OSTCBFlagNode	uCOS_II.H	/^    OS_FLAG_NODE  *OSTCBFlagNode;      \/* Pointer to event flag node                                   *\/$/;"	m	struct:os_tcb
-OSTCBFlagsRdy	uCOS_II.H	/^    OS_FLAGS       OSTCBFlagsRdy;      \/* Event flags that made task ready to run                      *\/$/;"	m	struct:os_tcb
-OSTCBFreeList	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBFreeList;                   \/* Pointer to list of free TCBs             *\/$/;"	v
-OSTCBHighRdy	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBHighRdy;                    \/* Pointer to highest priority TCB R-to-R   *\/$/;"	v
-OSTCBId	uCOS_II.H	/^    INT16U         OSTCBId;            \/* Task ID (0..65535)                                           *\/$/;"	m	struct:os_tcb
-OSTCBList	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBList;                       \/* Pointer to doubly linked list of TCBs    *\/$/;"	v
-OSTCBMsg	uCOS_II.H	/^    void          *OSTCBMsg;           \/* Message received from OSMboxPost() or OSQPost()              *\/$/;"	m	struct:os_tcb
-OSTCBNext	uCOS_II.H	/^    struct os_tcb *OSTCBNext;          \/* Pointer to next     TCB in the TCB list                      *\/$/;"	m	struct:os_tcb	typeref:struct:os_tcb::os_tcb
-OSTCBOpt	uCOS_II.H	/^    INT16U         OSTCBOpt;           \/* Task options as passed by OSTaskCreateExt()                  *\/$/;"	m	struct:os_tcb
-OSTCBPrev	uCOS_II.H	/^    struct os_tcb *OSTCBPrev;          \/* Pointer to previous TCB in the TCB list                      *\/$/;"	m	struct:os_tcb	typeref:struct:os_tcb::os_tcb
-OSTCBPrio	uCOS_II.H	/^    INT8U          OSTCBPrio;          \/* Task priority (0 == highest, 63 == lowest)                   *\/$/;"	m	struct:os_tcb
-OSTCBPrioTbl	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBPrioTbl[OS_LOWEST_PRIO + 1];\/* Table of pointers to created TCBs        *\/$/;"	v
-OSTCBStat	uCOS_II.H	/^    INT8U          OSTCBStat;          \/* Task status                                                  *\/$/;"	m	struct:os_tcb
-OSTCBStkBottom	uCOS_II.H	/^    OS_STK        *OSTCBStkBottom;     \/* Pointer to bottom of stack                                   *\/$/;"	m	struct:os_tcb
-OSTCBStkPtr	uCOS_II.H	/^    OS_STK        *OSTCBStkPtr;        \/* Pointer to current top of stack                              *\/$/;"	m	struct:os_tcb
-OSTCBStkSize	uCOS_II.H	/^    INT32U         OSTCBStkSize;       \/* Size of task stack (in number of stack elements)             *\/$/;"	m	struct:os_tcb
-OSTCBTbl	uCOS_II.H	/^OS_EXT  OS_TCB            OSTCBTbl[OS_MAX_TASKS + OS_N_SYS_TASKS];   \/* Table of TCBs                  *\/$/;"	v
+OSTCBDly	uCOS_II.H	/^    INT16U         OSTCBDly;           \/* Nbr ticks to delay task or, timeout waiting for event        *\/\/* 把任务延时或挂起一段时间	*\/$/;"	m	struct:os_tcb
+OSTCBEventPtr	uCOS_II.H	/^    OS_EVENT      *OSTCBEventPtr;      \/* Pointer to event control block                               *\/\/* 指向事件控制块的指针	*\/$/;"	m	struct:os_tcb
+OSTCBExtPtr	uCOS_II.H	/^    void          *OSTCBExtPtr;        \/* Pointer to user definable data for TCB extension             *\/\/* 指向用户的任务控制块的指针 	*\/$/;"	m	struct:os_tcb
+OSTCBFlagNode	uCOS_II.H	/^    OS_FLAG_NODE  *OSTCBFlagNode;      \/* Pointer to event flag node                                   *\/\/* 指向事件标志节点的指针 	*\/$/;"	m	struct:os_tcb
+OSTCBFlagsRdy	uCOS_II.H	/^    OS_FLAGS       OSTCBFlagsRdy;      \/* Event flags that made task ready to run                      *\/\/* 使任务进入就绪态的事件标志	*\/$/;"	m	struct:os_tcb
+OSTCBFreeList	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBFreeList;                   \/* Pointer to list of free TCBs             *\/\/* 指向空闲任务块链表的指针		*\/$/;"	v
+OSTCBHighRdy	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBHighRdy;                    \/* Pointer to highest priority TCB R-to-R   *\/\/* 指向最高优先级别就绪任务控制块的指针*\/$/;"	v
+OSTCBId	uCOS_II.H	/^    INT16U         OSTCBId;            \/* Task ID (0..65535)                                           *\/\/* 目前该域未被使用		*\/$/;"	m	struct:os_tcb
+OSTCBList	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBList;                       \/* Pointer to doubly linked list of TCBs    *\/\/* *\/$/;"	v
+OSTCBMsg	uCOS_II.H	/^    void          *OSTCBMsg;           \/* Message received from OSMboxPost() or OSQPost()              *\/\/* 指向传递给任务消息的指针	*\/$/;"	m	struct:os_tcb
+OSTCBNext	uCOS_II.H	/^    struct os_tcb *OSTCBNext;          \/* Pointer to next     TCB in the TCB list                      *\/\/* 指向后一个任务控制块的指针	*\/$/;"	m	struct:os_tcb	typeref:struct:os_tcb::os_tcb
+OSTCBOpt	uCOS_II.H	/^    INT16U         OSTCBOpt;           \/* Task options as passed by OSTaskCreateExt()                  *\/\/* 创建任务时的选择项		*\/$/;"	m	struct:os_tcb
+OSTCBPrev	uCOS_II.H	/^    struct os_tcb *OSTCBPrev;          \/* Pointer to previous TCB in the TCB list                      *\/\/* 指向前一个任务控制块的指针	*\/$/;"	m	struct:os_tcb	typeref:struct:os_tcb::os_tcb
+OSTCBPrio	uCOS_II.H	/^    INT8U          OSTCBPrio;          \/* Task priority (0 == highest, 63 == lowest)                   *\/\/* 任务的优先级		*\/$/;"	m	struct:os_tcb
+OSTCBPrioTbl	uCOS_II.H	/^OS_EXT  OS_TCB           *OSTCBPrioTbl[OS_LOWEST_PRIO + 1];\/* Table of pointers to created TCBs        *\/\/* 保存控制块指针的数组		*\/$/;"	v
+OSTCBStat	uCOS_II.H	/^    INT8U          OSTCBStat;          \/* Task status                                                  *\/\/* 任务的当前状态		*\/$/;"	m	struct:os_tcb
+OSTCBStkBottom	uCOS_II.H	/^    OS_STK        *OSTCBStkBottom;     \/* Pointer to bottom of stack                                   *\/\/* 指向任务堆栈栈底的指针	*\/$/;"	m	struct:os_tcb
+OSTCBStkPtr	uCOS_II.H	/^    OS_STK        *OSTCBStkPtr;        \/* Pointer to current top of stack                              *\/\/* 指向任务堆栈栈顶的指针	*\/$/;"	m	struct:os_tcb
+OSTCBStkSize	uCOS_II.H	/^    INT32U         OSTCBStkSize;       \/* Size of task stack (in number of stack elements)             *\/\/* 任务堆栈大小		*\/$/;"	m	struct:os_tcb
+OSTCBTbl	uCOS_II.H	/^OS_EXT  OS_TCB            OSTCBTbl[OS_MAX_TASKS + OS_N_SYS_TASKS];   \/* Table of TCBs                  *\/\/* 空任务控制块链表			*\/$/;"	v
 OSTCBX	uCOS_II.H	/^    INT8U          OSTCBX;             \/* Bit position in group  corresponding to task priority (0..7) *\/$/;"	m	struct:os_tcb
 OSTCBY	uCOS_II.H	/^    INT8U          OSTCBY;             \/* Index into ready table corresponding to task priority        *\/$/;"	m	struct:os_tcb
 OSTaskChangePrio	OS_TASK.C	/^INT8U  OSTaskChangePrio (INT8U oldprio, INT8U newprio)$/;"	f
 OSTaskCreate	OS_TASK.C	/^INT8U  OSTaskCreate (void (*task)(void *pd), void *pdata, OS_STK *ptos, INT8U prio)$/;"	f
-OSTaskCreateExt	OS_TASK.C	/^INT8U  OSTaskCreateExt (void   (*task)(void *pd),$/;"	f
-OSTaskCtr	uCOS_II.H	/^OS_EXT  INT8U             OSTaskCtr;                       \/* Number of tasks created                  *\/$/;"	v
+OSTaskCreateExt	OS_TASK.C	/^INT8U  OSTaskCreateExt (void   (*task)(void *pd),	\/* 指向任务的指针 		*\/$/;"	f
+OSTaskCtr	uCOS_II.H	/^OS_EXT  INT8U             OSTaskCtr;                       \/* Number of tasks created                  *\/\/* 定义任务计数器 *\/$/;"	v
 OSTaskDel	OS_TASK.C	/^INT8U  OSTaskDel (INT8U prio)$/;"	f
 OSTaskDelReq	OS_TASK.C	/^INT8U  OSTaskDelReq (INT8U prio)$/;"	f
 OSTaskIdleStk	uCOS_II.H	/^OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      \/* Idle task stack                *\/$/;"	v
@@ -169,7 +169,7 @@ OSTaskStatStk	uCOS_II.H	/^OS_EXT  OS_STK            OSTaskStatStk[OS_TASK_STAT_S
 OSTaskStkChk	OS_TASK.C	/^INT8U  OSTaskStkChk (INT8U prio, OS_STK_DATA *pdata)$/;"	f
 OSTaskSuspend	OS_TASK.C	/^INT8U  OSTaskSuspend (INT8U prio)$/;"	f
 OSTickDOSCtr	OS_CPU.H	/^OS_CPU_EXT  INT8U  OSTickDOSCtr;       \/* Counter used to invoke DOS's tick handler every 'n' ticks    *\/$/;"	v
-OSTime	uCOS_II.H	/^OS_EXT  volatile  INT32U  OSTime;                   \/* Current value of system time (in ticks)         *\/$/;"	v
+OSTime	uCOS_II.H	/^OS_EXT  volatile  INT32U  OSTime;                   \/* Current value of system time (in ticks)         *\/\/* 系统当前时间（节拍数）*\/$/;"	v
 OSTimeDly	OS_TIME.C	/^void  OSTimeDly (INT16U ticks)$/;"	f
 OSTimeDlyHMSM	OS_TIME.C	/^INT8U  OSTimeDlyHMSM (INT8U hours, INT8U minutes, INT8U seconds, INT16U milli)$/;"	f
 OSTimeDlyResume	OS_TIME.C	/^INT8U  OSTimeDlyResume (INT8U prio)$/;"	f
@@ -217,7 +217,7 @@ OS_EventTO	OS_CORE.C	/^void  OS_EventTO (OS_EVENT *pevent)$/;"	f
 OS_EventTaskRdy	OS_CORE.C	/^INT8U  OS_EventTaskRdy (OS_EVENT *pevent, void *msg, INT8U msk)$/;"	f
 OS_EventTaskWait	OS_CORE.C	/^void  OS_EventTaskWait (OS_EVENT *pevent)$/;"	f
 OS_EventWaitListInit	OS_CORE.C	/^void  OS_EventWaitListInit (OS_EVENT *pevent)$/;"	f
-OS_FLAGS	OS_CFG.H	/^typedef INT16U             OS_FLAGS;   \/* Date type for event flag bits (8, 16 or 32 bits)             *\/$/;"	t
+OS_FLAGS	OS_CFG.H	/^typedef INT16U             OS_FLAGS;   \/* Date type for event flag bits (8, 16 or 32 bits)             *\/\/* 用来存放信号量集所有信号的状态，每一个信号占据一个二进制位 *\/$/;"	t
 OS_FLAG_ACCEPT_EN	OS_CFG.H	54;"	d
 OS_FLAG_CLR	uCOS_II.H	102;"	d
 OS_FLAG_CONSUME	uCOS_II.H	99;"	d
@@ -225,11 +225,11 @@ OS_FLAG_DEL_EN	OS_CFG.H	55;"	d
 OS_FLAG_EN	OS_CFG.H	52;"	d
 OS_FLAG_ERR_NOT_RDY	uCOS_II.H	200;"	d
 OS_FLAG_ERR_WAIT_TYPE	uCOS_II.H	199;"	d
-OS_FLAG_GRP	uCOS_II.H	/^} OS_FLAG_GRP;    $/;"	t	typeref:struct:__anon2
+OS_FLAG_GRP	uCOS_II.H	/^} OS_FLAG_GRP;	\/* 标志组 --描述信号量集 *\/$/;"	t	typeref:struct:__anon2
 OS_FLAG_GRP_DEPLETED	uCOS_II.H	202;"	d
 OS_FLAG_INVALID_OPT	uCOS_II.H	201;"	d
 OS_FLAG_INVALID_PGRP	uCOS_II.H	198;"	d
-OS_FLAG_NODE	uCOS_II.H	/^} OS_FLAG_NODE;$/;"	t	typeref:struct:__anon3
+OS_FLAG_NODE	uCOS_II.H	/^} OS_FLAG_NODE;	\/* 等待任务链表节点 *\/$/;"	t	typeref:struct:__anon3
 OS_FLAG_QUERY_EN	OS_CFG.H	56;"	d
 OS_FLAG_SET	uCOS_II.H	103;"	d
 OS_FLAG_WAIT_CLR_ALL	uCOS_II.H	86;"	d
@@ -269,7 +269,7 @@ OS_MBOX_FULL	uCOS_II.H	152;"	d
 OS_MBOX_POST_EN	OS_CFG.H	63;"	d
 OS_MBOX_POST_OPT_EN	OS_CFG.H	64;"	d
 OS_MBOX_QUERY_EN	OS_CFG.H	65;"	d
-OS_MEM	uCOS_II.H	/^} OS_MEM;$/;"	t	typeref:struct:__anon5
+OS_MEM	uCOS_II.H	/^} OS_MEM;	\/* 内存控制块 *\/$/;"	t	typeref:struct:__anon5
 OS_MEM_DATA	uCOS_II.H	/^} OS_MEM_DATA;$/;"	t	typeref:struct:__anon6
 OS_MEM_EN	OS_CFG.H	69;"	d
 OS_MEM_FULL	uCOS_II.H	185;"	d
@@ -302,7 +302,7 @@ OS_PRIO_ERR	uCOS_II.H	157;"	d
 OS_PRIO_EXIST	uCOS_II.H	156;"	d
 OS_PRIO_INVALID	uCOS_II.H	158;"	d
 OS_PRIO_SELF	uCOS_II.H	36;"	d
-OS_Q	uCOS_II.H	/^} OS_Q;$/;"	t	typeref:struct:os_q
+OS_Q	uCOS_II.H	/^} OS_Q;	\/* 队列控制块 *\/$/;"	t	typeref:struct:os_q
 OS_QInit	OS_Q.C	/^void  OS_QInit (void)$/;"	f
 OS_Q_ACCEPT_EN	OS_CFG.H	82;"	d
 OS_Q_DATA	uCOS_II.H	/^} OS_Q_DATA;$/;"	t	typeref:struct:__anon8

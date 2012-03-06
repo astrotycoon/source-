@@ -412,15 +412,15 @@ INT8U  OSTaskDel (INT8U prio)
 #endif
         ptcb->OSTCBDly  = 0;                                    /* Prevent OSTimeTick() from updating  */
         ptcb->OSTCBStat = OS_STAT_RDY;                          /* Prevent task from being resumed     */
-		if (OSLockNesting < 255) {
+	if (OSLockNesting < 255) {
             OSLockNesting++;
-		}
+	}
         OS_EXIT_CRITICAL();                                     /* Enabling INT. ignores next instruc. */
         OS_Dummy();                                             /* ... Dummy ensures that INTs will be */
         OS_ENTER_CRITICAL();                                    /* ... disabled HERE!                  */
-		if (OSLockNesting > 0) {
+	if (OSLockNesting > 0) {
             OSLockNesting--;
-		}
+	}
         OSTaskDelHook(ptcb);                                    /* Call user defined hook              */
         OSTaskCtr--;                                            /* One less task being managed         */
         OSTCBPrioTbl[prio] = (OS_TCB *)0;                       /* Clear old priority entry            */

@@ -1045,7 +1045,7 @@ INT8U  OS_TCBInit (INT8U prio, OS_STK *ptos, OS_STK *pbos, INT16U id, INT32U stk
 #if OS_CRITICAL_METHOD == 3                                /* Allocate storage for CPU status register */
     OS_CPU_SR  cpu_sr;
 #endif    
-    OS_TCB    *ptcb;
+    OS_TCB    *ptcb;					   /* beterr is OS_TCB *ptcb = (OS_TCB *)0     */
 
 
     OS_ENTER_CRITICAL();

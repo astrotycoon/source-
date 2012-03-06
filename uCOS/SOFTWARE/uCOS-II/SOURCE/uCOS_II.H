@@ -135,7 +135,7 @@
 *                                             ERROR CODES
 *********************************************************************************************************
 */
-#define OS_NO_ERR                 0
+#define OS_NO_ERR                 0	/* 函数返回成功				*/
 
 #define OS_ERR_EVENT_TYPE         1
 #define OS_ERR_PEND_ISR           2
@@ -161,7 +161,7 @@
 
 #define OS_TASK_DEL_ERR          60
 #define OS_TASK_DEL_IDLE         61
-#define OS_TASK_DEL_REQ          62
+#define OS_TASK_DEL_REQ          62	/* 当前任务收到来自其他任务的删除请求	*/
 #define OS_TASK_DEL_ISR          63
 
 #define OS_NO_MORE_TCB           70	/* 系统中没有OS_TCB分配给任务了		*/
@@ -469,7 +469,7 @@ OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      /* Idle tas
 OS_EXT  OS_TCB           *OSTCBCur;                        /* Pointer to currently running TCB         *//* 指向正在运行任务控制块的指针 	*/
 OS_EXT  OS_TCB           *OSTCBFreeList;                   /* Pointer to list of free TCBs             *//* 指向空闲任务块链表的指针		*/
 OS_EXT  OS_TCB           *OSTCBHighRdy;                    /* Pointer to highest priority TCB R-to-R   *//* 指向最高优先级别就绪任务控制块的指针*/
-OS_EXT  OS_TCB           *OSTCBList;                       /* Pointer to doubly linked list of TCBs    */
+OS_EXT  OS_TCB           *OSTCBList;                       /* Pointer to doubly linked list of TCBs    *//* */
 OS_EXT  OS_TCB           *OSTCBPrioTbl[OS_LOWEST_PRIO + 1];/* Table of pointers to created TCBs        *//* 保存控制块指针的数组		*/
 OS_EXT  OS_TCB            OSTCBTbl[OS_MAX_TASKS + OS_N_SYS_TASKS];   /* Table of TCBs                  *//* 空任务控制块链表			*/
 
@@ -800,6 +800,11 @@ INT8U         OSTaskCreateExt(void  (*task)(void *pd),	/* 指向任务的指针 
 INT8U         OSTaskDel(INT8U prio);
 INT8U         OSTaskDelReq(INT8U prio);
 #endif
+/*
+INT8U 	      OSTaskDelReq(
+				INT8U prio;	-->待删除任务的优先级
+			  );
+*/
 
 #if OS_TASK_SUSPEND_EN > 0
 INT8U         OSTaskResume(INT8U prio);			/* 恢复任务 			*/
@@ -813,6 +818,13 @@ INT8U         OSTaskStkChk(INT8U prio, OS_STK_DATA *pdata);
 #if OS_TASK_QUERY_EN > 0
 INT8U         OSTaskQuery(INT8U prio, OS_TCB *pdata);
 #endif
+/*
+	查询任务的信息
+INT8U         OSTaskQuery(
+				INT8U prio,	-->待查询任务的优先级别
+				OS_TCB *ptcb	-->存储任务信息的结构
+			 );	
+*/
 
 /*$PAGE*/
 /*
