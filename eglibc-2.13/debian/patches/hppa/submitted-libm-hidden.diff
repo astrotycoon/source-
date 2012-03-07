@@ -1,0 +1,27 @@
+2011-03-11  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* sysdeps/hppa/fpu/fegetenv.c (fegetenv): Add libm_hidden_def.
+	* sysdeps/hppa/fpu/feupdateenv.c (feupdateenv): Likewise.
+	* sysdeps/hppa/fpu/ftestexcept.c (fetestexcept): Likewise.
+
+--- a/ports/sysdeps/hppa/fpu/fegetenv.c
++++ b/ports/sysdeps/hppa/fpu/fegetenv.c
+@@ -33,3 +33,4 @@ fegetenv (fenv_t *envp)
+   memcpy(envp, buf, sizeof (*envp));
+   return 0;
+ }
++libm_hidden_def (fegetenv)
+--- a/ports/sysdeps/hppa/fpu/feupdateenv.c
++++ b/ports/sysdeps/hppa/fpu/feupdateenv.c
+@@ -38,3 +38,4 @@ feupdateenv (const fenv_t *envp)
+   /* Success.  */
+   return 0;
+ }
++libm_hidden_def (feupdateenv)
+--- a/ports/sysdeps/hppa/fpu/ftestexcept.c
++++ b/ports/sysdeps/hppa/fpu/ftestexcept.c
+@@ -32,3 +32,4 @@ fetestexcept (int excepts)
+ 
+   return (s.sw[0] >> 27) & excepts & FE_ALL_EXCEPT;
+ }
++libm_hidden_def (fetestexcept)

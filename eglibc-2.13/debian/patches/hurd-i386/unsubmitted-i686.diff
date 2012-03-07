@@ -1,0 +1,24 @@
+This isn't needed on linux, should check why.
+
+2010-08-22  Samuel Thibault  <samuel.thibault@ens-lyon.org>
+
+        * sysdeps/mach/i386/sysdep.h [__ASSEMBLER__] (__i686): New macro.
+
+---
+ sysdeps/mach/i386/sysdep.h |    5 +++++
+ 1 file changed, 5 insertions(+)
+
+--- a/sysdeps/mach/i386/sysdep.h
++++ b/sysdeps/mach/i386/sysdep.h
+@@ -22,6 +22,11 @@
+ #include <dl-sysdep.h>
+ #include <tls.h>
+ 
++#if defined __i686 && defined __ASSEMBLER__
++#undef __i686
++#define __i686 __i686
++#endif
++
+ #define LOSE asm volatile ("hlt")
+ 
+ #define SNARF_ARGS(entry_sp, argc, argv, envp)				      \

@@ -1,0 +1,2 @@
+version=3
+http://monkey.org/~provos/libevent/ ../libevent-(.*?).tar.gz debian uupdate

@@ -1,0 +1,24 @@
+2011-06-04  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* sysdeps/mips/bits/wordsize.h(__WORDSIZE): Define from _MIPS_SZPTR
+	or __INTPTR_WIDTH__.
+
+diff --git a/ports/sysdeps/mips/bits/wordsize.h b/ports/sysdeps/mips/bits/wordsize.h
+index 06967e5..099dfdc 100644
+--- a/ports/sysdeps/mips/bits/wordsize.h
++++ b/ports/sysdeps/mips/bits/wordsize.h
+@@ -16,7 +16,13 @@
+    Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+    02111-1307 USA.  */
+ 
+-#define __WORDSIZE	_MIPS_SZPTR
++#if defined (_MIPS_SZPTR)
++# define __WORDSIZE	_MIPS_SZPTR
++#elif defined (__INTPTR_WIDTH__)
++# define __WORDSIZE	__INTPTR_WIDTH__
++#else
++# error Cannot define __WORDSIZE
++#endif
+ #if _MIPS_SIM == _ABI64
+ # define __WORDSIZE_COMPAT32	1
+ #endif

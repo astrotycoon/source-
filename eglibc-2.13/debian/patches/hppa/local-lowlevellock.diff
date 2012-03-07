@@ -1,0 +1,34 @@
+2010-02-11  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.h: remove
+	useless <sysdep.h> include. Move <tls.h> include to...
+	* sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.c: here.
+
+---
+ ports/sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.c |    1 +
+ ports/sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.h |    2 --
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+--- a/ports/sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.c
++++ b/ports/sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.c
+@@ -22,6 +22,7 @@
+ #include <sysdep.h>
+ #include <lowlevellock.h>
+ #include <sys/time.h>
++#include <tls.h>		/* Need THREAD_*, and header.*.  */
+ 
+ void
+ __lll_lock_wait (lll_lock_t *futex, int private)
+--- a/ports/sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.h
++++ b/ports/sysdeps/unix/sysv/linux/hppa/nptl/lowlevellock.h
+@@ -22,10 +22,8 @@
+ #include <time.h>
+ #include <sys/param.h>
+ #include <bits/pthreadtypes.h>
+-#include <sysdep.h>
+ #include <atomic.h>
+ #include <kernel-features.h>	/* Need __ASSUME_PRIVATE_FUTEX.  */
+-#include <tls.h>		/* Need THREAD_*, and header.*.  */
+ 
+ /* HPPA only has one atomic read and modify memory operation,
+    load and clear, so hppa uses a kernel helper routine to implement

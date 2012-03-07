@@ -1,0 +1,8 @@
+hurd-i386/submitted-net.diff
+hurd-i386/unsubmitted-gscope.diff
+hurd-i386/unsubmitted-atomic-no-multiple_threads.diff
+hurd-i386/local-pthread_stubs.diff
+hurd-i386/unsubmitted-pthread-unsupported-stubs.diff
+hurd-i386/unsubmitted-unlockpt-chroot.diff
+hurd-i386/local-msg-nosignal.diff
+hurd-i386/unsubmitted-pthread.diff

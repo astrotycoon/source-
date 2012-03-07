@@ -1,0 +1,254 @@
+* Build GNU C Library Reference manual.
+  - Build-depend on texinfo (>= 4.0), texi2html.
+  - glibc-doc doesn't have a Suggests but has Provides/Conflicts/Replaces on
+    glibc-doc-reference.
+  - Update description of glibc-doc package.
+  - Add doc-base entry for the glibc-manual.
+  - Install DEB_SRCDIR/manual/*.info* via debian/debhelper.in/glibc-doc.info,
+    DEB_SRCDIR/manual/*.html via debian/debhelper.in/glibc-doc.install, and a
+    usr/share/doc/glibc-doc/html/libc.html via
+    debian/debhelper.in/glibc-doc.links.
+  - Disable patch all/local-remove-manual.diff since this workaround isn't
+    needed anymore.
+  - Drop MAKEINFO=: from configure args in build.mk.
+  - Call texi2html in manual/ when building libc in build.mk.
+  - Disable stripping of manual/ in get-orig-source target.
+
+* Build-dep against binutils >= 2.20-1 and g++-4.4 >= 4.4.4-1.
+
+* libc packages have a Depends on tzdata.
+
+* libc packages don't have a Recommends but have Provides/Conflicts on
+  libc6-i686 [i386].
+* Remove libc6-dev-i386's conflict with libc6-i386.
+
+* Bump libc packages' Breaks on nscd to << 2.12.
+
+* libc packages don't have Breaks on locales (<< 2.11) nor
+  locales-all (<< 2.11); this was added for Debian upgrades, but didn't
+  actually help, see Debian #585737.
+
+* libc packages have Conflicts/Replaces on belocs-locales-bin.
+
+* Revert /emul/ia32-linux -> /usr/lib32 transition.
+  * Drop debian/debhelper.in/libc-alt.preinst upgrade snippet.
+  * Drop Breaks of libc6-i386 and libc6-dev-i386.
+
+* libc6-i386 has a Breaks on ia32-libs (<= 1.5) and libc6-dev-i386 on
+  ia32-libs-dev (<< 1.18).
+
+* debian/control.in/opt, debian/sysdeps/i386.mk: Don't build an i686 optimized
+  flavor since Ubuntu defaults to i686.
+
+* Changes for new upstream release, 2.12.
+  - debian/debhelper.in/libc-alt.lintian-overrides,
+    libc-otherbuild.lintian-overrides, libc.lintian-overrides, libc.postinst,
+    libc.preinst: update for 2.12.
+  - Drop debian/patches/any/cvs-getaddrinfo.diff, any/cvs-glob.diff,
+    any/cvs-malloc_info-init.diff, any/cvs-redirect-throw.diff,
+    any/cvs-remove.diff, any/cvs-resolv-bindv6only.diff,
+    any/cvs-stat-issock.diff, any/cvs-umount-nofollow.diff,
+    any/local-ntp-update.diff, localedata/fr_BE-first_weekday.diff,
+    localedata/locale-es_CR.diff, localedata/locale-et_EE.diff,
+    localedata/submitted-pt_BR.diff, sparc/cvs-sparcv9-memchr.diff,
+    sparc/submitted-msgrcv.diff: applied upstream.
+  - debian/patches/any/local-disable-test-tgmath2.diff,
+    any/local-ldso-disable-hwcap.diff, any/submitted-futex_robust_pi.diff,
+    any/submitted-longdouble.diff, any/local-hwcap-updates.diff,
+    localedata/first_weekday.diff, localedata/locales-fr.diff,
+    localedata/sort-UTF8-first.diff: update to apply cleanly on 2.12.
+  - Update debian/patches/svn-updates.diff.
+  - debian/rules.d/tarball.mk: set EGLIBC_BRANCH = branches/eglibc-2_12 and
+    EGLIBC_REVISION = 11211 and patch get-orig-source target to use
+    EGLIBC_REVISION.
+  - debian/shlibver: bump to 2.12.
+  - debian/symbols.wildcards: update to generate >> 2.12 and << 2.13 deps and
+    to list @GLIBC_2.12.
+
+* debian/debhelper.in/libc-bin.install: install update-locale and validlocale
+  to /usr/sbin.
+
+* ldconfig trigger support:
+  - debian/debhelper.in/libc-bin.postinst: when triggered, just set
+    LDCONFIG_NOTRIGGER=y and call ldconfig.
+  - debian/debhelper.in/libc-bin.triggers: register interest in ldconfig.
+  - debian/local/ldconfig_wrap: wrapper around ldconfig, calling the .real.
+  - debian/rules.d/debhelper.mk: Rename ldconfig to ldconfig.real and install
+    the wrapper instead; install triggers file.
+
+* debian/debhelper.in/libc.postinst: Purge locales on upgrades from versions
+  older than 2.12.
+
+* debian/debhelper.in/libc.postinst, libc.preinst: prompt restart services
+  questions at medium priority if RELEASE_UPGRADE_MODE is desktop, but keep
+  critical priority otherwise.
+
+* debian/debhelper.in/libc.postinst: when using upstart, call "restart
+  $service" instead of "invoke-rc.d ${service} restart" to restart services.
+
+* debian/debhelper.in/libc.postinst: handle reloading gdm with init script when
+  upgrading from non-upstartified gdm.
+
+* debian/debhelper.in/libc.preinst: don't break upgrades when the sanity checks
+  looking for libcs in other directories, in LD_LIBRARY_PATH, or in
+  /etc/ld.so.conf; LP #81125.
+
+* debian/debhelper.in/libc.preinst: only require linux to be at least 2.6.15,
+  and not 2.6.18 as 2.6.15 is still used on some architectures.
+
+* debian/debhelper.in/nscd.init: do not do a test run of nscd when starting.
+
+* debian/patches/all/fedora-nss_dns-gethostbyname4-disable.diff: from Fedora
+  2.9-3, temporarily disables _nss_dns_gethostbyname4_r, which caused problems
+  for systems with broken IPv6 connectivity; LP #313218, RedHat #459756.
+
+* Revert flushing of cache after solving TEXTRELS in dl-reloc.
+  - Drop debian/patches/any/cvs-flush-cache-textrels.diff.
+  - Add debian/patches/any/cvs-revert-flush-cache-textrels.diff.
+
+* On powerpc, revert handling of AT_FDCWD in futimens() as powerpc buildds are
+  still running on 2.6.15 kernels.
+  - Drop debian/patches/any/cvs-futimens.diff.
+  - Add debian/patches/any/revert-cvs-futimens.diff.
+  - Add debian/patches/series.powerpc with the reversion patch.
+  - debian/sysdeps/linux.mk: set MIN_KERNEL_SUPPORTED to 2.6.15.
+
+* debian/patches/any/cvs-gai-rfc3484.diff: assign global scope to RFC 1918
+  addresses and document difference from RFC 3484.
+
+* debian/patches/any/cvs-issue11968.diff: Fix _FORTIFY_SOURCE version of
+  longjmp on x86-64.
+
+* debian/patches/any/cvs-issue12092.diff: Fix strstr and memmem algorithm and
+  add a test cases for the strstr problem.
+
+* debian/patches/any/disable-ld_audit.diff: turn off LD_AUDIT for setuid
+  binaries.
+
+* debian/patches/any/dst-expansion-fix.diff: do not expand DST in setuid
+  binaries; CVE-2010-3847.
+
+* debian/patches/any/local-ipv6-lookup.diff: This patch is a rewrite of the one
+  in Debian and has some issues; it is disabled in Debian but re-enabled in
+  Ubuntu; LP #417757.
+
+* debian/patches/any/local-libgcc-compat-ports.diff: change Debian patch to
+  only patch ports/sysdeps/arm/ and not /alpha/, /m68k/ and /mips/.
+
+* debian/patches/any/local-no-pagesize.diff: drop
+  ports/sysdeps/unix/sysv/linux/alpha/sys/user.h changes from the Debian patch.
+
+* debian/patches/arm/local-syscall-mcount.diff: unset CALL_MCOUNT for
+  __libc_do_syscall; LP #605030.
+
+* debian/patches/localedata/tailor-iso14651_t1.diff,
+  localedata/tailor-iso14651_t1.diff.TODO: apparently a partial update for
+  eglibc 2.12.
+
+* debian/patches/series: disable alpha/*, hppa/*, hurd-i386/*, m68k/*, mips/*,
+  s390/*, sh4/* patches as they don't apply to Ubuntu and require updates when
+  moving to new upstream versions.
+
+* Disable patch i386/local-pthread_cond_wait.diff, probably because it disables
+  assembly routines for pthread_cond_wait and might have a performance impact.
+
+* Disable patches any/local-gai-rfc1918-scope-global.patch,
+  all/local-alias-UTF-8.diff and all/local-alias-et_EE.diff,
+  all/local-ru_RU.diff, any/local-linuxthreads-kill_other.diff; no mention or
+  explanation in changelog.
+
+* Disable patch all/local-pthread-manpages.diff probably needs an update with
+  newest man pages.
+
+* Disable patches any/local-libgcc-compat-main.diff and
+  any/local-libgcc-compat-ports.diff to workaround FTBFS.
+
+* Disabled patch any/submitted-nis-shadow.diff; needs an update for 2.12.
+
+* debian/patches/ubuntu/local-altlocaledir.diff: support alternative gettext
+  tree in /usr/share/locale-langpack.
+
+* debian/patches/ubuntu/no-sprintf-pre-truncate.diff: Keep unspecified
+  sprintf() working identically when building with -D_FORTIFY_SOURCE=2;
+  LP #305901.
+
+* debian/patches/ubuntu/local-fwrite-no-attr-unused.diff: disable
+  warn-unused-results notifications for fwrite() and fwrite_unlocked();
+  Debian #563637.
+
+* debian/patches/ubuntu/ia64-include.diff: include <asm/types.h> in
+  sysdeps/ia64/elf/start.S.
+
+* debian/patches/ubuntu/machine-sparcv2.diff: patch config.sub to recognize
+  sparcv9v2 and sparc64v2 as valid machine names.
+
+* debian/patches/ubuntu/no-asm-mtune-i686.diff: patch
+  sysdeps/i386/i686/Makefile to not pass -Wa,-mtune=i686 to allow supporting
+  Geode LX; LP #587186.
+
+* Add debian/patches/ubuntu/README to explain that these are Ubuntu specific
+  patches.
+
+* debian/rules: DEB_SRCDIR defaults to CURDIR; this is needed to build docs.
+
+* debian/rules: ass nocheck to DEB_BUILD_OPTIONS when building for hppa.
+
+* debian/rules: unsetenv CPPFLAGS, CFLAGS, CXXFLAGS, LDFLAGS as to not use the
+  values from the environment but from the package.
+
+* debian/rules: build with gcc-4.4/g++-4.4 and disable stack-protector when
+  building eglibc itself by passing -fno-stack-protector -U_FORTIFY_SOURCE in
+  BUILD_CC and BUILD_CXX.  Also set CC and CXX to BUILD_CC/CXX.
+
+* debian/rules, debian/rules.d/build.mk: Add support for multiple build stages.
+  - stage1 only builds libc-dev and configures with --disable-sanity-checks
+    --enable-hacker-mode.
+  - Skip docs and tests for multi-staged builds.
+
+* debian/rules: Call realclean in manual/ on clean:; cleanup various additional
+  leftover files.
+
+* debian/rules.d/build.mk: Pass Ubuntu as the vendor to configure.
+
+* debian/rules.d/build.mk: pass --with-headers=$(WITH_SYSROOT)/$(includedir) if
+  WITH_SYSROOT is passed to the build.
+
+* debian/rules.d/quilt.mk: disable patching if PATCHED_SOURCES is passed to the
+  build.
+
+* debian/sysdeps/amd64.mk:
+  - Default to nptl for amd64.
+  - Configure i386 flavor for i686.
+  - Set i386 CC/CXX to use BUILD_CC/CXX.
+  - Re-add --disable-profile to i386_extra_config_options.
+  - Re-add i386_MAKEFLAGS to set gconvdir.
+  - Drop i386_rtlddir (requires check).
+
+* debian/sysdeps/i386.mk:
+  - Generate a etc/ld.so.conf.d/xen.conf instead of a libc6-xen.conf.
+  - Build libc pass with -mno-tls-direct-seg-refs.
+  - Set xen_slibdir to /lib/tls/i686/nosegneg.
+  - Pass --enable-multi-arch to all flavors.
+
+* debian/sysdeps/powerpc.mk:
+  - Pass -fno-stack-protector -U_FORTIFY_SOURCE to ppc64_CC/CXX.
+
+* Add sparc64b, sparc64v, sparc64v2, sparcv9v, and sparcv9v2 passes in
+  debian/sysdeps/sparc.mk and in debian/control.in/opt.
+
+* debian/testsuite-checking/compare.sh: misc update to skip some lines of
+  output starting with whitespaces or for other conditions.
+
+* debian/testsuite-checking/expected-results-arm-linux-gnueabi-libc,
+  -i686-linux-gnu-i686, -ia64-linux-gnu-libc, -powerpc-linux-gnu-libc,
+  -powerpc64-linux-gnu-ppc64, -sparc-linux-gnu-libc,
+  -sparc64-linux-gnu-sparc64, -x86_64-linux-gnu-amd64: misc addition for test
+  regressions witnessed in Ubuntu.
+
+TODO: drop hppa support
+TODO: drop sparc flavors
+TODO: drop ia64 changes
+TODO: understand + document more changes
+TODO: try to take updated versions of debian/patches/any/local-libgcc-compat-ports.diff and debian/patches/any/local-no-pagesize.diff.
+TODO: lower delta with Debian in debian/sysdeps/*.mk.
+

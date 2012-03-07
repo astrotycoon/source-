@@ -1,0 +1,32 @@
+Do not warn about madvise not being implemented. It does not have any real
+semantic anyway, and that brings some -Werror FTBFS.
+
+---
+ misc/madvise.c        |    4 ++--
+ posix/posix_madvise.c |    4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/misc/madvise.c b/misc/madvise.c
+index 7a4aa8a..532c874 100644
+--- a/misc/madvise.c
++++ b/misc/madvise.c
+@@ -30,5 +30,5 @@ madvise (__ptr_t addr, size_t len, int advice)
+   return -1;
+ }
+ libc_hidden_def (madvise)
+-stub_warning (madvise)
+-#include <stub-tag.h>
++/* stub_warning (madvise)
++#include <stub-tag.h> */
+diff --git a/posix/posix_madvise.c b/posix/posix_madvise.c
+index 6f8d60f..3eba60a 100644
+--- a/posix/posix_madvise.c
++++ b/posix/posix_madvise.c
+@@ -28,5 +28,5 @@ posix_madvise (__ptr_t addr, size_t len, int advice)
+ {
+   return ENOSYS;
+ }
+-stub_warning (posix_madvise)
+-#include <stub-tag.h>
++/* stub_warning (posix_madvise)
++#include <stub-tag.h> */

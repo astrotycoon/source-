@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+LDFLAGS = -Wl,--as-needed,-z,defs,--no-add-needed
+
+%:
+	dh $@ --with autotools-dev
+
+override_dh_auto_configure:
+	dh_auto_configure -- --disable-libevent-regress
+
+override_dh_strip:
+	dh_strip --dbg-package=libevent-dbg

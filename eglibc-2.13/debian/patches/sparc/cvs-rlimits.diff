@@ -1,0 +1,23 @@
+2011-08-14  David S. Miller  <davem@davemloft.net>
+
+	* sysdeps/unix/sysv/linux/sparc/bits/resource.h (RLIM_INFINITY,
+	RLIM64_INFINITY): Fix 64-bit values for 32-bit sparc.
+
+diff --git a/sysdeps/unix/sysv/linux/sparc/bits/resource.h b/sysdeps/unix/sysv/linux/sparc/bits/resource.h
+index 04d33e4..5c00b8f 100644
+--- a/sysdeps/unix/sysv/linux/sparc/bits/resource.h
++++ b/sysdeps/unix/sysv/linux/sparc/bits/resource.h
+@@ -130,11 +130,11 @@ enum __rlimit_resource
+ #ifndef __USE_FILE_OFFSET64
+ # define RLIM_INFINITY ((long int)(~0UL >> 1))
+ #else
+-# define RLIM_INFINITY 0x7fffffffffffffffLL
++# define RLIM_INFINITY 0xffffffffffffffffLL
+ #endif
+ 
+ #ifdef __USE_LARGEFILE64
+-# define RLIM64_INFINITY 0x7fffffffffffffffLL
++# define RLIM64_INFINITY 0xffffffffffffffffLL
+ #endif
+ 
+ #endif

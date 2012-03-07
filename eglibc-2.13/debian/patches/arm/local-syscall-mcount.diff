@@ -1,0 +1,25 @@
+Description: unset CALL_MCOUNT for __libc_do_syscall
+ unset CALL_MCOUNT before __libc_do_syscall, because it only supports Thumb-2
+ and ARM mode, not Thumb-1; and because profiling this internal routine
+ is of dubious value.
+Origin: https://bugs.launchpad.net/linaro-toolchain-misc/+bug/605030/+attachment/1484534/+files/libc-do-syscall.S
+Author: Peter Pearse <peter.pearse@linaro.org>
+Bug-Linaro: https://bugs.launchpad.net/linaro-toolchain-misc/+bug/605030
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/eglibc/+bug/605030
+Reviewed-by: Steve Langasek <steve.langasek@linaro.org>
+
+--- a/ports/sysdeps/unix/sysv/linux/arm/eabi/libc-do-syscall.S
++++ b/ports/sysdeps/unix/sysv/linux/arm/eabi/libc-do-syscall.S
+@@ -29,6 +29,12 @@
+ 	.syntax unified
+ 	.hidden __libc_do_syscall
+ 
++/*
++ * PMP Work round for https://bugs.launchpad.net/gcc-linaro/+bug/605030
++ */
++#undef CALL_MCOUNT
++#define CALL_MCOUNT
++
+ ENTRY (__libc_do_syscall)
+ 	.fnstart
+ 	push	{r7, lr}

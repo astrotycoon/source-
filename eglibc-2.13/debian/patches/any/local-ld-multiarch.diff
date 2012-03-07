@@ -1,0 +1,33 @@
+2009-09-08  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* Makeconfig: add support for multiarch compat directories.
+
+---
+ Makeconfig |   19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+
+--- a/Makeconfig
++++ b/Makeconfig
+@@ -191,6 +191,11 @@
+ endif
+ inst_libdir = $(install_root)$(libdir)
+ 
++# Compat places to look for libraries
++ifndef extra_libdir
++extra_libdir = /lib:$(exec_prefix)/lib
++endif
++
+ # Where to install the shared library and dynamic linker.
+ ifndef slibdir
+ slibdir = $(exec_prefix)/lib
+@@ -514,6 +529,10 @@
+ default-rpath = $(libdir)
+ endif
+ 
++ifdef extra_libdir
++default-rpath += :$(extra_libdir)
++endif
++
+ ifndef link-extra-libs
+ link-extra-libs = $(LDLIBS-$(@F))
+ link-extra-libs-static = $(link-extra-libs)

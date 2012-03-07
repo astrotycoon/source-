@@ -440,28 +440,28 @@ OS_EXT  OS_FLAG_GRP      *OSFlagFreeList;           /* Pointer to free list of e
 
 #if OS_TASK_STAT_EN > 0
 OS_EXT  INT8S             OSCPUUsage;               /* Percentage of CPU used                          *//* CPU的利用率（%）*/
-OS_EXT  INT32U            OSIdleCtrMax;             /* Max. value that idle ctr can take in 1 sec.     *//* 表示每秒空闲任务计数的最大值 */
+OS_EXT  INT32U            OSIdleCtrMax;             /* Max. value that idle ctr can take in 1 sec.     *//* 表示每秒空闲任务计数的最大值 	*/
 OS_EXT  INT32U            OSIdleCtrRun;             /* Val. reached by idle ctr at run time in 1 sec.  */
-OS_EXT  BOOLEAN           OSStatRdy;                /* Flag indicating that the statistic task is rdy  *//* 统计任务是否就绪的标志 */
+OS_EXT  BOOLEAN           OSStatRdy;                /* Flag indicating that the statistic task is rdy  *//* 统计任务是否就绪的标志 		*/
 OS_EXT  OS_STK            OSTaskStatStk[OS_TASK_STAT_STK_SIZE];      /* Statistics task stack          */
 #endif
 
-OS_EXT  INT8U             OSIntNesting;             /* Interrupt nesting level                         *//* 存放中段嵌套的层数 */
+OS_EXT  INT8U             OSIntNesting;             /* Interrupt nesting level                         *//* 存放中段嵌套的层数 			*/
 OS_EXT  INT8U             OSIntExitY;	            /* 用于函数OSIntExt() */
 
-OS_EXT  INT8U             OSLockNesting;            /* Multitasking lock nesting level                 *//* 调用OSSchedLock()的嵌套层数 */
+OS_EXT  INT8U             OSLockNesting;            /* Multitasking lock nesting level                 *//* 调用OSSchedLock()的嵌套层数 	*/
 
-OS_EXT  INT8U             OSPrioCur;                /* Priority of current task                        *//* 正在运行任务的优先级 */
-OS_EXT  INT8U             OSPrioHighRdy;            /* Priority of highest priority task               *//* 具有最高优先级的就绪任务的优先级 */
+OS_EXT  INT8U             OSPrioCur;                /* Priority of current task                        *//* 正在运行任务的优先级 		*/
+OS_EXT  INT8U             OSPrioHighRdy;            /* Priority of highest priority task               *//* 具有最高优先级的就绪任务的优先级 	*/
 
 OS_EXT  INT8U             OSRdyGrp;                        /* Ready list group                         */
 OS_EXT  INT8U             OSRdyTbl[OS_RDY_TBL_SIZE];       /* Table of tasks which are ready to run    */
 
-OS_EXT  BOOLEAN           OSRunning;                       /* Flag indicating that kernel is running   *//* uCOS核是否在运行的标志 */
+OS_EXT  BOOLEAN           OSRunning;                       /* Flag indicating that kernel is running   *//* uCOS核是否在运行的标志 		*/
 
-OS_EXT  INT8U             OSTaskCtr;                       /* Number of tasks created                  *//* 定义任务计数器 */
+OS_EXT  INT8U             OSTaskCtr;                       /* Number of tasks created                  *//* 定义任务计数器 			*/
 
-OS_EXT  volatile  INT32U  OSIdleCtr;                       /* Idle counter                   	       *//* 定义32位空闲任务计数器 */
+OS_EXT  volatile  INT32U  OSIdleCtr;                       /* Idle counter                   	       *//* 定义32位空闲任务计数器 		*/
 
 OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      /* Idle task stack                */
 

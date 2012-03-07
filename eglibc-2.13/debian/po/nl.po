@@ -1,0 +1,220 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: glibc\n"
+"Report-Msgid-Bugs-To: glibc@packages.debian.org\n"
+"POT-Creation-Date: 2009-03-08 15:23+0100\n"
+"PO-Revision-Date: 2008-02-27 08:28+0100\n"
+"Last-Translator: Bart Cornelis <cobaco@skolelinux.no>\n"
+"Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+
+#. Type: multiselect
+#. Choices
+#: ../debhelper.in/locales.templates:1001
+msgid "All locales"
+msgstr "Alle lokalisaties"
+
+#. Type: multiselect
+#. Description
+#: ../debhelper.in/locales.templates:1002
+msgid "Locales to be generated:"
+msgstr "Te genereren lokalisaties:"
+
+#. Type: multiselect
+#. Description
+#: ../debhelper.in/locales.templates:1002
+msgid ""
+"Locales are a framework to switch between multiple languages and allow users "
+"to use their language, country, characters, collation order, etc."
+msgstr ""
+"Lokalisatie is het raamwerk om om te schakelen tussen verschillende talen en "
+"laat gebruikers toe om hun eigen taal, land, karakterset, enzovoort te "
+"gebruiken."
+
+#. Type: multiselect
+#. Description
+#: ../debhelper.in/locales.templates:1002
+msgid ""
+"Please choose which locales to generate. UTF-8 locales should be chosen by "
+"default, particularly for new installations. Other character sets may be "
+"useful for backwards compatibility with older systems and software."
+msgstr ""
+"Welke lokalisaties wilt u laten genereren? Standaard kiest u, zeker voor "
+"nieuwe installaties, best UTF-8 lokalisaties. Andere karaktersets kunnen "
+"nuttig zijn voor compatibiliteit met oudere systemen of software."
+
+#. Type: select
+#. Choices
+#: ../debhelper.in/locales.templates:2001
+msgid "None"
+msgstr "Geen"
+
+#. Type: select
+#. Description
+#: ../debhelper.in/locales.templates:2002
+msgid "Default locale for the system environment:"
+msgstr "Standaardlokalisatie voor dit systeem:"
+
+#. Type: select
+#. Description
+#: ../debhelper.in/locales.templates:2002
+msgid ""
+"Many packages in Debian use locales to display text in the correct language "
+"for the user. You can choose a default locale for the system from the "
+"generated locales."
+msgstr ""
+"Veel Debian-pakketten gebruiken lokalisaties om de tekst in de voor de "
+"gebruiker juiste taal weer te geven. U kunt u de standaardlokalisatie voor "
+"het systeem kiezen uit de gegeneerde lokalisaties."
+
+#. Type: select
+#. Description
+#: ../debhelper.in/locales.templates:2002
+msgid ""
+"This will select the default language for the entire system. If this system "
+"is a multi-user system where not all users are able to speak the default "
+"language, they will experience difficulties."
+msgstr ""
+"Dit bepaalt de standaardtaal voor het volledige systeem. Op systemen met "
+"meerdere gebruikers kunt u problemen krijgen als niet alle gebruikers de "
+"gekozen taal spreken; in dat geval kunt u misschien beter de "
+"standaardlokalisatie niet veranderen."
+
+#. Type: boolean
+#. Description
+#: ../debhelper.in/libc.templates:1001
+msgid "Do you want to upgrade glibc now?"
+msgstr "Wilt u glibc nu opwaarderen?"
+
+#. Type: boolean
+#. Description
+#: ../debhelper.in/libc.templates:1001
+msgid ""
+"Running services and programs that are using NSS need to be restarted, "
+"otherwise they might not be able to do lookup or authentication any more. "
+"The installation process is able to restart some services (such as ssh or "
+"telnetd), but other programs cannot be restarted automatically. One such "
+"program that needs manual stopping and restart after the glibc upgrade by "
+"yourself is xdm - because automatic restart might disconnect your active X11 "
+"sessions."
+msgstr ""
+"Draaiende diensten en programma's die NSS gebruiken dienen herstart te "
+"worden. Zo niet kunnen ze mogelijk geen opzoekingen en authenticatie meer "
+"doen. Het Installatieproces kan sommige diensten (zoals ssh en telnetd) "
+"herstarten, maar andere diensten kunnen niet automatisch herstart worden. "
+"Een zo'n dienst die handmatig dient gestopt en gestart te worden na de "
+"opwaardering van glibc is xdm, dit omdat een automatische herstart uw "
+"actieve X11-sessies verbreekt."
+
+#. Type: boolean
+#. Description
+#: ../debhelper.in/libc.templates:1001
+msgid ""
+"This script detected the following installed services which must be stopped "
+"before the upgrade: ${services}"
+msgstr ""
+"Dit script heeft de volgende diensten ontdekt die gestopt moeten worden voor "
+"de opwaardering: ${services}"
+
+#. Type: boolean
+#. Description
+#: ../debhelper.in/libc.templates:1001
+msgid ""
+"If you want to interrupt the upgrade now and continue later, please answer "
+"No to the question below."
+msgstr ""
+"Als u de opwaardering nu wilt afbreken en hiermee later wilt verder gaan "
+"dient u zo meteen te weigeren."
+
+#. Type: string
+#. Description
+#: ../debhelper.in/libc.templates:2001
+msgid "Services to restart for GNU libc library upgrade:"
+msgstr "Tijdens 'GNU libc'-opwaardering te herstarten diensten:"
+
+#. Type: string
+#. Description
+#: ../debhelper.in/libc.templates:2001
+msgid ""
+"Running services and programs that are using NSS need to be restarted, "
+"otherwise they might not be able to do lookup or authentication any more "
+"(for services such as ssh, this can affect your ability to login). Please "
+"review the following space-separated list of init.d scripts for services to "
+"be restarted now, and correct it if needed."
+msgstr ""
+"Draaiende diensten en programma's die NSS gebruiken dienen herstart te "
+"worden, zo niet kunnen ze mogelijk geen opzoekingen en authenticatie meer "
+"doen (voor diensten zoals ssh kan dit gevolgen hebben voor de mogelijkheid "
+"om in te loggen). Gelieve de volgende, met spaties gescheiden lijst van init."
+"d-scripts voor diensten die herstart dienen te worden te controleren en "
+"indien nodig bij te werken."
+
+#. Type: string
+#. Description
+#: ../debhelper.in/libc.templates:2001
+msgid ""
+"Note: restarting sshd/telnetd should not affect any existing connections."
+msgstr ""
+"Opmerking: herstarten van sshd/telnetd heeft normaal geen effect op "
+"bestaande verbindingen."
+
+#. Type: error
+#. Description
+#: ../debhelper.in/libc.templates:3001
+msgid "Failure restarting some services for GNU libc upgrade"
+msgstr ""
+"Herstarten van sommige diensten bij de opwaardering van GNU libc is mislukt."
+
+#. Type: error
+#. Description
+#: ../debhelper.in/libc.templates:3001
+msgid ""
+"The following services could not be restarted for the GNU libc library "
+"upgrade:"
+msgstr ""
+"De volgende diensten konden niet herstart worden na de opwaardering van GNU "
+"libc:"
+
+#. Type: error
+#. Description
+#: ../debhelper.in/libc.templates:3001
+msgid ""
+"You will need to start these manually by running '/etc/init.d/<service> "
+"start'."
+msgstr ""
+"U dient deze diensten handmatig te herstarten via het commando '/etc/init.d/"
+"<dienst> start'."
+
+#. Type: error
+#. Description
+#: ../debhelper.in/libc.templates:4001
+msgid "xscreensaver and xlockmore must be restarted before upgrading"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../debhelper.in/libc.templates:4001
+msgid ""
+"One or more running instances of xscreensaver or xlockmore have been "
+"detected on this system. Because of incompatible library changes, the "
+"upgrade of the GNU libc library will leave you unable to authenticate to "
+"these programs. You should arrange for these programs to be restarted or "
+"stopped before continuing this upgrade, to avoid locking your users out of "
+"their current sessions."
+msgstr ""

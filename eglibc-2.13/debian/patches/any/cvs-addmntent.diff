@@ -1,0 +1,20 @@
+2011-05-11  Ulrich Drepper  <drepper@gmail.com>
+ 
+	[BZ #12625]
+	* misc/mntent_r.c (addmntent): Flush the stream after the output
+
+diff --git a/misc/mntent_r.c b/misc/mntent_r.c
+index 9598528..6959f0e 100644
+--- a/misc/mntent_r.c
++++ b/misc/mntent_r.c
+@@ -263,8 +263,8 @@ __addmntent (FILE *stream, const struct mntent *mnt)
+ 		   mntcopy.mnt_type,
+ 		   mntcopy.mnt_opts,
+ 		   mntcopy.mnt_freq,
+-		   mntcopy.mnt_passno)
+-	  < 0 ? 1 : 0);
++		   mntcopy.mnt_passno) < 0
++	  || fflush (stream) != 0);
+ }
+ weak_alias (__addmntent, addmntent)
+ 

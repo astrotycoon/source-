@@ -1,0 +1,48 @@
+2011-06-27  Ulrich Drepper  <drepper@gmail.com>
+ 
+	[BZ #12350]
+	* nscd/aicache.c (addhstaiX):  Restore only RES_USE_INET6
+	bit from old_res_options.
+
+2011-05-29  Ulrich Drepper  <drepper@gmail.com>
+ 
+	[BZ #12350]
+	* sysdeps/posix/getaddrinfo.c (gethosts): Restore only RES_USE_IENT6
+	bit from old_res_options.
+	(gaih_inet): Likewise.
+
+diff --git a/sysdeps/posix/getaddrinfo.c b/sysdeps/posix/getaddrinfo.c
+index 5ddda88..1e017b2 100644
+--- a/sysdeps/posix/getaddrinfo.c
++++ b/sysdeps/posix/getaddrinfo.c
+@@ -207,7 +207,7 @@ gaih_inet_serv (const char *servicename, const struct gaih_typeproto *tp,
+       if (herrno == NETDB_INTERNAL)					      \
+ 	{								      \
+ 	  __set_h_errno (herrno);					      \
+-	  _res.options = old_res_options;				      \
++	  _res.options |= old_res_options & RES_USE_INET6;		      \
+ 	  return -EAI_SYSTEM;						      \
+ 	}								      \
+       if (herrno == TRY_AGAIN)						      \
+@@ -1015,7 +1015,7 @@ gaih_inet (const char *name, const struct gaih_service *service,
+ 		nip = nip->next;
+ 	    }
+ 
+-	  _res.options = old_res_options;
++	  _res.options |= old_res_options & RES_USE_INET6;
+ 
+ 	  if (no_data != 0 && no_inet6_data != 0)
+ 	    {
+diff --git a/nscd/aicache.c b/nscd/aicache.c
+index 3190a13..6c8d83a 100644
+--- a/nscd/aicache.c
++++ b/nscd/aicache.c
+@@ -534,7 +534,7 @@ next_nip:
+    }
+ 
+  out:
+-  _res.options = old_res_options;
++  _res.options |= old_res_options & RES_USE_INET6;
+ 
+   if (dataset != NULL && !alloca_used)
+     {

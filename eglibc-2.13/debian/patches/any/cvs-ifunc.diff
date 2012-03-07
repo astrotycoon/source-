@@ -1,0 +1,329 @@
+2011-06-30  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* sysdeps/generic/dl-irel.h: fix protection against multiple
+	inclusions.
+	* sysdeps/generic/dl-irel.h (elf_ifunc_invoke): New.
+
+2011-06-20  David S. Miller  <davem@davemloft.net>
+
+	* sysdeps/sparc/sparc32/dl-plt.h: Protect against multiple
+	inclusions.
+	* sysdeps/sparc/sparc64/dl-plt.h: Likewise.
+
+	* sysdeps/i386/dl-irel.h (elf_ifunc_invoke): New.
+	(elf_irel): Use it.
+	* sysdeps/powerpc/powerpc32/dl-irel.h: Likewise.
+	* sysdeps/powerpc/powerpc64/dl-irel.h: Likewise.
+	* sysdeps/sparc/sparc32/dl-irel.h: Likewise.
+	* sysdeps/sparc/sparc64/dl-irel.h: Likewise.
+	* sysdeps/x86_64/dl-irel.h: Likewise.
+
+	* elf/dl-runtime.c: Use elf_ifunc_invoke.
+	* elf/dl-sym.c: Likewise.
+
+diff --git a/elf/dl-runtime.c b/elf/dl-runtime.c
+index b27cfbf..8778e67 100644
+--- a/elf/dl-runtime.c
++++ b/elf/dl-runtime.c
+@@ -27,6 +27,7 @@
+ #include <sysdep-cancel.h>
+ #include "dynamic-link.h"
+ #include <tls.h>
++#include <dl-irel.h>
+ 
+ 
+ #if (!defined ELF_MACHINE_NO_RELA && !defined ELF_MACHINE_PLT_REL) \
+@@ -146,7 +147,7 @@ _dl_fixup (
+ 
+   if (sym != NULL
+       && __builtin_expect (ELFW(ST_TYPE) (sym->st_info) == STT_GNU_IFUNC, 0))
+-    value = ((DL_FIXUP_VALUE_TYPE (*) (void)) DL_FIXUP_VALUE_ADDR (value)) ();
++    value = elf_ifunc_invoke (DL_FIXUP_VALUE_ADDR (value));
+ 
+   /* Finally, fix up the plt itself.  */
+   if (__builtin_expect (GLRO(dl_bind_not), 0))
+@@ -235,8 +236,7 @@ _dl_profile_fixup (
+ 	  if (defsym != NULL
+ 	      && __builtin_expect (ELFW(ST_TYPE) (defsym->st_info)
+ 				   == STT_GNU_IFUNC, 0))
+-	    value = ((DL_FIXUP_VALUE_TYPE (*) (void))
+-		     DL_FIXUP_VALUE_ADDR (value)) ();
++	    value = elf_ifunc_invoke (DL_FIXUP_VALUE_ADDR (value));
+ 	}
+       else
+ 	{
+@@ -246,8 +246,7 @@ _dl_profile_fixup (
+ 
+ 	  if (__builtin_expect (ELFW(ST_TYPE) (refsym->st_info)
+ 				== STT_GNU_IFUNC, 0))
+-	    value = ((DL_FIXUP_VALUE_TYPE (*) (void))
+-		     DL_FIXUP_VALUE_ADDR (value)) ();
++	    value = elf_ifunc_invoke (DL_FIXUP_VALUE_ADDR (value));
+ 
+ 	  result = l;
+ 	}
+diff --git a/elf/dl-sym.c b/elf/dl-sym.c
+index 4faf05c..0af3e48 100644
+--- a/elf/dl-sym.c
++++ b/elf/dl-sym.c
+@@ -27,6 +27,7 @@
+ #include <dl-hash.h>
+ #include <sysdep-cancel.h>
+ #include <dl-tls.h>
++#include <dl-irel.h>
+ 
+ 
+ #ifdef SHARED
+@@ -196,8 +197,7 @@ RTLD_NEXT used in code not dynamically loaded"));
+ 	{
+ 	  DL_FIXUP_VALUE_TYPE fixup
+ 	    = DL_FIXUP_MAKE_VALUE (result, (ElfW(Addr)) value);
+-	  fixup =
+-	    ((DL_FIXUP_VALUE_TYPE (*) (void)) DL_FIXUP_VALUE_ADDR (fixup)) ();
++	  fixup = elf_ifunc_invoke (DL_FIXUP_VALUE_ADDR (fixup));
+ 	  value = (void *) DL_FIXUP_VALUE_CODE_ADDR (fixup);
+ 	}
+ 
+diff --git a/sysdeps/i386/dl-irel.h b/sysdeps/i386/dl-irel.h
+index 30385a1..70cd6b0 100644
+--- a/sysdeps/i386/dl-irel.h
++++ b/sysdeps/i386/dl-irel.h
+@@ -26,6 +26,13 @@
+ 
+ #define ELF_MACHINE_IREL	1
+ 
++static inline Elf32_Addr
++__attribute ((always_inline))
++elf_ifunc_invoke (Elf32_Addr addr)
++{
++  return ((Elf32_Addr (*) (void)) (addr)) ();
++}
++
+ static inline void
+ __attribute ((always_inline))
+ elf_irel (const Elf32_Rel *reloc)
+@@ -35,7 +42,7 @@ elf_irel (const Elf32_Rel *reloc)
+ 
+   if (__builtin_expect (r_type == R_386_IRELATIVE, 1))
+     {
+-      Elf32_Addr value = ((Elf32_Addr (*) (void)) (*reloc_addr)) ();
++      Elf32_Addr value = elf_ifunc_invoke(*reloc_addr);
+       *reloc_addr = value;
+     }
+   else
+diff --git a/sysdeps/powerpc/powerpc32/dl-irel.h b/sysdeps/powerpc/powerpc32/dl-irel.h
+index 3f204cd..a31e1ed 100644
+--- a/sysdeps/powerpc/powerpc32/dl-irel.h
++++ b/sysdeps/powerpc/powerpc32/dl-irel.h
+@@ -26,6 +26,13 @@
+ 
+ #define ELF_MACHINE_IRELA	1
+ 
++static inline Elf32_Addr
++__attribute ((always_inline))
++elf_ifunc_invoke (Elf32_Addr addr)
++{
++  return ((Elf32_Addr (*) (void)) (addr)) ();
++}
++
+ static inline void
+ __attribute ((always_inline))
+ elf_irela (const Elf32_Rela *reloc)
+@@ -35,7 +42,7 @@ elf_irela (const Elf32_Rela *reloc)
+   if (__builtin_expect (r_type == R_PPC_IRELATIVE, 1))
+     {
+       Elf32_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf32_Addr value = ((Elf32_Addr (*) (void)) reloc->r_addend) ();
++      Elf32_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       *reloc_addr = value;
+     }
+   else
+diff --git a/sysdeps/powerpc/powerpc64/dl-irel.h b/sysdeps/powerpc/powerpc64/dl-irel.h
+index 6cded50..3c2668f 100644
+--- a/sysdeps/powerpc/powerpc64/dl-irel.h
++++ b/sysdeps/powerpc/powerpc64/dl-irel.h
+@@ -33,6 +33,13 @@ typedef struct
+   Elf64_Addr fd_aux;
+ } Elf64_FuncDesc;
+ 
++static inline Elf64_Addr
++__attribute ((always_inline))
++elf_ifunc_invoke (Elf64_Addr addr)
++{
++  return ((Elf64_Addr (*) (void)) (addr)) ();
++}
++
+ static inline void
+ __attribute ((always_inline))
+ elf_irela (const Elf64_Rela *reloc)
+@@ -42,13 +49,13 @@ elf_irela (const Elf64_Rela *reloc)
+   if (__builtin_expect (r_type == R_PPC64_IRELATIVE, 1))
+     {
+       Elf64_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf64_Addr value = ((Elf64_Addr (*) (void)) reloc->r_addend) ();
++      Elf64_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       *reloc_addr = value;
+     }
+   else if (__builtin_expect (r_type == R_PPC64_JMP_IREL, 1))
+     {
+       Elf64_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf64_Addr value = ((Elf64_Addr (*) (void)) reloc->r_addend) ();
++      Elf64_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       *(Elf64_FuncDesc *) reloc_addr = *(Elf64_FuncDesc *) value;
+     }
+   else
+diff --git a/sysdeps/sparc/sparc32/dl-irel.h b/sysdeps/sparc/sparc32/dl-irel.h
+index 2753fb4..4eaaa37 100644
+--- a/sysdeps/sparc/sparc32/dl-irel.h
++++ b/sysdeps/sparc/sparc32/dl-irel.h
+@@ -28,6 +28,13 @@
+ 
+ #define ELF_MACHINE_IRELA	1
+ 
++static inline Elf32_Addr
++__attribute ((always_inline))
++elf_ifunc_invoke (Elf32_Addr addr)
++{
++  return ((Elf32_Addr (*) (int)) (addr)) (GLRO(dl_hwcap));
++}
++
+ static inline void
+ __attribute ((always_inline))
+ elf_irela (const Elf32_Rela *reloc)
+@@ -37,13 +44,13 @@ elf_irela (const Elf32_Rela *reloc)
+   if (__builtin_expect (r_type == R_SPARC_IRELATIVE, 1))
+     {
+       Elf32_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf32_Addr value = ((Elf32_Addr (*) (int)) reloc->r_addend) (GLRO(dl_hwcap));
++      Elf32_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       *reloc_addr = value;
+     }
+   else if (__builtin_expect (r_type == R_SPARC_JMP_IREL, 1))
+     {
+       Elf32_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf32_Addr value = ((Elf32_Addr (*) (int)) reloc->r_addend) (GLRO(dl_hwcap));
++      Elf32_Addr value = elf_ifunc_invoke(reloc->r_addend);
+ 
+       sparc_fixup_plt (reloc, reloc_addr, value, 0, 1);
+     }
+diff --git a/sysdeps/sparc/sparc32/dl-plt.h b/sysdeps/sparc/sparc32/dl-plt.h
+index bfb891f..0fbd950 100644
+--- a/sysdeps/sparc/sparc32/dl-plt.h
++++ b/sysdeps/sparc/sparc32/dl-plt.h
+@@ -18,6 +18,9 @@
+    Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+    02111-1307 USA.  */
+ 
++#ifndef _DL_PLT_H
++#define _DL_PLT_H
++
+ /* Some SPARC opcodes we need to use for self-modifying code.  */
+ #define OPCODE_NOP	0x01000000 /* nop */
+ #define OPCODE_CALL	0x40000000 /* call ?; add PC-rel word address */
+@@ -95,3 +98,5 @@ sparc_fixup_plt (const Elf32_Rela *reloc, Elf32_Addr *reloc_addr,
+ 
+   return value;
+ }
++
++#endif /* dl-plt.h */
+diff --git a/sysdeps/sparc/sparc64/dl-irel.h b/sysdeps/sparc/sparc64/dl-irel.h
+index 0d70e2a..e356ac6 100644
+--- a/sysdeps/sparc/sparc64/dl-irel.h
++++ b/sysdeps/sparc/sparc64/dl-irel.h
+@@ -28,6 +28,13 @@
+ 
+ #define ELF_MACHINE_IRELA	1
+ 
++static inline Elf64_Addr
++__attribute ((always_inline))
++elf_ifunc_invoke (Elf64_Addr addr)
++{
++  return ((Elf64_Addr (*) (int)) (addr)) (GLRO(dl_hwcap));
++}
++
+ static inline void
+ __attribute ((always_inline))
+ elf_irela (const Elf64_Rela *reloc)
+@@ -37,13 +44,13 @@ elf_irela (const Elf64_Rela *reloc)
+   if (__builtin_expect (r_type == R_SPARC_IRELATIVE, 1))
+     {
+       Elf64_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf64_Addr value = ((Elf64_Addr (*) (int)) reloc->r_addend) (GLRO(dl_hwcap));
++      Elf64_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       *reloc_addr = value;
+     }
+   else if (__builtin_expect (r_type == R_SPARC_JMP_IREL, 1))
+     {
+       Elf64_Addr *const reloc_addr = (void *) reloc->r_offset;
+-      Elf64_Addr value = ((Elf64_Addr (*) (int)) reloc->r_addend) (GLRO(dl_hwcap));
++      Elf64_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       struct link_map map = { .l_addr = 0 };
+ 
+       /* 'high' is always zero, for large PLT entries the linker
+diff --git a/sysdeps/sparc/sparc64/dl-plt.h b/sysdeps/sparc/sparc64/dl-plt.h
+index ca2fe3b..ed8abfa 100644
+--- a/sysdeps/sparc/sparc64/dl-plt.h
++++ b/sysdeps/sparc/sparc64/dl-plt.h
+@@ -17,6 +17,9 @@
+    Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+    02111-1307 USA.  */
+ 
++#ifndef _DL_PLT_H
++#define _DL_PLT_H
++
+ /* We have 4 cases to handle.  And we code different code sequences
+    for each one.  I love V9 code models...  */
+ static inline void __attribute__ ((always_inline))
+@@ -161,3 +164,5 @@ sparc64_fixup_plt (struct link_map *map, const Elf64_Rela *reloc,
+       __asm __volatile ("flush %0" : : "r" (insns));
+     }
+ }
++
++#endif /* dl-plt.h */
+diff --git a/sysdeps/x86_64/dl-irel.h b/sysdeps/x86_64/dl-irel.h
+index d2d5c06..19f9457 100644
+--- a/sysdeps/x86_64/dl-irel.h
++++ b/sysdeps/x86_64/dl-irel.h
+@@ -26,6 +26,13 @@
+ 
+ #define ELF_MACHINE_IRELA	1
+ 
++static inline Elf64_Addr
++__attribute ((always_inline))
++elf_ifunc_invoke (Elf64_Addr addr)
++{
++  return ((Elf64_Addr (*) (void)) (addr)) ();
++}
++
+ static inline void
+ __attribute ((always_inline))
+ elf_irela (const Elf64_Rela *reloc)
+@@ -35,7 +42,7 @@ elf_irela (const Elf64_Rela *reloc)
+ 
+   if (__builtin_expect (r_type == R_X86_64_IRELATIVE, 1))
+     {
+-      Elf64_Addr value = ((Elf64_Addr (*) (void)) reloc->r_addend) ();
++      Elf64_Addr value = elf_ifunc_invoke(reloc->r_addend);
+       *reloc_addr = value;
+     }
+   else
+diff --git a/sysdeps/generic/dl-irel.h b/sysdeps/generic/dl-irel.h
+index 4d7b481..62fa1ce 100644
+--- a/sysdeps/generic/dl-irel.h
++++ b/sysdeps/generic/dl-irel.h
+@@ -17,7 +17,14 @@
+    Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+    02111-1307 USA.  */
+ 
+-#ifndef _DL_IREL_h
++#ifndef _DL_IREL_H
+ #define _DL_IREL_H
+ 
++static inline DL_FIXUP_VALUE_TYPE
++__attribute ((always_inline))
++elf_ifunc_invoke (ElfW(Addr) addr)
++{
++  return ((DL_FIXUP_VALUE_TYPE (*) (void)) (addr)) ();
++}
++
+ #endif /* dl-irel.h */

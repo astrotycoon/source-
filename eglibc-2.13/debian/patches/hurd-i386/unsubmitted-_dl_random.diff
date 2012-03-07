@@ -1,0 +1,16 @@
+Add dummy _dl_random.
+
+---
+ sysdeps/mach/hurd/dl-sysdep.c |    1 +
+ 1 file changed, 1 insertion(+)
+
+--- a/sysdeps/mach/hurd/dl-sysdep.c
++++ b/sysdeps/mach/hurd/dl-sysdep.c
+@@ -56,6 +56,7 @@
+ 				   of init-first.  */
+ /* This variable containts the lowest stack address ever used.  */
+ void *__libc_stack_end;
++void *_dl_random attribute_relro = NULL; /* TODO */
+ 
+ #if HP_TIMING_AVAIL
+ hp_timing_t _dl_cpuclock_offset;

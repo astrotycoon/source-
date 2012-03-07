@@ -1,0 +1,16 @@
+2011-04-01  Aurelien Jarno  <aurelien@aurel32.net>
+
+        * sysdeps/unix/sysv/linux/alpha/sysconf.c: Fix cache sysconf
+	switch.
+
+--- a/ports/sysdeps/unix/sysv/linux/alpha/sysconf.c
++++ b/ports/sysdeps/unix/sysv/linux/alpha/sysconf.c
+@@ -135,7 +135,7 @@ __sysconf (int name)
+   if (shape <= 0)
+     return shape;
+ 
+-  switch (name % 3)
++  switch ((name - _SC_LEVEL1_ICACHE_SIZE) % 3)
+     {
+     case 0: /* total size */
+       return shape & -0x100;

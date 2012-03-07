@@ -1,0 +1,367 @@
+From 738860089d5c510f3445f9830d9924ab58659c51 Mon Sep 17 00:00:00 2001
+From: Ulrich Weigand <ulrich.weigand@linaro.org>
+Date: Mon, 21 Mar 2011 20:44:01 +0000
+Subject: [PATCH] Create ARM unwind records for system call stubs.
+
+---
+ ChangeLog.arm                                      |   27 +++++
+ .../unix/sysv/linux/arm/eabi/nptl/sysdep-cancel.h  |  103 ++++++++++----------
+ sysdeps/unix/sysv/linux/arm/eabi/sysdep.h          |   91 +++++++++++++++++-
+ sysdeps/unix/sysv/linux/arm/vfork.S                |   23 ++++-
+ 4 files changed, 186 insertions(+), 58 deletions(-)
+
+2011-03-21  Ulrich Weigand  <ulrich.weigand@linaro.org>
+
+	* sysdeps/unix/sysv/arm/eabi/sysdep.h (DO_CALL): Do not save/restore
+	r7 into IP.
+	(DOARGS_0, UNDOARGS_0): Redefine to save/restore r7 to the stack.
+	Create appropriate ARM unwind record.
+	(DOARGS_1, UNDOARGS_1): Likewise.
+	(DOARGS_2, UNDOARGS_2): Likewise.
+	(DOARGS_3, UNDOARGS_3): Likewise.
+	(DOARGS_4, UNDOARGS_4): Likewise.
+	(DOARGS_5, UNDOARGS_5): Likewise.
+	(DOARGS_6, UNDOARGS_6): Likewise.
+	(DOARGS_7, UNDOARGS_7): Likewise.
+	* sysdeps/unix/sysv/arm/eabi/nptl/sysdep-cancel.h (PSEUDO): Adapt to
+	DO_CALL/DOARGS_xxx/UNDOARGS_xxx changes.
+	(RESTART_UNWIND): Likewise.
+	(DOCARGS_0, RESTORE_LR_0): Likewise.
+	(DOCARGS_1): Likewise.
+	(DOCARGS_2): Likewise.
+	(DOCARGS_3): Likewise.
+	(DOCARGS_4): Likewise.
+	(DOCARGS_5, UNDOCARGS_5, RESTORE_LR_5): Likewise.
+	(DOCARGS_6, UNDOCARGS_6): Likewise.
+	* sysdeps/unix/sysv/linux/arm/vfork.S (__vfork): Do no use DO_CALL to
+	call vfork.  In the __ARM_EABI__ case, save r7 both to IP (to restore
+	from) and the stack (to create an ARM unwind record).
+
+diff --git a/sysdeps/unix/sysv/linux/arm/eabi/nptl/sysdep-cancel.h b/sysdeps/unix/sysv/linux/arm/eabi/nptl/sysdep-cancel.h
+index 458558b..f4a8af4 100644
+--- a/ports/sysdeps/unix/sysv/linux/arm/eabi/nptl/sysdep-cancel.h
++++ b/ports/sysdeps/unix/sysv/linux/arm/eabi/nptl/sysdep-cancel.h
+@@ -47,20 +47,20 @@
+     DOARGS_##args;							\
+     bne .Lpseudo_cancel;						\
+     cfi_remember_state;							\
+-    DO_CALL (syscall_name, 0);						\
++    ldr r7, =SYS_ify (syscall_name);					\
++    swi 0x0;								\
+     UNDOARGS_##args;							\
+     cmn r0, $4096;							\
+     PSEUDO_RET;								\
+     cfi_restore_state;							\
+   .Lpseudo_cancel:							\
+-    .fnstart;								\
++    .fnstart;		/* matched by the .fnend in UNDOARGS below.  */	\
+     DOCARGS_##args;	/* save syscall args etc. around CENABLE.  */	\
+     CENABLE;								\
+     mov ip, r0;		/* put mask in safe place.  */			\
+     UNDOCARGS_##args;	/* restore syscall args.  */			\
+     ldr r7, =SYS_ify (syscall_name);					\
+     swi 0x0;		/* do the call.  */				\
+-    .fnend;		/* Past here we can't easily unwind.  */	\
+     mov r7, r0;		/* save syscall return value.  */		\
+     mov r0, ip;		/* get mask back.  */				\
+     CDISABLE;								\
+@@ -69,34 +69,34 @@
+     UNDOARGS_##args;							\
+     cmn r0, $4096
+ 
+-/* DOARGS pushes four bytes on the stack for five arguments, eight bytes for
+-   six arguments, and nothing for fewer.  In order to preserve doubleword
++/* DOARGS pushes eight bytes on the stack for five arguments, twelve bytes for
++   six arguments, and four bytes for fewer.  In order to preserve doubleword
+    alignment, sometimes we must save an extra register.  */
+ 
+ # define RESTART_UNWIND \
+   .fnend; \
+   .fnstart; \
+-  .save {r7, lr}
++  .save {r7}; \
++  .save {lr}
+ 
+ # define DOCARGS_0 \
+-  stmfd sp!, {r7, lr}; \
+-  cfi_adjust_cfa_offset (8); \
+-  cfi_rel_offset (r7, 0); \
+-  cfi_rel_offset (lr, 4); \
+-  .save {r7, lr}
++  .save {r7}; \
++  str lr, [sp, #-4]!; \
++  cfi_adjust_cfa_offset (4); \
++  cfi_rel_offset (lr, 0); \
++  .save {lr}
+ # define UNDOCARGS_0
+ # define RESTORE_LR_0 \
+-  ldmfd sp!, {r7, lr}; \
+-  cfi_adjust_cfa_offset (-8); \
+-  cfi_restore (r7); \
++  ldr lr, [sp], #4; \
++  cfi_adjust_cfa_offset (-4); \
+   cfi_restore (lr)
+ 
+ # define DOCARGS_1 \
+-  stmfd sp!, {r0, r1, r7, lr}; \
+-  cfi_adjust_cfa_offset (16); \
+-  cfi_rel_offset (r7, 8); \
+-  cfi_rel_offset (lr, 12); \
+-  .save {r7, lr}; \
++  .save {r7}; \
++  stmfd sp!, {r0, r1, lr}; \
++  cfi_adjust_cfa_offset (12); \
++  cfi_rel_offset (lr, 8); \
++  .save {lr}; \
+   .pad #8
+ # define UNDOCARGS_1 \
+   ldr r0, [sp], #8; \
+@@ -106,11 +106,11 @@
+   RESTORE_LR_0
+ 
+ # define DOCARGS_2 \
+-  stmfd sp!, {r0, r1, r7, lr}; \
+-  cfi_adjust_cfa_offset (16); \
+-  cfi_rel_offset (r7, 8); \
+-  cfi_rel_offset (lr, 12); \
+-  .save {r7, lr}; \
++  .save {r7}; \
++  stmfd sp!, {r0, r1, lr}; \
++  cfi_adjust_cfa_offset (12); \
++  cfi_rel_offset (lr, 8); \
++  .save {lr}; \
+   .pad #8
+ # define UNDOCARGS_2 \
+   ldmfd sp!, {r0, r1}; \
+@@ -120,11 +120,11 @@
+   RESTORE_LR_0
+ 
+ # define DOCARGS_3 \
+-  stmfd sp!, {r0, r1, r2, r3, r7, lr}; \
+-  cfi_adjust_cfa_offset (24); \
+-  cfi_rel_offset (r7, 16); \
+-  cfi_rel_offset (lr, 20); \
+-  .save {r7, lr}; \
++  .save {r7}; \
++  stmfd sp!, {r0, r1, r2, r3, lr}; \
++  cfi_adjust_cfa_offset (20); \
++  cfi_rel_offset (lr, 16); \
++  .save {lr}; \
+   .pad #16
+ # define UNDOCARGS_3 \
+   ldmfd sp!, {r0, r1, r2, r3}; \
+@@ -134,11 +134,11 @@
+   RESTORE_LR_0
+ 
+ # define DOCARGS_4 \
+-  stmfd sp!, {r0, r1, r2, r3, r7, lr}; \
+-  cfi_adjust_cfa_offset (24); \
+-  cfi_rel_offset (r7, 16); \
+-  cfi_rel_offset (lr, 20); \
+-  .save {r7, lr}; \
++  .save {r7}; \
++  stmfd sp!, {r0, r1, r2, r3, lr}; \
++  cfi_adjust_cfa_offset (20); \
++  cfi_rel_offset (lr, 16); \
++  .save {lr}; \
+   .pad #16
+ # define UNDOCARGS_4 \
+   ldmfd sp!, {r0, r1, r2, r3}; \
+@@ -149,43 +149,40 @@
+ 
+ /* r4 is only stmfd'ed for correct stack alignment.  */
+ # define DOCARGS_5 \
+-  .save {r4}; \
+-  stmfd sp!, {r0, r1, r2, r3, r4, r7, lr}; \
+-  cfi_adjust_cfa_offset (28); \
+-  cfi_rel_offset (r7, 20); \
+-  cfi_rel_offset (lr, 24); \
+-  .save {r7, lr}; \
++  .save {r4, r7}; \
++  stmfd sp!, {r0, r1, r2, r3, r4, lr}; \
++  cfi_adjust_cfa_offset (24); \
++  cfi_rel_offset (lr, 20); \
++  .save {lr}; \
+   .pad #20
+ # define UNDOCARGS_5 \
+   ldmfd sp!, {r0, r1, r2, r3}; \
+   cfi_adjust_cfa_offset (-16); \
+   .fnend; \
+   .fnstart; \
+-  .save {r4}; \
+-  .save {r7, lr}; \
++  .save {r4, r7}; \
++  .save {lr}; \
+   .pad #4
+ # define RESTORE_LR_5 \
+-  ldmfd sp!, {r4, r7, lr}; \
+-  cfi_adjust_cfa_offset (-12); \
++  ldmfd sp!, {r4, lr}; \
++  cfi_adjust_cfa_offset (-8); \
+   /* r4 will be marked as restored later.  */ \
+-  cfi_restore (r7); \
+   cfi_restore (lr)
+ 
+ # define DOCARGS_6 \
+-  .save {r4, r5}; \
+-  stmfd sp!, {r0, r1, r2, r3, r7, lr}; \
+-  cfi_adjust_cfa_offset (24); \
+-  cfi_rel_offset (r7, 16); \
+-  cfi_rel_offset (lr, 20); \
+-  .save {r7, lr}; \
++  .save {r4, r5, r7}; \
++  stmfd sp!, {r0, r1, r2, r3, lr}; \
++  cfi_adjust_cfa_offset (20); \
++  cfi_rel_offset (lr, 16); \
++  .save {lr}; \
+   .pad #16
+ # define UNDOCARGS_6 \
+   ldmfd sp!, {r0, r1, r2, r3}; \
+   cfi_adjust_cfa_offset (-16); \
+   .fnend; \
+   .fnstart; \
+-  .save {r4, r5}; \
+-  .save {r7, lr}
++  .save {r4, r5, r7}; \
++  .save {lr};
+ # define RESTORE_LR_6 \
+   RESTORE_LR_0
+ 
+diff --git a/sysdeps/unix/sysv/linux/arm/eabi/sysdep.h b/sysdeps/unix/sysv/linux/arm/eabi/sysdep.h
+index b7815ba..a80621e 100644
+--- a/ports/sysdeps/unix/sysv/linux/arm/eabi/sysdep.h
++++ b/ports/sysdeps/unix/sysv/linux/arm/eabi/sysdep.h
+@@ -106,12 +106,95 @@
+ #undef	DO_CALL
+ #define DO_CALL(syscall_name, args)		\
+     DOARGS_##args;				\
+-    mov ip, r7;					\
+-    cfi_register (r7, ip);			\
+     ldr r7, =SYS_ify (syscall_name);		\
+     swi 0x0;					\
+-    mov r7, ip;					\
+-    cfi_restore (r7);				\
+     UNDOARGS_##args
+ 
++#undef  DOARGS_0
++#define DOARGS_0 \
++  .fnstart; \
++  str r7, [sp, #-4]!; \
++  cfi_adjust_cfa_offset (4); \
++  cfi_rel_offset (r7, 0); \
++  .save { r7 }
++#undef  DOARGS_1
++#define DOARGS_1 DOARGS_0
++#undef  DOARGS_2
++#define DOARGS_2 DOARGS_0
++#undef  DOARGS_3
++#define DOARGS_3 DOARGS_0
++#undef  DOARGS_4
++#define DOARGS_4 DOARGS_0
++#undef  DOARGS_5
++#define DOARGS_5 \
++  .fnstart; \
++  stmfd sp!, {r4, r7}; \
++  cfi_adjust_cfa_offset (8); \
++  cfi_rel_offset (r4, 0); \
++  cfi_rel_offset (r7, 4); \
++  .save { r4, r7 }; \
++  ldr r4, [sp, #8]
++#undef  DOARGS_6
++#define DOARGS_6 \
++  .fnstart; \
++  mov ip, sp; \
++  stmfd sp!, {r4, r5, r7}; \
++  cfi_adjust_cfa_offset (12); \
++  cfi_rel_offset (r4, 0); \
++  cfi_rel_offset (r5, 4); \
++  cfi_rel_offset (r7, 8); \
++  .save { r4, r5, r7 }; \
++  ldmia ip, {r4, r5}
++#undef  DOARGS_7
++#define DOARGS_7 \
++  .fnstart; \
++  mov ip, sp; \
++  stmfd sp!, {r4, r5, r6, r7}; \
++  cfi_adjust_cfa_offset (16); \
++  cfi_rel_offset (r4, 0); \
++  cfi_rel_offset (r5, 4); \
++  cfi_rel_offset (r6, 8); \
++  cfi_rel_offset (r7, 12); \
++  .save { r4, r5, r6, r7 }; \
++  ldmia ip, {r4, r5, r6}
++
++#undef  UNDOARGS_0
++#define UNDOARGS_0 \
++  ldr r7, [sp], #4; \
++  cfi_adjust_cfa_offset (-4); \
++  cfi_restore (r7); \
++  .fnend
++#undef  UNDOARGS_1
++#define UNDOARGS_1 UNDOARGS_0
++#undef  UNDOARGS_2
++#define UNDOARGS_2 UNDOARGS_0
++#undef  UNDOARGS_3
++#define UNDOARGS_3 UNDOARGS_0
++#undef  UNDOARGS_4
++#define UNDOARGS_4 UNDOARGS_0
++#undef  UNDOARGS_5
++#define UNDOARGS_5 \
++  ldmfd sp!, {r4, r7}; \
++  cfi_adjust_cfa_offset (-8); \
++  cfi_restore (r4); \
++  cfi_restore (r7); \
++  .fnend
++#undef  UNDOARGS_6
++#define UNDOARGS_6 \
++  ldmfd sp!, {r4, r5, r7}; \
++  cfi_adjust_cfa_offset (-12); \
++  cfi_restore (r4); \
++  cfi_restore (r5); \
++  cfi_restore (r7); \
++  .fnend
++#undef  UNDOARGS_7
++#define UNDOARGS_7 \
++  ldmfd sp!, {r4, r5, r6, r7}; \
++  cfi_adjust_cfa_offset (-16); \
++  cfi_restore (r4); \
++  cfi_restore (r5); \
++  cfi_restore (r6); \
++  cfi_restore (r7); \
++  .fnend
++
+ #endif /* _LINUX_ARM_EABI_SYSDEP_H */
+diff --git a/sysdeps/unix/sysv/linux/arm/vfork.S b/sysdeps/unix/sysv/linux/arm/vfork.S
+index a020658..e63690e 100644
+--- a/ports/sysdeps/unix/sysv/linux/arm/vfork.S
++++ b/ports/sysdeps/unix/sysv/linux/arm/vfork.S
+@@ -33,7 +33,28 @@ ENTRY (__vfork)
+ #ifdef SAVE_PID
+ 	SAVE_PID
+ #endif
+-	DO_CALL (vfork, 0)
++#ifdef __ARM_EABI__
++	/* The DO_CALL macro saves r7 on the stack, to enable generation
++	   of ARM unwind info.  Since the stack is initially shared between
++	   parent and child of vfork, that saved value could be corrupted.
++	   To avoid this problem, we save r7 into ip as well, and restore
++	   from there.  */
++	mov	ip, r7
++	cfi_register (r7, ip)
++	.fnstart
++	str r7, [sp, #-4]!
++	cfi_adjust_cfa_offset (4)
++	.save { r7 }
++	ldr	r7, =SYS_ify (vfork)
++	swi	0x0
++	.fnend
++	add	sp, sp, #4
++	cfi_adjust_cfa_offset (-4)
++	mov	r7, ip
++	cfi_restore (r7);
++#else
++	swi	SYS_ify(vfork)
++#endif
+ #ifdef RESTORE_PID
+ 	RESTORE_PID
+ #endif

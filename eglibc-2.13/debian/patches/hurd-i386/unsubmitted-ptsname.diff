@@ -1,0 +1,19 @@
+This is a bit lame (thus not submitted), but should work for now.
+
+---
+ sysdeps/mach/hurd/ptsname.c |    8 ++++++++
+ 1 file changed, 8 insertions(+)
+--- a/sysdeps/mach/hurd/ptsname.c
++++ b/sysdeps/mach/hurd/ptsname.c
+@@ -63,3 +63,11 @@
+   return 0;
+ }
+ weak_alias (__ptsname_r, ptsname_r)
++
++int
++__ptsname_internal (int fd, char *buf, size_t buflen, struct stat64 *stp)
++{
++  if (__fxstat64 (_STAT_VER, fd, stp) < 0)
++    return errno;
++  return __ptsname_r (fd, buf, buflen);
++}

@@ -1,0 +1,41 @@
+---
+ localedata/locales/C |   34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+--- /dev/null
++++ b/localedata/locales/C
+@@ -0,0 +1,34 @@
++escape_char /
++comment_char %
++% Locale for C locale in UTF-8
++% Contributed by Aurelien Jarno <aurel32@debian.org>, 2011
++
++LC_IDENTIFICATION
++title      "C locale"
++source     ""
++address    ""
++contact    ""
++email      "aurel32@debian.org"
++tel        ""
++fax        ""
++language   "C"
++territory  ""
++revision   "1.0"
++date       "2011-02-08"
++%
++category  "C:2011";LC_IDENTIFICATION
++category  "C:2011";LC_CTYPE
++category  "C:2011";LC_COLLATE
++END LC_IDENTIFICATION
++
++LC_CTYPE
++copy "i18n"
++translit_start
++include "translit_combining";""
++translit_end
++END LC_CTYPE
++
++LC_COLLATE
++% Copy the template from ISO/IEC 14651
++copy "iso14651_t1"
++END LC_COLLATE

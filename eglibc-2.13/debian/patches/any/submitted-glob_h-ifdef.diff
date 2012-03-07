@@ -1,0 +1,18 @@
+2011-08-30  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* posix/glob.h: Use #if defined to not receive warnings about
+	  undefined symbols.
+
+diff --git a/posix/glob.h b/posix/glob.h
+index 89a1886..632ea91 100644
+--- a/posix/glob.h
++++ b/posix/glob.h
+@@ -143,7 +143,7 @@ typedef struct
+   } glob64_t;
+ #endif
+ 
+-#if __USE_FILE_OFFSET64 && __GNUC__ < 2
++#if defined __USE_FILE_OFFSET64 && __GNUC__ < 2
+ # define glob glob64
+ # define globfree globfree64
+ #endif

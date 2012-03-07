@@ -1,0 +1,18 @@
+2011-05-21  Ulrich Drepper  <drepper@gmail.com>
+
+	[BZ #12788]
+	* locale/setlocale.c (new_composite_name): Fix test to check for
+	identical name of all categories.
+
+diff --git a/locale/setlocale.c b/locale/setlocale.c
+index 46372fd..94e1c64 100644
+--- a/locale/setlocale.c
++++ b/locale/setlocale.c
+@@ -155,7 +155,7 @@ new_composite_name (int category, const char *newnames[__LC_LAST])
+ 			    _nl_global_locale.__names[i]);
+ 	last_len = strlen (name);
+ 	cumlen += _nl_category_name_sizes[i] + 1 + last_len + 1;
+-	if (i > 0 && same && strcmp (name, newnames[0]) != 0)
++	if (same && name != newnames[0] && strcmp (name, newnames[0]) != 0)
+ 	  same = 0;
+       }

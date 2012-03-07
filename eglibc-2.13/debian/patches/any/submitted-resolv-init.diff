@@ -1,0 +1,18 @@
+2011-07-26  Aurelien Jarno  <aurelien@aurel32.net>
+
+	* res_send.c(__libc_res_nsend): Correctly copy the nameserver
+	address.
+
+diff --git a/resolv/res_send.c b/resolv/res_send.c
+index a001c1e..51ddf38 100644
+--- a/resolv/res_send.c
++++ b/resolv/res_send.c
+@@ -441,7 +441,7 @@ __libc_res_nsend(res_state statp, const u_char *buf, int buflen,
+ 				    malloc(sizeof (struct sockaddr_in6));
+ 			if (EXT(statp).nsaddrs[n] != NULL) {
+ 				memset (mempcpy(EXT(statp).nsaddrs[n],
+-						&statp->nsaddr_list[n],
++						&statp->nsaddr_list[ns],
+ 						sizeof (struct sockaddr_in)),
+ 					'\0',
+ 					sizeof (struct sockaddr_in6)

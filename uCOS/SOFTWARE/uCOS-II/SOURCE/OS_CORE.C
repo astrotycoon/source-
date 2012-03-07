@@ -873,16 +873,15 @@ void  OS_Sched (void)
 #endif    
     INT8U      y;
 /*
- *为了防止在中段服务程序运行中出现调度而引起的混论，uCOS规定在中段服务程序中不允许进行任务调度，所以每当进入
- *中段服务程序就要把OSIntNesting加1，而中段返回前则要把OSIntNesting减1，这样调度器不会在中段服务程序中进行调
- *度工作
+ *为了防止在中段服务程序(ISR)运行中出现调度而引起的混论，uCOS规定在中段服务程序中不允许进行任务调度，所以每当进入
+ *中段服务程序就要把OSIntNesting加1，而中段返回前则要把OSIntNesting减1，这样调度器不会在中段服务程序中进行调度工作
  *
  *应用程序每调用函数OSSchedLock()为调度器上锁时，变量OSLockNesting就加1. 反之，应用程序每调用函数OSSchedUnlock()
  *为调度器解锁时，变量OSLockNesting就减1. 如果OSLockNesting非0，则禁止进行调度.
  *
  */
 
-    OS_ENTER_CRITICAL();
+    OS_ENTER_CRITICAL();/* OSIntNesting == 0 在中段服务程序中不允许进行任务调度 */
     if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Sched. only if all ISRs done & not locked    *//* 未处在中段服务程序中或调度器未被上锁 */
         y             = OSUnMapTbl[OSRdyGrp];          /* Get pointer to HPT ready to run              */
         OSPrioHighRdy = (INT8U)((y << 3) + OSUnMapTbl[OSRdyTbl[y]]);          /*    得到最高优先任务   */
