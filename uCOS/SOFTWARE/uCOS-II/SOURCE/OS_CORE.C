@@ -620,8 +620,8 @@ static  void  OS_InitEventList (void)
     OS_EVENT  *pevent2;
 
 
-    pevent1 = &OSEventTbl[0];
-    pevent2 = &OSEventTbl[1];
+    pevent1 = &OSEventTbl[0];					 /* pevent1 = OSEventTbl;		     */
+    pevent2 = &OSEventTbl[1];					 /* pevent2 = OSEventTbl + 1;		     */
     for (i = 0; i < (OS_MAX_EVENTS - 1); i++) {                  /* Init. list of free EVENT control blocks  */
         pevent1->OSEventType = OS_EVENT_TYPE_UNUSED;
         pevent1->OSEventPtr  = pevent2;
@@ -631,7 +631,7 @@ static  void  OS_InitEventList (void)
     pevent1->OSEventType = OS_EVENT_TYPE_UNUSED;
     pevent1->OSEventPtr  = (OS_EVENT *)0;
     OSEventFreeList      = &OSEventTbl[0];
-#else
+#else								 /* OS_MAX_EVENTS == 1			     */
     OSEventFreeList              = &OSEventTbl[0];               /* Only have ONE event control block        */
     OSEventFreeList->OSEventType = OS_EVENT_TYPE_UNUSED;
     OSEventFreeList->OSEventPtr  = (OS_EVENT *)0;
@@ -838,14 +838,14 @@ static  void  OS_InitTCBList (void)
     for (i = 0; i < (OS_LOWEST_PRIO + 1); i++) {                 /* Clear the priority table                 */
         OSTCBPrioTbl[i] = (OS_TCB *)0;
     }
-    ptcb1 = &OSTCBTbl[0];
-    ptcb2 = &OSTCBTbl[1];
+    ptcb1 = &OSTCBTbl[0];					 /* ptcb1 = OSTCBTbl;			     */
+    ptcb2 = &OSTCBTbl[1];					 /* ptcb2 = OSTCBTbl + 1;		     */
     for (i = 0; i < (OS_MAX_TASKS + OS_N_SYS_TASKS - 1); i++) {  /* Init. list of free TCBs                  */
         ptcb1->OSTCBNext = ptcb2;
         ptcb1++;
         ptcb2++;
     }
-    ptcb1->OSTCBNext = (OS_TCB *)0;                              /* Last OS_TCB                              */
+    ptcb1->OSTCBNext = (OS_TCB *)0;                              /* Last OS_TCB                              *//* or ptcb2 = (OS_TCB *)0;	*/
     OSTCBFreeList    = &OSTCBTbl[0];
 }
 /*$PAGE*/

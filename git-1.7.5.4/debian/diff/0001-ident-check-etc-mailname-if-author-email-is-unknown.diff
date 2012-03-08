@@ -1,0 +1,52 @@
+From c8b064f92e9aa2348afd3e2713f56024ea29639a Mon Sep 17 00:00:00 2001
+From: Gerrit Pape <pape@smarden.org>
+Date: Fri, 2 Nov 2007 20:11:19 +0000
+Subject: [PATCH 1/6] ident: check /etc/mailname if author email is unknown
+
+Before falling back to gethostname(), check /etc/mailname on Debian if
+GIT_AUTHOR_EMAIL is not set in the environment or through config files;
+only fallback if /etc/mailname cannot be opened or read.
+
+Fixes: http://bugs.debian.org/448655
+Signed-off-by: Jonathan Nieder <jrnieder@gmail.com>
+---
+ ident.c |   16 ++++++++++++++++
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
+diff --git a/ident.c b/ident.c
+index 8e56b5e..47ceeb6 100644
+--- a/ident.c
++++ b/ident.c
+@@ -46,6 +46,8 @@ static void copy_gecos(const struct passwd *w, char *name, size_t sz)
+ 
+ static void copy_email(const struct passwd *pw)
+ {
++	FILE *mailname;
++
+ 	/*
+ 	 * Make up a fake email address
+ 	 * (name + '@' + hostname [+ '.' + domainname])
+@@ -55,6 +57,20 @@ static void copy_email(const struct passwd *pw)
+ 		die("Your sysadmin must hate you!");
+ 	memcpy(git_default_email, pw->pw_name, len);
+ 	git_default_email[len++] = '@';
++
++	/* On Debian check /etc/mailname before using gethostname */
++	mailname = fopen("/etc/mailname", "r");
++	if (mailname && fgets(git_default_email + len,
++			      sizeof(git_default_email) - len, mailname)) {
++		/* Success! */
++		fclose(mailname);
++		return;
++	}
++	if (errno != ENOENT)
++		warning("unable to read /etc/mailname: %s\n",
++			strerror(errno));
++	if (mailname)
++		fclose(mailname);
+ 	gethostname(git_default_email + len, sizeof(git_default_email) - len);
+ 	if (!strchr(git_default_email+len, '.')) {
+ 		struct hostent *he = gethostbyname(git_default_email + len);
+-- 
+1.7.5.3
+

@@ -1,0 +1,50 @@
+From 57be702a5fc8303596bf1c1e0d8ddbdce9be338b Mon Sep 17 00:00:00 2001
+From: Jonathan Nieder <jrnieder@gmail.com>
+Date: Sun, 24 Oct 2010 21:12:42 -0500
+Subject: [PATCH 5/6] gitk: use symbolic font names "sans" and "monospace"
+
+tk8.5 and later use antialiased fonts (via fontconfig and freetype).
+The fonts used by gitk are Helvetica and Courier, which can look
+rather bad on screens with antialiasing, especially in the absence of
+proper hinting.
+
+It would be best if gitk used sans (which usually is mapped to
+Bitstream Vera Sans) for the interface and monospace (usually
+Bitstream Vera Mono) for the diff; this way, the local sysadmin can
+choose fonts that work well in the local installation once and the
+setting will apply to all well-behaved apps.
+
+The appearance of gitk for users that have already used it on a
+particular installation will not be affected, since gitk stores the
+UI and diff fonts in ~/.gitk.
+
+This patch is intended for Debian experimental for now.  It should
+not be applied to sid and upstream until it has been tested against
+tk8.4.
+
+Requested-by: Michael Biebl <biebl@debian.org>
+Signed-off-by: Jonathan Nieder <jrnieder@gmail.com>
+---
+ gitk-git/gitk |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/gitk-git/gitk b/gitk-git/gitk
+index 4cde0c4..31c48cd 100755
+--- a/gitk-git/gitk
++++ b/gitk-git/gitk
+@@ -11408,9 +11408,9 @@ if {[tk windowingsystem] eq "aqua"} {
+     set textfont {Monaco 9}
+     set uifont {{Lucida Grande} 9 bold}
+ } else {
+-    set mainfont {Helvetica 9}
+-    set textfont {Courier 9}
+-    set uifont {Helvetica 9 bold}
++    set mainfont {sans 9}
++    set textfont {monospace 9}
++    set uifont {sans 9 bold}
+ }
+ set tabstop 8
+ set findmergefiles 0
+-- 
+1.7.5.3
+

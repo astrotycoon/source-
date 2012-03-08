@@ -41,13 +41,13 @@
 #define  OS_N_SYS_TASKS            1
 #endif
 
-#define  OS_STAT_PRIO       (OS_LOWEST_PRIO - 1)        /* Statistic task priority                     */
+#define  OS_STAT_PRIO       (OS_LOWEST_PRIO - 1)        /* Statistic task priority                     *//* 统计任务				*/
 #define  OS_IDLE_PRIO       (OS_LOWEST_PRIO)            /* IDLE      task priority                     *//* 空闲任务 				*/
 
-#define  OS_EVENT_TBL_SIZE ((OS_LOWEST_PRIO) / 8 + 1)   /* Size of event table                         */
-#define  OS_RDY_TBL_SIZE   ((OS_LOWEST_PRIO) / 8 + 1)   /* Size of ready table                         */
+#define  OS_EVENT_TBL_SIZE ((OS_LOWEST_PRIO) / 8 + 1)   /* Size of event table                         *//* 事件列表字节			*/
+#define  OS_RDY_TBL_SIZE   ((OS_LOWEST_PRIO) / 8 + 1)   /* Size of ready table                         *//* 就绪列表字节			*/
 
-#define  OS_TASK_IDLE_ID       65535                    /* I.D. numbers for Idle and Stat tasks        */
+#define  OS_TASK_IDLE_ID       65535                    /* I.D. numbers for Idle and Stat tasks        *//* 空闲任务的ID 			*/
 #define  OS_TASK_STAT_ID       65534
 
 #define  OS_EVENT_EN       (((OS_Q_EN > 0) && (OS_MAX_QS > 0)) || (OS_MBOX_EN > 0) || (OS_SEM_EN > 0) || (OS_MUTEX_EN > 0))
@@ -441,9 +441,9 @@ OS_EXT  OS_FLAG_GRP      *OSFlagFreeList;           /* Pointer to free list of e
 #if OS_TASK_STAT_EN > 0
 OS_EXT  INT8S             OSCPUUsage;               /* Percentage of CPU used                          *//* CPU的利用率（%）*/
 OS_EXT  INT32U            OSIdleCtrMax;             /* Max. value that idle ctr can take in 1 sec.     *//* 表示每秒空闲任务计数的最大值 	*/
-OS_EXT  INT32U            OSIdleCtrRun;             /* Val. reached by idle ctr at run time in 1 sec.  */
+OS_EXT  INT32U            OSIdleCtrRun;             /* Val. reached by idle ctr at run time in 1 sec.  *//* 表示空闲任务计数器每秒的计数值	*/
 OS_EXT  BOOLEAN           OSStatRdy;                /* Flag indicating that the statistic task is rdy  *//* 统计任务是否就绪的标志 		*/
-OS_EXT  OS_STK            OSTaskStatStk[OS_TASK_STAT_STK_SIZE];      /* Statistics task stack          */
+OS_EXT  OS_STK            OSTaskStatStk[OS_TASK_STAT_STK_SIZE];      /* Statistics task stack          *//* 统计任务堆栈			*/
 #endif
 
 OS_EXT  INT8U             OSIntNesting;             /* Interrupt nesting level                         *//* 存放中段嵌套的层数 			*/
@@ -463,7 +463,7 @@ OS_EXT  INT8U             OSTaskCtr;                       /* Number of tasks cr
 
 OS_EXT  volatile  INT32U  OSIdleCtr;                       /* Idle counter                   	       *//* 定义32位空闲任务计数器 		*/
 
-OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      /* Idle task stack                */
+OS_EXT  OS_STK            OSTaskIdleStk[OS_TASK_IDLE_STK_SIZE];      /* Idle task stack                *//* 空闲任务堆栈			*/
 
 
 OS_EXT  OS_TCB           *OSTCBCur;                        /* Pointer to currently running TCB         *//* 指向正在运行任务控制块的指针 	*/

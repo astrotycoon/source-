@@ -1,0 +1,66 @@
+From 1b1179996d49401df093c23982d73f506d8ae77f Mon Sep 17 00:00:00 2001
+From: Jonathan Nieder <jrnieder@gmail.com>
+Date: Thu, 6 Jan 2011 22:29:59 -0600
+Subject: [PATCH 3/6] remove shebang line from shell libraries
+
+As v1.7.0-rc1~9 (2009-11-25) explained, even if a script is expected
+to be sourced instead of executed on its own, the #!/bin/sh line
+provides simple documentation about what format the file is in.
+
+Now that these files are not marked executable, though, the lack of
+such a line is not confusing the valgrind support of our test scripts.
+To be even more self-documenting, add some text explaining that these
+are shell libraries and remove the #!.
+
+Noticed by lintian.  This patch is Debian-specific for now.
+
+Signed-off-by: Jonathan Nieder <jrnieder@gmail.com>
+---
+ git-mergetool--lib.sh |    3 +--
+ git-parse-remote.sh   |    4 +---
+ git-sh-setup.sh       |    9 +++------
+ 3 files changed, 5 insertions(+), 11 deletions(-)
+
+diff --git a/git-mergetool--lib.sh b/git-mergetool--lib.sh
+index 4db9212..309e78b 100644
+--- a/git-mergetool--lib.sh
++++ b/git-mergetool--lib.sh
+@@ -1,5 +1,4 @@
+-#!/bin/sh
+-# git-mergetool--lib is a library for common merge tool functions
++# git-mergetool--lib is a shell library for common merge tool functions
+ diff_mode() {
+ 	test "$TOOL_MODE" = diff
+ }
+diff --git a/git-parse-remote.sh b/git-parse-remote.sh
+index ea093d2..5aab691 100644
+--- a/git-parse-remote.sh
++++ b/git-parse-remote.sh
+@@ -1,6 +1,4 @@
+-#!/bin/sh
+-
+-# git-ls-remote could be called from outside a git managed repository;
++# git-ls-remote could be included from outside a git managed repository;
+ # this would fail in that case and would issue an error message.
+ GIT_DIR=$(git rev-parse -q --git-dir) || :;
+ 
+diff --git a/git-sh-setup.sh b/git-sh-setup.sh
+index aa16b83..264966d 100644
+--- a/git-sh-setup.sh
++++ b/git-sh-setup.sh
+@@ -1,9 +1,6 @@
+-#!/bin/sh
+-#
+-# This is included in commands that either have to be run from the toplevel
+-# of the repository, or with GIT_DIR environment variable properly.
+-# If the GIT_DIR does not look like the right correct git-repository,
+-# it dies.
++# This shell scriplet is meant to be included by other shell scripts
++# to set up some variables pointing at the normal git directories and
++# a few helper shell functions.
+ 
+ # Having this variable in your environment would break scripts because
+ # you would cause "cd" to be taken to unexpected places.  If you
+-- 
+1.7.5.3
+
