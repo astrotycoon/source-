@@ -1,0 +1,95 @@
+make (3.80+3.81.b3.1-1) unstable; urgency=low
+  
+  * WARNING: Backward-incompatibility! (this may help CDBS users)
+    GNU make now implements a generic "second expansion" feature on the
+    prerequisites of both explicit and implicit (pattern) rules.  In order
+    to enable this feature, the special target '.SECONDEXPANSION' must be
+    defined before the first target which takes advantage of it.  If this
+    feature is enabled then after all rules have been parsed the
+    prerequisites are expanded again, this time with all the automatic
+    variables in scope.  This means that in addition to using standard
+    SysV $$@ in prerequisites lists, you can also use complex functions
+    such as $$(notdir $$@) etc.  This behavior applies to implicit rules,
+    as well, where the second expansion occurs when the rule is matched.
+    However, this means that you need to double-quote any "$" in your
+    filenames; instead of "foo: boo$$bar" you now must write "foo:
+    foo$$$$bar".  Note that the SysV $$@ etc. feature, which used to be
+    available by default, is now ONLY available when the .SECONDEXPANSION
+    target is defined.  If your makefiles take advantage of this SysV
+    feature you will need to update them.
+  * New special variables available in this release:
+    - .INCLUDE_DIRS: Expands to a list of directories that make searches
+      for included makefiles.
+  * New functions available in this release:
+    - $(info ...) prints its arguments to stdout.  No makefile name or
+      line number info, etc. is printed.
+    - $(flavor ...) returns the flavor of a variable.
+
+ -- Manoj Srivastava <srivasta@debian.org>  Mon, 12 Dec 2005 13:38:47 -0600
+
+make (3.80+3.81.b3-1) unstable; urgency=low
+  
+  * WARNING: Backward-incompatibility!  
+    GNU make now implements a generic "second expansion" feature on the
+    prerequisites of both explicit and implicit (pattern) rules.  After
+    all rules have been parsed the prerequisites are expanded again, this
+    time with all the automatic variables in scope.  This means that in
+    addition to using standard SysV $$@ in prerequisites lists, you can
+    also use complex functions such as $$(notdir $$@) etc.  This behavior
+    applies to implicit rules, as well, where the second expansion occurs
+    after the rule is matched.  However, this means that you need to
+    double-quote any "$" in your filenames; instead of "foo: boo$$bar" you
+    now must write "foo: foo$$$$bar".
+  * WARNING: Backward-incompatibility!
+    In order to comply with POSIX, the way in which GNU make processes
+    backslash-newline sequences in command strings has changed.  See the
+    GNU make manual section "Command Execution" for details.
+  * New command-line option: -L (--check-symlink-times).  On systems that
+    support symbolic links, if this option is given then GNU make will use
+    the most recent modification time of any symbolic links that are used
+    to resolve target files.  The default behavior remains as it always
+    has: use the modification time of the actual target file only.
+  * The "else" conditional line can now be followed by any other legal
+    conditional on the same line: this does not increase the depth of the
+    conditional nesting, so only one "endif" is required to close the
+    conditional.
+  * All pattern-specific variables that match a given target are now used
+    (previously only the first match was used).
+  * Target-specific variables can be marked as exportable using the
+    "export" keyword.
+  * In a recursive $(call ...) context, any extra arguments from the outer
+    call are now masked in the context of the inner call.
+  * Implemented a solution for the "thundering herd" problem with "-j -l".
+    This version of GNU make uses an algorithm suggested by Thomas Riedl
+    <thomas.riedl@siemens.com> to track the number of jobs started in the
+    last second and artificially adjust GNU make's view of the system's
+    load average accordingly.
+  * New special variables available in this release:
+     - .FEATURES: Contains a list of special features available in this
+       version of GNU make.
+     - .DEFAULT_GOAL: Set the name of the default goal make will
+       use if no goals are provided on the command line.
+     - MAKE_RESTARTS: If set, then this is the number of times this
+       instance of make has been restarted (see "How Makefiles Are Remade"
+       in the manual).
+     - New automatic variable: $| (added in 3.80, actually): contains all
+       the order-only prerequisites defined for the target.
+  * New functions available in this release:
+     - $(lastword ...) returns the last word in the list.  This gives
+       identical results as $(word $(words ...) ...), but is much faster.
+     - $(abspath ...) returns the absolute path (all "." and ".."
+       directories resolved, and any duplicate "/" characters removed) for
+       each path provided.
+     - $(realpath ...) returns the canonical pathname for each path
+       provided.  The canonical pathname is the absolute pathname, with
+       all symbolic links resolved as well.
+     - $(info ...) prints informative messages to stdout.  No makefile
+       name or line number info, etc. is printed, just the message.
+  * Changes made for POSIX compatibility:
+     - Only touch targets (under -t) if they have at least one command.
+     - Setting the SHELL make variable does NOT change the value of the
+       SHELL environment variable given to programs invoked by make.  As
+       an enhancement to POSIX, if you export the make variable SHELL then
+       it will be set in the environment, just as before.
+  
+ -- Manoj Srivastava <srivasta@debian.org>  Fri,  9 Dec 2005 21:28:14 -0600
